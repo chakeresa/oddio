@@ -12,7 +12,6 @@ feature 'Visitor can search landmarks' do
 
       within(first('.landmark_results')) do
         expect(page).to have_css('.landmark_name')
-        expect(page).to have_css('.landmark_photos')
         expect(page).to have_css('.landmark_rating')
         expect(page).to have_css('.landmark_types')
         expect(page).to have_css('.landmark_lat')
