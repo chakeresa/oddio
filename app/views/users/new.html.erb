@@ -1,0 +1,12 @@
+<%= form_for @user do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <%= f.label 'Re-enter your password' %>
+  <%= f.password_field :password_confirmation %>
+  <%= f.submit 'Make an Account', class: 'btn btn-primary' %>
+<% end %>
+<p>or</p>
+<%= link_to 'Login with Google', 'TODO', class: 'btn btn-primary' %>
+<%= link_to 'Login with Twitter', 'TODO', class: 'btn btn-primary' %>
