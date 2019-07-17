@@ -1,13 +1,72 @@
-# List of Landmarks
-<% unless @landmarks.nil? %>
-  <% @landmarks.each do |landmark| %>
-    <ul class="landmark_results">
-      <li class="landmark_name">Name: <%= landmark.name %></li>
-      <li class="landmark_rating">Rating: <%= landmark.rating %></li>
-      <li class="landmark_types">Type(s): <%= landmark.types %></li>
-      <li class="landmark_lat">Latitute: <%= landmark.lat %></li>
-      <li class="landmark_lng">Longitude: <%= landmark.lng %></li>
-      <li class="landmark_place_id">Place ID: <%= landmark.place_id %></li>
-    </ul>
-  <% end %>
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <style>
+    #mapid { height: 500px; width: 500px}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+     crossorigin=""/>
+</head>
+
+<body>
+  <!--map-->
+  <div id="mapid"></div>
+  <button onclick="map.locate()">Use my Location</button>
+  <p id="demo"></p>
+
+
+
+  <!---->
+  <!--start scripts-->
+  <!--leaflet script-->
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+ integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+ crossorigin=""></script>
+
+ <!--script to load map with points-->
+ <script>
+   var map = L.map('mapid').setView([39.44325637817383, -98.95733642578125], 13);
+   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+   maxZoom: 18,
+   id: 'mapbox.streets',
+   accessToken: 'pk.eyJ1IjoicGR1dmFsbCIsImEiOiJjanhveHczaG0wYnpsM21vN3AycjIxamo2In0.wgWKZjYwN5IckxRY5Qd9lQ'
+}).addTo(map);
+<% if @landmarks %>
+<%  @landmarks.each_with_index do |point, index| %>
+var marker<%= index %> = L.marker([<%=point.lat%>, <%= point.long%>], {
+  icon: greenIcon
+}).addTo(map);
+marker<%= index %>.bindPopup("<%= point.text %>" );
 <% end %>
+<% end %>
+
+function onLocationFound(e) {
+    var radius = e.accuracy;
+    L.marker(e.latlng).addTo(map)
+        .bindPopup("You are within " + radius + " meters from this point").openPopup();
+}
+
+map.on('locationfound', onLocationFound);
+
+function onLocationError(e) {
+    alert(e.message);
+}
+
+map.on('locationerror', onLocationError);
+
+ </script>
+
+
+ <!--script to show users location-->
+
+
+
+</body>
+</html>
