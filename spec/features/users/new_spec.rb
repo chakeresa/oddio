@@ -11,7 +11,7 @@ RSpec.describe 'Registering a new user' do
       expect(status_code).to eq(200)
     end
 
-    xit 'I can register' do
+    it 'I can register' do
       expect(page).to have_link('Login with Google')
       # TODO: expect(page).to have_selector(:css, "a[href=\"#{ ??? }\"]")
       expect(page).to have_link('Login with Twitter')
@@ -19,9 +19,10 @@ RSpec.describe 'Registering a new user' do
       
       username = 'bobthebuilder'
       password = 'supersecurepassword'
-      fill_in :username, with: username
-      fill_in :password, with: password
-      fill_in :password_confirmation, with: password
+
+      fill_in 'user[username]', with: username
+      fill_in 'user[password]', with: password
+      fill_in 'user[password_confirmation]', with: password
       click_button('Make an Account')
       
       expect(current_path).to eq(landmarks_path)
