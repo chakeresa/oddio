@@ -10,6 +10,12 @@
   </head>
 
   <body>
+    <div class="form-group search-field">
+      <%= form_tag(:landmarks, method: :get) do %>
+        <%= text_field_tag(:query) %>
+        <%= submit_tag "Search" %>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>
