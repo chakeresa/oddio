@@ -11,7 +11,7 @@ RSpec.describe 'Registering a new user' do
       expect(status_code).to eq(200)
     end
 
-    it 'I can register' do
+    xit 'I can register' do
       expect(page).to have_link('Login with Google')
       # TODO: expect(page).to have_selector(:css, "a[href=\"#{ ??? }\"]")
       expect(page).to have_link('Login with Twitter')
