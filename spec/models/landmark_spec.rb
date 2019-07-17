@@ -4,54 +4,74 @@ require './app/models/landmark'
 describe Landmark do
   let(:attribute) {
     {
-    "geometry": {
-      "location": {
-        "lat": 39.7320329,
-        "lng": -104.9617885
+      "type": "POI",
+      "id": "US/POI/p1/2411719",
+      "score": -0.12444,
+      "dist": 124.44127109929306,
+      "info": "search:ta:840049001001659-US",
+      "poi": {
+        "name": "Tucson Children's Museum",
+        "phone": "+(1)-(520)-7929985",
+        "categorySet": [
+            {
+                "id": 7317
+            }
+        ],
+        "url": "www.tucsonchildrensmuseum.org",
+        "categories": [
+            "museum"
+        ],
+        "classifications": [
+          {
+            "code": "MUSEUM",
+            "names": [
+              {
+                "nameLocale": "en-US",
+                "name": "museum"
+              }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetName": "W Broadway Blvd",
+        "municipalitySubdivision": "Tucson, Downtown Tucson",
+        "municipality": "Tucson",
+        "countrySecondarySubdivision": "Pima",
+        "countryTertiarySubdivision": "Tucson",
+        "countrySubdivision": "AZ",
+        "postalCode": "85701",
+        "extendedPostalCode": "857011606",
+        "countryCode": "US",
+        "country": "United States",
+        "countryCodeISO3": "USA",
+        "freeformAddress": "W Broadway Blvd, Tucson, AZ 85701",
+        "localName": "Tucson",
+        "countrySubdivisionName": "Arizona"
+      },
+      "position": {
+        "lat": 32.22097,
+        "lon": -110.972
       },
       "viewport": {
-        "northeast": {
-          "lat": 39.7347054,
-          "lng": -104.95759045
-          },
-        "southwest": {
-          "lat": 39.72968899999999,
-          "lng": -104.96318785
+        "topLeftPoint": {
+          "lat": 32.22187,
+          "lon": -110.97306
+        },
+        "btmRightPoint": {
+          "lat": 32.22007,
+          "lon": -110.97094
         }
-      }
-    },
-    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png",
-    "id": "27c5128df6a9a92604683c6ac7986a68043dc5b8",
-    "name": "Denver Botanic Gardens",
-    "opening_hours": {
-      "open_now": false
-    },
-    "photos": [
-      {
-      "height": 2592,
-      "html_attributions": [
-      "<a href=\"https://maps.google.com/maps/contrib/111275340364491486041/photos\">Tulio Guerra</a>"
-      ],
-      "photo_reference": "CmRaAAAAcCf5in3sY2k96cJlyq5oOJrzIthIVk6frFyJAvY_EeosCYekBHyk1BU-5LnoU9d4jGhGTGM7VKmbwZjoXtWJ5wuep9QzjW7654F-G56hhoR14slOA2dtq_zNnQTDloxbEhAKmKuVBHc8R4hSk58eL6StGhQZoLDQeI1KBl2v12tTys8JursGvA",
-      "width": 4608
-      }
-    ],
-    "place_id": "ChIJ14cW_Ld-bIcRlAMkBe6SCV0",
-    "plus_code": {
-      "compound_code": "P2JQ+R7 Denver, Colorado, United States",
-      "global_code": "85FQP2JQ+R7"
-    },
-    "rating": 4.8,
-    "reference": "ChIJ14cW_Ld-bIcRlAMkBe6SCV0",
-    "scope": "GOOGLE",
-    "types": [
-      "museum",
-      "park",
-      "point_of_interest",
-      "establishment"
-    ],
-    "user_ratings_total": 9871,
-    "vicinity": "1007 York Street, Denver"
+      },
+      "entryPoints": [
+        {
+          "type": "main",
+          "position": {
+            "lat": 32.22099,
+            "lon": -110.972
+          }
+        }
+      ]
     }
   }
 
@@ -59,11 +79,9 @@ describe Landmark do
 
   it "exists" do
     expect(subject).to be_a Landmark
-    expect(subject.name).to eq "Denver Botanic Gardens"
-    expect(subject.rating).to eq 4.8
-    expect(subject.types).to eq ["museum", "park", "point_of_interest", "establishment"]
-    expect(subject.lat).to eq 39.7320329
-    expect(subject.lng).to eq -104.9617885
-    expect(subject.place_id).to eq "ChIJ14cW_Ld-bIcRlAMkBe6SCV0"
+    expect(subject.name).to eq "Tucson Children's Museum"
+    expect(subject.types).to eq ['museum']
+    expect(subject.lat.round(2)).to eq 32.22097.round(2)
+    expect(subject.lng.round(2)).to eq -110.972.round(2)
   end
 end
