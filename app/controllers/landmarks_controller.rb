@@ -4,7 +4,6 @@ class LandmarksController < ApplicationController
       # Connects to API with query to find latitude and longitude
       conn = Faraday.new(url: "https://maps.googleapis.com") do |faraday|
         faraday.params["key"] = ENV["GOOGLE_PLACES_API_KEY"]
-        # faraday.params["query"] = "#{@query}"
         faraday.adapter Faraday.default_adapter
       end
 
