@@ -31,34 +31,83 @@
 
  <!--script to load map with points-->
  <script>
-   var map = L.map('mapid').setView([39.44325637817383, -98.95733642578125], 13);
+   var map = L.map('mapid').setView([39.7392, -104.9903], 13);
    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
    maxZoom: 18,
    id: 'mapbox.streets',
    accessToken: 'pk.eyJ1IjoicGR1dmFsbCIsImEiOiJjanhveHczaG0wYnpsM21vN3AycjIxamo2In0.wgWKZjYwN5IckxRY5Qd9lQ'
 }).addTo(map);
+
+<!--make green markers-->
+var greenIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
+<!--make purple markers-->
+var violetIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-violet.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
+<!--make orange markers-->
+var orangeIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-orange.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+<!--to prevent error before search-->
 <% if @landmarks %>
-<%  @landmarks.each_with_index do |point, index| %>
+
+<!--show parks on map-->
+<%  @parks.each_with_index do |point, index| %>
 var marker<%= index %> = L.marker([<%=point.lat%>, <%= point.long%>], {
   icon: greenIcon
 }).addTo(map);
-marker<%= index %>.bindPopup("<%= point.text %>" );
+marker<%= index %>.bindPopup("<%= point.name %>" );
+<% end %>
+
+<!--show museums on map-->
+<%  @museums.each_with_index do |point, index| %>
+var marker<%= index %> = L.marker([<%=point.lat%>, <%= point.long%>], {
+  icon: orangeIcon
+}).addTo(map);
+marker<%= index %>.bindPopup("<%= point.name %>" );
+<% end %>
+
+<!--show theaters on map-->
+<%  @theaters.each_with_index do |point, index| %>
+var marker<%= index %> = L.marker([<%=point.lat%>, <%= point.long%>], {
+  icon: violetIcon
+}).addTo(map);
+marker<%= index %>.bindPopup("<%= point.name %>" );
 <% end %>
 <% end %>
 
+<!--for map locate funktion-->
 function onLocationFound(e) {
     var radius = e.accuracy;
     L.marker(e.latlng).addTo(map)
         .bindPopup("You are within " + radius + " meters from this point").openPopup();
 }
-
 map.on('locationfound', onLocationFound);
 
+<!--handle location error-->
 function onLocationError(e) {
     alert(e.message);
 }
-
 map.on('locationerror', onLocationError);
 
  </script>

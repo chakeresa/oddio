@@ -1,19 +1,5 @@
 class LandmarksController < ApplicationController
   def index
-<<<<<<< HEAD
-
-
-      conn = Faraday.new(url: "https://api.ipgeolocationapi.com/geolocate/") do |faraday|
-      faraday.adapter Faraday.default_adapter
-    end
-    require "pry"; binding.pry
-
-    @lat = conn.get(request.remote_ip)['geo']['latitude']
-    @long = conn.get(request.remote_ip)['geo']['longitude']
-
-      require "pry"; binding.pry
-
-=======
     # If there is a search param
     if params[:query]
       # Connects to TomTom API with query to find latitude and longitude
@@ -43,11 +29,20 @@ class LandmarksController < ApplicationController
                        lon: search_longitude}
       nearby_response = tomtom_nearby_conn.get('/search/2/nearbySearch.json', nearby_params)
       nearby_results = JSON.parse(nearby_response.body, symbolize_names: true)[:results]
->>>>>>> c1fbdcbe9b3a8a3e4c57f82639e0fc07ec2501c5
 
       # Return an array of landmark objects
-      # @landmarks = nearby_results.map do |landmark_data|
-      #   Landmark.new(landmark_data)
-      # end
+      @landmarks = nearby_results.map do |landmark_data|
+        Landmark.new(landmark_data)
+      end
+      @parks = @landmarks.select{|landmark| landmark.types == ["park recreation area"]}
+      @museums = @landmarks.select{|landmark| landmark.types == ["museum"]}
+      @theaters = @landmarks.select{|landmark| landmark.types == ["theater"]}
+      @latitude = nearby_params[:lat]
+      @longitude = nearby_params[:lon]
+
+
+
+      require "pry"; binding.pry
     end
   end
+end
