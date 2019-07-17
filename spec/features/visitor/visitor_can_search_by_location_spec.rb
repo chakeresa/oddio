@@ -5,10 +5,12 @@ feature 'Visitor can search landmarks' do
     VCR.use_cassette('visitor_search_by_city') do
       visit landmarks_path
 
-      fill_in :query, with: 'Denver'
+      fill_in :query, with: 'Tucson'
       click_on 'Search'
 
       expect(current_path).to eq('/landmarks')
+
+      expect(page).to have_css('.landmark_results', count: 25)
 
       within(first('.landmark_results')) do
         expect(page).to have_css('.landmark_name')
@@ -23,9 +25,7 @@ feature 'Visitor can search landmarks' do
 end
 
 # As a visitor / user / admin,
-# When I visit the landmark index,
-# I see a map of the area around my IP address’ location with pins for landmarks (??)
-# I see a box for me to enter the search location.
+# When I visit the landmark index
 # When I enter a location (zip code, address, etc),
 # And I click “Search”,
 # I see a map with pins for landmarks around the desired location.
