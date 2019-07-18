@@ -11,5 +11,12 @@ Rails.application.routes.draw do
 
   resources :landmarks, only: [:index]
 
-  
+  namespace :api do
+    namespace :v1 do
+      resources :landmarks, only: [:index, :show]
+    end
+  end
+
+
+
 end
