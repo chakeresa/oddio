@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       flash[:success] = "Welcome, #{user.username}!"
       redirect_to landmarks_path
     else
-      flash[:danger] = "Incorrect username/password combination"
+      flash[:danger] = 'Incorrect username/password combination'
       render :new
     end
   end
