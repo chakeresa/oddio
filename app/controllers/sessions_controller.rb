@@ -1,4 +1,8 @@
-class SessionsController
+class SessionsController < ApplicationController
+  def new
+    # TODO
+  end
+
   def create
     # TODO
   end
