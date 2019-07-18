@@ -23,6 +23,8 @@ VCR.configure do |config|
   config.filter_sensitive_data('<AWS_SECRET_ACCESS_KEY>') { ENV['AWS_SECRET_ACCESS_KEY'] }
   config.filter_sensitive_data('<AWS_BUCKET>') { ENV['AWS_BUCKET'] }
   config.filter_sensitive_data('<AWS_REGION>') { ENV['AWS_REGION'] }
+  config.filter_sensitive_data('<GOOGLE_CLIENT_ID>') { ENV['GOOGLE_CLIENT_ID'] }
+  config.filter_sensitive_data('<GOOGLE_CLIENT_SECRET>') { ENV['GOOGLE_CLIENT_SECRET'] }
 end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
