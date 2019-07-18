@@ -18,12 +18,10 @@
    margin: 5px;
  }
 
-.text-centered {
-  text-align: center;
+.center-contents {
+  text-align:center;
 }
 
-.btn-centered {
-  margin:0 auto;
-  display: block;
-  width: 75px;
+.form-group {
+  margin: 5px;
 }
