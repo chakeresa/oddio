@@ -18,6 +18,11 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.configure_rspec_metadata!
   config.filter_sensitive_data('<GOOGLE_PLACES_API_KEY>') { ENV['GOOGLE_PLACES_API_KEY'] }
+  config.filter_sensitive_data('<TOMTOM_API_KEY>') { ENV['TOMTOM_API_KEY'] }
+  config.filter_sensitive_data('<AWS_ACCESS_KEY>') { ENV['AWS_ACCESS_KEY'] }
+  config.filter_sensitive_data('<AWS_SECRET_ACCESS_KEY>') { ENV['AWS_SECRET_ACCESS_KEY'] }
+  config.filter_sensitive_data('<AWS_BUCKET>') { ENV['AWS_BUCKET'] }
+  config.filter_sensitive_data('<AWS_REGION>') { ENV['AWS_REGION'] }
 end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
