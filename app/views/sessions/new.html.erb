@@ -1,0 +1,9 @@
+<div id='login-form'>
+  <%= form_tag do %>
+    <%= label_tag :username %>
+    <%= text_field_tag :username, nil, required: true %>
+    <%= label_tag :password %>
+    <%= password_field_tag :password, nil, required: true %>
+    <%= submit_tag 'Login' %>
+  <% end %>
+</div>
