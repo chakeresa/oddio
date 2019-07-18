@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+ 
+ nav .btn {
+   margin: 5px;
+ }
+
+.text-centered {
+  text-align: center;
+}
+
+.btn-centered {
+  margin:0 auto;
+  display: block;
+  width: 75px;
+}

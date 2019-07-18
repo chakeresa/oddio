@@ -40,6 +40,11 @@ gem 'faraday'
 # Secret environment variables
 gem 'figaro'
 
+# enables has_secure_password
+gem 'bcrypt'
+
+# factory for quick resource creation
+gem 'factory_bot_rails'
 # geocode get latlong from string
 gem 'geocoder'
 

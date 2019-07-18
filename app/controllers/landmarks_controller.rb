@@ -1,5 +1,7 @@
 class LandmarksController < ApplicationController
   def index
+    # TODO: Refactor huge method --
+    #       Create TomTomApiService & LandmarkIndex Facade
     # If there is a search param
     if params[:query]
       # Connects to TomTom API with query to find latitude and longitude
