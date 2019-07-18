@@ -18,7 +18,6 @@ RSpec.describe 'Registering a new user' do
       # TODO: expect(page).to have_selector(:css, "a[href=\"#{ ??? }\"]")
       
       username = 'BobTheBuilder'
-      username_downcased = username.downcase
       password = 'supersecurepassword'
 
       fill_in 'user[username]', with: username
@@ -29,29 +28,28 @@ RSpec.describe 'Registering a new user' do
       expect(current_path).to eq(landmarks_path)
       expect(User.count).to eq(1)
       
-      expect(page).to have_content("Welcome, #{username_downcased}!")
+      expect(page).to have_content("Welcome, #{username}!")
       expect(page).to have_link('Log Out')
       expect(page).to have_selector(:css, "a[href=\"#{ logout_path }\"]")
       expect(page).to_not have_link('Login')
       expect(page).to_not have_link('Register')
     end
 
-    it 'I cannot register with a duplicate username' do
+    it 'I cannot register with a duplicate username (even with different capitalization)' do
       username = 'BobTheBuilder'
-      username_downcased = username.downcase
       password = 'supersecurepassword'
 
-      create(:user, username: username_downcased)
+      create(:user, username: username.downcase)
 
       fill_in 'user[username]', with: username
       fill_in 'user[password]', with: password
       fill_in 'user[password_confirmation]', with: password
       click_button('Make an Account')
-      
-      expect(current_path).to eq(new_user_path)
+
+      expect(page).to have_field('user[password_confirmation]')
       expect(User.count).to eq(1)
       
-      expect(page).to have_content('lsdkjfalksdjfa')
+      expect(page).to have_content('Username has already been taken')
       expect(page).to_not have_content("Welcome, #{username}!")
 
       expect(page).to_not have_link('Log Out')
@@ -107,7 +105,7 @@ RSpec.describe 'Registering a new user' do
       expect(User.count).to eq(0)
       
       expect(page).to have_content("Password can't be blank")
-      expect(page).to_not have_content("Welcome, #{username.downcase}")
+      expect(page).to_not have_content("Welcome, #{username}")
 
       expect(page).to_not have_link('Log Out')
       expect(page).to have_link('Login')
