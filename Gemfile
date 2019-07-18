@@ -43,8 +43,6 @@ gem 'figaro'
 # enables has_secure_password
 gem 'bcrypt'
 
-# factory for quick resource creation
-gem 'factory_bot_rails'
 # geocode get latlong from string
 gem 'geocoder'
 #for serializers
@@ -61,6 +59,8 @@ group :development, :test do
   gem 'simplecov'
   gem 'vcr'
   gem 'webmock'
+  # factory for quick resource creation
+  gem 'factory_bot_rails'
 end
 
 group :development do

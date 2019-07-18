@@ -5,7 +5,7 @@ class CreateLandmarks < ActiveRecord::Migration[5.2]
       t.float :lat
       t.float :long
       t.string :address
-      t.string :type
+      t.string :category
       t.string :website
       t.string :phone
       t.string :photo_url
