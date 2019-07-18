@@ -14,6 +14,11 @@ RSpec.describe 'Logging in' do
     end
 
     it 'has a form to log in' do
+      expect(page).to have_link('Login with Google')
+      # TODO: expect(page).to have_selector(:css, "a[href=\"#{ ??? }\"]")
+      expect(page).to have_link('Login with Twitter')
+      # TODO: expect(page).to have_selector(:css, "a[href=\"#{ ??? }\"]")
+
       fill_in 'username', with: @user.username
       fill_in 'password', with: @password
       click_button('Login')
