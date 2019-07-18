@@ -7,8 +7,7 @@ describe "Landmarks API" do
     get '/api/v1/landmarks'
     expect(response).to be_successful
 
-     items = JSON.parse(response.body)
-require "pry"; binding.pry
+     items = JSON.parse(response.body)gs
      expect(items['data'].count).to eq(3)
 
   end

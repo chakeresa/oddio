@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!doctype html>
 
 <html lang="en">
@@ -78,20 +78,6 @@ var marker<%= index %> = L.marker([<%=point.lat%>, <%= point.long%>], {
   icon: greenIcon
 }).addTo(map);
 marker<%= index %>.bindPopup("<%= point.name %>" );
-=======
-<!--  List of Landmarks -->
-<% unless @landmarks.nil? %>
-  <% @landmarks.each do |landmark| %>
-    <ul class="landmark_results">
-      <li class="landmark_name">Name: <%= landmark.name %></li>
-      <li class="landmark_rating">Rating: <%= landmark.rating %></li>
-      <li class="landmark_types">Type(s): <%= landmark.types %></li>
-      <li class="landmark_lat">Latitute: <%= landmark.lat %></li>
-      <li class="landmark_lng">Longitude: <%= landmark.lng %></li>
-      <li class="landmark_place_id">Place ID: <%= landmark.place_id %></li>
-    </ul>
-  <% end %>
->>>>>>> 6cef9467a30d3907c5d9de3ef118b9adffae1053
 <% end %>
 
 //<!--show museums on map-->
