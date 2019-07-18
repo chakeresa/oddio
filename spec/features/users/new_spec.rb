@@ -36,7 +36,7 @@ RSpec.describe 'Registering a new user' do
       expect(page).to_not have_link('Register')
     end
 
-    xit 'I cannot register with a duplicate username' do
+    it 'I cannot register with a duplicate username' do
       username = 'BobTheBuilder'
       username_downcased = username.downcase
       password = 'supersecurepassword'
