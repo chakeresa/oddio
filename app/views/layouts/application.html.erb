@@ -12,8 +12,9 @@
 
   <body>
     <%= render 'shared/nav' %>
-// TODO: Consider moving the div below to a partial or the appropriate page
-//       I don't think we want it on every page -- registration, etc
+<!--  TODO: Consider moving the div below to a partial or the appropriate page.
+            I don't think we want it on every page (e.g. welcome, registration).
+            Unless you want it in the nav bar maybe?                       -->
     <div class="form-group search-field">
       <%= form_tag(:landmarks, method: :get) do %>
         <%= text_field_tag(:query) %>
