@@ -5,7 +5,7 @@ FactoryBot.define do
     sequence(:long) { |n| 3n }
     sequence(:address) { |n| "Address #{n}" }
     type { "park" }
-    sequence(:photo_url) { |n| "Website #{n}" }
+    sequence(:website) { |n| "Website #{n}" }
     sequence(:phone) { |n| "Phone #{n}" }
     sequence(:photo_url) { |n| "Photo Url #{n}" }
   end
