@@ -28,7 +28,7 @@ RSpec.describe 'Registering a new user' do
       expect(current_path).to eq(landmarks_path)
       expect(User.count).to eq(1)
       
-      expect(page).to have_content("Welcome, #{username}!")
+      expect(page).to have_content("Welcome, #{username.downcase}!")
       expect(page).to have_link('Log Out')
       expect(page).to have_selector(:css, "a[href=\"#{ logout_path }\"]")
       expect(page).to_not have_link('Login')
@@ -50,7 +50,7 @@ RSpec.describe 'Registering a new user' do
       expect(User.count).to eq(1)
       
       expect(page).to have_content('Username has already been taken')
-      expect(page).to_not have_content("Welcome, #{username}!")
+      expect(page).to_not have_content("Welcome, #{username.downcase}!")
 
       expect(page).to_not have_link('Log Out')
       expect(page).to have_link('Login')
@@ -70,7 +70,7 @@ RSpec.describe 'Registering a new user' do
       expect(User.count).to eq(0)
       
       expect(page).to have_content("Password confirmation doesn't match")
-      expect(page).to_not have_content("Welcome, #{username}!")
+      expect(page).to_not have_content("Welcome, #{username.downcase}!")
 
       expect(page).to_not have_link('Log Out')
       expect(page).to have_link('Login')
@@ -105,7 +105,7 @@ RSpec.describe 'Registering a new user' do
       expect(User.count).to eq(0)
       
       expect(page).to have_content("Password can't be blank")
-      expect(page).to_not have_content("Welcome, #{username}")
+      expect(page).to_not have_content("Welcome, #{username.downcase}")
 
       expect(page).to_not have_link('Log Out')
       expect(page).to have_link('Login')

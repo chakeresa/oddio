@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   enum role: ['user', 'admin']
 
-  # before_save { self.username = username.downcase }
+  before_save { self.username = username.downcase }
 
   has_secure_password
 end
