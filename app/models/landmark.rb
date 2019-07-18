@@ -1,4 +1,5 @@
 class Landmark
+  # TODO: delete :rating & :place_id if not used
   attr_reader :name, :rating, :types, :lat, :lng, :place_id
 
   def initialize(attributes = {})
