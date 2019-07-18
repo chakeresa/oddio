@@ -8,7 +8,10 @@ describe AWS_Service do
       WebMock.disable!
 
       something = AWS_Service.new
+
       binding.pry
+      expect(something.get_recordings.class).to eq()
+
     end
   end
 end
