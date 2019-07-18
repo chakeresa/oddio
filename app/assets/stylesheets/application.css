@@ -14,7 +14,7 @@
  *= require_self
  */
  
- nav .btn {
+nav .btn {
    margin: 5px;
  }
 
@@ -24,4 +24,8 @@
 
 .form-group {
   margin: 5px;
+}
+
+.search-field {
+  width: 200px;
 }

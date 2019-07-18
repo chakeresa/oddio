@@ -18,10 +18,10 @@
 <!--  TODO: Consider moving the div below to a partial or the appropriate page.
             I don't think we want it on every page (e.g. welcome, registration).
             Unless you want it in the nav bar maybe?                       -->
-    <div class="form-group search-field">
-      <%= form_tag(:landmarks, method: :get) do %>
-        <%= text_field_tag(:query) %>
-        <%= submit_tag "Search" %>
+    <div class='search-field'>
+      <%= form_tag landmarks_path, method: :get, class: 'form-inline my-2 my-lg-0' do %>
+        <%= text_field_tag :query, 'Enter a location', class: 'form-control mr-sm-2' %>
+        <%= submit_tag 'Search', class: 'btn btn-primary my-2 my-sm-0' %>
       <% end %>
     </div>
     <%= yield %>
