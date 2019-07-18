@@ -40,6 +40,10 @@ gem 'faraday'
 # Secret environment variables
 gem 'figaro'
 
+# geocode get latlong from string
+gem 'geocoder'
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

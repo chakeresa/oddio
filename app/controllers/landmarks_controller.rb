@@ -39,10 +39,11 @@ class LandmarksController < ApplicationController
       @theaters = @landmarks.select{|landmark| landmark.types == ["theater"]}
       @latitude = nearby_params[:lat]
       @longitude = nearby_params[:lon]
-
-
-
-      require "pry"; binding.pry
+    else
+      @latitude = 39.7392
+      @longitude = -104.9903
     end
+
+
   end
 end
