@@ -10,21 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_18_220446) do
+ActiveRecord::Schema.define(version: 2019_07_19_004710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "landmarks", force: :cascade do |t|
-    t.string "place_id"
     t.decimal "lat", precision: 10, scale: 6
     t.decimal "long", precision: 10, scale: 6
     t.string "name"
     t.string "address"
     t.string "phone_number"
     t.string "category"
-    t.string "website"
-    t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
