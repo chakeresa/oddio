@@ -14,7 +14,7 @@ class LandmarksController < ApplicationController
       # Connects to TomTom API for nearby search
       tomtom_nearby_conn = Faraday.new(url: 'https://api.tomtom.com') do |faraday|
         faraday.params['key'] = ENV['TOMTOM_API_KEY']
-        faraday.params['[limit]'] = 25
+        faraday.params['[limit]'] = 100
         faraday.params['[radius]'] = 10000
         faraday.params['[categorySet]'] = '9362, 7317, 7318'
         faraday.adapter Faraday.default_adapter
@@ -36,6 +36,16 @@ class LandmarksController < ApplicationController
       @landmarks = nearby_results.map do |landmark_data|
         Landmark.new(landmark_data)
       end
+      @parks = @landmarks.select{|landmark| landmark.types == ["park recreation area"]}
+      @museums = @landmarks.select{|landmark| landmark.types == ["museum"]}
+      @theaters = @landmarks.select{|landmark| landmark.types == ["theater"]}
+      @latitude = nearby_params[:lat]
+      @longitude = nearby_params[:lon]
+    else
+      @latitude = 39.7392
+      @longitude = -104.9903
     end
+
+
   end
 end
