@@ -7,7 +7,7 @@ describe "Landmarks API" do
     get '/api/v1/landmarks'
     expect(response).to be_successful
 
-     items = JSON.parse(response.body)gs
+     items = JSON.parse(response.body)
      expect(items['data'].count).to eq(3)
 
   end
@@ -28,8 +28,8 @@ describe "Landmarks API" do
    expect(response).to be_successful
    expect(landmark['data']["id"].to_i).to eq(id)
    expect(landmark['data']['attributes']["name"]).to eq(name)
-   expect(landmark['data']['attributes']["lat"]).to eq(lat)
-   expect(landmark['data']['attributes']["long"]).to eq(long)
+   expect(landmark['data']['attributes']["lat"].round(2)).to eq(lat.round(2))
+   expect(landmark['data']['attributes']["long"].round(2)).to eq(long.round(2))
    expect(landmark['data']['attributes']["category"]).to eq(category)
    expect(landmark['data']['attributes']["phone"]).to eq(phone)
    expect(landmark['data']['attributes']["website"]).to eq(website)
