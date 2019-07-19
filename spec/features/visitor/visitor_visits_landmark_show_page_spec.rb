@@ -5,13 +5,16 @@ describe 'visitor sees landmark show' do
     it "lets me visit a landmarks page" do
       lm1 = create(:landmark)
       visit landmark_path(lm1)
-      within "#landmark.name" do
+      within ".landmark-name" do
         expect(page).to have_content(lm1.name)
       end
+      within ".category" do
+        save_and_open_page
+        expect(page).to have_content(lm1.category.capitalize)
+      end
+
       within ".attributes" do
-        expect(page).to have_content(lm1.category)
         expect(page).to have_content(lm1.phone_number)
-        expect(page).to have_content(lm1.website)
         expect(page).to have_content(lm1.address)
       end
     end
