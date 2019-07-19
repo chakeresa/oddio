@@ -4,3 +4,7 @@
   <li>Phone: <%= @landmark.phone_number %></li>
   <li>Website: <%= @landmark.address %></li>
 </ul>
+
+<% @landmark.recordings.each do |recording| %>
+  <%= render partial: 'shared/audio_player', object: recording %>
+<% end %>

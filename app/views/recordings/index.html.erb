@@ -1,13 +1,5 @@
 <% @recordings.each do |recording| %>
 
-<figure>
-    <figcaption><%= recording.title %></figcaption>
-    <audio
-        controls
-        src="<%= recording.url %>">
-            Your browser does not support the
-            <code>audio</code> element.
-    </audio>
-</figure>
+  <%= render partial: 'shared/audio_player', object: recording %>
 
 <% end %>
