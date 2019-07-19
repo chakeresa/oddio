@@ -1,12 +1,16 @@
 class AWS_Service
 
   def get_recordings
-    conn.list_objects(bucket: 'oddio1903')
+    read.list_objects(bucket: 'oddio1903')
   end
 
   private
 
-  def conn
+  def write
+    s3 = Aws::S3::Resource.new
+  end
+
+  def read
     s3 = Aws::S3::Client.new
   end
 end
