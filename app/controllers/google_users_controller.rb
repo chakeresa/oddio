@@ -1,11 +1,11 @@
-class UsersController < ApplicationController
+class GoogleUsersController < ApplicationController
   def new
-    @user = User.new
+    @user = User.create_from_google(auth_hash)
   end
 
   def create
-    @user = User.new(user_params)
-    if @user.save
+    @user = User.find(params[:id])
+    if @user.update(username: params[:username])
       successful_save
     else
       flash[:danger] = @user.errors.full_messages.join('. ')
@@ -15,8 +15,8 @@ class UsersController < ApplicationController
 
   private
 
-  def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation)
+  def auth_hash
+    request.env['omniauth.auth']
   end
 
   def successful_save
