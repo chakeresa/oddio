@@ -94,7 +94,9 @@ function onLocationFound(e) {
         icon: selectMarkerColor(landmark['attributes']['category'])
       }).addTo(map);
     //add marker popup
-      marker.bindPopup(landmark['attributes']['name'])
+    let name = landmark['attributes']['name']
+    let id = landmark['id']
+      marker.bindPopup(name.link(`/landmarks/${id}`))
     });
   });
   //add my location popup
