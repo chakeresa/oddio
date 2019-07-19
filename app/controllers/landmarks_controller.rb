@@ -33,7 +33,6 @@ class LandmarksController < ApplicationController
       nearby_results = JSON.parse(nearby_response.body, symbolize_names: true)[:results]
 
       # Return an array of landmark objects
-      require "pry"; binding.pry
       @landmarks = nearby_results.map do |landmark_data|
         Landmark.new(landmark_data)
       end
