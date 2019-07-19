@@ -6,7 +6,6 @@ RSpec.describe Landmark, type: :model do
     it { should validate_presence_of :long }
     it { should validate_presence_of :name }
     it { should validate_presence_of :address }
-    it { should validate_presence_of :phone_number }
     it { should validate_presence_of :category }
   end
 end
