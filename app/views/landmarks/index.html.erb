@@ -8,7 +8,7 @@
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
   <style>
-    #mapid { height: 500px; width: 500px}
+    #mapid { height: 500px; width: 100%}
   </style>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
@@ -19,7 +19,6 @@
   <!--map-->
   <div id="mapid"></div>
   <button onclick="map.locate()">Use my Location</button>
-  <p id="demo"></p>
 
 
 
@@ -97,8 +96,36 @@ marker<%= index %>.bindPopup("<%= point.name %>" );
 <% end %>
 <% end %>
 
+
 //<!--for map locate funktion-->
+
+//color based on type of landmark
+function selectMarkerColor(category){
+  if (category === 'park') {
+    return greenIcon
+  } else if (category ==='theater') {
+    return violetIcon
+  } else {
+    return orangeIcon
+  }
+};
+//what to do after user enables location service
 function onLocationFound(e) {
+  fetch('api/v1/landmarks')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+    //iterate over landmarks, make points
+    myJson['data'].forEach(function(landmark){
+      let marker = L.marker([landmark['attributes']['lat'], landmark['attributes']['long']],{
+        icon: selectMarkerColor(landmark['attributes']['category'])
+      }).addTo(map);
+    //add marker popup
+      marker.bindPopup(landmark['attributes']['name'])
+    });
+  });
+  //add my location popup
     var radius = e.accuracy;
     L.marker(e.latlng).addTo(map)
         .bindPopup("You are within " + radius + " meters from this point").openPopup();
@@ -110,10 +137,7 @@ function onLocationError(e) {
     alert(e.message);
 }
 map.on('locationerror', onLocationError);
-
  </script>
-
-
 
 </body>
 </html>

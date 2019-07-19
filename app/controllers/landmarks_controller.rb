@@ -14,7 +14,7 @@ class LandmarksController < ApplicationController
       # Connects to TomTom API for nearby search
       tomtom_nearby_conn = Faraday.new(url: 'https://api.tomtom.com') do |faraday|
         faraday.params['key'] = ENV['TOMTOM_API_KEY']
-        faraday.params['[limit]'] = 25
+        faraday.params['[limit]'] = 100
         faraday.params['[radius]'] = 10000
         faraday.params['[categorySet]'] = '9362, 7317, 7318'
         faraday.adapter Faraday.default_adapter
@@ -33,6 +33,7 @@ class LandmarksController < ApplicationController
       nearby_results = JSON.parse(nearby_response.body, symbolize_names: true)[:results]
 
       # Return an array of landmark objects
+      require "pry"; binding.pry
       @landmarks = nearby_results.map do |landmark_data|
         Landmark.new(landmark_data)
       end
