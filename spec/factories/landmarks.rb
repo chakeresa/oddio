@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :landmark do
     sequence(:name) { |n| "Landmark #{n}" }
-    sequence(:lat) { |n| 2 * n }
-    sequence(:long) { |n| 3 * n }
+    sequence(:lat) { |n| 39.739 +  n * 0.001 }
+    sequence(:long) { |n|-104.9903 + n * 0.0015}
     sequence(:address) { |n| "Address #{n}" }
     category { "park" }
     sequence(:website) { |n| "Website #{n}" }
