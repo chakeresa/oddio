@@ -6,7 +6,7 @@ class LandmarksController < ApplicationController
   end
 
   def show
-
+    @landmark = Landmark.find(params[:id])
   end
 
 
