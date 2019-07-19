@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
-  resources :landmarks, only: [:index]
+  resources :landmarks, only: [:index, :show]
 
   namespace :api do
     namespace :v1 do

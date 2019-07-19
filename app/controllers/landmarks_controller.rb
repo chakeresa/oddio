@@ -1,4 +1,6 @@
 class LandmarksController < ApplicationController
+
+
   def index
     # TODO: Refactor huge method --
     #       Create TomTomApiService & LandmarkIndex Facade
@@ -46,7 +48,12 @@ class LandmarksController < ApplicationController
       @latitude = 39.7392
       @longitude = -104.9903
     end
-
-
   end
+
+  def show
+    require "pry"; binding.pry
+    @landmark = Landmark.find(params[:id])
+  end
+
+
 end
