@@ -47,6 +47,14 @@
    accessToken: 'pk.eyJ1IjoicGR1dmFsbCIsImEiOiJjanhveHczaG0wYnpsM21vN3AycjIxamo2In0.wgWKZjYwN5IckxRY5Qd9lQ'
 }).addTo(map);
 
+L.Routing.control({
+    waypoints: [
+        L.latLng(40.74, -104.94),
+        L.latLng(42.55, -103.33)
+    ],
+    routeWhileDragging: true
+}).addTo(map);
+
 //<!--make green markers-->
 var greenIcon = new L.Icon({
   iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png',
@@ -104,7 +112,9 @@ function onLocationFound(e) {
     //add marker popup
     let name = landmark['attributes']['name']
     let id = landmark['id']
-      marker.bindPopup(name.link(`/landmarks/${id}`))
+      // marker.bindPopup(name.link(`/landmarks/${id}`
+      marker.bindPopup(name.link(`/landmarks/${id}`) + `<br><button class="location_button">Take me Here</button>`)
+      // onclick="navigateTo(${[landmark['attributes']['lat']}, ${[landmark['attributes']['long']})
     });
   });
   //set zoom level 17
@@ -122,6 +132,10 @@ function onLocationError(e) {
     alert(e.message);
 }
 map.on('locationerror', onLocationError);
+
+function navigateTo(lat,long){
+
+}
  </script>
 
 </body>
