@@ -3,20 +3,22 @@ require 'rails_helper'
 RSpec.describe 'Registering a new user' do
   describe 'as a visitor' do
     before(:each) do
-      visit new_user_path
+      visit register_path
     end
 
     it 'loads the page' do
-      expect(current_path).to eq(new_user_path)
+      expect(current_path).to eq(register_path)
       expect(status_code).to eq(200)
     end
 
-    it 'I can register' do
+    it 'has links to register with Google & Twitter' do
       expect(page).to have_link('Login with Google')
-      # TODO: expect(page).to have_selector(:css, "a[href=\"#{ ??? }\"]")
+      expect(page).to have_selector(:css, "a[href='/auth/google_oauth2']")
       expect(page).to have_link('Login with Twitter')
       # TODO: expect(page).to have_selector(:css, "a[href=\"#{ ??? }\"]")
-      
+    end
+
+    xit 'I can register' do
       username = 'BobTheBuilder'
       password = 'supersecurepassword'
 
@@ -35,7 +37,7 @@ RSpec.describe 'Registering a new user' do
       expect(page).to_not have_link('Register')
     end
 
-    it 'I cannot register with a duplicate username (even with different capitalization)' do
+    xit 'I cannot register with a duplicate username (even with different capitalization)' do
       username = 'BobTheBuilder'
       password = 'supersecurepassword'
 
@@ -57,7 +59,7 @@ RSpec.describe 'Registering a new user' do
       expect(page).to have_link('Register')
     end
 
-    it "I cannot register if passwords don't match" do
+    xit "I cannot register if passwords don't match" do
       username = 'BobTheBuilder'
       password = 'supersecurepassword'
 
@@ -77,7 +79,7 @@ RSpec.describe 'Registering a new user' do
       expect(page).to have_link('Register')
     end
 
-    it 'I cannot register if I leave username blank' do
+    xit 'I cannot register if I leave username blank' do
       password = 'supersecurepassword'
 
       fill_in 'user[password]', with: password
@@ -95,7 +97,7 @@ RSpec.describe 'Registering a new user' do
       expect(page).to have_link('Register')
     end
 
-    it 'I cannot register if I leave password blank' do
+    xit 'I cannot register if I leave password blank' do
       username = 'BobTheBuilder'
 
       fill_in 'user[username]', with: username
