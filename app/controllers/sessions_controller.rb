@@ -3,8 +3,9 @@ class SessionsController < ApplicationController
   end
   
   def create
-    @user = User.find_by(username: params[:username].downcase)
-    if @user && @user.authenticate(params[:password])
+    app_auth = AppAuth.find_by(username: params[:username].downcase)
+    @user = app_auth.user if app_auth
+    if @user && app_auth.authenticate(params[:password])
       successful_login
     else
       flash[:danger] = 'Incorrect username/password combination'

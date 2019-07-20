@@ -1,5 +1,5 @@
 class AppAuth < ApplicationRecord
-  has_one :user
+  belongs_to :user, optional: true
 
   validates :username, uniqueness: { case_sensitive: false }, presence: true
 
