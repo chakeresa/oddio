@@ -47,13 +47,13 @@
    accessToken: 'pk.eyJ1IjoicGR1dmFsbCIsImEiOiJjanhveHczaG0wYnpsM21vN3AycjIxamo2In0.wgWKZjYwN5IckxRY5Qd9lQ'
 }).addTo(map);
 
-L.Routing.control({
-    waypoints: [
-        L.latLng(40.74, -104.94),
-        L.latLng(42.55, -103.33)
-    ],
-    routeWhileDragging: true
-}).addTo(map);
+// L.Routing.control({
+//     waypoints: [
+//         L.latLng(40.74, -104.94),
+//         L.latLng(42.55, -103.33)
+//     ],
+//     routeWhileDragging: true
+// }).addTo(map);
 
 //<!--make green markers-->
 var greenIcon = new L.Icon({
@@ -113,7 +113,7 @@ function onLocationFound(e) {
     let name = landmark['attributes']['name']
     let id = landmark['id']
       // marker.bindPopup(name.link(`/landmarks/${id}`
-      marker.bindPopup(name.link(`/landmarks/${id}`) + `<br><button class="location_button">Take me Here</button>`)
+      marker.bindPopup(name.link(`/landmarks/${id}`) + `<br><button class="location_button" onclick="navigateTo(${landmark['attributes']['lat']}, ${landmark['attributes']['long']})" >Take me Here</button>`)
       // onclick="navigateTo(${[landmark['attributes']['lat']}, ${[landmark['attributes']['long']})
     });
   });
@@ -133,8 +133,19 @@ function onLocationError(e) {
 }
 map.on('locationerror', onLocationError);
 
-function navigateTo(lat,long){
 
+function navigateTo(lat,long){
+  navigator.geolocation.getCurrentPosition(function(position) {
+      var my_lat = position.coords.latitude;
+      var my_lng = position.coords.longitude;
+      L.Routing.control({
+          waypoints: [
+              L.latLng(my_lat, my_lng),
+              L.latLng(lat, long)
+          ],
+          routeWhileDragging: true
+      }).addTo(map);
+  });
 }
  </script>
 
