@@ -1,14 +1,8 @@
 class User < ApplicationRecord
-  # validates :username, uniqueness: { case_sensitive: false }, presence: true
-  validates :username, uniqueness: { case_sensitive: false }
   validates :email, uniqueness: { case_sensitive: false }
   validates_presence_of :role
 
   enum role: ['user', 'admin']
-
-  before_save { self.username = username && username.downcase }
-
-  has_secure_password
 
   def self.create_from_google(auth_hash)
     email = auth_hash["info"]["email"]

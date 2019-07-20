@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe AppAuth, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'validations' do
+    it { should validate_uniqueness_of(:username).case_insensitive }
+    it { should validate_presence_of :username }
+  end
 end

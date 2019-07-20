@@ -18,19 +18,30 @@ RSpec.describe 'Registering a new user' do
       # TODO: expect(page).to have_selector(:css, "a[href=\"#{ ??? }\"]")
     end
 
-    xit 'I can register' do
+    it 'I can register' do
       username = 'BobTheBuilder'
       password = 'supersecurepassword'
+      email = 'BobTheBuilder@gmail.com'
+      first_name = 'Bob'
+      last_name = 'TheBuilder'
+      display_name = 'btb42'
 
-      fill_in 'user[username]', with: username
-      fill_in 'user[password]', with: password
-      fill_in 'user[password_confirmation]', with: password
+      fill_in 'app_auth[username]', with: username
+      fill_in 'app_auth[password]', with: password
+      fill_in 'app_auth[password_confirmation]', with: password
       click_button('Make an Account')
       
-      expect(current_path).to eq(landmarks_path)
-      expect(User.count).to eq(1)
+      expect(current_path).to eq(new_user_path)
+      expect(AppAuth.count).to eq(1)
+      expect(User.count).to eq(0)
       
-      expect(page).to have_content("Welcome, #{username.downcase}!")
+      fill_in 'user[display_name]', with: display_name
+      fill_in 'user[email]', with: email
+      fill_in 'user[first_name]', with: first_name
+      fill_in 'user[last_name]', with: last_name
+      click_button("Let's Get Started")
+      
+      expect(page).to have_content("Welcome, #{first_name}!")
       expect(page).to have_link('Log Out')
       expect(page).to have_selector(:css, "a[href=\"#{ logout_path }\"]")
       expect(page).to_not have_link('Login')
