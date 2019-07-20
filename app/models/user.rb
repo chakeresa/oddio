@@ -1,7 +1,8 @@
 class User < ApplicationRecord
-  validates :username, uniqueness: { case_sensitive: false }, presence: true
-  validates_presence_of :password_digest,
-                        :role
+  # validates :username, uniqueness: { case_sensitive: false }, presence: true
+  validates :username, uniqueness: { case_sensitive: false }
+  validates :email, uniqueness: { case_sensitive: false }
+  validates_presence_of :role
 
   enum role: ['user', 'admin']
 
