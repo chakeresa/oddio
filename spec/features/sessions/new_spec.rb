@@ -37,7 +37,7 @@ RSpec.describe 'Logging in' do
 
     it 'will log in with any username case' do
       fill_in 'username', with: @app_auth.username.upcase
-      fill_in 'password', with: @password
+      fill_in 'password', with: @app_auth.password
       click_button('Login')
 
       expect(current_path).to eq(landmarks_path)
@@ -45,7 +45,7 @@ RSpec.describe 'Logging in' do
 
     it "won't log in if username doesn't exist" do
       fill_in 'username', with: @app_auth.username + '1'
-      fill_in 'password', with: @password
+      fill_in 'password', with: @app_auth.password
       click_button('Login')
 
       expect(page).to have_field('password')
@@ -73,7 +73,7 @@ RSpec.describe 'Logging in' do
     end
 
     it "won't log in if username is blank" do
-      fill_in 'password', with: @password
+      fill_in 'password', with: @app_auth.password
       click_button('Login')
 
       expect(page).to have_field('password')
