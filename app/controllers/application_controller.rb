@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def successful_login
-    flash[:success] = "Welcome, #{@user.username}!"
+    flash[:success] = "Welcome, #{@user.first_name}!"
     session[:user_id] = @user.id
     redirect_to landmarks_path
   end
