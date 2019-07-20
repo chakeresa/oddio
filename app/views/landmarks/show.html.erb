@@ -5,6 +5,21 @@
   <li>Website: <%= @landmark.address %></li>
 </ul>
 
+<% if current_user %>
+  <input type="file" accept="audio/*" capture id="recorder">
+  <audio id="player" controls></audio>
+  <script>
+  var recorder = document.getElementById('recorder');
+  var player = document.getElementById('player');
+
+  recorder.addEventListener('change', function(e) {
+    var file = e.target.files[0];
+    debugger
+    player.srcObject = file;
+  });
+  </script>
+<% end %>
+
 <% @landmark.recordings.each do |recording| %>
   <%= render partial: 'shared/audio_player', object: recording %>
 <% end %>
