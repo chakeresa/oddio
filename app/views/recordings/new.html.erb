@@ -1,0 +1,5 @@
+<%= form_for @recording, url: landmark_recordings_path(@recording.landmark) do |f| %>
+  <%= f.text_field :title %>
+  <%= f.file_field :recording %>
+  <%= f.submit %>
+<% end %>
