@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
-  resources :landmarks, only: [:index, :show]
+  resources :landmarks, only: [:index, :show] do
+    resources :recordings, only: [:new, :create]
+
+  end
 
   resources :recordings, only: [:index]
 
