@@ -6,10 +6,6 @@ class AWS_Service
 
   private
 
-  def write
-    s3 = Aws::S3::Resource.new
-  end
-
   def read
     s3 = Aws::S3::Client.new
   end

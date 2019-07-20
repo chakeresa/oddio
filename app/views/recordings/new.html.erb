@@ -2,6 +2,6 @@
   <%= f.label :title %>
   <%= f.text_field :title %>
   <br>
-  <%= f.file_field :recording %><br>
+  <%= f.file_field :recording, accept:"audio/*", capture: true %><br>
   <%= f.submit %>
 <% end %>
