@@ -14,6 +14,8 @@ class SessionsController < ApplicationController
   end
   
   def destroy
-    # TODO
+    reset_session
+    flash[:success] = 'Logged out. See you next time!'
+    redirect_to root_path
   end
 end
