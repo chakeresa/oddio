@@ -1,0 +1,211 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<AWS_BUCKET>.s3.<AWS_REGION>.amazonaws.com/?encoding-type=url
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Content-Type:
+      - ''
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.59.0 ruby/2.4.1 x86_64-darwin18 aws-sdk-s3/1.45.0
+      Host:
+      - "<AWS_BUCKET>.s3.<AWS_REGION>.amazonaws.com"
+      X-Amz-Date:
+      - 20190719T142124Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=<AWS_ACCESS_KEY>/20190719/<AWS_REGION>/s3/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=0099489e878e25d99625f9cd32d9c10538c650178ff5bacea9b2c8818a79ffbf
+      Content-Length:
+      - '0'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - HdjqeE06EylhyOAvnKTmW5ja3THC1zvcRZHdFwI7LUcRsKAa6xNLcRxN7t3B4hB5iW4pcR0cn2s=
+      X-Amz-Request-Id:
+      - 42FCD49430D93D88
+      Date:
+      - Fri, 19 Jul 2019 14:21:26 GMT
+      X-Amz-Bucket-Region:
+      - "<AWS_REGION>"
+      Content-Type:
+      - application/xml
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <ListBucketResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Name><AWS_BUCKET></Name><Prefix></Prefix><Marker></Marker><MaxKeys>1000</MaxKeys><EncodingType>url</EncodingType><IsTruncated>false</IsTruncated><Contents><Key>audio_1.mp3</Key><LastModified>2019-07-18T20:09:49.000Z</LastModified><ETag>&quot;a21dcef4a5fd655e1d80c2a86340199c&quot;</ETag><Size>11597</Size><Owner><ID>9561e2bcbf685413e4313066de1636a264d64618310ef8f415513513d18ec8b6</ID></Owner><StorageClass>STANDARD</StorageClass></Contents><Contents><Key>audio_2.mp3</Key><LastModified>2019-07-18T20:09:49.000Z</LastModified><ETag>&quot;a21dcef4a5fd655e1d80c2a86340199c&quot;</ETag><Size>11597</Size><Owner><ID>9561e2bcbf685413e4313066de1636a264d64618310ef8f415513513d18ec8b6</ID></Owner><StorageClass>STANDARD</StorageClass></Contents><Contents><Key>audio_3.mp3</Key><LastModified>2019-07-18T21:59:46.000Z</LastModified><ETag>&quot;873e200190f6cddf1e93315f9967470e&quot;</ETag><Size>79016</Size><Owner><ID>9561e2bcbf685413e4313066de1636a264d64618310ef8f415513513d18ec8b6</ID></Owner><StorageClass>STANDARD</StorageClass></Contents></ListBucketResult>
+    http_version: 
+  recorded_at: Fri, 19 Jul 2019 14:21:25 GMT
+- request:
+    method: get
+    uri: https://<AWS_BUCKET>.s3.<AWS_REGION>.amazonaws.com/?encoding-type=url
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Content-Type:
+      - ''
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.59.0 ruby/2.4.1 x86_64-darwin18 aws-sdk-s3/1.45.0
+      Host:
+      - "<AWS_BUCKET>.s3.<AWS_REGION>.amazonaws.com"
+      X-Amz-Date:
+      - 20190719T142125Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=<AWS_ACCESS_KEY>/20190719/<AWS_REGION>/s3/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=8c6453cb9c4e3a03e8a55f72c68fa8ca9a34df52f98a7a32ed578b1732f397d8
+      Content-Length:
+      - '0'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - Xc4pdax7yVftkTtv3/pRpN/RRnmpeOfrfnYs4YIS+/O49QPvz6/KNAGvN1h6DSwxZaYWvSqanrk=
+      X-Amz-Request-Id:
+      - D4885C0B5C149869
+      Date:
+      - Fri, 19 Jul 2019 14:21:26 GMT
+      X-Amz-Bucket-Region:
+      - "<AWS_REGION>"
+      Content-Type:
+      - application/xml
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <ListBucketResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Name><AWS_BUCKET></Name><Prefix></Prefix><Marker></Marker><MaxKeys>1000</MaxKeys><EncodingType>url</EncodingType><IsTruncated>false</IsTruncated><Contents><Key>audio_1.mp3</Key><LastModified>2019-07-18T20:09:49.000Z</LastModified><ETag>&quot;a21dcef4a5fd655e1d80c2a86340199c&quot;</ETag><Size>11597</Size><Owner><ID>9561e2bcbf685413e4313066de1636a264d64618310ef8f415513513d18ec8b6</ID></Owner><StorageClass>STANDARD</StorageClass></Contents><Contents><Key>audio_2.mp3</Key><LastModified>2019-07-18T20:09:49.000Z</LastModified><ETag>&quot;a21dcef4a5fd655e1d80c2a86340199c&quot;</ETag><Size>11597</Size><Owner><ID>9561e2bcbf685413e4313066de1636a264d64618310ef8f415513513d18ec8b6</ID></Owner><StorageClass>STANDARD</StorageClass></Contents><Contents><Key>audio_3.mp3</Key><LastModified>2019-07-18T21:59:46.000Z</LastModified><ETag>&quot;873e200190f6cddf1e93315f9967470e&quot;</ETag><Size>79016</Size><Owner><ID>9561e2bcbf685413e4313066de1636a264d64618310ef8f415513513d18ec8b6</ID></Owner><StorageClass>STANDARD</StorageClass></Contents></ListBucketResult>
+    http_version: 
+  recorded_at: Fri, 19 Jul 2019 14:21:25 GMT
+- request:
+    method: get
+    uri: https://<AWS_BUCKET>.s3.<AWS_REGION>.amazonaws.com/?encoding-type=url
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Content-Type:
+      - ''
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.59.0 ruby/2.4.1 x86_64-darwin18 aws-sdk-s3/1.45.0
+      Host:
+      - "<AWS_BUCKET>.s3.<AWS_REGION>.amazonaws.com"
+      X-Amz-Date:
+      - 20190719T142125Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=<AWS_ACCESS_KEY>/20190719/<AWS_REGION>/s3/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=8c6453cb9c4e3a03e8a55f72c68fa8ca9a34df52f98a7a32ed578b1732f397d8
+      Content-Length:
+      - '0'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - wM3L8QBBuh3peYG5LRJUz+ykeAheNkqGjFGNjI1d9T0g1vTlF25ZRjdz6hkyM2vpLsAxXa8kAyU=
+      X-Amz-Request-Id:
+      - D775B9F81FFA77D4
+      Date:
+      - Fri, 19 Jul 2019 14:21:26 GMT
+      X-Amz-Bucket-Region:
+      - "<AWS_REGION>"
+      Content-Type:
+      - application/xml
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <ListBucketResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Name><AWS_BUCKET></Name><Prefix></Prefix><Marker></Marker><MaxKeys>1000</MaxKeys><EncodingType>url</EncodingType><IsTruncated>false</IsTruncated><Contents><Key>audio_1.mp3</Key><LastModified>2019-07-18T20:09:49.000Z</LastModified><ETag>&quot;a21dcef4a5fd655e1d80c2a86340199c&quot;</ETag><Size>11597</Size><Owner><ID>9561e2bcbf685413e4313066de1636a264d64618310ef8f415513513d18ec8b6</ID></Owner><StorageClass>STANDARD</StorageClass></Contents><Contents><Key>audio_2.mp3</Key><LastModified>2019-07-18T20:09:49.000Z</LastModified><ETag>&quot;a21dcef4a5fd655e1d80c2a86340199c&quot;</ETag><Size>11597</Size><Owner><ID>9561e2bcbf685413e4313066de1636a264d64618310ef8f415513513d18ec8b6</ID></Owner><StorageClass>STANDARD</StorageClass></Contents><Contents><Key>audio_3.mp3</Key><LastModified>2019-07-18T21:59:46.000Z</LastModified><ETag>&quot;873e200190f6cddf1e93315f9967470e&quot;</ETag><Size>79016</Size><Owner><ID>9561e2bcbf685413e4313066de1636a264d64618310ef8f415513513d18ec8b6</ID></Owner><StorageClass>STANDARD</StorageClass></Contents></ListBucketResult>
+    http_version: 
+  recorded_at: Fri, 19 Jul 2019 14:21:25 GMT
+- request:
+    method: get
+    uri: https://<AWS_BUCKET>.s3.<AWS_REGION>.amazonaws.com/?encoding-type=url
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Content-Type:
+      - ''
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.59.0 ruby/2.4.1 x86_64-darwin18 aws-sdk-s3/1.45.0
+      Host:
+      - "<AWS_BUCKET>.s3.<AWS_REGION>.amazonaws.com"
+      X-Amz-Date:
+      - 20190719T142125Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=<AWS_ACCESS_KEY>/20190719/<AWS_REGION>/s3/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=8c6453cb9c4e3a03e8a55f72c68fa8ca9a34df52f98a7a32ed578b1732f397d8
+      Content-Length:
+      - '0'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - Kcz+CzGZw+kyT4ypH8SRV62qcbWdfIcORjeMlTpBVQSD2iggvXsCBvMWTclt/EunHJjf17wolJo=
+      X-Amz-Request-Id:
+      - D20285D2258EA556
+      Date:
+      - Fri, 19 Jul 2019 14:21:26 GMT
+      X-Amz-Bucket-Region:
+      - "<AWS_REGION>"
+      Content-Type:
+      - application/xml
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <ListBucketResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Name><AWS_BUCKET></Name><Prefix></Prefix><Marker></Marker><MaxKeys>1000</MaxKeys><EncodingType>url</EncodingType><IsTruncated>false</IsTruncated><Contents><Key>audio_1.mp3</Key><LastModified>2019-07-18T20:09:49.000Z</LastModified><ETag>&quot;a21dcef4a5fd655e1d80c2a86340199c&quot;</ETag><Size>11597</Size><Owner><ID>9561e2bcbf685413e4313066de1636a264d64618310ef8f415513513d18ec8b6</ID></Owner><StorageClass>STANDARD</StorageClass></Contents><Contents><Key>audio_2.mp3</Key><LastModified>2019-07-18T20:09:49.000Z</LastModified><ETag>&quot;a21dcef4a5fd655e1d80c2a86340199c&quot;</ETag><Size>11597</Size><Owner><ID>9561e2bcbf685413e4313066de1636a264d64618310ef8f415513513d18ec8b6</ID></Owner><StorageClass>STANDARD</StorageClass></Contents><Contents><Key>audio_3.mp3</Key><LastModified>2019-07-18T21:59:46.000Z</LastModified><ETag>&quot;873e200190f6cddf1e93315f9967470e&quot;</ETag><Size>79016</Size><Owner><ID>9561e2bcbf685413e4313066de1636a264d64618310ef8f415513513d18ec8b6</ID></Owner><StorageClass>STANDARD</StorageClass></Contents></ListBucketResult>
+    http_version: 
+  recorded_at: Fri, 19 Jul 2019 14:21:25 GMT
+recorded_with: VCR 5.0.0

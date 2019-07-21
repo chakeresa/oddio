@@ -5,7 +5,12 @@
   <li>Website: <%= @landmark.address %></li>
 </ul>
 
-<script>
-
-
-</script>
+<br>
+<% if current_user %>
+  <%= button_to "Upload new recording", new_landmark_recording_path(@landmark), method: :get %>
+<% end %>
+<br>
+<br>
+<% @landmark.recordings.each do |recording| %>
+  <%= render partial: 'shared/audio_player', object: recording %>
+<% end %>

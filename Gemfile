@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# AWS S3 integration
+gem 'aws-sdk-s3', '~> 1'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -47,6 +50,12 @@ gem 'bcrypt'
 gem 'geocoder'
 #for serializers
 gem 'fast_jsonapi'
+
+# OAuth
+gem 'omniauth-google-oauth2'
+
+# print different colors to the terminal
+gem 'colorize'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,12 +1,18 @@
 <%= form_for @user do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.label 'Re-enter your password' %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit 'Make an Account', class: 'btn btn-primary' %>
+  <% f.options[:html][:class] += ' form-group' %>
+  <%= f.label :display_name %>
+  <%= f.text_field :display_name, class: 'form-control form-field-register', required: true %>
+  <br>
+  <%= f.label :email %>
+  <%= f.email_field :email, class: 'form-control form-field-register', required: true %>
+  <br>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name, class: 'form-control form-field-register', required: true %>
+  <br>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name, class: 'form-control form-field-register' %>
+  <br>
+  <div class='center-contents'>
+    <%= f.submit "Let's Get Started", class: 'btn btn-primary' %>
+  </div>
 <% end %>
-<p>or</p>
-<%= link_to 'Login with Google', 'TODO', class: 'btn btn-primary' %>
-<%= link_to 'Login with Twitter', 'TODO', class: 'btn btn-primary' %>
