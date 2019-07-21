@@ -23,14 +23,14 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 19 Jul 2019 01:48:52 GMT
+      - Sun, 21 Jul 2019 19:31:28 GMT
       Content-Length:
       - '100124'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"summary":{"queryType":"NEARBY","queryTime":24,"numResults":95,"offset":0,"totalResults":398,"fuzzyLevel":1,"geoBias":{"lat":39.7392358,"lon":-104.990251}},"results":[{"type":"POI","id":"US/POI/p0/433330","score":-0.23063,"dist":230.6292728439259,"info":"search:ta:840081000402721-US","poi":{"name":"Byers-Evans
+      string: '{"summary":{"queryType":"NEARBY","queryTime":22,"numResults":95,"offset":0,"totalResults":398,"fuzzyLevel":1,"geoBias":{"lat":39.7392358,"lon":-104.990251}},"results":[{"type":"POI","id":"US/POI/p0/433330","score":-0.23063,"dist":230.6292728439259,"info":"search:ta:840081000402721-US","poi":{"name":"Byers-Evans
         House Museum","phone":"+(1)-(303)-6204933","categorySet":[{"id":7317}],"url":"www.historycolorado.org/museums/byers-evans-house-museum","categories":["museum"],"classifications":[{"code":"MUSEUM","names":[{"nameLocale":"en-US","name":"museum"}]}]},"address":{"streetNumber":"1310","streetName":"Bannock
         St","municipalitySubdivision":"Denver, Civic Center","municipality":"Denver","countrySecondarySubdivision":"Denver","countryTertiarySubdivision":"Denver","countrySubdivision":"CO","postalCode":"80204","countryCode":"US","country":"United
         States","countryCodeISO3":"USA","freeformAddress":"1310 Bannock St, Denver,
@@ -410,5 +410,5 @@ http_interactions:
         States","countryCodeISO3":"USA","freeformAddress":"1743 Wazee St, Denver,
         CO 80202","localName":"Denver","countrySubdivisionName":"Colorado"},"position":{"lat":39.75283,"lon":-104.99853},"viewport":{"topLeftPoint":{"lat":39.75373,"lon":-104.9997},"btmRightPoint":{"lat":39.75193,"lon":-104.99736}},"entryPoints":[{"type":"main","position":{"lat":39.7526,"lon":-104.99824}}]}]}'
     http_version: 
-  recorded_at: Fri, 19 Jul 2019 01:48:52 GMT
+  recorded_at: Sun, 21 Jul 2019 19:31:27 GMT
 recorded_with: VCR 5.0.0

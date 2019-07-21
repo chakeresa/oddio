@@ -1,37 +1,30 @@
 class TomTomService
-  def initialize(filter = {})
-    @filter = filter
+  def category_search(category)
+    fetch_data(category)[:results]
   end
 
-  def self.type_search(filter = {})
-    new({"[#{filter.keys.join}]" => filter.values.join}).type_search
-  end
-
-  def type_search
-    get_json('/search/2/nearbySearch.json')
+  def self.category_search(category)
+    new.category_search(category)
   end
 
   private
-  attr_reader :filter
 
-  def get_json(url)
-    response = conn.get(url, default_filter.merge(filter))
-    JSON.parse(response.body, symbolize_names: true)[:results]
+  def fetch_data(category)
+    response = conn.get do |req|
+      req.path = '/search/2/nearbySearch.json'
+      req.params['lat'] = 39.7392358
+      req.params['lon'] = -104.990251
+      req.params['[limit]'] = 100
+      req.params['[radius]'] = 20000
+      req.params['[categorySet]'] = category[:categorySet]
+    end
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   def conn
-    Faraday.new(url: 'https://api.tomtom.com') do |faraday|
-      faraday.params['[limit]'] = 100
-      faraday.params['[radius]'] = 20000
+    @_conn ||= Faraday.new(url: 'https://api.tomtom.com') do |faraday|
+      faraday.params['key'] = ENV['TOMTOM_API_KEY']
       faraday.adapter Faraday.default_adapter
     end
-  end
-
-  def default_filter
-    {
-      'key' => ENV['TOMTOM_API_KEY'],
-      'lat' => 39.7392358,
-      'lon' => -104.990251,
-    }
   end
 end
