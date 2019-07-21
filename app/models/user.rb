@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :recordings
   has_one :app_auth
   has_one :google_auth
 

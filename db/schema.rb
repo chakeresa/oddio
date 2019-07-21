@@ -44,6 +44,17 @@ ActiveRecord::Schema.define(version: 2019_07_21_003714) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "recordings", force: :cascade do |t|
+    t.string "title"
+    t.text "url"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "landmark_id"
+    t.index ["landmark_id"], name: "index_recordings_on_landmark_id"
+    t.index ["user_id"], name: "index_recordings_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
@@ -56,6 +67,8 @@ ActiveRecord::Schema.define(version: 2019_07_21_003714) do
     t.string "display_name"
   end
 
+  add_foreign_key "recordings", "landmarks"
+  add_foreign_key "recordings", "users"
   add_foreign_key "app_auths", "users"
   add_foreign_key "google_auths", "users"
 end
