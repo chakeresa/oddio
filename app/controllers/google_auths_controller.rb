@@ -7,11 +7,7 @@ class GoogleAuthsController < ApplicationController
       successful_login
     else
       if new_auth = auth_resource.save
-        @user = User.new(
-          email: auth_hash[:info][:email],
-          first_name: auth_hash[:info][:first_name],
-          last_name: auth_hash[:info][:last_name]
-        )
+        make_new_user
         session[:auth_type] = "google_auth"
         session[:auth_id] = auth_resource.id
         render 'users/new'
@@ -32,6 +28,14 @@ class GoogleAuthsController < ApplicationController
     @auth_resource ||= GoogleAuth.new(
       uid: auth_hash[:uid],
       token: auth_hash[:info][:credentials][:token]
+    )
+  end
+
+  def make_new_user
+    @user = User.new(
+      email: auth_hash[:info][:email],
+      first_name: auth_hash[:info][:first_name],
+      last_name: auth_hash[:info][:last_name]
     )
   end
 end
