@@ -9,7 +9,7 @@ describe 'visitor sees landmark show' do
         expect(page).to have_content(lm1.name)
       end
       within ".category" do
-        save_and_open_page
+
         expect(page).to have_content(lm1.category.capitalize)
       end
 
