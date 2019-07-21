@@ -1,6 +1,7 @@
 class GoogleService
   def landmarks_place_ids(landmark)
-    fetch_ids(landmark)[:candidates].first[:place_id]
+    id = fetch_ids(landmark)
+    id[:candidates].empty? ? nil : id[:candidates].first[:place_id]
   end
 
   def self.landmarks_place_ids(landmark)
