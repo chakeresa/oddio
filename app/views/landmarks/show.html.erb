@@ -4,6 +4,7 @@
   <li>Phone: <%= @landmark.phone_number %></li>
   <li>Website: <%= @landmark.address %></li>
 </ul>
+
 <br>
 <% if current_user %>
   <%= button_to "Upload new recording", new_landmark_recording_path(@landmark), method: :get %>
