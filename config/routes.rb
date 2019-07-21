@@ -8,9 +8,7 @@ Rails.application.routes.draw do
   resources :app_auths, only: [:create]
   resources :users, only: [:new, :create]
   
-  get '/auth/google_oauth2/callback', to: 'google_users#create'
-  resources :google_users, only: [:edit]
-
+  get '/auth/google_oauth2/callback', to: 'google_auths#create'
   
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

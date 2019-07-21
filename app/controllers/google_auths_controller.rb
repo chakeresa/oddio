@@ -1,9 +1,9 @@
-class GoogleUsersController < ApplicationController
+class GoogleAuthsController < ApplicationController
   def create
-    @user = User.create_from_google(auth_hash)
-    # require 'pry'; binding.pry
+    require 'pry'; binding.pry
+    # @user = User.create_from_google(auth_hash)
     # TODO: not working because password is empty but bcrypt requires it!
-    redirect_to edit_google_user_path(@user.id)
+    redirect_to new_user_path
   end
 
   def edit
