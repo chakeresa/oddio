@@ -5,13 +5,9 @@ class GoogleAuthsController < ApplicationController
       @user = google_auth.user
       successful_login
     else
-      if auth_resource.save
-        make_new_user
-        send_to_new_user_page
-      else
-        flash[:danger] = auth_resource.errors.full_messages.join('. ')
-        redirect_to landmarks_path
-      end
+      auth_resource.save
+      make_new_user
+      send_to_new_user_page
     end
   end
 
