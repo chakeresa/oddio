@@ -26,7 +26,7 @@ class RecordingsController < ApplicationController
       flash[:success] = "Your recording has been saved."
       redirect_to landmark_path(params[:landmark_id])
     else
-      flash[:error] = "Unable to save recording."
+      flash.now[:error] = "Unable to save recording."
       render :new
     end
   end
