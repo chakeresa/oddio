@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_20_224610) do
+ActiveRecord::Schema.define(version: 2019_07_21_003714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 2019_07_20_224610) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_app_auths_on_user_id"
+  end
+
+  create_table "google_auths", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "uid"
+    t.string "token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_google_auths_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,4 +46,5 @@ ActiveRecord::Schema.define(version: 2019_07_20_224610) do
   end
 
   add_foreign_key "app_auths", "users"
+  add_foreign_key "google_auths", "users"
 end
