@@ -13,15 +13,13 @@ RSpec.describe 'Registering a new user through Google OAuth' do
     expect(User.count).to eq(0)
     
     fill_in 'user[display_name]', with: display_name
-    # fill_in 'user[email]', with: email
-    # fill_in 'user[first_name]', with: first_name
-    # fill_in 'user[last_name]', with: last_name
     click_button("Let's Get Started")
     
     expect(current_path).to eq(landmarks_path)
     expect(User.count).to eq(1)
+    expect(GoogleAuth.last.user.id).to eq(User.last.id)
 
-    user = User.first
+    user = User.last
     expect(user.first_name).to eq('Alexandra')
     expect(user.last_name).to eq('Chakeres')
     expect(user.email).to eq('alexchakeres@gmail.com')

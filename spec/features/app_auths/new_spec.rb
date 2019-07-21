@@ -43,6 +43,7 @@ RSpec.describe 'Registering a new user' do
       
       expect(current_path).to eq(landmarks_path)
       expect(User.count).to eq(1)
+      expect(AppAuth.last.user.id).to eq(User.last.id)
       
       expect(page).to have_content("Welcome, #{first_name}!")
       expect(page).to have_link('Log Out')
