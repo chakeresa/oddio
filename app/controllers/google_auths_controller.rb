@@ -1,16 +1,13 @@
 class GoogleAuthsController < ApplicationController
   def create
-    uid = auth_hash[:uid]
-    if google_auth = GoogleAuth.find_by(uid: uid)
+    if google_auth = GoogleAuth.find_by(uid: auth_hash[:uid])
       # TODO: need to update the stored token if google sends back a different one?
       @user = google_auth.user
       successful_login
     else
-      if new_auth = auth_resource.save
+      if auth_resource.save
         make_new_user
-        session[:auth_type] = "google_auth"
-        session[:auth_id] = auth_resource.id
-        render 'users/new'
+        send_to_new_user_page
       else
         flash[:danger] = auth_resource.errors.full_messages.join('. ')
         redirect_to landmarks_path
@@ -37,5 +34,11 @@ class GoogleAuthsController < ApplicationController
       first_name: auth_hash[:info][:first_name],
       last_name: auth_hash[:info][:last_name]
     )
+  end
+
+  def send_to_new_user_page
+    session[:auth_type] = "google_auth"
+    session[:auth_id] = auth_resource.id
+    render 'users/new'
   end
 end
