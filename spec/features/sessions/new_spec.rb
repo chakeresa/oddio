@@ -3,8 +3,9 @@ require 'rails_helper'
 RSpec.describe 'Logging in' do
   describe 'as a visitor' do
     before(:each) do
-      @password = 'mysecurepassword'
-      @user = create(:user, password: @password)
+      password = 'mysecurepassword'
+      @user = create(:user)
+      @app_auth = create(:app_auth, user: @user, password: password)
       visit login_path
     end
 
@@ -13,19 +14,21 @@ RSpec.describe 'Logging in' do
       expect(status_code).to eq(200)
     end
 
-    it 'has a form to log in' do
+    it 'has links to login with Google & Twitter' do
       expect(page).to have_link('Login with Google')
-      # TODO: expect(page).to have_selector(:css, "a[href=\"#{ ??? }\"]")
+      expect(page).to have_selector(:css, "a[href='/auth/google_oauth2']")
       expect(page).to have_link('Login with Twitter')
       # TODO: expect(page).to have_selector(:css, "a[href=\"#{ ??? }\"]")
+    end
 
-      fill_in 'username', with: @user.username
-      fill_in 'password', with: @password
+    it 'has a form to log in' do
+      fill_in 'username', with: @app_auth.username
+      fill_in 'password', with: @app_auth.password
       click_button('Login')
-
+      
       expect(current_path).to eq(landmarks_path)
 
-      expect(page).to have_content("Welcome, #{@user.username}!")
+      expect(page).to have_content("Welcome, #{@user.first_name}!")
       
       expect(page).to have_link('Log Out')
       expect(page).to_not have_link('Login')
@@ -33,22 +36,22 @@ RSpec.describe 'Logging in' do
     end
 
     it 'will log in with any username case' do
-      fill_in 'username', with: @user.username.upcase
-      fill_in 'password', with: @password
+      fill_in 'username', with: @app_auth.username.upcase
+      fill_in 'password', with: @app_auth.password
       click_button('Login')
 
       expect(current_path).to eq(landmarks_path)
     end
 
     it "won't log in if username doesn't exist" do
-      fill_in 'username', with: @user.username + '1'
-      fill_in 'password', with: @password
+      fill_in 'username', with: @app_auth.username + '1'
+      fill_in 'password', with: @app_auth.password
       click_button('Login')
 
       expect(page).to have_field('password')
 
       expect(page).to have_content('Incorrect username/password combination')
-      expect(page).to_not have_content("Welcome, #{@user.username}!")
+      expect(page).to_not have_content('Welcome,')
       
       expect(page).to_not have_link('Log Out')
       expect(page).to have_link('Login')
@@ -56,13 +59,13 @@ RSpec.describe 'Logging in' do
     end
 
     it "won't log in if password is blank" do
-      fill_in 'username', with: @user.username
+      fill_in 'username', with: @app_auth.username
       click_button('Login')
 
       expect(page).to have_field('password')
 
       expect(page).to have_content('Incorrect username/password combination')
-      expect(page).to_not have_content("Welcome, #{@user.username}!")
+      expect(page).to_not have_content('Welcome,')
       
       expect(page).to_not have_link('Log Out')
       expect(page).to have_link('Login')
@@ -70,13 +73,13 @@ RSpec.describe 'Logging in' do
     end
 
     it "won't log in if username is blank" do
-      fill_in 'password', with: @password
+      fill_in 'password', with: @app_auth.password
       click_button('Login')
 
       expect(page).to have_field('password')
 
       expect(page).to have_content('Incorrect username/password combination')
-      expect(page).to_not have_content("Welcome, #{@user.username}!")
+      expect(page).to_not have_content('Welcome,')
       
       expect(page).to_not have_link('Log Out')
       expect(page).to have_link('Login')
