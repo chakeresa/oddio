@@ -13,7 +13,9 @@ class RecordingsController < ApplicationController
     # file = File.open("app/assets/new_recording_1.mp3")
     # s3.put_object(bucket: 'oddio1903', key: 'file_1.mp3', body: file)
     file = params[:recording][:recording]
-    file_name = "#{Time.now.to_s}-#{file.original_filename}"
+    ran = SecureRandom.hex
+    file_name = "#{ran}.mp3"
+    binding.pry
     s3 = Aws::S3::Client.new(profile: 'oddio1903', region: 'us-east-2')
     s3.put_object(bucket: 'oddio1903', key: file_name, body: file)
     recording = Recording.new(
