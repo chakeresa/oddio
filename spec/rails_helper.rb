@@ -92,15 +92,15 @@ end
 def mock_oauth
   OmniAuth.config.test_mode = true
   OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new(
-    provider: 'google_oauth2',
-    uid: ENV['GOOGLE_INDIV_UID'],
-    info: {
-      email: 'alexchakeres@gmail.com',
-      first_name: 'Alexandra',
-      last_name: 'Chakeres',
-      credentials: {
-        token: ENV['GOOGLE_INDIV_TOKEN']
-      }
+    'provider' => 'google_oauth2',
+    'uid' => ENV['GOOGLE_INDIV_UID'],
+    'info' => {
+      'email' => 'alexchakeres@gmail.com',
+      'first_name' => 'Alexandra',
+      'last_name' => 'Chakeres'
+    },
+    'credentials' => {
+      'token' => ENV['GOOGLE_INDIV_TOKEN']
     }
   )
 end

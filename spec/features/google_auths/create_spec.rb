@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe 'Registering a new user through Google OAuth' do
-  it 'creates a user after entering a unique username' do
+RSpec.describe 'Google OAuth' do
+  it 'creates a user after entering a unique display_name' do
     mock_oauth
 
     display_name = 'bobthepersonfromgoogle'
@@ -31,5 +31,17 @@ RSpec.describe 'Registering a new user through Google OAuth' do
     expect(page).to_not have_link('Register')
 
     OmniAuth.config.mock_auth[:google_oauth2] = nil
+  end
+
+  it 'does not create a new user after entering a duplicate display_name' do
+    expect(1).to eq(2)
+  end
+  
+  it 'does not save duplicate uids' do
+    expect(1).to eq(2)
+  end
+
+  it 'logs in an existing user' do
+    expect(1).to eq(2)
   end
 end

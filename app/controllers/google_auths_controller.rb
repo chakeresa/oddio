@@ -1,6 +1,6 @@
 class GoogleAuthsController < ApplicationController
   def create
-    if google_auth = GoogleAuth.find_by(uid: auth_hash[:uid])
+    if google_auth = GoogleAuth.find_by(uid: auth_hash["uid"])
       # TODO: need to update the stored token if google sends back a different one?
       @user = google_auth.user
       successful_login
@@ -23,16 +23,16 @@ class GoogleAuthsController < ApplicationController
 
   def auth_resource
     @auth_resource ||= GoogleAuth.new(
-      uid: auth_hash[:uid],
-      token: auth_hash[:info][:credentials][:token]
+      uid: auth_hash["uid"],
+      token: auth_hash["credentials"]["token"]
     )
   end
 
   def make_new_user
     @user = User.new(
-      email: auth_hash[:info][:email],
-      first_name: auth_hash[:info][:first_name],
-      last_name: auth_hash[:info][:last_name]
+      email: auth_hash["info"]["email"],
+      first_name: auth_hash["info"]["first_name"],
+      last_name: auth_hash["info"]["last_name"]
     )
   end
 
