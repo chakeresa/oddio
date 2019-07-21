@@ -3,13 +3,13 @@ class GoogleAuthsController < ApplicationController
     google_auth = GoogleAuth.find_by(uid: auth_hash["uid"])
     if google_auth && google_auth.user
       @user = google_auth.user
-      return successful_login
+      successful_login
+    else
+      # TODO: need to update the stored token if google sends back a different one?
+      new_auth_resource unless google_auth
+      make_new_user
+      send_to_new_user_page(google_auth || new_auth_resource)
     end
-
-    # TODO: need to update the stored token if google sends back a different one?
-    auth_resource.save unless google_auth
-    make_new_user
-    send_to_new_user_page
   end
 
   private
@@ -18,8 +18,8 @@ class GoogleAuthsController < ApplicationController
     request.env['omniauth.auth']
   end
 
-  def auth_resource
-    @auth_resource ||= GoogleAuth.new(
+  def new_auth_resource
+    @new_auth_resource ||= GoogleAuth.create(
       uid: auth_hash["uid"],
       token: auth_hash["credentials"]["token"]
     )
@@ -33,7 +33,7 @@ class GoogleAuthsController < ApplicationController
     )
   end
 
-  def send_to_new_user_page
+  def send_to_new_user_page(auth_resource)
     session[:auth_type] = "google_auth"
     session[:auth_id] = auth_resource.id
     render 'users/new'
