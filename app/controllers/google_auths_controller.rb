@@ -16,6 +16,8 @@ class GoogleAuthsController < ApplicationController
         first_name: auth_hash[:info][:first_name],
         last_name: auth_hash[:info][:last_name]
       )
+      session[:auth_type] = "google_auth"
+      session[:auth_id] = new_auth.id
       render 'users/new'
     end
   end

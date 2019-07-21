@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      add_user_id_to_auth_resource
       successful_login
     else
       flash[:danger] = @user.errors.full_messages.join('. ')
@@ -17,5 +18,15 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:display_name, :email, :first_name, :last_name)
+  end
+
+  def add_user_id_to_auth_resource
+    case session[:auth_type]
+    when 'app_auth'
+      auth = AppAuth.find(session[:auth_id])
+    when 'google_auth'
+      auth = GoogleAuth.find(session[:auth_id])
+    end
+    auth.update(user: @user)
   end
 end
