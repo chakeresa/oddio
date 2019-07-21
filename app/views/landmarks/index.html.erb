@@ -88,7 +88,14 @@ function selectMarkerColor(category){
   }
 };
 //what to do after user enables location service
+//assign for future use
+var currentPosition = null
 function onLocationFound(e) {
+  if (currentPosition) {
+    map.removeLayer(currentPosition);
+    currentPosition = L.marker(e.latlng).addTo(map);
+  } else {
+
   fetch('api/v1/landmarks')
   .then(function(response) {
     return response.json();
@@ -110,42 +117,53 @@ function onLocationFound(e) {
 
   //add my location popup
     var radius = e.accuracy;
-    L.marker(e.latlng).addTo(map)
+    currentPosition = L.marker(e.latlng).addTo(map)
         .bindPopup("You are within " + radius + " meters from this point").openPopup();
-}
+      }
+    }
 map.on('locationfound', onLocationFound);
 
-<!--handle location error-->
+//<!--handle location error-->
 function onLocationError(e) {
     alert(e.message);
 }
 map.on('locationerror', onLocationError);
 
-
+//navigate to button
+//set route to check against later
 var routingControl = null
 function navigateTo(lat,long){
   navigator.geolocation.getCurrentPosition(function(position) {
       var my_lat = position.coords.latitude;
       var my_lng = position.coords.longitude;
-      debugger
+      //check and see if previous route exists
       if (routingControl)
  {
   routingControl.setWaypoints([]);
   map.removeControl(routingControl);
   routingControl = null;
  }
+ //draw line on map from mapbox/walking
       routingControl = L.Routing.control({
           waypoints: [
               L.latLng(my_lat, my_lng),
               L.latLng(lat, long)
           ],
           router: L.Routing.mapbox('pk.eyJ1IjoicGR1dmFsbCIsImEiOiJjanhveHczaG0wYnpsM21vN3AycjIxamo2In0.wgWKZjYwN5IckxRY5Qd9lQ',{profile: 'mapbox/walking'}),
-          // serviceUrl: `https://api.mapbox.com/directions/v5/mapbox/walking/${my_lat},${my_lng};${lat},${long}.json?access_token=pk.eyJ1IjoicGR1dmFsbCIsImEiOiJjanhveHczaG0wYnpsM21vN3AycjIxamo2In0.wgWKZjYwN5IckxRY5Qd9lQ`,
           lineOptions: { addWaypoints: false },
           collapsible: true
       }).addTo(map);
   });
 }
+
+function locate() {
+  if (currentPosition){
+    map.locate();
+  }
+}
+
+// call locate every 5 seconds
+setInterval(locate, 5000);
 
 
 
