@@ -9,7 +9,6 @@ RSpec.describe 'Registering a new user through Google OAuth' do
     visit register_path
     click_link 'Login with Google'
 
-    expect(current_path).to eq(new_user_path)
     expect(GoogleAuth.count).to eq(1)
     expect(User.count).to eq(0)
     
