@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_one :app_auth
+  has_one :google_auth
 
   validates :email, uniqueness: { case_sensitive: false }, presence: true
   validates :display_name, uniqueness: { case_sensitive: false }, presence: true
