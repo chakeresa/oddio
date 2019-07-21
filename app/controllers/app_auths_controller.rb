@@ -10,7 +10,7 @@ class AppAuthsController < ApplicationController
       session[:auth_id] = @app_auth.id
       redirect_to new_user_path
     else
-      flash[:danger] = @app_auth.errors.full_messages.join('. ')
+      flash.now[:danger] = @app_auth.errors.full_messages.join('. ')
       render :new
     end
   end

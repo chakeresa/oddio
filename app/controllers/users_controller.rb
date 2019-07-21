@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       add_user_id_to_auth_resource
       successful_login
     else
-      flash[:danger] = @user.errors.full_messages.join('. ')
+      flash.now[:danger] = @user.errors.full_messages.join('. ')
       render :new
     end
   end

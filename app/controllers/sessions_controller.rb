@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if @user && app_auth.authenticate(params[:password])
       successful_login
     else
-      flash[:danger] = 'Incorrect username/password combination'
+      flash.now[:danger] = 'Incorrect username/password combination'
       render :new
     end
   end
