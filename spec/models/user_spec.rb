@@ -4,6 +4,7 @@ RSpec.describe User, type: :model do
   describe 'relationships' do
     it { should have_one :app_auth }
     it { should have_one :google_auth }
+    it { should have_many :recordings}
   end
 
   describe 'validations' do
