@@ -28,8 +28,6 @@
 
 
 
-  <!---->
-  <!--start scripts-->
   <!--leaflet script-->
 <!-- <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
  integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
@@ -46,14 +44,6 @@
    id: 'mapbox.streets',
    accessToken: 'pk.eyJ1IjoicGR1dmFsbCIsImEiOiJjanhveHczaG0wYnpsM21vN3AycjIxamo2In0.wgWKZjYwN5IckxRY5Qd9lQ'
 }).addTo(map);
-
-// L.Routing.control({
-//     waypoints: [
-//         L.latLng(40.74, -104.94),
-//         L.latLng(42.55, -103.33)
-//     ],
-//     routeWhileDragging: true
-// }).addTo(map);
 
 //<!--make green markers-->
 var greenIcon = new L.Icon({
@@ -132,119 +122,30 @@ function onLocationError(e) {
 map.on('locationerror', onLocationError);
 
 
+var routingControl = null
 function navigateTo(lat,long){
   navigator.geolocation.getCurrentPosition(function(position) {
       var my_lat = position.coords.latitude;
       var my_lng = position.coords.longitude;
       debugger
-      MapHelper.removeRoutingControl()
-      routing = L.Routing.control({
+      if (routingControl)
+ {
+  routingControl.setWaypoints([]);
+  map.removeControl(routingControl);
+  routingControl = null;
+ }
+      routingControl = L.Routing.control({
           waypoints: [
               L.latLng(my_lat, my_lng),
               L.latLng(lat, long)
           ],
-          router: L.Routing.mapbox('pk.eyJ1IjoicGR1dmFsbCIsImEiOiJjanhveHczaG0wYnpsM21vN3AycjIxamo2In0.wgWKZjYwN5IckxRY5Qd9lQ'),
-          // serviceUrl: `https://api.mapbox.com/directions/v5/mapbox/walking/${my_lat},${my_lng};${lat},${long}`,
-          // params: {access_token: 'pk.eyJ1IjoicGR1dmFsbCIsImEiOiJjanhveHczaG0wYnpsM21vN3AycjIxamo2In0.wgWKZjYwN5IckxRY5Qd9lQ'},
+          router: L.Routing.mapbox('pk.eyJ1IjoicGR1dmFsbCIsImEiOiJjanhveHczaG0wYnpsM21vN3AycjIxamo2In0.wgWKZjYwN5IckxRY5Qd9lQ',{profile: 'mapbox/walking'}),
+          // serviceUrl: `https://api.mapbox.com/directions/v5/mapbox/walking/${my_lat},${my_lng};${lat},${long}.json?access_token=pk.eyJ1IjoicGR1dmFsbCIsImEiOiJjanhveHczaG0wYnpsM21vN3AycjIxamo2In0.wgWKZjYwN5IckxRY5Qd9lQ`,
           lineOptions: { addWaypoints: false },
           collapsible: true
       }).addTo(map);
   });
 }
-
-
-
-
-MapHelper = (function ($) {
-    'use strict';
-
-    var settings = {
-        center: [0, 0],
-        zoom: null,
-    };
-
-    var mapId = '';
-    var map = null;
-    var baseMaps = {};
-    var overlayMaps = {};
-    var routingControl = null;
-
-
-    var init = function (mapLayerId, options) {
-        settings = $.extend(settings, options);
-        mapId = mapLayerId;
-        initMap();
-    };
-
-    var getMap = function () {
-        return map;
-    };
-
-    var addRoutingControl = function (waypoints) {
-        if (routingControl != null)
-            removeRoutingControl();
-
-        routingControl = L.Routing.control({
-            waypoints: waypoints
-        }).addTo(map);
-    };
-
-    var removeRoutingControl = function () {
-        if (routingControl != null) {
-            map.removeControl(routingControl);
-            routingControl = null;
-        }
-    };
-
-    var panMap = function (lat, lng) {
-        map.panTo(new L.LatLng(lat, lng));
-    }
-
-    var centerMap = function (e) {
-        panMap(e.latlng.lat, e.latlng.lng);
-    }
-
-    var zoomIn = function (e) {
-        map.zoomIn();
-    }
-
-    var zoomOut = function (e) {
-        map.zoomOut();
-    }
-
-    var initMap = function () {
-        var $this = this;
-
-        map = L.map(mapId, {
-            center: settings.center,
-            zoom: settings.zoom,
-            crs: L.CRS.EPSG3857,
-            attributionControl: true,
-            contextmenu: true,
-            contextmenuWidth: 140
-        });
-
-        baseMaps["OSM"] = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="http://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'
-        }).addTo(map);
-    };
-
-    var invalidateMapSize = function () {
-        map.invalidateSize();
-    }
-
-    return {
-        init: init, addRoutingControl: addRoutingControl, removeRoutingControl: removeRoutingControl,
-        panMap: panMap, invalidateMapSize: invalidateMapSize, getMap: getMap
-    }
-}(jQuery));
-
-
-
-
-
-
-
 
 
 
