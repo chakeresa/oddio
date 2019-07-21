@@ -4,7 +4,12 @@ Rails.application.routes.draw do
 
   root to: 'welcome#index'
 
+  get '/register', to: 'app_auths#new'
+  resources :app_auths, only: [:create]
   resources :users, only: [:new, :create]
+  
+  get '/auth/google_oauth2/callback', to: 'google_auths#create'
+  
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
@@ -16,7 +21,4 @@ Rails.application.routes.draw do
       resources :landmarks, only: [:index, :show]
     end
   end
-
-
-
 end
