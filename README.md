@@ -49,3 +49,33 @@ function showPosition(position) {
  "<br>Longitude: " + position.coords.longitude;
 }
 </script>
+
+
+
+<!--to prevent error before search-->
+<% if @landmarks %>
+
+//<!--show parks on map-->
+<%  @parks.each_with_index do |point, index| %>
+var marker<%= index %> = L.marker([<%=point.lat%>, <%= point.long%>], {
+  icon: greenIcon
+}).addTo(map);
+marker<%= index %>.bindPopup("<%= point.name %>" );
+<% end %>
+
+//<!--show museums on map-->
+<%  @museums.each_with_index do |point, index| %>
+var marker<%= index %> = L.marker([<%=point.lat%>, <%= point.long%>], {
+  icon: orangeIcon
+}).addTo(map);
+marker<%= index %>.bindPopup("<%= point.name %>" );
+<% end %>
+
+//<!--show theaters on map-->
+<%  @theaters.each_with_index do |point, index| %>
+var marker<%= index %> = L.marker([<%=point.lat%>, <%= point.long%>], {
+  icon: violetIcon
+}).addTo(map);
+marker<%= index %>.bindPopup("<%= point.name %>" );
+<% end %>
+<% end %>

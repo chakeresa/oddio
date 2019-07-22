@@ -7,7 +7,7 @@ RSpec.describe 'Google OAuth' do
     display_name = 'bobthepersonfromgoogle'
 
     visit register_path
-    click_link 'Login with Google'
+    click_button 'Login with Google'
 
     expect(GoogleAuth.count).to eq(1)
     expect(User.count).to eq(0)
@@ -41,7 +41,7 @@ RSpec.describe 'Google OAuth' do
     create(:user, display_name: display_name)
 
     visit register_path
-    click_link 'Login with Google'
+    click_button 'Login with Google'
 
     expect(GoogleAuth.count).to eq(1)
     expect(User.count).to eq(1)
@@ -64,13 +64,13 @@ RSpec.describe 'Google OAuth' do
     display_name = 'bobthepersonfromgoogle'
 
     visit register_path
-    click_link 'Login with Google'
+    click_button 'Login with Google'
 
     expect(GoogleAuth.count).to eq(1)
     expect(User.count).to eq(0)
     
     visit register_path
-    click_link 'Login with Google'
+    click_button 'Login with Google'
 
     expect(GoogleAuth.count).to eq(1)
     expect(User.count).to eq(0)
@@ -103,7 +103,7 @@ RSpec.describe 'Google OAuth' do
     create(:google_auth, user: user, uid: ENV['GOOGLE_INDIV_UID'])
 
     visit login_path
-    click_link 'Login with Google'
+    click_button 'Login with Google'
 
     expect(GoogleAuth.count).to eq(1)
     expect(User.count).to eq(1)

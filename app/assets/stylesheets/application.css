@@ -13,7 +13,16 @@
  *= require_tree .
  *= require_self
  */
- 
+
+
+ @import 'leaflet/dist/leaflet.css';
+ @import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
+ /* @import 'leaflet-routing-machine/dist/leaflet.routing.icons.png'; */
+
+main {
+  margin: 10px;
+}
+
 nav .btn {
    margin: 5px;
  }
