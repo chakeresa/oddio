@@ -80,6 +80,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+
+#I Changed this to use development database on local production #Patrick
 production:
   <<: *default
   database: oddio_development
