@@ -2,12 +2,17 @@
   <% f.options[:html][:class] += ' form-group' %>
   <%= f.label :username %>
   <%= f.text_field :username, class: 'form-control form-field-register', required: true %>
+  <small class="form-text text-muted">
+    Required. This is what you will use to log in (but not necessarily what other users will see).
+  </small>
   <br>
   <%= f.label :password %>
   <%= f.password_field :password, class: 'form-control form-field-register', required: true %>
+  <%= render partial: 'shared/reqd_field_label' %>
   <br>
   <%= f.label 'Re-enter your password' %>
   <%= f.password_field :password_confirmation, class: 'form-control form-field-register', required: true %>
+  <%= render partial: 'shared/reqd_field_label' %>
   <br>
   <div class='center-contents'>
     <%= f.submit 'Make an Account', class: 'btn btn-primary' %>
@@ -15,6 +20,6 @@
 <% end %>
 <div class='center-contents'>
   <p>or</p>
-  <%= link_to 'Login with Google', '/auth/google_oauth2', class: 'btn btn-primary' %>
-  <%= link_to 'Login with Twitter', 'TODO', class: 'btn btn-primary' %>
+  <%= button_to 'Login with Google', '/auth/google_oauth2', class: 'btn btn-primary' %>
+  <%= button_to 'Login with Twitter', 'TODO', class: 'btn btn-primary' %>
 </div>
