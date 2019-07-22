@@ -20,7 +20,7 @@ RSpec.describe "Welcome Index" do
     
     it 'has links to register and login' do
       expect(page).to have_link('Register')
-      expect(page).to have_selector(:css, "a[href=\"#{new_user_path}\"]")
+      expect(page).to have_selector(:css, "a[href=\"#{register_path}\"]")
 
       expect(page).to have_link('Login')
       expect(page).to have_selector(:css, "a[href=\"#{login_path}\"]")

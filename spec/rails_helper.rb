@@ -23,6 +23,10 @@ VCR.configure do |config|
   config.filter_sensitive_data('<AWS_SECRET_ACCESS_KEY>') { ENV['AWS_SECRET_ACCESS_KEY'] }
   config.filter_sensitive_data('<AWS_BUCKET>') { ENV['AWS_BUCKET'] }
   config.filter_sensitive_data('<AWS_REGION>') { ENV['AWS_REGION'] }
+  config.filter_sensitive_data('<GOOGLE_CLIENT_ID>') { ENV['GOOGLE_CLIENT_ID'] }
+  config.filter_sensitive_data('<GOOGLE_CLIENT_SECRET>') { ENV['GOOGLE_CLIENT_SECRET'] }
+  config.filter_sensitive_data('<GOOGLE_INDIV_UID>') { ENV['GOOGLE_INDIV_UID'] }
+  config.filter_sensitive_data('<GOOGLE_INDIV_TOKEN>') { ENV['GOOGLE_INDIV_TOKEN'] }
 end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -83,4 +87,20 @@ Shoulda::Matchers.configure do |config|
     with.test_framework :rspec
     with.library :rails
   end
+end
+
+def mock_oauth
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new(
+    'provider' => 'google_oauth2',
+    'uid' => ENV['GOOGLE_INDIV_UID'],
+    'info' => {
+      'email' => 'alexchakeres@gmail.com',
+      'first_name' => 'Alexandra',
+      'last_name' => 'Chakeres'
+    },
+    'credentials' => {
+      'token' => ENV['GOOGLE_INDIV_TOKEN']
+    }
+  )
 end
