@@ -15,9 +15,6 @@ describe 'A logged in user' do
   it 'can add a vote to a specific location' do
     visit landmark_path(@id)
 
-  
-    binding.pry
-
     within(page.first(".recording-list")) do
       find('button.upvote').click
     end

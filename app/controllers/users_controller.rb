@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.vote_token = SecureRandom.hex
     if @user.save
       add_user_id_to_auth_resource
       successful_login
