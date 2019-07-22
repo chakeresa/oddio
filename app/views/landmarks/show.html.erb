@@ -1,16 +1,39 @@
-<h1 class='landmark-name'><%= @landmark.name %></h1>
-<h3 class='category'><%= @landmark.category.capitalize %></h3>
-<ul class='attributes'>
-  <li>Phone: <%= @landmark.phone_number %></li>
-  <li>Website: <%= @landmark.address %></li>
-</ul>
+<% provide :head_tags do %>
+  <meta name='turbolinks-visit-control' content='reload'>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      initMap(<%=facade.landmark.lat%>, <%=facade.landmark.long%>)
+    });
+  </script>
+<% end %>
 
-<br>
-<% if current_user %>
-  <%= button_to "Upload new recording", new_landmark_recording_path(@landmark), method: :get %>
-<% end %>
-<br>
-<br>
-<% @landmark.recordings.each do |recording| %>
-  <%= render partial: 'shared/audio_player', object: recording %>
-<% end %>
+<h1><%= facade.landmark.name %></h1>
+
+<section class="picture">
+  <%= image_tag facade.picture %>
+</section>
+
+<section class="attributes">
+  <ul class='attributes'>
+    <li>Address: <%= facade.landmark.address %></li>
+    <li>Phone: <%= facade.landmark.phone_number %></li>
+    <li>Website: <%= facade.landmark.website %></li>
+    <li>Category: <%= facade.landmark.category.capitalize %></li>
+  </ul>
+</section>
+
+<section class="recordings">
+  <% if current_user %>
+    <%= button_to "Upload new recording", new_landmark_recording_path(facade.landmark), method: :get %>
+  <% end %>
+  <% facade.landmark.recordings.each do |recording| %>
+    <%= render partial: 'shared/audio_player', object: recording %>
+  <% end %>
+</section>
+
+<section class="map">
+  <h3>Map</h3>
+  <p>
+    <div id="map"></div>
+  </p>
+</section>
