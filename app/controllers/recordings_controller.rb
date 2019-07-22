@@ -4,12 +4,11 @@ class RecordingsController < ApplicationController
   end
 
   def new
-    if current_user
-      landmark = Landmark.find(params[:landmark_id])
-      @recording = landmark.recordings.new
-    else
+    landmark = Landmark.find(params[:landmark_id])
+    @recording = landmark.recordings.new
+    if !current_user
       flash.now[:error] = "You must be logged in to make a recording."
-      redirect_to landmark_path(landmark))
+      redirect_to landmark_path(landmark)
     end
   end
 
