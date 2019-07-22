@@ -55,7 +55,7 @@ RSpec.describe 'Logging out' do
       create(:google_auth, user: user, uid: ENV['GOOGLE_INDIV_UID'])
 
       visit login_path
-      click_link 'Login with Google'
+      click_button 'Login with Google'
 
       click_link('Log Out')
       
@@ -78,7 +78,7 @@ RSpec.describe 'Logging out' do
       create(:google_auth, user: admin, uid: ENV['GOOGLE_INDIV_UID'])
 
       visit login_path
-      click_link 'Login with Google'
+      click_button 'Login with Google'
 
       click_link('Log Out')
       
