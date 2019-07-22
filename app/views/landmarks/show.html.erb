@@ -7,33 +7,61 @@
   </script>
 <% end %>
 
-<h1><%= facade.landmark.name %></h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-<section class="picture">
-  <%= image_tag facade.picture %>
-</section>
+<div class="container-fluid">
+  <div class="container">
+    <h1><%= facade.landmark.name %></h1>
+    <section class="picture">
+      <%= image_tag facade.picture, class: "img-fluid", style: "display: block; margin-left: auto; margin-right: auto; width: 100%;" %>
+    </section>
+  </div>
 
-<section class="attributes">
-  <ul class='attributes'>
-    <li>Address: <%= facade.landmark.address %></li>
-    <li>Phone: <%= facade.landmark.phone_number %></li>
-    <li>Website: <%= facade.landmark.website %></li>
-    <li>Category: <%= facade.landmark.category.capitalize %></li>
-  </ul>
-</section>
+  <div class="container">
+    <section class="attributes">
+      <p><b>Address:</b> <%= facade.landmark.address %></p>
+      <p><b>Phone:</b> <%= facade.landmark.phone_number %></p>
+      <p><b>Website:</b> <%= facade.landmark.website %></p>
+      <p><b>Category:</b> <%= facade.landmark.category.capitalize %></p>
+    </section>
+  </div>
 
-<section class="recordings">
-  <% if current_user %>
-    <%= button_to "Upload new recording", new_landmark_recording_path(facade.landmark), method: :get %>
-  <% end %>
-  <% facade.landmark.recordings.each do |recording| %>
-    <%= render partial: 'shared/audio_player', object: recording %>
-  <% end %>
-</section>
+  <div class="container">
+    <section class="add-recordings">
+      <% if current_user %>
+      <%= button_to "Upload new recording", new_landmark_recording_path(facade.landmark), method: :get, class: 'btn btn-primary' %>
+      <% end %>
+    </section>
+  </div>
 
-<section class="map">
-  <h3>Map</h3>
-  <p>
-    <div id="map"></div>
-  </p>
-</section>
+  <div class="container">
+    <section class="recordings">
+      <% unless facade.landmark.recordings.empty? %>
+        <h3>Recordings</h3>
+        <% facade.landmark.recordings.each do |recording| %>
+          <%= render partial: 'shared/audio_player', object: recording %>
+        <% end %>
+      <% end %>
+    </section>
+  </div>
+
+  <div class="container">
+    <br>
+    <section class="map">
+      <div id="map"></div>
+    </section>
+  </div>
+</div>
+
+</body>
+</html>
