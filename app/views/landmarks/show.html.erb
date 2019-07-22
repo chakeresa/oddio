@@ -4,12 +4,13 @@
   <li>Phone: <%= @landmark.phone_number %></li>
   <li>Website: <%= @landmark.address %></li>
 </ul>
-<br>
 <% if current_user %>
+<br>
   <%= button_to "Upload new recording", new_landmark_recording_path(@landmark), method: :get %>
+  <br>
+  <br>
 <% end %>
-<br>
-<br>
+<h3>Recordings</h3>
 <% @landmark.recordings.each do |recording| %>
   <%= render partial: 'shared/audio_player', object: recording %>
 <% end %>
