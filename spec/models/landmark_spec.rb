@@ -10,4 +10,8 @@ RSpec.describe Landmark, type: :model do
     it { should validate_presence_of :place_id }
     it { should validate_uniqueness_of :place_id }
   end
+  
+  describe 'relationships' do
+    it { should have_many :recordings}
+  end
 end
