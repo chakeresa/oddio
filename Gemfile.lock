@@ -269,6 +269,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport (~> 5.0)
   aws-sdk-s3 (~> 1)
   bcrypt
   bootsnap (>= 1.1.0)
