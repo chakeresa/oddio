@@ -29,17 +29,25 @@
 
   <div class="container">
     <section class="attributes">
-      <p><b>Address:</b> <%= facade.landmark.address %></p>
-      <p><b>Phone:</b> <%= facade.landmark.phone_number %></p>
-      <p><b>Website:</b> <%= facade.landmark.website %></p>
-      <p><b>Category:</b> <%= facade.landmark.category.capitalize %></p>
+      <p><b>Address: </b> <%= facade.landmark.address %></p>
+      <% if facade.landmark.phone_number.nil? %>
+        <b>Phone: </b>Not Available</p>
+      <% else %>
+        <p><b>Phone: </b> <%= facade.landmark.phone_number %></p>
+      <% end %>
+      <% if facade.landmark.website.nil? %>
+        <b>Website: </b>Not Available</p>
+      <% else %>
+        <p><b>Website: </b> <%= facade.landmark.website %></p>
+      <% end %>
+      <p><b>Category: </b> <%= facade.landmark.category.capitalize %></p>
     </section>
   </div>
 
   <div class="container">
     <section class="add-recordings">
       <% if current_user %>
-      <%= button_to "Upload new recording", new_landmark_recording_path(facade.landmark), method: :get, class: 'btn btn-primary' %>
+        <%= button_to "Upload new recording", new_landmark_recording_path(facade.landmark), method: :get, class: 'btn btn-primary' %>
       <% end %>
     </section>
   </div>
