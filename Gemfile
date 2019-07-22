@@ -51,8 +51,9 @@ gem 'geocoder'
 #for serializers
 gem 'fast_jsonapi'
 
-# OAuth
+# OAuth & patch of security vulnerability thereof
 gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
 
 # print different colors to the terminal
 gem 'colorize'
