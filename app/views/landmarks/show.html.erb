@@ -38,7 +38,7 @@
       <% if facade.landmark.website.nil? %>
         <b>Website: </b>Not Available</p>
       <% else %>
-        <p><b>Website: </b> <%= facade.landmark.website %></p>
+        <p><b>Website: </b> <%= link_to facade.landmark.website, href="facade.landmark.website" %></p>
       <% end %>
       <p><b>Category: </b> <%= facade.landmark.category.capitalize %></p>
     </section>

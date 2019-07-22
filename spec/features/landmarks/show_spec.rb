@@ -25,6 +25,7 @@ feature 'landmark show' do
       expect(page).to have_content(landmark.address)
       expect(page).to have_content(landmark.phone_number)
       expect(page).to have_content(landmark.category)
+      expect(page).to have_link(landmark.website)
     end
 
     it "doesn't display add new recording button" do
