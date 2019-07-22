@@ -1,4 +1,4 @@
-<%= form_for @recording, url: landmark_recordings_path(@recording.landmark) do |f| %>
+<%= form_for @recording, url: user_landmark_recordings_path(@recording.landmark) do |f| %>
   <% f.options[:html][:class] += ' form-group' %>
   <%= f.label :title %>
   <%= f.text_field :title, class: 'form-control form-field-register', required: true %>
