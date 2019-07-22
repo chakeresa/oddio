@@ -2,12 +2,17 @@
   <% f.options[:html][:class] += ' form-group' %>
   <%= f.label :display_name %>
   <%= f.text_field :display_name, class: 'form-control form-field-register', required: true %>
+  <small class="form-text text-muted">
+    Required. This is what other users will see.
+  </small>
   <br>
   <%= f.label :email %>
   <%= f.email_field :email, class: 'form-control form-field-register', required: true %>
+  <%= render partial: 'shared/reqd_field_label' %>
   <br>
   <%= f.label :first_name %>
   <%= f.text_field :first_name, class: 'form-control form-field-register', required: true %>
+  <%= render partial: 'shared/reqd_field_label' %>
   <br>
   <%= f.label :last_name %>
   <%= f.text_field :last_name, class: 'form-control form-field-register' %>
