@@ -155,7 +155,7 @@ function navigateTo(lat,long){
 
 function locateMe() {
   if (currentPosition){
-    map.locate();
+    map.locate({strings:{enableHighAccuracy: true}});
   }
 }
 
