@@ -1,11 +1,7 @@
+require 'digest/md5'
 namespace :landmarks do
   desc :"Load landmark table"
-  task all: %i[clear governments museums parks theaters]
-
-  desc :"Clears landmarks table"
-  task :clear, [:clear] => :environment do
-    Landmark.destroy_all
-  end
+  task all: %i[governments museums parks theaters]
 
   desc :"Add governments"
   task :governments, [:governments] => :environment do
@@ -74,7 +70,8 @@ namespace :landmarks do
         long: details[:geometry][:location][:lng],
         website: details[:website],
         place_id: details[:place_id],
-        photo_reference: details[:photos].first[:photo_reference]
+        photo_reference: details[:photos].first[:photo_reference],
+        md5_hash: Digest::MD5.hexdigest("#{details[:name]} + #{details[:place_id]}")
       )
     end
   end
