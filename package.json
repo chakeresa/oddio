@@ -1,4 +1,8 @@
+
 {
+  "scripts": {
+    "start": "node server.js"
+  },
   "name": "oddio",
   "private": true,
   "dependencies": {
@@ -6,6 +10,10 @@
     "leaflet-routing-machine": "^3.2.12"
   },
   "version": "1.0.0",
+  "engines": {
+    "node": "12.5.0",
+    "npm": "6.9.0"
+  },
   "main": "index.js",
   "directories": {
     "lib": "lib"
