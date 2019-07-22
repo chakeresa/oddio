@@ -112,7 +112,9 @@ function onLocationFound(e) {
 
   //add my location popup
     var radius = e.accuracy;
-    currentPosition = L.marker(e.latlng).addTo(map)
+    currentPosition = L.marker(e.latlng, {
+      icon: userIcon)
+    }).addTo(map)
         .bindPopup("You are within " + radius + " meters from this point").openPopup();
       }
     }
