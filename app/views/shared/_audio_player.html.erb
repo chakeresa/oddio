@@ -1,4 +1,12 @@
-<figure>
+<figure class="recording-list">
+
+  <div class="votebox">
+    <div class="up vote"></div>
+    <%= button_to "https://secret-gorge-75866.herokuapp.com/api/v1/Recording/#{audio_player.id}/create_vote/#{current_user.vote_token}/1", class: "upvote" %>
+    <div class="down vote"></div>
+    <%= button_to "https://secret-gorge-75866.herokuapp.com/api/v1/Recording/#{audio_player.id}/create_vote/#{current_user.vote_token}/-1", class: "downvote" %>
+  </div>
+
   <figcaption>Title: <%= audio_player.title %></figcaption>
   <audio
       controls

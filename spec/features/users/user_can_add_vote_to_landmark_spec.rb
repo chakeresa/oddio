@@ -5,7 +5,7 @@ describe 'A logged in user' do
     @user = create(:user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
     @landmark = create(:landmark)
-    @recording = create(:recording, landmark: @landmark)
+    @recording = create(:recording, landmark: @landmark, user: @user)
     @id = @landmark.id
     @score = 1
     @votable_type = "Recording"
@@ -13,19 +13,22 @@ describe 'A logged in user' do
   end
 
   it 'can add a vote to a specific location' do
-    visit "landmark_recordings_path(#{@id})"
+    visit landmark_path(@id)
 
-    expect(page).to have_content("Total Rating:")
-    expect(page).to have_content("Upvotes:")
-    expect(page).to have_content("Downvotes:")
+  
+    binding.pry
 
-    select "1", from: :vote
+    within(page.first(".recording-list")) do
+      find('button.upvote').click
+    end
 
-    click_button "Submit Vote"
+    within(page.first(".recording-list")) do
+      expect(page).to have_content(1)
+    end
 
-    expect(current_path).to eq(submit_landmark_vote)
 
-    endpoint = "/api/v1/#{@votable_type}/#{@id}/#{{@score}}"
 
+
+    # endpoint = get "/api/v1/#{@votable_type}/#{@id}/#{{@score}}"
   end
 end
