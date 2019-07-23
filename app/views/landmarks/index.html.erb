@@ -22,13 +22,47 @@
  <script>
 
 
-   var map = L.map('mapid').setView([39.7392358, -104.990251], 13);
-   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-   maxZoom: 18,
-   id: 'mapbox.streets',
-   accessToken: 'pk.eyJ1IjoicGR1dmFsbCIsImEiOiJjanhveHczaG0wYnpsM21vN3AycjIxamo2In0.wgWKZjYwN5IckxRY5Qd9lQ'
+
+var theaters = []
+var museums = []
+
+fetch('api/v1/landmarks')
+.then(function(response) {
+  return response.json();
+})
+.then(function(myJson) {
+  //iterate over landmarks, make points
+  myJson['data'].forEach(function(landmark){
+    let marker = L.marker([landmark['attributes']['lat'], landmark['attributes']['long']],{
+      icon: selectMarkerColor(landmark['attributes']['category'])
+    });
+  //set landmarks
+  let name = landmark['attributes']['name']
+  let id = landmark['id']
+    marker.bindPopup(name.link(`/landmarks/${id}`) + `<br><button class="location_button" onclick="navigateTo(${landmark['attributes']['lat']}, ${landmark['attributes']['long']})" >Take me Here</button>`)
+  if (landmark['attributes']['category'] === 'theater') {theaters.push(marker)}
+  if (landmark['attributes']['category'] === 'museum') {museums.push(marker)}
+  });
+})
+.then(function(response){
+  var museumMarkers = L.layerGroup(museums)
+  var theaterMarkers = L.layerGroup(theaters)
+  var overlayMaps = {
+      "museums": museumMarkers,
+      "theaters": theaterMarkers
+  };
+
+  var map = L.map('mapid',{layers: [museumMarkers, theaterMarkers]}).setView([39.7392358, -104.990251], 13);
+  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+  maxZoom: 18,
+  id: 'mapbox.streets',
+  accessToken: '<%=ENV['MAPBOX_API_KEY']%>'
 }).addTo(map);
+
+  L.control.layers(overlayMaps).addTo(map)
+});
+
 
 //<!--make green markers-->
 var greenIcon = new L.Icon({
@@ -83,6 +117,7 @@ function selectMarkerColor(category){
 };
 //what to do after user enables location service
 //assign for future use
+
 var currentPosition = null
 function onLocationFound(e) {
   //if we have position update
@@ -91,22 +126,7 @@ function onLocationFound(e) {
     currentPosition = L.marker(e.latlng, {icon: userIcon}).addTo(map);
   } else {
 //otherwise set and populate map
-  fetch('api/v1/landmarks')
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(myJson) {
-    //iterate over landmarks, make points
-    myJson['data'].forEach(function(landmark){
-      let marker = L.marker([landmark['attributes']['lat'], landmark['attributes']['long']],{
-        icon: selectMarkerColor(landmark['attributes']['category'])
-      }).addTo(map);
-    //set landmarks
-    let name = landmark['attributes']['name']
-    let id = landmark['id']
-      marker.bindPopup(name.link(`/landmarks/${id}`) + `<br><button class="location_button" onclick="navigateTo(${landmark['attributes']['lat']}, ${landmark['attributes']['long']})" >Take me Here</button>`)
-    });
-  });
+
   //set zoom level 17
   map.setView(e.latlng, 17)
 
@@ -155,7 +175,7 @@ function navigateTo(lat,long){
 
 function locateMe() {
   if (currentPosition){
-    map.locate({strings:{enableHighAccuracy: true});
+    map.locate();
   }
 }
 
