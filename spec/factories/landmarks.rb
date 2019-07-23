@@ -1,5 +1,3 @@
-require 'digest/md5'
-
 FactoryBot.define do
   factory :landmark do
     name { Faker::Address.community }
