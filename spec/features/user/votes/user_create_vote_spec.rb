@@ -9,23 +9,28 @@ describe 'A logged in user' do
     @id = @landmark.id
     @score = 1
     @votable_type = "Recording"
-
   end
 
-  it 'can add a vote to a specific location' do
+  it 'can add a vote to a specific landmarks recording' do
+    WebMock.allow_net_connect! 
+    VCR.turn_off!
     visit landmark_path(@id)
 
-    within(page.first(".recording-list")) do
-      find('button.upvote').click
+    within(".up-vote") do
+      find('.upvote').click
     end
 
     within(page.first(".recording-list")) do
       expect(page).to have_content(1)
     end
 
-
+#go to controller with sintra in there instead of going to
+#instead of vote.create
+#use a background worker
 
 
     # endpoint = get "/api/v1/#{@votable_type}/#{@id}/#{{@score}}"
+
+    #add part in registration spec that tests whether or not vote token is created
   end
 end
