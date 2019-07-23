@@ -11,6 +11,5 @@ FactoryBot.define do
     place_id { Faker::Crypto.sha1 }
     website { Faker::Internet.url }
     photo_reference { 'CmRaAAAA58Iy6Em8ucPC_-OCxKTJ-p7YKDBUQ4mgVZj4qlFN6j2JhXKSfteprF-Ckca73TjXaYUtNk-trEbhBCWoUcWWsO42KRap_rlw4teWz4hqBU57sAoTl3-myl_4xjOw3LmBEhBTUAINq_SeOPXlwudc8ccKGhSH-pCQxOO6rRE-O1zFKPW1-h3OqA' }
-    md5_hash { Digest::MD5.hexdigest("#{name} + #{place_id}") }
   end
 end
