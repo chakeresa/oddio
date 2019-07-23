@@ -12,16 +12,16 @@ describe 'A logged in user' do
   end
 
   it 'can add a vote to a specific landmarks recording' do
-    WebMock.allow_net_connect! 
+    WebMock.allow_net_connect!
     VCR.turn_off!
     visit landmark_path(@id)
 
     within(".up-vote") do
       find('.upvote').click
     end
-
+    
     within(page.first(".recording-list")) do
-      expect(page).to have_content(1)
+      expect(audio_player.total_score).to eq(1)
     end
 
 #go to controller with sintra in there instead of going to

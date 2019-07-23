@@ -1,10 +1,12 @@
 <figure class="recording-list">
 
   <div class="votebox">
-
     <div class="up-vote">
     <%= button_to " ", user_votes_path(votable_type: "recording", votable_id: audio_player.id, type: "upvote"), class: "upvote" %>
     </div>
+
+    <h4><%= audio_player.total_score %></h4>
+
     <div class="down-vote">
     <%= button_to " ", user_votes_path(votable_type: "recording", votable_id: audio_player.id, type: "downvote"), class: "downvote" %>
     </div>
