@@ -3,19 +3,23 @@
 
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>The HTML5 Herald</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
   <style>
     #mapid { height: 500px; width: 100%};
-    @import 'leaflet/dist/leaflet.css';
   </style>
 </head>
 <body>
   <!--map-->
   <div id="mapid"></div>
   <button onclick="map.locate()" class='btn btn-primary'>Use my Location</button>
+
+  <div class="wrap">
+   <div class="search">
+      <input type="text" class="searchTerm" placeholder="Landmark?">
+      <button type="submit" class="searchButton" onclick="searchLandmark()">
+        <i class="fa fa-search"></i>
+     </button>
+   </div>
+</div>
 
 
  <!--script to load map with points-->
@@ -45,7 +49,6 @@ fetch('api/v1/landmarks')
   });
 })
 .then(function(response){
-  debugger
   var museumMarkers = L.layerGroup(museums)
   var theaterMarkers = L.layerGroup(theaters)
   var allMarkers = L.layerGroup(museums.concat(theaters))
@@ -69,8 +72,6 @@ fetch('api/v1/landmarks')
 
 });
 
-
-//<!--for map locate funktion-->
 
 //color based on type of landmark
 function selectMarkerColor(category){
@@ -96,7 +97,6 @@ function onLocationFound(e) {
 
   //set zoom level 17
   map.setView(e.latlng, 17)
-
   //add my location popup
     var radius = e.accuracy;
     currentPosition = L.marker(e.latlng,{icon: userIcon}).addTo(map)
@@ -104,12 +104,10 @@ function onLocationFound(e) {
       }
     }
 
-
 //<!--handle location error-->
 function onLocationError(e) {
     alert(e.message);
 }
-map.on('locationerror', onLocationError);
 
 //navigate to button
 //set route to check against later
@@ -140,6 +138,24 @@ function navigateTo(lat,long){
   });
 }
 
+function searchLandmark(){
+  let input = document.getElementById('searchTerm').value
+  fetch()('api/v1/landmarks')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+    fetch('api/v1/landmarks')
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(landmarkJson){
+      
+    })
+
+  })
+
+
 function locateMe() {
   if (currentPosition){
     map.locate();
@@ -148,8 +164,6 @@ function locateMe() {
 
 // call locate every 5 seconds
 setInterval(locateMe, 5000);
-
-
 
  </script>
 

@@ -12,12 +12,12 @@
         <a class="nav-link" href="<%= root_path %>">About</a>
       </li>
       <li class="nav-item">
-        <div class='search-field'>
+        <!-- <div class='search-field'>
           <%= form_tag landmarks_path, method: :get, class: 'form-inline my-2 my-lg-0' do %>
             <%= text_field_tag :query, 'Enter a location', class: 'form-control mr-sm-2' %>
             <%= submit_tag 'Search', class: 'btn btn-primary my-2 my-sm-0' %>
           <% end %>
-        </div>
+        </div> -->
       </li>
       <% if current_user %>
         <li class="nav-item">
@@ -34,4 +34,3 @@
     </ul>
   </div>
 </nav>
-    
