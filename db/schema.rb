@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_22_031155) do
+ActiveRecord::Schema.define(version: 2019_07_22_215652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,14 +55,18 @@ ActiveRecord::Schema.define(version: 2019_07_22_031155) do
   end
 
   create_table "landmarks", force: :cascade do |t|
+    t.string "name"
     t.decimal "lat", precision: 10, scale: 6
     t.decimal "long", precision: 10, scale: 6
-    t.string "name"
     t.string "address"
     t.string "phone_number"
     t.string "category"
+    t.string "place_id"
+    t.string "website"
+    t.string "photo_reference"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "md5_hash"
   end
 
   create_table "recordings", force: :cascade do |t|
