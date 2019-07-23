@@ -73,6 +73,7 @@ group :development, :test do
   gem 'webmock'
   # factory for quick resource creation
   gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
