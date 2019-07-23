@@ -12,7 +12,7 @@ namespace :landmarks do
     puts "#{landmarks.size} governments imported"
     puts "Querying Google for governments..."
     place_ids = landmarks.map do |landmark|
-      GoogleService.landmarks_place_ids(landmark)
+      GoogleService.get_place_id(landmark)
     end
     puts "Updating Landmark resources for governments..."
     place_ids.compact.each do |id|
@@ -31,7 +31,7 @@ namespace :landmarks do
     puts "#{landmarks.size} musuems imported"
     puts "Querying Google for musuems..."
     place_ids = landmarks.map do |landmark|
-      GoogleService.landmarks_place_ids(landmark)
+      GoogleService.get_place_id(landmark)
     end
     puts "Updating Landmark resources for musuems..."
     place_ids.compact.each do |id|
@@ -50,7 +50,7 @@ namespace :landmarks do
     puts "#{landmarks.size} parks imported"
     puts "Querying Google for parks..."
     place_ids = landmarks.compact.map do |landmark|
-      GoogleService.landmarks_place_ids(landmark)
+      GoogleService.get_place_id(landmark)
     end
     puts "Updating Landmark resources for parks..."
     place_ids.compact.each do |id|
@@ -69,7 +69,7 @@ namespace :landmarks do
     puts "#{landmarks.size} theaters imported"
     puts "Querying Google for theathers..."
     place_ids = landmarks.compact.map do |landmark|
-      GoogleService.landmarks_place_ids(landmark)
+      GoogleService.get_place_id(landmark)
     end
     puts "Updating Landmark resources for theaters..."
     place_ids.compact.each do |id|

@@ -1,15 +1,15 @@
 class GoogleService
-  def landmarks_place_ids(landmark)
-    id = fetch_ids(landmark)
-    id[:candidates].empty? ? nil : id[:candidates].first[:place_id]
+  def get_place_id(landmark_name)
+    id_hash = fetch_id(landmark_name)
+    id_hash[:candidates].empty? ? nil : id_hash[:candidates].first[:place_id]
   end
 
-  def self.landmarks_place_ids(landmark)
-    new.landmarks_place_ids(landmark)
+  def self.get_place_id(landmark_name)
+    new.get_place_id(landmark_name)
   end
 
   def get_details(id)
-    fetch_data(id)[:result]
+    fetch_details(id)[:result]
   end
 
   def self.get_details(id)
@@ -18,16 +18,16 @@ class GoogleService
 
   private
 
-  def fetch_ids(landmark)
+  def fetch_id(landmark_name)
     response = conn.get do |req|
       req.path = '/maps/api/place/findplacefromtext/json'
-      req.params['input'] = "#{landmark} in Denver"
+      req.params['input'] = "#{landmark_name} in Denver"
       req.params['inputtype'] = 'textquery'
     end
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def fetch_data(id)
+  def fetch_details(id)
     response = conn.get do |req|
       req.path = '/maps/api/place/details/json'
       req.params['place_id'] = id

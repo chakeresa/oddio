@@ -23,14 +23,14 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 21 Jul 2019 23:50:02 GMT
+      - Tue, 23 Jul 2019 21:37:37 GMT
       Content-Length:
       - '114582'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"summary":{"queryType":"NEARBY","queryTime":19,"numResults":100,"offset":0,"totalResults":859,"fuzzyLevel":1,"geoBias":{"lat":39.7392358,"lon":-104.990251}},"results":[{"type":"POI","id":"US/POI/p0/5550455","score":-0.06148,"dist":61.47970584023871,"info":"search:ta:840089001164725-US","poi":{"name":"Denver
+      string: '{"summary":{"queryType":"NEARBY","queryTime":22,"numResults":100,"offset":0,"totalResults":859,"fuzzyLevel":1,"geoBias":{"lat":39.7392358,"lon":-104.990251}},"results":[{"type":"POI","id":"US/POI/p0/5550455","score":-0.06148,"dist":61.47970584023871,"info":"search:ta:840089001164725-US","poi":{"name":"Denver
         City & County Government County Court City & County Building","phone":"+(1)-(720)-8657890","categorySet":[{"id":7367002}],"categories":["government
         office","order9area"],"classifications":[{"code":"GOVERNMENT_OFFICE","names":[{"nameLocale":"en-US","name":"government
         office"},{"nameLocale":"en-US","name":"order9area"}]}]},"address":{"streetNumber":"1437","streetName":"Bannock
@@ -659,7 +659,7 @@ http_interactions:
         States","countryCodeISO3":"USA","freeformAddress":"1575 N Sherman St, Denver,
         CO 80203","localName":"Denver","countrySubdivisionName":"Colorado"},"position":{"lat":39.74119,"lon":-104.9852},"viewport":{"topLeftPoint":{"lat":39.74209,"lon":-104.98637},"btmRightPoint":{"lat":39.74029,"lon":-104.98403}},"entryPoints":[{"type":"main","position":{"lat":39.74119,"lon":-104.98487}}]}]}'
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:02 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:35 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20City%20%26%20County%20Government%20County%20Court%20City%20%26%20County%20Building%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -681,9 +681,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:03 GMT
+      - Tue, 23 Jul 2019 21:37:38 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:03 GMT
+      - Tue, 23 Jul 2019 21:42:38 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -695,7 +695,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=840
+      - gfet4t7; dur=562
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -710,7 +710,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:03 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:36 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%208%20TV%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -732,9 +732,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:04 GMT
+      - Tue, 23 Jul 2019 21:37:38 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:04 GMT
+      - Tue, 23 Jul 2019 21:42:38 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -746,7 +746,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=516
+      - gfet4t7; dur=431
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -764,7 +764,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:03 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:36 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20Interpreter%27s%20Office%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -786,9 +786,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:04 GMT
+      - Tue, 23 Jul 2019 21:37:39 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:04 GMT
+      - Tue, 23 Jul 2019 21:42:39 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -800,7 +800,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=532
+      - gfet4t7; dur=383
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -818,7 +818,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:04 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:37 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20Mayor%27s%20Office%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -840,9 +840,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:05 GMT
+      - Tue, 23 Jul 2019 21:37:39 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:05 GMT
+      - Tue, 23 Jul 2019 21:42:39 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -854,7 +854,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=511
+      - gfet4t7; dur=465
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -869,7 +869,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:04 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:37 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Courtroom%20W%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -891,9 +891,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:05 GMT
+      - Tue, 23 Jul 2019 21:37:40 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:05 GMT
+      - Tue, 23 Jul 2019 21:42:40 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -905,7 +905,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=359
+      - gfet4t7; dur=327
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -923,7 +923,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:05 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:38 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20City%20%26%20County%20Government%20Probate%20Court%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -945,9 +945,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:06 GMT
+      - Tue, 23 Jul 2019 21:37:40 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:06 GMT
+      - Tue, 23 Jul 2019 21:42:40 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -959,7 +959,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=519
+      - gfet4t7; dur=574
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -974,7 +974,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:05 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:39 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20City%20%26%20County%20Court%20Clerk%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -996,9 +996,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:07 GMT
+      - Tue, 23 Jul 2019 21:37:41 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:07 GMT
+      - Tue, 23 Jul 2019 21:42:41 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -1010,7 +1010,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=508
+      - gfet4t7; dur=663
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -1025,7 +1025,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:06 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:39 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20City%20Council%20District%207%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -1047,9 +1047,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:07 GMT
+      - Tue, 23 Jul 2019 21:37:42 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:07 GMT
+      - Tue, 23 Jul 2019 21:42:42 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -1061,7 +1061,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=458
+      - gfet4t7; dur=561
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -1076,7 +1076,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:07 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:40 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20County%20Traffic%20Division%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -1098,9 +1098,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:08 GMT
+      - Tue, 23 Jul 2019 21:37:42 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:08 GMT
+      - Tue, 23 Jul 2019 21:42:42 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -1112,7 +1112,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=578
+      - gfet4t7; dur=592
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -1127,7 +1127,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:07 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:40 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20Revenue%20Department%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -1149,9 +1149,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:09 GMT
+      - Tue, 23 Jul 2019 21:37:43 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:09 GMT
+      - Tue, 23 Jul 2019 21:42:43 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -1163,7 +1163,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=444
+      - gfet4t7; dur=435
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -1178,7 +1178,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:08 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:41 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20Cultural%20Affairs%20Office%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -1200,9 +1200,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:09 GMT
+      - Tue, 23 Jul 2019 21:37:43 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:09 GMT
+      - Tue, 23 Jul 2019 21:42:43 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -1214,7 +1214,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=528
+      - gfet4t7; dur=390
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -1229,7 +1229,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:08 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:41 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20Payment%20To%20Elderly%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -1251,9 +1251,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:10 GMT
+      - Tue, 23 Jul 2019 21:37:44 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:10 GMT
+      - Tue, 23 Jul 2019 21:42:44 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -1265,7 +1265,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=564
+      - gfet4t7; dur=744
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -1280,7 +1280,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:09 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:42 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20City%20%26%20County%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -1302,9 +1302,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:11 GMT
+      - Tue, 23 Jul 2019 21:37:45 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:11 GMT
+      - Tue, 23 Jul 2019 21:42:45 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -1316,7 +1316,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=732
+      - gfet4t7; dur=777
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -1331,7 +1331,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:10 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:43 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20Environmental%20Quality%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -1353,9 +1353,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:11 GMT
+      - Tue, 23 Jul 2019 21:37:46 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:11 GMT
+      - Tue, 23 Jul 2019 21:42:46 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -1367,7 +1367,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=462
+      - gfet4t7; dur=416
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -1382,7 +1382,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:10 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:44 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=General%20Services%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -1404,9 +1404,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:12 GMT
+      - Tue, 23 Jul 2019 21:37:46 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:12 GMT
+      - Tue, 23 Jul 2019 21:42:46 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -1418,7 +1418,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=400
+      - gfet4t7; dur=417
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -1433,7 +1433,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:11 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:44 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20Office%20of%20Information%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -1455,9 +1455,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:12 GMT
+      - Tue, 23 Jul 2019 21:37:47 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:12 GMT
+      - Tue, 23 Jul 2019 21:42:47 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -1469,7 +1469,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=730
+      - gfet4t7; dur=677
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -1484,7 +1484,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:12 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:45 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Department-Safety%20Recruitment%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -1506,9 +1506,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:13 GMT
+      - Tue, 23 Jul 2019 21:37:48 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:13 GMT
+      - Tue, 23 Jul 2019 21:42:48 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -1520,7 +1520,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=540
+      - gfet4t7; dur=579
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -1535,7 +1535,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:12 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:46 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20Environmental%20Health%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -1557,9 +1557,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:14 GMT
+      - Tue, 23 Jul 2019 21:37:48 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:14 GMT
+      - Tue, 23 Jul 2019 21:42:48 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -1571,7 +1571,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=503
+      - gfet4t7; dur=593
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -1586,7 +1586,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:13 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:46 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20Board%20of%20Adjustment%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -1608,9 +1608,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:14 GMT
+      - Tue, 23 Jul 2019 21:37:49 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:14 GMT
+      - Tue, 23 Jul 2019 21:42:49 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -1622,7 +1622,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=415
+      - gfet4t7; dur=312
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -1637,7 +1637,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:13 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:47 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20City%20Forester%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -1659,9 +1659,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:15 GMT
+      - Tue, 23 Jul 2019 21:37:49 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:15 GMT
+      - Tue, 23 Jul 2019 21:42:49 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -1673,7 +1673,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=453
+      - gfet4t7; dur=478
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -1688,7 +1688,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:14 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:47 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20Urban%20Horticulture%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -1710,9 +1710,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:15 GMT
+      - Tue, 23 Jul 2019 21:37:50 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:15 GMT
+      - Tue, 23 Jul 2019 21:42:50 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -1724,7 +1724,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=420
+      - gfet4t7; dur=424
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -1739,7 +1739,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:14 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:48 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20Zoning%20Administration%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -1761,9 +1761,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:16 GMT
+      - Tue, 23 Jul 2019 21:37:50 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:16 GMT
+      - Tue, 23 Jul 2019 21:42:50 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -1775,7 +1775,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=324
+      - gfet4t7; dur=401
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -1790,7 +1790,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:15 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:48 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Treasury%20Division%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -1812,9 +1812,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:16 GMT
+      - Tue, 23 Jul 2019 21:37:51 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:16 GMT
+      - Tue, 23 Jul 2019 21:42:51 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -1826,7 +1826,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=408
+      - gfet4t7; dur=421
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -1841,7 +1841,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:15 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:49 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20Public%20Works%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -1863,9 +1863,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:17 GMT
+      - Tue, 23 Jul 2019 21:37:52 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:17 GMT
+      - Tue, 23 Jul 2019 21:42:52 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -1877,7 +1877,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=573
+      - gfet4t7; dur=546
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -1892,7 +1892,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:16 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:50 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20Building%20Department%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -1914,9 +1914,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:17 GMT
+      - Tue, 23 Jul 2019 21:37:52 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:17 GMT
+      - Tue, 23 Jul 2019 21:42:52 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -1928,7 +1928,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=508
+      - gfet4t7; dur=492
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -1943,7 +1943,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:17 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:50 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20Public%20Trustee%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -1965,9 +1965,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:18 GMT
+      - Tue, 23 Jul 2019 21:37:53 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:18 GMT
+      - Tue, 23 Jul 2019 21:42:53 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -1979,7 +1979,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=468
+      - gfet4t7; dur=472
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -1994,7 +1994,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:17 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:51 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20Career%20Service%20Authority%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -2016,9 +2016,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:19 GMT
+      - Tue, 23 Jul 2019 21:37:53 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:19 GMT
+      - Tue, 23 Jul 2019 21:42:53 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -2030,7 +2030,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=440
+      - gfet4t7; dur=468
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -2045,7 +2045,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:18 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:51 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20Central%20Service%20Department%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -2067,9 +2067,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:19 GMT
+      - Tue, 23 Jul 2019 21:37:54 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:19 GMT
+      - Tue, 23 Jul 2019 21:42:54 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -2081,7 +2081,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=456
+      - gfet4t7; dur=503
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -2096,7 +2096,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:18 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:52 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20Board%20of%20Ethics%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -2118,9 +2118,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:20 GMT
+      - Tue, 23 Jul 2019 21:37:54 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:20 GMT
+      - Tue, 23 Jul 2019 21:42:54 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -2132,7 +2132,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=390
+      - gfet4t7; dur=468
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -2147,7 +2147,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:19 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:53 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20Finance%20Office%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -2169,9 +2169,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:20 GMT
+      - Tue, 23 Jul 2019 21:37:55 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:20 GMT
+      - Tue, 23 Jul 2019 21:42:55 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -2183,7 +2183,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=565
+      - gfet4t7; dur=431
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -2198,7 +2198,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:19 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:53 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20Policy%20%26%20Planning%20Department%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -2220,9 +2220,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:21 GMT
+      - Tue, 23 Jul 2019 21:37:56 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:21 GMT
+      - Tue, 23 Jul 2019 21:42:56 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -2234,7 +2234,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=416
+      - gfet4t7; dur=584
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -2249,7 +2249,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:20 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:54 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=United%20States%20Mint%20Denver%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -2271,9 +2271,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:21 GMT
+      - Tue, 23 Jul 2019 21:37:56 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:21 GMT
+      - Tue, 23 Jul 2019 21:42:56 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -2285,7 +2285,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=474
+      - gfet4t7; dur=564
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -2300,7 +2300,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:21 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:54 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20City%20%26%20County%20Government%20County%20Court%20City%20%26%20County%20Building%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -2322,9 +2322,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:03 GMT
+      - Tue, 23 Jul 2019 21:37:38 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:03 GMT
+      - Tue, 23 Jul 2019 21:42:38 GMT
       Server:
       - scaffolding on HTTPServer2
       Content-Length:
@@ -2334,7 +2334,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=840
+      - gfet4t7; dur=562
       Cache-Control:
       - public, max-age=300
       Age:
@@ -2353,7 +2353,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:21 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:54 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20Electronic%20Monitoring%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -2375,9 +2375,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:22 GMT
+      - Tue, 23 Jul 2019 21:37:57 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:22 GMT
+      - Tue, 23 Jul 2019 21:42:57 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -2389,7 +2389,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=342
+      - gfet4t7; dur=502
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -2404,7 +2404,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:21 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:55 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20Safe%20City%20Office%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -2426,9 +2426,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:22 GMT
+      - Tue, 23 Jul 2019 21:37:57 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:22 GMT
+      - Tue, 23 Jul 2019 21:42:57 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -2440,7 +2440,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=570
+      - gfet4t7; dur=480
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -2455,7 +2455,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:22 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:56 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20Department%20of%20Safety%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -2477,9 +2477,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:23 GMT
+      - Tue, 23 Jul 2019 21:37:58 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:23 GMT
+      - Tue, 23 Jul 2019 21:42:58 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -2491,7 +2491,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=674
+      - gfet4t7; dur=781
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -2506,7 +2506,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:22 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:56 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20Office%20of%20Information%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -2528,9 +2528,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:12 GMT
+      - Tue, 23 Jul 2019 21:37:47 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:12 GMT
+      - Tue, 23 Jul 2019 21:42:47 GMT
       Server:
       - scaffolding on HTTPServer2
       Content-Length:
@@ -2540,7 +2540,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=730
+      - gfet4t7; dur=677
       Cache-Control:
       - public, max-age=300
       Age:
@@ -2559,7 +2559,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:23 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:56 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Honorable%20John%20R%20Webb%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -2581,9 +2581,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:24 GMT
+      - Tue, 23 Jul 2019 21:37:59 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:24 GMT
+      - Tue, 23 Jul 2019 21:42:59 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -2595,7 +2595,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=527
+      - gfet4t7; dur=319
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -2610,7 +2610,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:23 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:57 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Colorado%20State%20Government%20Supreme%20Court%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -2632,9 +2632,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:24 GMT
+      - Tue, 23 Jul 2019 21:37:59 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:24 GMT
+      - Tue, 23 Jul 2019 21:42:59 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -2646,7 +2646,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=487
+      - gfet4t7; dur=581
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -2661,7 +2661,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:24 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:58 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Honorable%20Michael%20L%20Bender%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -2683,9 +2683,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:25 GMT
+      - Tue, 23 Jul 2019 21:38:00 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:25 GMT
+      - Tue, 23 Jul 2019 21:43:00 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -2697,7 +2697,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=377
+      - gfet4t7; dur=334
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -2712,7 +2712,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:24 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:58 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Honorable%20Alan%20M%20Loeb%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -2734,9 +2734,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:25 GMT
+      - Tue, 23 Jul 2019 21:38:00 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:25 GMT
+      - Tue, 23 Jul 2019 21:43:00 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -2748,7 +2748,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=317
+      - gfet4t7; dur=364
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -2763,7 +2763,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:25 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:58 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Honorable%20James%20S%20Casebolt%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -2785,9 +2785,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:26 GMT
+      - Tue, 23 Jul 2019 21:38:01 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:26 GMT
+      - Tue, 23 Jul 2019 21:43:01 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -2799,7 +2799,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=301
+      - gfet4t7; dur=327
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -2814,7 +2814,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:25 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:59 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Honorable%20Daniel%20M%20Taubman%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -2836,9 +2836,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:26 GMT
+      - Tue, 23 Jul 2019 21:38:01 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:26 GMT
+      - Tue, 23 Jul 2019 21:43:01 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -2850,7 +2850,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=392
+      - gfet4t7; dur=398
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -2865,7 +2865,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:25 GMT
+  recorded_at: Tue, 23 Jul 2019 21:37:59 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Honorable%20Nathan%20B%20Coats%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -2887,9 +2887,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:27 GMT
+      - Tue, 23 Jul 2019 21:38:02 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:27 GMT
+      - Tue, 23 Jul 2019 21:43:02 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -2901,7 +2901,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=482
+      - gfet4t7; dur=607
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -2916,7 +2916,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:26 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:00 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Honorable%20Robert%20Hawthorne%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -2938,9 +2938,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:27 GMT
+      - Tue, 23 Jul 2019 21:38:02 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:27 GMT
+      - Tue, 23 Jul 2019 21:43:02 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -2952,7 +2952,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=372
+      - gfet4t7; dur=347
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -2967,7 +2967,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:27 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:01 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Honorable%20Nancy%20J%20Lichtenstein%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -2989,9 +2989,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:28 GMT
+      - Tue, 23 Jul 2019 21:38:03 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:28 GMT
+      - Tue, 23 Jul 2019 21:43:03 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -3003,7 +3003,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=358
+      - gfet4t7; dur=509
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -3021,7 +3021,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:27 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:01 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Honorable%20Russell%20Carparelli%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -3043,9 +3043,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:28 GMT
+      - Tue, 23 Jul 2019 21:38:04 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:28 GMT
+      - Tue, 23 Jul 2019 21:43:04 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -3057,7 +3057,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=343
+      - gfet4t7; dur=432
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -3072,7 +3072,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:27 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:02 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Honorable%20Dennis%20Graham%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -3094,9 +3094,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:29 GMT
+      - Tue, 23 Jul 2019 21:38:04 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:29 GMT
+      - Tue, 23 Jul 2019 21:43:04 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -3108,7 +3108,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=704
+      - gfet4t7; dur=317
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -3123,7 +3123,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:28 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:02 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Honorable%20Diana%20L%20Terry%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -3145,9 +3145,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:30 GMT
+      - Tue, 23 Jul 2019 21:38:05 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:30 GMT
+      - Tue, 23 Jul 2019 21:43:05 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -3159,7 +3159,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=1020
+      - gfet4t7; dur=436
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -3174,7 +3174,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:29 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:03 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Honorable%20Mary%20J%20Mullarkey%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -3196,9 +3196,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:31 GMT
+      - Tue, 23 Jul 2019 21:38:05 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:31 GMT
+      - Tue, 23 Jul 2019 21:43:05 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -3210,7 +3210,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=461
+      - gfet4t7; dur=512
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -3225,7 +3225,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:30 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:03 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Honorable%20Laurie%20Booras%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -3247,9 +3247,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:31 GMT
+      - Tue, 23 Jul 2019 21:38:06 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:31 GMT
+      - Tue, 23 Jul 2019 21:43:06 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -3261,7 +3261,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=413
+      - gfet4t7; dur=438
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -3276,7 +3276,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:30 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:04 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Honorable%20David%20M%20Furman%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -3298,9 +3298,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:31 GMT
+      - Tue, 23 Jul 2019 21:38:06 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:31 GMT
+      - Tue, 23 Jul 2019 21:43:06 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -3312,7 +3312,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=356
+      - gfet4t7; dur=309
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -3327,7 +3327,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:31 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:04 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Honorable%20Gregory%20J.%20Hobbs%20Junior%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -3349,9 +3349,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:32 GMT
+      - Tue, 23 Jul 2019 21:38:07 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:32 GMT
+      - Tue, 23 Jul 2019 21:43:07 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -3363,7 +3363,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=360
+      - gfet4t7; dur=403
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -3378,7 +3378,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:31 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:05 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Honorable%20Allison%20H%20Eid%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -3400,9 +3400,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:32 GMT
+      - Tue, 23 Jul 2019 21:38:07 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:32 GMT
+      - Tue, 23 Jul 2019 21:43:07 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -3414,7 +3414,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=348
+      - gfet4t7; dur=567
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -3429,7 +3429,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:32 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:05 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Honorable%20Alex%20J%20Martinez%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -3451,9 +3451,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:33 GMT
+      - Tue, 23 Jul 2019 21:38:08 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:33 GMT
+      - Tue, 23 Jul 2019 21:43:08 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -3465,7 +3465,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=399
+      - gfet4t7; dur=384
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -3480,7 +3480,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:32 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:06 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Honorable%20Arthur%20P%20Roy%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -3502,9 +3502,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:33 GMT
+      - Tue, 23 Jul 2019 21:38:08 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:33 GMT
+      - Tue, 23 Jul 2019 21:43:08 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -3516,7 +3516,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=441
+      - gfet4t7; dur=539
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -3531,7 +3531,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:33 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:06 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Honorable%20Janice%20B%20Davidson%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -3553,9 +3553,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:34 GMT
+      - Tue, 23 Jul 2019 21:38:09 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:34 GMT
+      - Tue, 23 Jul 2019 21:43:09 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -3567,7 +3567,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=341
+      - gfet4t7; dur=362
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -3582,7 +3582,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:33 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:07 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Honorable%20Steven%20L%20Bernard%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -3604,9 +3604,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:34 GMT
+      - Tue, 23 Jul 2019 21:38:09 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:34 GMT
+      - Tue, 23 Jul 2019 21:43:09 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -3618,7 +3618,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=407
+      - gfet4t7; dur=457
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -3633,7 +3633,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:34 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:07 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Honorable%20John%20D%20Dailey%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -3655,9 +3655,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:35 GMT
+      - Tue, 23 Jul 2019 21:38:10 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:35 GMT
+      - Tue, 23 Jul 2019 21:43:10 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -3669,7 +3669,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=618
+      - gfet4t7; dur=299
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -3684,7 +3684,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:34 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:08 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Honorable%20Gilbert%20M%20Roman%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -3706,9 +3706,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:36 GMT
+      - Tue, 23 Jul 2019 21:38:10 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:36 GMT
+      - Tue, 23 Jul 2019 21:43:10 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -3720,7 +3720,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=615
+      - gfet4t7; dur=389
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -3735,7 +3735,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:35 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:08 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Enterprise%20Community%20Partners%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -3757,9 +3757,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:36 GMT
+      - Tue, 23 Jul 2019 21:38:11 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:36 GMT
+      - Tue, 23 Jul 2019 21:43:11 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -3771,7 +3771,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=374
+      - gfet4t7; dur=421
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -3786,7 +3786,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:35 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:09 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Colorado%20Regulation%20Counsel%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -3808,9 +3808,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:37 GMT
+      - Tue, 23 Jul 2019 21:38:11 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:37 GMT
+      - Tue, 23 Jul 2019 21:43:11 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -3822,7 +3822,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=434
+      - gfet4t7; dur=467
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -3837,7 +3837,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:36 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:09 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Honorable%20Jerry%20N.%20Jones%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -3859,9 +3859,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:37 GMT
+      - Tue, 23 Jul 2019 21:38:12 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:37 GMT
+      - Tue, 23 Jul 2019 21:43:12 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -3873,7 +3873,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=650
+      - gfet4t7; dur=463
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -3888,7 +3888,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:37 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:10 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=State%20Court%20Administration%20Office%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -3910,9 +3910,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:38 GMT
+      - Tue, 23 Jul 2019 21:38:13 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:38 GMT
+      - Tue, 23 Jul 2019 21:43:13 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -3924,7 +3924,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=589
+      - gfet4t7; dur=673
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -3939,7 +3939,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:37 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:11 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Colorado%20State%20Government%20Executive%20Director%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -3961,9 +3961,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:39 GMT
+      - Tue, 23 Jul 2019 21:38:13 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:39 GMT
+      - Tue, 23 Jul 2019 21:43:13 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -3975,7 +3975,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=556
+      - gfet4t7; dur=631
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -3990,7 +3990,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:38 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:11 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Colorado%20Civil%20Rights%20Comm%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -4012,9 +4012,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:39 GMT
+      - Tue, 23 Jul 2019 21:38:14 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:39 GMT
+      - Tue, 23 Jul 2019 21:43:14 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -4026,7 +4026,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=410
+      - gfet4t7; dur=673
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -4041,7 +4041,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:38 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:12 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Colorado%20Passenger%20Tramway%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -4063,9 +4063,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:40 GMT
+      - Tue, 23 Jul 2019 21:38:14 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:40 GMT
+      - Tue, 23 Jul 2019 21:43:14 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -4077,7 +4077,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=327
+      - gfet4t7; dur=322
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -4092,7 +4092,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:39 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:13 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Colorado%20Division%20of%20Financial%20Services%20State%20of%20Colorado%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -4114,9 +4114,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:40 GMT
+      - Tue, 23 Jul 2019 21:38:15 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:40 GMT
+      - Tue, 23 Jul 2019 21:43:15 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -4128,7 +4128,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=543
+      - gfet4t7; dur=409
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -4143,7 +4143,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:39 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:13 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Colorado%20Outfitters%20%26%20Guides%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -4165,9 +4165,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:41 GMT
+      - Tue, 23 Jul 2019 21:38:16 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:41 GMT
+      - Tue, 23 Jul 2019 21:43:16 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -4179,7 +4179,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=634
+      - gfet4t7; dur=681
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -4194,7 +4194,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:40 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:14 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Public%20Defender%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -4216,9 +4216,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:41 GMT
+      - Tue, 23 Jul 2019 21:38:16 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:41 GMT
+      - Tue, 23 Jul 2019 21:43:16 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -4230,7 +4230,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=373
+      - gfet4t7; dur=402
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -4245,7 +4245,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:41 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:14 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Securities%20Division%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -4267,9 +4267,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:42 GMT
+      - Tue, 23 Jul 2019 21:38:17 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:42 GMT
+      - Tue, 23 Jul 2019 21:43:17 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -4281,7 +4281,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=363
+      - gfet4t7; dur=355
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -4296,7 +4296,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:41 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:15 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Public%20Utilities%20Commission%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -4318,9 +4318,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:42 GMT
+      - Tue, 23 Jul 2019 21:38:17 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:42 GMT
+      - Tue, 23 Jul 2019 21:43:17 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -4332,7 +4332,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=354
+      - gfet4t7; dur=468
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -4347,7 +4347,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:42 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:15 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Higher%20Education%20Commission%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -4369,9 +4369,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:43 GMT
+      - Tue, 23 Jul 2019 21:38:19 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:43 GMT
+      - Tue, 23 Jul 2019 21:43:19 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -4383,7 +4383,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=1124
+      - gfet4t7; dur=1131
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -4398,7 +4398,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:43 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:17 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Attorney%20Regulation%20Committee%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -4420,9 +4420,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:44 GMT
+      - Tue, 23 Jul 2019 21:38:19 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:44 GMT
+      - Tue, 23 Jul 2019 21:43:19 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -4434,7 +4434,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=578
+      - gfet4t7; dur=359
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -4452,7 +4452,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:43 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:17 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Colorado%20Drivers%20License%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -4474,9 +4474,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:45 GMT
+      - Tue, 23 Jul 2019 21:38:20 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:45 GMT
+      - Tue, 23 Jul 2019 21:43:20 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -4488,7 +4488,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=441
+      - gfet4t7; dur=777
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -4503,7 +4503,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:44 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:18 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Colorado%20Engineers%20%26%20Land%20Srvy%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -4525,9 +4525,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:45 GMT
+      - Tue, 23 Jul 2019 21:38:21 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:45 GMT
+      - Tue, 23 Jul 2019 21:43:21 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -4539,7 +4539,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=556
+      - gfet4t7; dur=613
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -4554,7 +4554,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:45 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:19 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Colorado%20Board%20of%20Architects%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -4576,9 +4576,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:46 GMT
+      - Tue, 23 Jul 2019 21:38:21 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:46 GMT
+      - Tue, 23 Jul 2019 21:43:21 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -4590,7 +4590,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=538
+      - gfet4t7; dur=787
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -4605,7 +4605,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:45 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:19 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Small%20Business%20Development%20Hotline%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -4627,9 +4627,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:46 GMT
+      - Tue, 23 Jul 2019 21:38:22 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:46 GMT
+      - Tue, 23 Jul 2019 21:43:22 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -4641,7 +4641,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=425
+      - gfet4t7; dur=657
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -4656,7 +4656,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:46 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:20 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Boxing%20Board%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -4678,9 +4678,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:47 GMT
+      - Tue, 23 Jul 2019 21:38:23 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:47 GMT
+      - Tue, 23 Jul 2019 21:43:23 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -4692,7 +4692,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=363
+      - gfet4t7; dur=515
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -4707,7 +4707,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:47 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:21 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20City%20%26%20County%20Government-Criminal%20Division%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -4729,9 +4729,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:48 GMT
+      - Tue, 23 Jul 2019 21:38:24 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:48 GMT
+      - Tue, 23 Jul 2019 21:43:24 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -4743,7 +4743,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=964
+      - gfet4t7; dur=818
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -4758,7 +4758,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:48 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:22 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Colorado%20State%20Capitol%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -4780,9 +4780,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:50 GMT
+      - Tue, 23 Jul 2019 21:38:24 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:50 GMT
+      - Tue, 23 Jul 2019 21:43:24 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -4794,7 +4794,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=473
+      - gfet4t7; dur=408
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -4809,7 +4809,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:49 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:22 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=I%20%26%20G%20Wtc%20Denver%20Jones%20LaSalle%20Americas%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -4831,9 +4831,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:50 GMT
+      - Tue, 23 Jul 2019 21:38:25 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:50 GMT
+      - Tue, 23 Jul 2019 21:43:25 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -4845,7 +4845,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=574
+      - gfet4t7; dur=566
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -4860,7 +4860,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:49 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:23 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Colorado%20Tourism%20Office%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -4882,9 +4882,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:51 GMT
+      - Tue, 23 Jul 2019 21:38:25 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:51 GMT
+      - Tue, 23 Jul 2019 21:43:25 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -4896,7 +4896,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=608
+      - gfet4t7; dur=444
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -4914,7 +4914,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:51 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:23 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Colorado%20State%20Government%20Motor%20Vehicle%20Local%20Affairs%20Department%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -4936,9 +4936,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:52 GMT
+      - Tue, 23 Jul 2019 21:38:26 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:52 GMT
+      - Tue, 23 Jul 2019 21:43:26 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -4950,7 +4950,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=939
+      - gfet4t7; dur=795
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -4965,7 +4965,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:52 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:24 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Denver%20Regional%20Council%20of%20Governments%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -4987,9 +4987,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:53 GMT
+      - Tue, 23 Jul 2019 21:38:27 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:53 GMT
+      - Tue, 23 Jul 2019 21:43:27 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -5001,7 +5001,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=357
+      - gfet4t7; dur=394
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -5016,7 +5016,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:52 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:25 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Air%20Basics%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -5038,9 +5038,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:53 GMT
+      - Tue, 23 Jul 2019 21:38:27 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:53 GMT
+      - Tue, 23 Jul 2019 21:43:27 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -5052,7 +5052,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=364
+      - gfet4t7; dur=417
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -5067,7 +5067,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:52 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:25 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Budget%20Office%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -5089,9 +5089,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:54 GMT
+      - Tue, 23 Jul 2019 21:38:28 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:54 GMT
+      - Tue, 23 Jul 2019 21:43:28 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -5103,7 +5103,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=395
+      - gfet4t7; dur=650
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -5118,7 +5118,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:53 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:26 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Commission%20of%20Indian%20Affairs%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -5140,9 +5140,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:54 GMT
+      - Tue, 23 Jul 2019 21:38:29 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:54 GMT
+      - Tue, 23 Jul 2019 21:43:29 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -5154,7 +5154,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=540
+      - gfet4t7; dur=541
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -5169,7 +5169,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:54 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:27 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Treasury%20Department%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -5191,9 +5191,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:55 GMT
+      - Tue, 23 Jul 2019 21:38:29 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:55 GMT
+      - Tue, 23 Jul 2019 21:43:29 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -5205,7 +5205,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=440
+      - gfet4t7; dur=364
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -5223,7 +5223,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:54 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:27 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=State%20Personnel%20Board%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -5245,9 +5245,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:55 GMT
+      - Tue, 23 Jul 2019 21:38:30 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:55 GMT
+      - Tue, 23 Jul 2019 21:43:30 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -5259,7 +5259,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=471
+      - gfet4t7; dur=557
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -5274,7 +5274,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:55 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:28 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Controller%20Office%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -5296,9 +5296,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:56 GMT
+      - Tue, 23 Jul 2019 21:38:30 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:56 GMT
+      - Tue, 23 Jul 2019 21:43:30 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -5310,7 +5310,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=669
+      - gfet4t7; dur=546
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -5325,7 +5325,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:56 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:28 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Attorney%20General%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -5347,9 +5347,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:57 GMT
+      - Tue, 23 Jul 2019 21:38:31 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:57 GMT
+      - Tue, 23 Jul 2019 21:43:31 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -5361,7 +5361,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=362
+      - gfet4t7; dur=690
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -5376,7 +5376,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:56 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:29 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Child%20Support%20State%20of%20Colorado%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -5398,9 +5398,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:57 GMT
+      - Tue, 23 Jul 2019 21:38:32 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:57 GMT
+      - Tue, 23 Jul 2019 21:43:32 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -5412,7 +5412,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=411
+      - gfet4t7; dur=544
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -5427,7 +5427,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:56 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:30 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=State%20Buildings%20Division%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -5449,9 +5449,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:58 GMT
+      - Tue, 23 Jul 2019 21:38:32 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:58 GMT
+      - Tue, 23 Jul 2019 21:43:32 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -5463,7 +5463,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=439
+      - gfet4t7; dur=621
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -5478,7 +5478,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:57 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:31 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Capitol%20Complex%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -5500,9 +5500,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:58 GMT
+      - Tue, 23 Jul 2019 21:38:33 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:58 GMT
+      - Tue, 23 Jul 2019 21:43:33 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -5514,7 +5514,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=456
+      - gfet4t7; dur=368
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -5529,7 +5529,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:58 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:31 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Anne%20Barkis%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -5551,9 +5551,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:59 GMT
+      - Tue, 23 Jul 2019 21:38:33 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:59 GMT
+      - Tue, 23 Jul 2019 21:43:33 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -5565,7 +5565,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=400
+      - gfet4t7; dur=370
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -5580,7 +5580,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:58 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:32 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=US%20Department%20of%20Housing%20%26%20Urban%20Development%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -5602,9 +5602,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:50:59 GMT
+      - Tue, 23 Jul 2019 21:38:34 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:55:59 GMT
+      - Tue, 23 Jul 2019 21:43:34 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -5616,7 +5616,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=532
+      - gfet4t7; dur=674
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -5631,7 +5631,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:59 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:32 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Vocational%20Rehabilitation%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -5653,9 +5653,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:51:00 GMT
+      - Tue, 23 Jul 2019 21:38:35 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:56:00 GMT
+      - Tue, 23 Jul 2019 21:43:35 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -5667,7 +5667,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=351
+      - gfet4t7; dur=428
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -5682,7 +5682,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:50:59 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:33 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Child%20Welfare%20Service%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -5704,9 +5704,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:51:00 GMT
+      - Tue, 23 Jul 2019 21:38:35 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:56:00 GMT
+      - Tue, 23 Jul 2019 21:43:35 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -5718,7 +5718,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=441
+      - gfet4t7; dur=425
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -5736,7 +5736,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:51:00 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:33 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Child%20Support%20Enforcement%20Division%20in%20Denver&inputtype=textquery&key=<GOOGLE_PLACES_API_KEY>
@@ -5758,9 +5758,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 21 Jul 2019 23:51:01 GMT
+      - Tue, 23 Jul 2019 21:38:36 GMT
       Expires:
-      - Sun, 21 Jul 2019 23:56:01 GMT
+      - Tue, 23 Jul 2019 21:43:36 GMT
       Cache-Control:
       - public, max-age=300
       Server:
@@ -5772,7 +5772,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=588
+      - gfet4t7; dur=648
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -5787,5 +5787,5 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 23:51:00 GMT
+  recorded_at: Tue, 23 Jul 2019 21:38:34 GMT
 recorded_with: VCR 5.0.0
