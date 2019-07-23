@@ -20,7 +20,7 @@ feature 'landmark show' do
     it "displays the landmarks info" do
       visit landmark_path(landmark)
 
-      expect(page).to have_all_of_selectors(".picture", ".attributes", ".map")
+      expect(page).to have_all_of_selectors(".attributes", ".map")
       expect(page).to have_content(landmark.name)
       expect(page).to have_content(landmark.address)
       expect(page).to have_content(landmark.phone_number)
@@ -41,7 +41,7 @@ feature 'landmark show' do
 
       visit landmark_path(landmark)
 
-      expect(page).to have_all_of_selectors(".picture", ".attributes", ".map")
+      expect(page).to have_all_of_selectors(".attributes", ".map")
       expect(page).to have_content(landmark.name)
       expect(page).to have_content(landmark.address)
       expect(page).to have_content(landmark.phone_number)
