@@ -22,10 +22,12 @@ RSpec.describe "Tour Show Page" do
 
       within(first('.recording-list')) do
         recording = @tour.recordings.first
-        expect(page).to have_link(recording.title, href: recording_path(recording))
+        expect(page).to have_content(recording.title)
         expect(page).to have_link(recording.user.display_name, href: user_path(recording.user))
         expect(page.all('audio').count).to eq(1)
       end
     end
+
+    xit 'shows a map of the relevant locations'
   end
 end
