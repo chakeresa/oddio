@@ -14,23 +14,9 @@ RSpec.describe 'Logging in' do
       expect(status_code).to eq(200)
     end
 
-<<<<<<< HEAD
-
-    it 'has links to login with Google & Twitter' do
-      expect(page).to have_button('Login with Google')
-      expect(page).to have_selector(:css, "form[action='/auth/google_oauth2']")
-      expect(page).to have_button('Login with Twitter')
-      # TODO: expect(page).to have_selector(:css, "form[action=\"#{ ??? }\"]")
-
     it 'has link a to login with Google' do
       expect(page).to have_button('Login with Google')
       expect(page).to have_selector(:css, "form[action='/auth/google_oauth2']")
-
-=======
-    it 'has link a to login with Google' do
-      expect(page).to have_button('Login with Google')
-      expect(page).to have_selector(:css, "form[action='/auth/google_oauth2']")
->>>>>>> 0c632e3cd28354975b2cdd0b0cb1d587eb85f254
     end
 
     it 'has a form to log in' do
