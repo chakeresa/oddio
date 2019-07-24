@@ -45,7 +45,7 @@
     <section class="recordings">
       <% unless facade.landmark.recordings.empty? %>
         <br>
-        <h3>Recordings</h3>
+        <h4>Recordings</h4>
         <% facade.landmark.recordings.each do |recording| %>
           <div class='recording-list'>
             <p>
@@ -55,6 +55,25 @@
             <%= render partial: 'shared/audio_player', object: recording %>
           </div>
         <% end %>
+      <% end %>
+    </section>
+  </div>
+
+  <div class="container">
+    <section class="tours">
+      <h4>Tours</h4>
+      <% if facade.landmark.tours.any? %>
+        <ul>
+          <% facade.landmark.tours.each do |tour| %>
+            <div class='tour-list'>
+              <li>
+                <%= link_to tour.title, tour_path(tour) %>, Creator: <%= link_to tour.user.display_name, user_path(tour.user) %>
+              </li>
+            </div>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>No tours include this landmark</p>
       <% end %>
     </section>
   </div>
