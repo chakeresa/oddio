@@ -18,10 +18,13 @@ class LandmarksShowFacade
   end
 
   def landmark_recordings
-    landmark.recordings.map do |rec|
-      RecordingDecorator.new(rec)
-      #define total_score in decorator
-    end
+    landmark.recordings
+
+    # to do 
+    # landmark.recordings.map do |rec|
+    #   RecordingDecorator.new(rec)
+    #   #define total_score in decorator
+    # end
   end
 
   def landmark_total_score

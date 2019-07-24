@@ -12,18 +12,20 @@ describe 'A logged in user' do
   end
 
   it 'can add a vote to a specific landmarks recording' do
-    WebMock.allow_net_connect!
-    VCR.turn_off!
-    visit landmark_path(@id)
+    VCR.use_cassette('user_creates_vote', record: :new_episodes) do
+      # WebMock.allow_net_connect!
+      # VCR.turn_off!
+      visit landmark_path(@id)
 
-    within(".up-vote") do
-      click_button "Up"
-    end
+      within(".up-vote") do
+        click_button "Up"
+      end
 
-    expect(current_path).to eq(landmark_path(@id))
+      expect(current_path).to eq(landmark_path(@id))
 
-    within(".total-score") do
-      expect(page).to have_content("Rating: 1")
-    end
+      within(".total-score") do
+        expect(page).to have_content("Rating: 1")
+      end
+    end 
   end
 end

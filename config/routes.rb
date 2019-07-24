@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :recordings, only: [:index]
 
   namespace :user do
+    resources :votes, only: [:create]
     resources :landmarks, only: [:show] do
       resources :recordings, only: [:new, :create]
     end
