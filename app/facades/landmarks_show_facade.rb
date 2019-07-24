@@ -25,9 +25,7 @@ class LandmarksShowFacade
   end
 
   def landmark_total_score
-    get_score = votes_service.get do |req|
-      req.url "/api/v1/landmark/#{:id}/score"
-    end
+    get_score
     score = JSON.parse(get_score.body)["data"]["attributes"]["total_score"]
     return score
     #step 1: extract api call into a service- should still return same info. PR
@@ -42,6 +40,12 @@ class LandmarksShowFacade
   def votes_service
     Faraday.new url: "https://votes-app-1903.herokuapp.com" do  |faraday|
       faraday.adapter Faraday.default_adapter
+    end
+  end
+
+  def get_score
+    votes_service.get do |req|
+      req.url "/api/v1/landmark/#{:id}/score"
     end
   end
 end

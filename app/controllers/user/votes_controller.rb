@@ -5,7 +5,7 @@ class User::VotesController < ApplicationController
     request = conn.post do |req|
       req.url "/api/v1/#{params[:votable_type]}/#{params[:votable_id]}/create_vote/#{current_user.vote_token}/#{rating}"
     end
-binding.pry
+    
     if params[:votable_type] == "recording"
       recording = Recording.find(params[:votable_id])
       redirect_to landmark_path(recording.landmark)

@@ -9,11 +9,8 @@
 
 <div class="container-fluid">
   <div class="container">
-<<<<<<< HEAD
     <h1><%= facade.landmark.name %></h1>
-=======
     <h3 class='center-contents'><%= facade.landmark.name %></h3>
->>>>>>> 75b46aee16f8431b4b28d085c1b4ff06652e9983
     <section class="picture">
       <%= image_tag facade.picture, class: "img-fluid img", style: "display: block; margin-left: auto; margin-right: auto; width: 80%;" %>
     </section>
@@ -24,7 +21,7 @@
       <br>
       <p><b>Address: </b> <%= facade.landmark.address %></p>
       <% if facade.landmark.phone_number.nil? %>
-        <b>Phone: </b>Not Available</p>
+        <p><b>Phone: </b>Not Available</p>
       <% else %>
         <p><b>Phone: </b> <%= facade.landmark.phone_number %></p>
       <% end %>
