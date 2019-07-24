@@ -4,12 +4,12 @@ class User::DashboardController < User::BaseController
   end
 
   def destroy
-    recording = Recording.find(params[:id])
-    if recording && recording.user == current_user
+    recording = current_user.recordings.find_by(id: params[:id])
+    if recording
       recording.destroy
-      redirect_to user_dashboard_path
     else
-      render file: 'public/404', status: 404
+      flash[:danger] = "That recording cannot be deleted"
     end
+    redirect_to user_dashboard_path
   end
 end
