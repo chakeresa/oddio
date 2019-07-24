@@ -17,7 +17,16 @@ class GoogleService
   end
 
   def get_picture(photo_reference)
-    fetch_picture(photo_reference)
+    response = conn.get do |req|
+      req.path = '/maps/api/place/photo'
+      req.params['photoreference'] = photo_reference
+      req.params['maxheight'] = 800
+      req.params['maxwidth'] = 800
+    end
+    string = response.body
+    start = string.index('HREF') + 6
+    finish = string.index('>here') - 2
+    string[start..finish]
   end
 
   private
@@ -37,19 +46,6 @@ class GoogleService
       req.params['place_id'] = id
     end
     JSON.parse(response.body, symbolize_names: true)
-  end
-
-  def fetch_picture(photo_reference)
-    response = conn.get do |req|
-      req.path = '/maps/api/place/photo'
-      req.params['photoreference'] = photo_reference
-      req.params['maxheight'] = 800
-      req.params['maxwidth'] = 800
-    end
-    string = response.body
-    start = string.index('HREF') + 6
-    finish = string.index('>here') - 2
-    string[start..finish]
   end
 
   def conn
