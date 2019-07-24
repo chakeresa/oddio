@@ -5,6 +5,7 @@ RSpec.describe User, type: :model do
     it { should have_one :app_auth }
     it { should have_one :google_auth }
     it { should have_many :recordings}
+    it { should have_many :tours}
   end
 
   describe 'validations' do

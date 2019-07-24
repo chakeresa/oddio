@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :recordings
+  has_many :tours
   has_one :app_auth
   has_one :google_auth
 
