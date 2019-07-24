@@ -47,6 +47,10 @@
         <br>
         <h3>Recordings</h3>
         <% facade.landmark.recordings.each do |recording| %>
+          <p>
+            Title: <%= recording.title %><br>
+            Creator: <%= recording.user.display_name %>
+          </p>
           <%= render partial: 'shared/audio_player', object: recording %>
         <% end %>
       <% end %>
