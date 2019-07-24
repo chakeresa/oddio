@@ -5,7 +5,6 @@ FactoryBot.define do
     sequence(:first_name) { |n| "user_first_name_#{n}" }
     sequence(:last_name) { |n| "user_last_name_#{n}" }
     role { :user }
-    vote_token { SecureRandom.hex }
   end
 
   factory :admin, parent: :user do
