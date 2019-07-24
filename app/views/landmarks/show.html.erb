@@ -9,7 +9,11 @@
 
 <div class="container-fluid">
   <div class="container">
+<<<<<<< HEAD
     <h1><%= facade.landmark.name %></h1>
+=======
+    <h3 class='center-contents'><%= facade.landmark.name %></h3>
+>>>>>>> 75b46aee16f8431b4b28d085c1b4ff06652e9983
     <section class="picture">
       <%= image_tag facade.picture, class: "img-fluid img", style: "display: block; margin-left: auto; margin-right: auto; width: 80%;" %>
     </section>
@@ -20,7 +24,7 @@
       <br>
       <p><b>Address: </b> <%= facade.landmark.address %></p>
       <% if facade.landmark.phone_number.nil? %>
-      <p><b>Phone: </b>Not Available</p>
+        <b>Phone: </b>Not Available</p>
       <% else %>
         <p><b>Phone: </b> <%= facade.landmark.phone_number %></p>
       <% end %>
@@ -48,7 +52,13 @@
         <br>
         <h3>Recordings</h3>
         <% facade.landmark_recordings.each do |recording| %>
-          <%= render partial: 'shared/audio_player', object: recording %>
+          <div class='recording-list'>
+            <p>
+              Title: <%= recording.title %><br>
+              Creator: <%= link_to recording.user.display_name, user_path(recording.user) %>
+            </p>
+            <%= render partial: 'shared/audio_player', object: recording %>
+          </div>
         <% end %>
       <% end %>
     </section>

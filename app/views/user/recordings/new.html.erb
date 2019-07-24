@@ -1,0 +1,14 @@
+<h3>Upload a Recording for <%= link_to @recording.landmark.name, landmark_path(@recording.landmark) %></h3>
+<%= form_for @recording, url: user_landmark_recordings_path(@recording.landmark) do |f| %>
+  <% f.options[:html][:class] += ' form-group' %>
+  <%= f.label :title %>
+  <%= f.text_field :title, class: 'form-control form-field-register', required: true %>
+  <%= render partial: 'shared/reqd_field_label' %>
+  <br>
+  <div class='form-group'>
+    <%= f.file_field :recording, accept:"audio/*", capture: "microphone", class: 'form-control-file', required: true %><br>
+  </div>
+  <%= render partial: 'shared/reqd_field_label' %>
+  <br>
+  <%= f.submit 'Upload Recording', class: 'btn btn-primary' %>
+<% end %>

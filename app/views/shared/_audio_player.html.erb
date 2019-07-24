@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <figure class="recording-list">
 
   <div class="votebox">
@@ -14,10 +15,27 @@
 
 
   <figcaption>Title: <%= audio_player.title %></figcaption>
+=======
+<figure>
+>>>>>>> 75b46aee16f8431b4b28d085c1b4ff06652e9983
   <audio
       controls
-      src="<%= audio_player.url %>">
+      preload="auto"
+      style="width:100%"
+      src="<%= audio_player.url %>" type="audio/mpeg">
           Your browser does not support the
           <code>audio</code> element.
+
   </audio>
 </figure>
+<style>
+  audio::-internal-media-controls-download-button {
+    display:none;
+  }
+  audio::-webkit-media-controls-enclosure {
+    overflow:hidden;
+  }
+  audio::-webkit-media-controls-panel {
+    width: calc(100% + 33px);
+  }
+</style>
