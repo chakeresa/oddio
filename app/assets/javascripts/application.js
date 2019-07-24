@@ -20,6 +20,8 @@
 //= require  leaflet-routing-machine/dist/leaflet-routing-machine.js
 
 //<!--make green markers-->
+
+
 var greenIcon = new L.Icon({
   iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png',
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
