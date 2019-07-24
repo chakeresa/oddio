@@ -24,7 +24,6 @@ describe "Landmarks API", :vcr do
    phone_number = landmark.phone_number
    address = landmark.address
    get "/api/v1/landmarks/#{place_id}"
-   require "pry"; binding.pry
    landmark = JSON.parse(response.body)
    expect(response).to be_successful
    expect(landmark['data']["id"].to_i).to eq(id)

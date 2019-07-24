@@ -71,21 +71,17 @@
      shadowSize: [41, 41]
    });
 
-   function selectMarkerColor(category){
-     if (category === 'park') {
-       return greenIcon
-     } else if (category ==='theater') {
-       return violetIcon
-     } else if (category ==='government'){
-       return greyIcon
-     } else {
-       return orangeIcon
-     }
-   };
-
-
-
-
+function selectMarkerColor(category){
+  if (category === 'park') {
+    return greenIcon
+  } else if (category ==='theater') {
+    return violetIcon
+  } else if (category ==='government'){
+    return greyIcon
+  } else {
+    return orangeIcon
+  }
+};
 
 //empty vars to make layers
 var theaters = []
@@ -193,8 +189,6 @@ function searchLandmark(){
   }
   })
 };
-
-
 
  </script>
 
