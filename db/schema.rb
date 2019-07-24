@@ -70,13 +70,6 @@ ActiveRecord::Schema.define(version: 2019_07_22_215652) do
     t.string "vote_token"
   end
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
->>>>>>> d5210e950e2433a41e36970c6702292dde625ffb
-=======
->>>>>>> d61221c02c3cb19e5dbf9e0687ec579a53e73e6c
   add_foreign_key "app_auths", "users"
   add_foreign_key "google_auths", "users"
   add_foreign_key "recordings", "landmarks"
