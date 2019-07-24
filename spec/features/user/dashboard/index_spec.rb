@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'user dashboard', :vcr do
   before :each do
-    @user = create(:user)
+    @user1 = create(:user)
 
     @landmark = Landmark.create(
       name: 'Governors Park',
@@ -16,9 +16,9 @@ feature 'user dashboard', :vcr do
       photo_reference: 'CmRaAAAA0DaL7ahs9-s43r1B5UgJDfY-PWSTiU4IaIGZXneIhnL9VoLasfdjb8uILVT2fpv3itbylY_ag0rfjDCNkgQfX7BbukpZYFyZkcyxt5QzpS4T-0jsU6i-yukAWcoplJ79EhAuUtUH8AmRk8vestSiHYHBGhR1RIVab8DqQ39GMus178M4aHepwQ'
     )
 
-    @recording1 = create(:recording, user: @user, landmark: @landmark)
-    @recording2 = create(:recording, user: @user, landmark: @landmark)
-    @recording3 = create(:recording, user: @user, landmark: @landmark)
+    @recording1 = create(:recording, user: @user1, landmark: @landmark)
+    @recording2 = create(:recording, user: @user1, landmark: @landmark)
+    @recording3 = create(:recording, user: @user1, landmark: @landmark)
   end
 
   describe 'as a visitor' do
@@ -31,13 +31,14 @@ feature 'user dashboard', :vcr do
 
   describe 'as a user' do
     it 'it displays their recordings' do
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
 
       visit user_dashboard_path
 
       expect(current_path).to eq(user_dashboard_path)
-      expect(page).to have_css(".recording-list", count: 3)
-      expect(page).to have_content("#{@user.display_name}'s Recordings")
+      expect(page).to have_css('.user-recordings')
+      expect(page).to have_css('.recording-list', count: 3)
+      expect(page).to have_content("#{@user1.display_name}'s Dashboard")
 
       within(first('.recording-list')) do
         expect(page).to have_content(@recording1.title)
@@ -50,22 +51,38 @@ feature 'user dashboard', :vcr do
     end
 
     it 'can delete a recording' do
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
 
       visit user_dashboard_path
 
       within(first('.recording-list')) do
-        save_and_open_page
-        expect(page).to have_button("Delete")
-        click_button "Delete"
+        expect(page).to have_button('Delete')
+        click_button 'Delete'
       end
 
       expect(current_path).to eq(user_dashboard_path)
-      expect(page).to have_css(".recording-list", count: 2)
+      expect(page).to have_css('.recording-list', count: 2)
       expect(@landmark.recordings.count).to eq(2)
     end
   end
 
   describe 'as a admin' do
+  end
+
+  describe 'edge case' do
+    let(:user2) { create(:user) }
+
+    it 'user cannot delete another users recording' do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
+
+      visit user_dashboard_path
+
+      @recording1.update(user: user2)
+
+      within(first('.recording-list')) do
+        click_button 'Delete'
+      end
+      expect(page).to have_content("That recording cannot be deleted")
+    end
   end
 end
