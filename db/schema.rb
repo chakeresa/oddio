@@ -66,12 +66,7 @@ ActiveRecord::Schema.define(version: 2019_07_22_215652) do
     t.string "photo_reference"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
-    t.string "place_id"
-    t.string "website"
-    t.string "photo_reference"
-=======
->>>>>>> 75b46aee16f8431b4b28d085c1b4ff06652e9983
+
     t.string "md5_hash"
   end
 
@@ -97,10 +92,8 @@ ActiveRecord::Schema.define(version: 2019_07_22_215652) do
     t.string "vote_token"
   end
 
-<<<<<<< HEAD
-=======
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
->>>>>>> 75b46aee16f8431b4b28d085c1b4ff06652e9983
+
   add_foreign_key "app_auths", "users"
   add_foreign_key "google_auths", "users"
   add_foreign_key "recordings", "landmarks"

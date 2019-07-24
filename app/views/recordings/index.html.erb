@@ -1,10 +1,5 @@
 <h3>All Recordings</h3>
 <% @recordings.each do |recording| %>
-<<<<<<< HEAD
-
-  <%= render partial: 'shared/audio_player', object: recording %>
-  
-=======
   <div class='recording-list'>
     <p>
       Title: <%= recording.title %><br>
@@ -13,5 +8,4 @@
     </p>
     <%= render partial: 'shared/audio_player', object: recording %>
   </div>
->>>>>>> 75b46aee16f8431b4b28d085c1b4ff06652e9983
 <% end %>
