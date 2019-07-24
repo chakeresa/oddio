@@ -27,7 +27,12 @@ class User::VotesController < ApplicationController
       req.url "/api/v1/#{params[:votable_type]}/#{params[:votable_id]}/create_vote/#{current_user.vote_token}/#{rating}"
     end
 
-    
+    if params[:votable_type] == "recording"
+      recording = Recording.find(params[:votable_id])
+      redirect_to landmark_path(recording.landmark)
+    else
+      redirect_to landmark_path(params[:votable_id])
+    end
   end
 
   def update_vote(id)

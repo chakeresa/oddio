@@ -19,5 +19,4 @@ class Recording < ApplicationRecord
         faraday.adapter Faraday.default_adapter
       end
     end
-
 end
