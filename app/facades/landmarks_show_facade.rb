@@ -28,7 +28,6 @@ class LandmarksShowFacade
     get_score
     score = JSON.parse(get_score.body)["data"]["attributes"]["total_score"]
     return score
-    #step 1: extract api call into a service- should still return same info. PR
   end
 
   private
