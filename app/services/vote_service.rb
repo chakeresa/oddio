@@ -6,7 +6,6 @@ class VoteService
       req.url "/api/v1/landmark/#{:id}/score"
     end
     score = JSON.parse(get_score.body)["data"]["attributes"]["total_score"]
-    binding.pry
     return score
   end
 
