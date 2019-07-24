@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :recordings, only: [:index]
 
   namespace :user do
-    resources :recordings, only: [:index]
+    resources :recordings, only: [:index, :destroy]
     resources :landmarks, only: [:show] do
       resources :recordings, only: [:new, :create]
     end

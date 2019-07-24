@@ -28,4 +28,14 @@ class User::RecordingsController < User::BaseController
       render :new
     end
   end
+
+  def destroy
+    recording = Recording.find(params[:id])
+    if recording && recording.user == current_user
+      recording.destroy
+      redirect_to user_recordings_path
+    else
+      render file: 'public/404', status: 404
+    end
+  end
 end

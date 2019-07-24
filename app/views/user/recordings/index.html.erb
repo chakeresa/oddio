@@ -7,7 +7,7 @@
         Landmark: <%= link_to recording.landmark.name, landmark_path(recording.landmark) %><br>
       </p>
       <%= render partial: 'shared/audio_player', object: recording %>
-      <%= button_to "Delete", user_recordings_path(recording), method: :delete %>
+      <%= button_to "Delete", user_recording_path(recording), method: :delete %>
     </div>
   <% end %>
 <% else %>
