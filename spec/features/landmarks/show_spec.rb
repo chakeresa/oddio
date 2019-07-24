@@ -72,7 +72,7 @@ feature 'landmark show', :vcr do
       within(".add-recordings") do
         expect(page).to have_button('Upload new recording')
         click_on 'Upload new recording'
-        expect(current_path).to eq(new_landmark_recording_path(landmark))
+        expect(current_path).to eq(new_user_landmark_recording_path(landmark))
       end
     end
   end
