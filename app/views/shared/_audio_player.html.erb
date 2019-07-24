@@ -1,23 +1,15 @@
-<<<<<<< HEAD
-<figure class="recording-list">
-
-  <div class="votebox">
-    <div class="up-vote">
+<div class="votebox">
+  <div class="up-vote">
     <%= button_to "Up", user_votes_path(votable_type: "recording", votable_id: audio_player.id, type: "upvote"), class: "upvote" %>
-    </div>
-    <div class="total-score">
-      Rating: <%= audio_player.total_score %>
-    </div>
-    <div class="down-vote">
-    <%= button_to "Down", user_votes_path(votable_type: "recording", votable_id: audio_player.id, type: "downvote"), class: "downvote" %>
-    </div>
   </div>
-
-
-  <figcaption>Title: <%= audio_player.title %></figcaption>
-=======
+  <div class="total-score">
+    Rating: <%= audio_player.total_score %>
+  </div>
+  <div class="down-vote">
+  <%= button_to "Down", user_votes_path(votable_type: "recording", votable_id: audio_player.id, type: "downvote"), class: "downvote" %>
+  </div>
+</div>
 <figure>
->>>>>>> 75b46aee16f8431b4b28d085c1b4ff06652e9983
   <audio
       controls
       preload="auto"
