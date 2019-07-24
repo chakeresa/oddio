@@ -20,16 +20,17 @@
       <br>
       <p><b>Address: </b> <%= facade.landmark.address %></p>
       <% if facade.landmark.phone_number.nil? %>
-        <b>Phone: </b>Not Available</p>
+      <p><b>Phone: </b>Not Available</p>
       <% else %>
         <p><b>Phone: </b> <%= facade.landmark.phone_number %></p>
       <% end %>
       <% if facade.landmark.website.nil? %>
-        <b>Website: </b>Not Available</p>
+      <p><b>Website: </b>Not Available</p>
       <% else %>
         <p><b>Website: </b> <%= link_to facade.landmark.website, facade.landmark.website, :target => "_blank" %></p>
       <% end %>
-      <p><b>Category: </b> <%= facade.landmark.category.capitalize %></p>
+      <p><b>Category: </b> <%= facade.landmark_category %></p>
+      <p><b>Rating: </b> <%= facade.landmark_total_score %></p>
     </section>
   </div>
 
@@ -43,10 +44,10 @@
 
   <div class="container">
     <section class="recordings">
-      <% unless facade.landmark.recordings.empty? %>
+      <% unless facade.landmark_recordings.empty? %>
         <br>
         <h3>Recordings</h3>
-        <% facade.landmark.recordings.each do |recording| %>
+        <% facade.landmark_recordings.each do |recording| %>
           <%= render partial: 'shared/audio_player', object: recording %>
         <% end %>
       <% end %>

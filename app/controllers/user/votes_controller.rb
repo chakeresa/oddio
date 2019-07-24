@@ -1,32 +1,11 @@
 class User::VotesController < ApplicationController
-
-  # def check
-  #   #if there is a vote for this resource that has this user token, run update
-  #   #else
-  #   #create
-  #   #end
-  # end
-
-  # def self.total_score
-  #   binding.pry
-  #   #votable_id  self.id
-  #   #recording = find(id)
-  #
-  #   get_score = conn.get do |req|
-  #     req.url "/api/v1/recording/#{params[:votable_id]}/score"
-  #   end
-  #   score = JSON.parse(get_score.body)
-  #
-  #   @total_score =  score["data"]["attributes"]["total_score"]
-  # end
-
   def create
     rating = params["type"] == "upvote" ? 1 : -1
 
     request = conn.post do |req|
       req.url "/api/v1/#{params[:votable_type]}/#{params[:votable_id]}/create_vote/#{current_user.vote_token}/#{rating}"
     end
-
+binding.pry
     if params[:votable_type] == "recording"
       recording = Recording.find(params[:votable_id])
       redirect_to landmark_path(recording.landmark)

@@ -17,13 +17,13 @@ describe 'A logged in user' do
     visit landmark_path(@id)
 
     within(".up-vote") do
-      find('.upvote').click
+      click_button "Up"
     end
 
     expect(current_path).to eq(landmark_path(@id))
 
-    within(page.all(".attributes")) do
-      expect(page).to have_content("Landmark Score: 1")
+    within(".total-score") do
+      expect(page).to have_content("Rating: 1")
     end
   end
 end

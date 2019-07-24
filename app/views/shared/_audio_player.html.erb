@@ -2,11 +2,13 @@
 
   <div class="votebox">
     <div class="up-vote">
-    <%= button_to " ", user_votes_path(votable_type: "recording", votable_id: audio_player.id, type: "upvote"), class: "upvote" %>
+    <%= button_to "Up", user_votes_path(votable_type: "recording", votable_id: audio_player.id, type: "upvote"), class: "upvote" %>
     </div>
-    
+    <div class="total-score">
+      Rating: <%= audio_player.total_score %>
+    </div>
     <div class="down-vote">
-    <%= button_to " ", user_votes_path(votable_type: "recording", votable_id: audio_player.id, type: "downvote"), class: "downvote" %>
+    <%= button_to "Down", user_votes_path(votable_type: "recording", votable_id: audio_player.id, type: "downvote"), class: "downvote" %>
     </div>
   </div>
 
