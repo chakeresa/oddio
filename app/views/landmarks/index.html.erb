@@ -14,7 +14,7 @@
 
   <div class="wrap">
    <div class="search">
-      <input type="text" class="searchTerm" placeholder="Landmark?">
+      <input type="text" id="searchTerm" placeholder="Landmark?">
       <button type="submit" class="searchButton" onclick="searchLandmark()">
         <i class="fa fa-search"></i>
      </button>
@@ -140,20 +140,22 @@ function navigateTo(lat,long){
 
 function searchLandmark(){
   let input = document.getElementById('searchTerm').value
-  fetch()('api/v1/landmarks')
+  fetch(`api/v1/landmarks/${input}`)
   .then(function(response) {
     return response.json();
   })
   .then(function(myJson) {
-    fetch('api/v1/landmarks')
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(landmarkJson){
-      
-    })
+    if (myJson['data']===null){
+      window.alert('Please try a different search')
+    } else{
+    map.flyTo([parseFloat(myJson['data']['attributes']['lat']),parseFloat(myJson['data']['attributes']['long'])], 18)
+  }
 
   })
+};
+
+  // req.params['input'] = "#{landmark_name} in Denver"
+  // req.params['inputtype'] = 'textquery'
 
 
 function locateMe() {
