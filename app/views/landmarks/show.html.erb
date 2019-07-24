@@ -38,7 +38,7 @@
   <div class="container">
     <section class="add-recordings">
       <% if current_user %>
-        <%= button_to "Upload new recording", new_landmark_recording_path(facade.landmark), method: :get, class: 'btn btn-primary' %>
+        <%= button_to "Upload new recording", new_user_landmark_recording_path(facade.landmark), method: :get, class: 'btn btn-primary' %>
       <% end %>
     </section>
   </div>
