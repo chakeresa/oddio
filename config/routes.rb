@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get '/register', to: 'app_auths#new'
   resources :app_auths, only: [:create]
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :show]
 
   get '/auth/google_oauth2/callback', to: 'google_auths#create'
 

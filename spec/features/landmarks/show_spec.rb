@@ -33,6 +33,22 @@ feature 'landmark show', :vcr do
 
       expect(page).to_not have_button('Upload new recording')
     end
+
+    it 'has a list of recordings for the landmark' do
+      create(:recording)
+      landmark2 = create(:landmark)
+      recordings = create_list(:recording, 2, landmark: landmark2)
+      visit landmark_path(landmark2)
+
+      expect(page.all('.recording-list').count).to eq(2)
+
+      within(first('.recording-list')) do
+        recording = recordings.first
+        expect(page).to have_content(recording.title)
+        expect(page).to have_link(recording.user.display_name, href: user_path(recording.user))
+        expect(page.all('audio').count).to eq(1)
+      end
+    end
   end
 
   describe 'as a user' do
