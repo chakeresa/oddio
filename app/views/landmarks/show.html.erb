@@ -1,16 +1,62 @@
-<h1 class='landmark-name'><%= @landmark.name %></h1>
-<h3 class='category'><%= @landmark.category.capitalize %></h3>
-<ul class='attributes'>
-  <li>Phone: <%= @landmark.phone_number %></li>
-  <li>Website: <%= @landmark.address %></li>
-</ul>
-<% if current_user %>
-<br>
-  <%= button_to "Upload new recording", new_user_landmark_recording_path(@landmark), method: :get %>
-  <br>
-  <br>
+<% provide :head_tags do %>
+  <meta name='turbolinks-visit-control' content='reload'>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      initMap(<%=facade.landmark.lat%>, <%=facade.landmark.long%>)
+    });
+  </script>
 <% end %>
-<h3>Recordings</h3>
-<% @landmark.recordings.each do |recording| %>
-  <%= render partial: 'shared/audio_player', object: recording %>
-<% end %>
+
+<div class="container-fluid">
+  <div class="container">
+    <h1><%= facade.landmark.name %></h1>
+    <section class="picture">
+      <%= image_tag facade.picture, class: "img-fluid img", style: "display: block; margin-left: auto; margin-right: auto; width: 80%;" %>
+    </section>
+  </div>
+
+  <div class="container">
+    <section class="attributes">
+      <br>
+      <p><b>Address: </b> <%= facade.landmark.address %></p>
+      <% if facade.landmark.phone_number.nil? %>
+        <b>Phone: </b>Not Available</p>
+      <% else %>
+        <p><b>Phone: </b> <%= facade.landmark.phone_number %></p>
+      <% end %>
+      <% if facade.landmark.website.nil? %>
+        <b>Website: </b>Not Available</p>
+      <% else %>
+        <p><b>Website: </b> <%= link_to facade.landmark.website, facade.landmark.website, :target => "_blank" %></p>
+      <% end %>
+      <p><b>Category: </b> <%= facade.landmark.category.capitalize %></p>
+    </section>
+  </div>
+
+  <div class="container">
+    <section class="add-recordings">
+      <% if current_user %>
+        <%= button_to "Upload new recording", new_landmark_recording_path(facade.landmark), method: :get, class: 'btn btn-primary' %>
+      <% end %>
+    </section>
+  </div>
+
+  <div class="container">
+    <section class="recordings">
+      <% unless facade.landmark.recordings.empty? %>
+        <br>
+        <h3>Recordings</h3>
+        <% facade.landmark.recordings.each do |recording| %>
+          <%= render partial: 'shared/audio_player', object: recording %>
+        <% end %>
+      <% end %>
+    </section>
+  </div>
+
+  <div class="container">
+    <br>
+    <section class="map">
+      <div id="map"></div>
+    </section>
+  </div>
+</div>

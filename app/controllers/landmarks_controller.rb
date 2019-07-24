@@ -1,13 +1,10 @@
 class LandmarksController < ApplicationController
-
-
   def index
-
   end
 
   def show
-    @landmark = Landmark.find(params[:id])
+    render locals: {
+      facade: LandmarksShowFacade.new(params[:id])
+    }
   end
-
-
 end
