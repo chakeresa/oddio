@@ -11,11 +11,15 @@ describe 'A logged in user' do
     @votable_type = "Recording"
   end
 
-  it 'can add a vote to a specific landmarks recording' do
+  xit 'can add a vote to a specific landmarks recording' do
     VCR.use_cassette('user_creates_vote', record: :new_episodes) do
       # WebMock.allow_net_connect!
       # VCR.turn_off!
       visit landmark_path(@id)
+
+      within(".total-score") do
+        expect(page).to have_content("Rating: 0")
+      end
 
       within(".up-vote") do
         click_button "Up"
@@ -26,6 +30,6 @@ describe 'A logged in user' do
       within(".total-score") do
         expect(page).to have_content("Rating: 1")
       end
-    end 
+    end
   end
 end
