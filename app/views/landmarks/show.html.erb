@@ -9,6 +9,7 @@
 
 <div class="container-fluid">
   <div class="container">
+    <h1><%= facade.landmark.name %></h1>
     <h3 class='center-contents'><%= facade.landmark.name %></h3>
     <section class="picture">
       <%= image_tag facade.picture, class: "img-fluid img", style: "display: block; margin-left: auto; margin-right: auto; width: 80%;" %>
@@ -20,16 +21,17 @@
       <br>
       <p><b>Address: </b> <%= facade.landmark.address %></p>
       <% if facade.landmark.phone_number.nil? %>
-        <b>Phone: </b>Not Available</p>
+        <p><b>Phone: </b>Not Available</p>
       <% else %>
         <p><b>Phone: </b> <%= facade.landmark.phone_number %></p>
       <% end %>
       <% if facade.landmark.website.nil? %>
-        <b>Website: </b>Not Available</p>
+      <p><b>Website: </b>Not Available</p>
       <% else %>
         <p><b>Website: </b> <%= link_to facade.landmark.website, facade.landmark.website, :target => "_blank" %></p>
       <% end %>
-      <p><b>Category: </b> <%= facade.landmark.category.capitalize %></p>
+      <p><b>Category: </b> <%= facade.landmark_category %></p>
+      <p><b>Rating: </b> <%= facade.landmark_total_score %></p>
     </section>
   </div>
 
@@ -43,10 +45,10 @@
 
   <div class="container">
     <section class="recordings">
-      <% unless facade.landmark.recordings.empty? %>
+      <% unless facade.landmark_recordings.empty? %>
         <br>
         <h3>Recordings</h3>
-        <% facade.landmark.recordings.each do |recording| %>
+        <% facade.landmark_recordings.each do |recording| %>
           <div class='recording-list'>
             <p>
               Title: <%= recording.title %><br>

@@ -28,6 +28,7 @@ VCR.configure do |config|
   config.filter_sensitive_data('<GOOGLE_INDIV_UID>') { ENV['GOOGLE_INDIV_UID'] }
   config.filter_sensitive_data('<GOOGLE_INDIV_TOKEN>') { ENV['GOOGLE_INDIV_TOKEN'] }
   config.filter_sensitive_data('<MAPBOX_API_KEY>') { ENV['MAPBOX_API_KEY'] }
+  config.default_cassette_options = { record: :new_episodes }
 end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -60,7 +61,7 @@ RSpec.configure do |config|
   config.after(:each) { FactoryBot.reload }
 
   config.after(:each) { Faker::UniqueGenerator.clear }
-  
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
