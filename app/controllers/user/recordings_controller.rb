@@ -1,8 +1,4 @@
-class RecordingsController < ApplicationController
-  def index
-    @recordings = Recording.all.includes(:user, :landmark)
-  end
-
+class User::RecordingsController < User::BaseController
   def new
     landmark = Landmark.find(params[:landmark_id])
     @recording = landmark.recordings.new

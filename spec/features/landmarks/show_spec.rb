@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'landmark show' do
+feature 'landmark show', :vcr do
   let(:landmark) { Landmark.create(
     name: 'Governors Park',
     address: '701 Pennsylvania St, Denver, CO 80203, USA',
@@ -33,6 +33,22 @@ feature 'landmark show' do
 
       expect(page).to_not have_button('Upload new recording')
     end
+
+    it 'has a list of recordings for the landmark' do
+      create(:recording)
+      landmark2 = create(:landmark)
+      recordings = create_list(:recording, 2, landmark: landmark2)
+      visit landmark_path(landmark2)
+
+      expect(page.all('.recording-list').count).to eq(2)
+
+      within(first('.recording-list')) do
+        recording = recordings.first
+        expect(page).to have_content(recording.title)
+        expect(page).to have_link(recording.user.display_name, href: user_path(recording.user))
+        expect(page.all('audio').count).to eq(1)
+      end
+    end
   end
 
   describe 'as a user' do
@@ -56,7 +72,7 @@ feature 'landmark show' do
       within(".add-recordings") do
         expect(page).to have_button('Upload new recording')
         click_on 'Upload new recording'
-        expect(current_path).to eq(new_landmark_recording_path(landmark))
+        expect(current_path).to eq(new_user_landmark_recording_path(landmark))
       end
     end
   end

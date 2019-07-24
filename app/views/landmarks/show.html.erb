@@ -9,11 +9,15 @@
 
 <div class="container-fluid">
   <div class="container">
-    <h1><%= facade.landmark.name %></h1>
+    <h3 class='center-contents'><%= facade.landmark.name %></h3>
+    <section class="picture">
+      <%= image_tag facade.picture, class: "img-fluid img", style: "display: block; margin-left: auto; margin-right: auto; width: 80%;" %>
+    </section>
   </div>
 
   <div class="container">
     <section class="attributes">
+      <br>
       <p><b>Address: </b> <%= facade.landmark.address %></p>
       <% if facade.landmark.phone_number.nil? %>
         <b>Phone: </b>Not Available</p>
@@ -32,7 +36,7 @@
   <div class="container">
     <section class="add-recordings">
       <% if current_user %>
-        <%= button_to "Upload new recording", new_landmark_recording_path(facade.landmark), method: :get, class: 'btn btn-primary' %>
+        <%= button_to "Upload new recording", new_user_landmark_recording_path(facade.landmark), method: :get, class: 'btn btn-primary' %>
       <% end %>
     </section>
   </div>
@@ -40,9 +44,16 @@
   <div class="container">
     <section class="recordings">
       <% unless facade.landmark.recordings.empty? %>
+        <br>
         <h3>Recordings</h3>
         <% facade.landmark.recordings.each do |recording| %>
-          <%= render partial: 'shared/audio_player', object: recording %>
+          <div class='recording-list'>
+            <p>
+              Title: <%= recording.title %><br>
+              Creator: <%= link_to recording.user.display_name, user_path(recording.user) %>
+            </p>
+            <%= render partial: 'shared/audio_player', object: recording %>
+          </div>
         <% end %>
       <% end %>
     </section>
