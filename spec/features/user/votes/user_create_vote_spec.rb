@@ -19,9 +19,9 @@ describe 'A logged in user' do
     within(".up-vote") do
       find('.upvote').click
     end
-    
-    within(page.first(".recording-list")) do
-      expect(audio_player.total_score).to eq(1)
+
+    within(page.all(".total-score")) do
+      expect(page).to have_content(1)
     end
 
 #go to controller with sintra in there instead of going to
