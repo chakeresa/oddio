@@ -18,7 +18,7 @@ RSpec.describe "Tours Index" do
 
       within(first('.tour-list')) do
         tour = @tours.first
-        expect(page).to have_link(tour.title, url: tour_path(tour))
+        expect(page).to have_link(tour.title, href: tour_path(tour))
         expect(page).to have_link(tour.user.display_name, href: user_path(tour.user))
       end
     end

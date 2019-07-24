@@ -30,5 +30,5 @@ Rails.application.routes.draw do
   resources :recordings, only: [:index]
 
   # Tours
-  resources :tours, only: [:index]
+  resources :tours, only: [:index, :show]
 end
