@@ -20,5 +20,13 @@ feature 'user show page' do
         expect(page.all('audio').count).to eq(1)
       end
     end
+
+    it 'shows a message if there are no recordings' do
+      user = create(:user)
+      visit user_path(user)
+
+      expect(page).to have_content('Recordings')
+      expect(page).to have_content('No recordings uploaded yet')
+    end
   end
 end
