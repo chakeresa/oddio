@@ -29,6 +29,8 @@
 
 var theaters = []
 var museums = []
+var parks = []
+var governments = []
 
 fetch('api/v1/landmarks')
 .then(function(response) {
@@ -46,20 +48,26 @@ fetch('api/v1/landmarks')
     marker.bindPopup(name.link(`/landmarks/${id}`) + `<br><button class="location_button" onclick="navigateTo(${landmark['attributes']['lat']}, ${landmark['attributes']['long']})" >Take me Here</button>`)
   if (landmark['attributes']['category'] === 'theater') {theaters.push(marker)}
   if (landmark['attributes']['category'] === 'museum') {museums.push(marker)}
+  if (landmark['attributes']['category'] === 'park') {parks.push(marker)}
+  if (landmark['attributes']['category'] === 'government') {governments.push(marker)}
   });
 })
 .then(function(response){
   var museumMarkers = L.layerGroup(museums)
   var theaterMarkers = L.layerGroup(theaters)
-  var allMarkers = L.layerGroup(museums.concat(theaters))
+  var parkMarkers = L.layerGroup(parks)
+  var governmentMarkers = L.layerGroup(governments)
+  var allMarkers = L.layerGroup(museums.concat(theaters).concat(parks).concat(governments))
 
   var overlayMaps = {
       "museums": museumMarkers,
       "theaters": theaterMarkers,
+      "parks": parkMarkers,
+      "government": governmentMarkers,
       "all": allMarkers
   };
 
-   map = L.map('mapid',{layers: [museumMarkers, theaterMarkers]}).setView([39.7392358, -104.990251], 13);
+   map = L.map('mapid',{layers: [museumMarkers, theaterMarkers, parkMarkers, governmentMarkers]}).setView([39.7392358, -104.990251], 15);
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
   maxZoom: 18,
@@ -79,6 +87,8 @@ function selectMarkerColor(category){
     return greenIcon
   } else if (category ==='theater') {
     return violetIcon
+  } else if (category ==='government'){
+    return greyIcon
   } else {
     return orangeIcon
   }
