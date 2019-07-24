@@ -3,6 +3,7 @@ class Recording < ApplicationRecord
   belongs_to :landmark
 
   validates_presence_of :title, :url
+  validates_uniqueness_of :url
 
   def total_score(id)
     get_score = conn.get do |req|
@@ -18,4 +19,5 @@ class Recording < ApplicationRecord
         faraday.adapter Faraday.default_adapter
       end
     end
+
 end

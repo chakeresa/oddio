@@ -12,10 +12,10 @@ RSpec.describe 'Registering a new user' do
     end
 
     it 'has links to register with Google & Twitter' do
-      expect(page).to have_link('Login with Google')
-      expect(page).to have_selector(:css, "a[href='/auth/google_oauth2']")
-      expect(page).to have_link('Login with Twitter')
-      # TODO: expect(page).to have_selector(:css, "a[href=\"#{ ??? }\"]")
+      expect(page).to have_button('Login with Google')
+      expect(page).to have_selector(:css, "form[action='/auth/google_oauth2']")
+      expect(page).to have_button('Login with Twitter')
+      # TODO: expect(page).to have_selector(:css, "form[action\"#{ ??? }\"]")
     end
 
     it 'I can register' do

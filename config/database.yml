@@ -25,6 +25,8 @@ development:
   <<: *default
   database: oddio_development
 
+
+
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -78,8 +80,10 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+
+#I Changed this to use development database on local production #Patrick
 production:
   <<: *default
-  database: oddio_production
-  username: oddio
-  password: <%= ENV['ODDIO_DATABASE_PASSWORD'] %>
+  database: oddio_development
+  # username: oddio
+  # password: <%= ENV['ODDIO_DATABASE_PASSWORD'] %>
