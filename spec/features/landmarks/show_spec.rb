@@ -33,8 +33,6 @@ feature 'landmark show', :vcr do
 
       expect(page).to_not have_button('Upload new recording')
     end
-<<<<<<< HEAD
-=======
 
     it 'has a list of recordings for the landmark' do
       create(:recording)
@@ -51,7 +49,6 @@ feature 'landmark show', :vcr do
         expect(page.all('audio').count).to eq(1)
       end
     end
->>>>>>> 75b46aee16f8431b4b28d085c1b4ff06652e9983
   end
 
   describe 'as a user' do
@@ -75,11 +72,7 @@ feature 'landmark show', :vcr do
       within(".add-recordings") do
         expect(page).to have_button('Upload new recording')
         click_on 'Upload new recording'
-<<<<<<< HEAD
-        expect(current_path).to eq(new_landmark_recording_path(landmark))
-=======
         expect(current_path).to eq(new_user_landmark_recording_path(landmark))
->>>>>>> 75b46aee16f8431b4b28d085c1b4ff06652e9983
       end
     end
   end
