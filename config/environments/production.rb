@@ -16,9 +16,7 @@ Rails.application.configure do
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
-
-  # only allow https
-
+  
   # config.assets.compile = true
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
