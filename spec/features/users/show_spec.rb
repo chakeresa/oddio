@@ -17,6 +17,7 @@ feature 'user show page' do
         recording = @user.recordings.first
         expect(page).to have_content(recording.title)
         expect(page).to have_link(recording.landmark.name, href: landmark_path(recording.landmark))
+        expect(page.all('audio').count).to eq(1)
       end
     end
   end
