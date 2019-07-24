@@ -17,6 +17,7 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
+  # only allow https
 
   # config.assets.compile = true
 

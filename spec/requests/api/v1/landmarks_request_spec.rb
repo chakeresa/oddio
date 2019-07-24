@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "Landmarks API" do
+describe "Landmarks API", :vcr do
   it "sends a list of landmarks" do
     create_list(:landmark, 3)
 
@@ -13,7 +13,9 @@ describe "Landmarks API" do
   end
 
   it "can get one landmark by id" do
-  landmark = create(:landmark)
+    allow(GoogleService).to receive(:get_place_id).and_return("ChIJP3JjmdR4bIcRMZHklaGqYrI")
+  landmark = create(:landmark, place_id: "ChIJP3JjmdR4bIcRMZHklaGqYrI")
+  place_id = landmark.place_id
    id = landmark.id
    name = landmark.name
    lat = landmark.lat
@@ -21,7 +23,8 @@ describe "Landmarks API" do
    category = landmark.category
    phone_number = landmark.phone_number
    address = landmark.address
-   get "/api/v1/landmarks/#{id}"
+   get "/api/v1/landmarks/#{place_id}"
+   require "pry"; binding.pry
    landmark = JSON.parse(response.body)
    expect(response).to be_successful
    expect(landmark['data']["id"].to_i).to eq(id)

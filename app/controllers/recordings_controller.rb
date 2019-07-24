@@ -9,9 +9,6 @@ class RecordingsController < ApplicationController
   end
 
   def create
-    # binding.pry
-    # file = File.open("app/assets/new_recording_1.mp3")
-    # s3.put_object(bucket: 'oddio1903', key: 'file_1.mp3', body: file)
     file = params[:recording][:recording]
     ran = SecureRandom.hex
     file_name = "#{ran}.mp3"

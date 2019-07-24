@@ -16,17 +16,13 @@
    <div class="search">
       <input type="text" id="searchTerm" placeholder="Landmark?">
       <button type="submit" class="searchButton" onclick="searchLandmark()">
-        <i class="fa fa-search"></i>
+        <i class="fa fa-search">Search</i>
      </button>
    </div>
 </div>
 
-
- <!--script to load map with points-->
  <script>
-
-
-
+//empty vars to make layers
 var theaters = []
 var museums = []
 var parks = []
@@ -42,23 +38,24 @@ fetch('api/v1/landmarks')
     let marker = L.marker([landmark['attributes']['lat'], landmark['attributes']['long']],{
       icon: selectMarkerColor(landmark['attributes']['category'])
     });
-  //set landmarks
+  //add popups to landmarks
   let name = landmark['attributes']['name']
   let id = landmark['id']
-    marker.bindPopup(name.link(`/landmarks/${id}`) + `<br><button class="location_button" onclick="navigateTo(${landmark['attributes']['lat']}, ${landmark['attributes']['long']})" >Take me Here</button>`)
+    marker.bindPopup(name.link(`/landmarks/${id}`) + `<br><button class="location_button" onclick="navigateTo(${landmark['attributes']['lat']}, ${landmark['attributes']['long']})" >Directions</button>`)
   if (landmark['attributes']['category'] === 'theater') {theaters.push(marker)}
   if (landmark['attributes']['category'] === 'museum') {museums.push(marker)}
   if (landmark['attributes']['category'] === 'park') {parks.push(marker)}
   if (landmark['attributes']['category'] === 'government') {governments.push(marker)}
   });
 })
+//make layers for map
 .then(function(response){
   var museumMarkers = L.layerGroup(museums)
   var theaterMarkers = L.layerGroup(theaters)
   var parkMarkers = L.layerGroup(parks)
   var governmentMarkers = L.layerGroup(governments)
   var allMarkers = L.layerGroup(museums.concat(theaters).concat(parks).concat(governments))
-
+//Make overlay interface
   var overlayMaps = {
       "museums": museumMarkers,
       "theaters": theaterMarkers,
@@ -66,7 +63,7 @@ fetch('api/v1/landmarks')
       "government": governmentMarkers,
       "all": allMarkers
   };
-
+//make map
    map = L.map('mapid',{layers: [museumMarkers, theaterMarkers, parkMarkers, governmentMarkers]}).setView([39.7392358, -104.990251], 15);
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -77,105 +74,45 @@ fetch('api/v1/landmarks')
   map.on('locationerror', onLocationError);
   map.on('locationfound', onLocationFound);
   L.control.layers(overlayMaps).addTo(map)
-
 });
 
-
-//color based on type of landmark
-function selectMarkerColor(category){
-  if (category === 'park') {
-    return greenIcon
-  } else if (category ==='theater') {
-    return violetIcon
-  } else if (category ==='government'){
-    return greyIcon
-  } else {
-    return orangeIcon
-  }
-};
-//what to do after user enables location service
-//assign for future use
-
-var currentPosition = null
+//add my location popup When User clicks locate me
 function onLocationFound(e) {
-  //if we have position update
-  if (currentPosition) {
-    map.removeLayer(currentPosition);
-    currentPosition = L.marker(e.latlng, {icon: userIcon}).addTo(map);
-  } else {
-//otherwise set and populate map
-
-  //set zoom level 17
   map.setView(e.latlng, 17)
-  //add my location popup
-    var radius = e.accuracy;
-    currentPosition = L.marker(e.latlng,{icon: userIcon}).addTo(map)
-        .bindPopup("You are within " + radius + " meters from this point").openPopup();
-      }
-    }
-
-//<!--handle location error-->
+  var radius = e.accuracy;
+  currentPosition = L.marker(e.latlng,{icon: userIcon}).addTo(map)
+  .bindPopup("You are within " + radius + " meters from this point").openPopup();
+}
+//Display error if cannot find user
 function onLocationError(e) {
-    alert(e.message);
+  alert(e.message);
 }
 
-//navigate to button
-//set route to check against later
+//Set route to null, allows us to change route
 var routingControl = null
 function navigateTo(lat,long){
   navigator.geolocation.getCurrentPosition(function(position) {
-      var my_lat = position.coords.latitude;
-      var my_lng = position.coords.longitude;
-      //check and see if previous route exists
-      if (routingControl)
- {
-  routingControl.setWaypoints([]);
-  map.removeControl(routingControl);
-  routingControl = null;
- }
+    var my_lat = position.coords.latitude;
+    var my_lng = position.coords.longitude;
+    if (routingControl){
+      routingControl.setWaypoints([]);
+      map.removeControl(routingControl);
+      routingControl = null;
+    }
  //draw line on map from mapbox/walking
-      routingControl = L.Routing.control({
-          waypoints: [
-              L.latLng(my_lat, my_lng),
-              L.latLng(lat, long)
-          ],
-          router: L.Routing.mapbox('<%=ENV['MAPBOX_API_KEY']%>',{profile: 'mapbox/cycling'}),
-          createMarker: function() { return null; },
-          lineOptions: { addWaypoints: false },
-          collapsible: true
-      })
-      routingControl.addTo(map);
+    routingControl = L.Routing.control({
+      waypoints: [
+      L.latLng(my_lat, my_lng),
+      L.latLng(lat, long)
+      ],
+      router: L.Routing.mapbox('<%=ENV['MAPBOX_API_KEY']%>',{profile: 'mapbox/cycling'}),
+      createMarker: function() { return null; },
+      lineOptions: { addWaypoints: false },
+      collapsible: true
+    })
+    routingControl.addTo(map);
   });
 }
-
-function searchLandmark(){
-  let input = document.getElementById('searchTerm').value
-  fetch(`api/v1/landmarks/${input}`)
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(myJson) {
-    if (myJson['data']===null){
-      window.alert('Please try a different search')
-    } else{
-    map.flyTo([parseFloat(myJson['data']['attributes']['lat']),parseFloat(myJson['data']['attributes']['long'])], 18)
-  }
-
-  })
-};
-
-  // req.params['input'] = "#{landmark_name} in Denver"
-  // req.params['inputtype'] = 'textquery'
-
-
-function locateMe() {
-  if (currentPosition){
-    map.locate();
-  }
-}
-
-// call locate every 5 seconds
-setInterval(locateMe, 5000);
 
  </script>
 

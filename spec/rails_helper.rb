@@ -26,8 +26,8 @@ VCR.configure do |config|
   config.filter_sensitive_data('<GOOGLE_CLIENT_ID>') { ENV['GOOGLE_CLIENT_ID'] }
   config.filter_sensitive_data('<GOOGLE_CLIENT_SECRET>') { ENV['GOOGLE_CLIENT_SECRET'] }
   config.filter_sensitive_data('<GOOGLE_INDIV_UID>') { ENV['GOOGLE_INDIV_UID'] }
+  config.filter_sensitive_data('<MAPBOX_API_KEY>') { ENV['MAPBOX_API_KEY'] }
   config.filter_sensitive_data('<GOOGLE_INDIV_TOKEN>') { ENV['GOOGLE_INDIV_TOKEN'] }
-  config.filter_sensitive_data('<MAPBOX_API_KEY'>) { ENV['MAPBOX_API_KEY'] }
 end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
