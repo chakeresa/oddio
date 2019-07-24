@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'user recordings index', :vcr do
+feature 'user dashboard', :vcr do
   before :each do
     @user = create(:user)
 
@@ -23,7 +23,7 @@ feature 'user recordings index', :vcr do
 
   describe 'as a visitor' do
     it 'unable to visit the page' do
-      visit user_recordings_path
+      visit user_dashboard_path
 
       expect(page.status_code).to eq(404)
     end
@@ -33,9 +33,9 @@ feature 'user recordings index', :vcr do
     it 'it displays their recordings' do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
 
-      visit user_recordings_path
+      visit user_dashboard_path
 
-      expect(current_path).to eq(user_recordings_path)
+      expect(current_path).to eq(user_dashboard_path)
       expect(page).to have_css(".recording-list", count: 3)
       expect(page).to have_content("#{@user.display_name}'s Recordings")
 
@@ -52,14 +52,15 @@ feature 'user recordings index', :vcr do
     it 'can delete a recording' do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
 
-      visit user_recordings_path
+      visit user_dashboard_path
 
       within(first('.recording-list')) do
+        save_and_open_page
         expect(page).to have_button("Delete")
-        click_on 'Delete'
+        click_button "Delete"
       end
 
-      expect(current_path).to eq(user_recordings_path)
+      expect(current_path).to eq(user_dashboard_path)
       expect(page).to have_css(".recording-list", count: 2)
       expect(@landmark.recordings.count).to eq(2)
     end

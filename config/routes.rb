@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   resources :recordings, only: [:index]
 
   namespace :user do
-    resources :recordings, only: [:index, :destroy]
+    get '/dashboard', to: 'dashboard#index'
+    delete '/dashboard/:id', to: 'dashboard#destroy', as: :delete_recording
     resources :landmarks, only: [:show] do
       resources :recordings, only: [:new, :create]
     end

@@ -1,8 +1,4 @@
 class User::RecordingsController < User::BaseController
-  def index
-    @user = User.find(current_user.id)
-  end
-
   def new
     landmark = Landmark.find(params[:landmark_id])
     @recording = landmark.recordings.new
@@ -26,16 +22,6 @@ class User::RecordingsController < User::BaseController
     else
       flash.now[:error] = "Unable to save recording."
       render :new
-    end
-  end
-
-  def destroy
-    recording = Recording.find(params[:id])
-    if recording && recording.user == current_user
-      recording.destroy
-      redirect_to user_recordings_path
-    else
-      render file: 'public/404', status: 404
     end
   end
 end

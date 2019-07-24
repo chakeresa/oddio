@@ -19,7 +19,7 @@ http_interactions:
       message: Found
     headers:
       Date:
-      - Wed, 24 Jul 2019 21:46:22 GMT
+      - Wed, 24 Jul 2019 22:15:45 GMT
       Pragma:
       - no-cache
       Expires:
@@ -39,7 +39,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=36
+      - gfet4t7; dur=33
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -48,5 +48,5 @@ http_interactions:
         Moved</TITLE></HEAD><BODY>\n<H1>302 Moved</H1>\nThe document has moved\n<A
         HREF=\"https://lh3.googleusercontent.com/p/AF1QipNDn_XhxFW-5EetN-Ko-0VPySLoOrcjTp6_5XUp=s1600-w800-h800\">here</A>.\r\n</BODY></HTML>\r\n"
     http_version: 
-  recorded_at: Wed, 24 Jul 2019 21:46:21 GMT
+  recorded_at: Wed, 24 Jul 2019 22:15:44 GMT
 recorded_with: VCR 5.0.0
