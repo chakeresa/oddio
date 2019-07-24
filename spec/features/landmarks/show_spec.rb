@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'landmark show' do
+feature 'landmark show', :vcr do
   let(:landmark) { Landmark.create(
     name: 'Governors Park',
     address: '701 Pennsylvania St, Denver, CO 80203, USA',
