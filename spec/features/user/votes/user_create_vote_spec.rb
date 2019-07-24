@@ -20,17 +20,10 @@ describe 'A logged in user' do
       find('.upvote').click
     end
 
-    within(page.all(".total-score")) do
-      expect(page).to have_content(1)
+    expect(current_path).to eq(landmark_path(@id))
+
+    within(page.all(".attributes")) do
+      expect(page).to have_content("Landmark Score: 1")
     end
-
-#go to controller with sintra in there instead of going to
-#instead of vote.create
-#use a background worker
-
-
-    # endpoint = get "/api/v1/#{@votable_type}/#{@id}/#{{@score}}"
-
-    #add part in registration spec that tests whether or not vote token is created
   end
 end

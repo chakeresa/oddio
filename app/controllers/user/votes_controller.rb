@@ -26,6 +26,8 @@ class User::VotesController < ApplicationController
     request = conn.post do |req|
       req.url "/api/v1/#{params[:votable_type]}/#{params[:votable_id]}/create_vote/#{current_user.vote_token}/#{rating}"
     end
+
+    
   end
 
   def update_vote(id)

@@ -3,7 +3,7 @@
 <ul class='attributes'>
   <li>Phone: <%= @landmark.phone_number %></li>
   <li>Website: <%= @landmark.address %></li>
-  <li>Website: <%= @landmark.total_score(@landmark.id) %></li>
+  <li>Landmark Score: <%= @landmark.total_score(@landmark.id) %></li>
 </ul>
 <br>
 <% if current_user %>
@@ -12,6 +12,6 @@
 <br>
 <br>
 <% @landmark.recordings.each do |recording| %>
-    <%= recording.total_score(recording.id) %>
+    Recording Score: <%= recording.total_score(recording.id) %>
   <%= render partial: 'shared/audio_player', object: recording %>
 <% end %>

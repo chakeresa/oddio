@@ -8,9 +8,8 @@ class Recording < ApplicationRecord
     get_score = conn.get do |req|
       req.url "/api/v1/recording/#{id}/score"
     end
-    score = JSON.parse(get_score.body)
-
-    return score["data"]["attributes"]["total_score"]
+    score = JSON.parse(get_score.body)["data"]["attributes"]["total_score"]
+    return score
   end
 
   private

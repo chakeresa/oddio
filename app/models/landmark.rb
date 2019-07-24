@@ -7,9 +7,8 @@ class Landmark < ApplicationRecord
     get_score = conn.get do |req|
       req.url "/api/v1/landmark/#{id}/score"
     end
-    score = JSON.parse(get_score.body)
-    binding.pry
-    return score["data"]["attributes"]["total_score"]
+    score = JSON.parse(get_score.body)["data"]["attributes"]["total_score"]
+    return score
   end
 
   private
