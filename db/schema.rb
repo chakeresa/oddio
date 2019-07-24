@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_24_174654) do
+ActiveRecord::Schema.define(version: 2019_07_24_180717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,15 @@ ActiveRecord::Schema.define(version: 2019_07_24_174654) do
     t.index ["user_id"], name: "index_recordings_on_user_id"
   end
 
+  create_table "tour_recordings", force: :cascade do |t|
+    t.bigint "tour_id"
+    t.bigint "recording_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recording_id"], name: "index_tour_recordings_on_recording_id"
+    t.index ["tour_id"], name: "index_tour_recordings_on_tour_id"
+  end
+
   create_table "tours", force: :cascade do |t|
     t.bigint "user_id"
     t.string "title"
@@ -81,5 +90,7 @@ ActiveRecord::Schema.define(version: 2019_07_24_174654) do
   add_foreign_key "google_auths", "users"
   add_foreign_key "recordings", "landmarks"
   add_foreign_key "recordings", "users"
+  add_foreign_key "tour_recordings", "recordings"
+  add_foreign_key "tour_recordings", "tours"
   add_foreign_key "tours", "users"
 end
