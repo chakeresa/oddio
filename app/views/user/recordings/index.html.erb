@@ -1,0 +1,15 @@
+<h3><%= @user.display_name %>'s Recordings</h3>
+<% if @user.recordings.any? %>
+  <% @user.recordings.each do |recording| %>
+    <div class='recording-list'>
+      <p>
+        Title: <%= recording.title %><br>
+        Landmark: <%= link_to recording.landmark.name, landmark_path(recording.landmark) %><br>
+      </p>
+      <%= render partial: 'shared/audio_player', object: recording %>
+      <%= button_to "Delete", user_recordings_path(recording), method: :delete %>
+    </div>
+  <% end %>
+<% else %>
+  <p>No recordings uploaded yet</p>
+<% end %>

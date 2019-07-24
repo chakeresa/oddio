@@ -1,4 +1,8 @@
 class User::RecordingsController < User::BaseController
+  def index
+    @user = User.find(current_user.id)
+  end
+
   def new
     landmark = Landmark.find(params[:landmark_id])
     @recording = landmark.recordings.new
