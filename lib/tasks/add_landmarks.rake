@@ -67,7 +67,7 @@ namespace :landmarks do
       index[:poi][:name]
     end
     puts "#{landmarks.size} theaters imported"
-    puts "Querying Google for theathers..."
+    puts "Querying Google for theaters..."
     place_ids = landmarks.compact.map do |landmark|
       GoogleService.get_place_id(landmark)
     end

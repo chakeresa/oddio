@@ -16,6 +16,19 @@ class GoogleService
     new.get_details(id)
   end
 
+  def get_picture(photo_reference)
+    response = conn.get do |req|
+      req.path = '/maps/api/place/photo'
+      req.params['photoreference'] = photo_reference
+      req.params['maxheight'] = 800
+      req.params['maxwidth'] = 800
+    end
+    string = response.body
+    start = string.index('HREF') + 6
+    finish = string.index('>here') - 2
+    string[start..finish]
+  end
+
   private
 
   def fetch_id(landmark_name)

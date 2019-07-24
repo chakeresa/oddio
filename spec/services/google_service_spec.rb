@@ -60,4 +60,13 @@ RSpec.describe GoogleService do
       expect(result[:place_id]).to eq(expected[0])
     end
   end
+
+  it "#get_picture(photo_reference) returns landmark's picture when given a photo reference" do
+    VCR.use_cassette('google_service_get_picture') do
+      expected = "https://lh3.googleusercontent.com/p/AF1QipN1BHEE8SUqT85_qx3bjCIx4A2_92ND2eOqY8Oj=s1600-w800-h800"
+      result = service.get_picture('CmRaAAAAh3TTyv0vzjZK0qEPpt2xfhu6io4RbhO89xLi2cHuj2coXNI_WyHqWI5Fsexwru9pEYVzLIEk2CYI3QFTxQPLM9kVa0T4fWnFRLuM5x84UnMBGq7wh4PSqCYqyg-rpC7bEhC3IgCuLlxpwn39FrLUM29LGhQS2dGxHj9KLeP_kGglXr5WFCBA7Q')
+
+      expect(result).to eq(expected)
+    end
+  end
 end
