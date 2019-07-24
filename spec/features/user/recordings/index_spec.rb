@@ -40,14 +40,28 @@ feature 'user recordings index', :vcr do
       expect(page).to have_content("#{@user.display_name}'s Recordings")
 
       within(first('.recording-list')) do
-        recording = @user.recordings.first
-        expect(page).to have_content(recording.title)
-        expect(page).to have_link(recording.landmark.name, href: landmark_path(recording.landmark))
+        expect(page).to have_content(@recording1.title)
+        expect(page).to have_link(@landmark.name, href: landmark_path(@landmark))
         expect(page.all('audio').count).to eq(1)
 
-        click_on recording.landmark.name
-        expect(current_path).to eq(landmark_path(recording.landmark))
+        click_on @landmark.name
+        expect(current_path).to eq(landmark_path(@landmark))
       end
+    end
+
+    it 'can delete a recording' do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+
+      visit user_recordings_path
+
+      within(first('.recording-list')) do
+        expect(page).to have_button("Delete")
+        click_on 'Delete'
+      end
+
+      expect(current_path).to eq(user_recordings_path)
+      expect(page).to have_css(".recording-list", count: 2)
+      expect(@landmark.recordings.count).to eq(2)
     end
   end
 
