@@ -1,9 +1,35 @@
+<div class="votebox">
+  <div class="up-vote">
+    <%= button_to "Up", user_votes_path(votable_type: "recording", votable_id: audio_player.id, type: "upvote"), class: "upvote" %>
+  </div>
+  <div class="total-score">
+    Rating: <%= audio_player.total_score %>
+  </div>
+  <div class="down-vote">
+    <%= button_to "Down", user_votes_path(votable_type: "recording", votable_id: audio_player.id, type: "downvote"), class: "downvote" %>
+  </div>
+</div>
+<br>
+<br>
+<br>
 <figure>
-  <figcaption>Title: <%= audio_player.title %></figcaption>
   <audio
       controls
-      src="<%= audio_player.url %>">
+      preload="auto"
+      style="width:100%"
+      src="<%= audio_player.url %>" type="audio/mpeg">
           Your browser does not support the
           <code>audio</code> element.
   </audio>
 </figure>
+<style>
+  audio::-internal-media-controls-download-button {
+    display:none;
+  }
+  audio::-webkit-media-controls-enclosure {
+    overflow:hidden;
+  }
+  audio::-webkit-media-controls-panel {
+    width: calc(100% + 33px);
+  }
+</style>

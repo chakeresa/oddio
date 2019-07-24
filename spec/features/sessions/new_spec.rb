@@ -14,22 +14,20 @@ RSpec.describe 'Logging in' do
       expect(status_code).to eq(200)
     end
 
-    it 'has links to login with Google & Twitter' do
+    it 'has link a to login with Google' do
       expect(page).to have_button('Login with Google')
       expect(page).to have_selector(:css, "form[action='/auth/google_oauth2']")
-      expect(page).to have_button('Login with Twitter')
-      # TODO: expect(page).to have_selector(:css, "form[action=\"#{ ??? }\"]")
     end
 
     it 'has a form to log in' do
       fill_in 'username', with: @app_auth.username
       fill_in 'password', with: @app_auth.password
       click_button('Login')
-      
+
       expect(current_path).to eq(landmarks_path)
 
       expect(page).to have_content("Welcome, #{@user.first_name}!")
-      
+
       expect(page).to have_link('Log Out')
       expect(page).to_not have_link('Login')
       expect(page).to_not have_link('Register')
@@ -52,7 +50,7 @@ RSpec.describe 'Logging in' do
 
       expect(page).to have_content('Incorrect username/password combination')
       expect(page).to_not have_content('Welcome,')
-      
+
       expect(page).to_not have_link('Log Out')
       expect(page).to have_link('Login')
       expect(page).to have_link('Register')
@@ -66,7 +64,7 @@ RSpec.describe 'Logging in' do
 
       expect(page).to have_content('Incorrect username/password combination')
       expect(page).to_not have_content('Welcome,')
-      
+
       expect(page).to_not have_link('Log Out')
       expect(page).to have_link('Login')
       expect(page).to have_link('Register')
@@ -80,7 +78,7 @@ RSpec.describe 'Logging in' do
 
       expect(page).to have_content('Incorrect username/password combination')
       expect(page).to_not have_content('Welcome,')
-      
+
       expect(page).to_not have_link('Log Out')
       expect(page).to have_link('Login')
       expect(page).to have_link('Register')

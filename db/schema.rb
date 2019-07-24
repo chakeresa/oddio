@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_22_031155) do
+ActiveRecord::Schema.define(version: 2019_07_22_215652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,14 +55,18 @@ ActiveRecord::Schema.define(version: 2019_07_22_031155) do
   end
 
   create_table "landmarks", force: :cascade do |t|
+    t.string "name"
     t.decimal "lat", precision: 10, scale: 6
     t.decimal "long", precision: 10, scale: 6
-    t.string "name"
     t.string "address"
     t.string "phone_number"
     t.string "category"
+    t.string "place_id"
+    t.string "website"
+    t.string "photo_reference"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "md5_hash"
   end
 
   create_table "recordings", force: :cascade do |t|
@@ -84,12 +88,16 @@ ActiveRecord::Schema.define(version: 2019_07_22_031155) do
     t.string "first_name"
     t.string "last_name"
     t.string "display_name"
+    t.string "vote_token"
   end
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
 >>>>>>> d5210e950e2433a41e36970c6702292dde625ffb
+=======
+>>>>>>> d61221c02c3cb19e5dbf9e0687ec579a53e73e6c
   add_foreign_key "app_auths", "users"
   add_foreign_key "google_auths", "users"
   add_foreign_key "recordings", "landmarks"

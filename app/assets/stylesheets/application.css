@@ -17,10 +17,6 @@
  */
 
 
- /* @import 'leaflet/dist/leaflet.css';
- @import 'leaflet-routing-machine/dist/leaflet-routing-machine.css'; */
- /* @import 'leaflet-routing-machine/dist/leaflet.routing.icons.png'; */
-
 main {
   margin: 10px;
 }
@@ -39,4 +35,61 @@ nav .btn {
 
 .search-field {
   width: 200px;
+}
+
+h1 {
+  text-align:center;
+}
+
+.votebox {
+  height: 38px;
+  position: relative;
+}
+
+.vote {
+  width: 0;
+  height: 0;
+  border: 11px solid transparent;
+  position: absolute;
+}
+
+.vote:after {
+  width: 6px;
+  height: 8px;
+  position: absolute;
+  left: -3px;
+  content: ' ';
+}
+
+.up.vote {
+  border-bottom-color: orangered;
+  border-top-width: 0;
+  top: 0;
+}
+
+.up.vote:after {
+  background: -moz-linear-gradient(top, orangered 0%, orangered 50%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,orangered), color-stop(50%,orangered), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, orangered 0%,orangered 50%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, orangered 0%,orangered 50%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, orangered 0%,orangered 50%,rgba(0,0,0,0) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, orangered 0%,orangered 50%,rgba(0,0,0,0) 100%); /* W3C */
+
+  top: 11px;
+}
+
+.down.vote {
+  border-top-color: #CCCCFF;
+  border-bottom-width: 0;
+  bottom: 0;
+}
+.down.vote:after {
+  background: -moz-linear-gradient(top,  rgba(204,204,255,0) 0%, rgba(204,204,255,1) 50%, rgba(204,204,255,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(204,204,255,0)), color-stop(50%,rgba(204,204,255,1)), color-stop(100%,rgba(204,204,255,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(204,204,255,0) 0%,rgba(204,204,255,1) 50%,rgba(204,204,255,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(204,204,255,0) 0%,rgba(204,204,255,1) 50%,rgba(204,204,255,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(204,204,255,0) 0%,rgba(204,204,255,1) 50%,rgba(204,204,255,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(204,204,255,0) 0%,rgba(204,204,255,1) 50%,rgba(204,204,255,1) 100%); /* W3C */
+
+  bottom: 11px;
 }
