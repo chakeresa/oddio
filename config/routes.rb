@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   namespace :user do
     get '/dashboard', to: 'dashboard#index'
-    delete '/dashboard/:id', to: 'dashboard#destroy', as: :delete_recording
+    delete '/dashboard/:id', to: 'recordings#destroy', as: :delete_recording
     resources :landmarks, only: [:show] do
       resources :recordings, only: [:new, :create]
     end
