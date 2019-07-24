@@ -9,4 +9,10 @@ class User < ApplicationRecord
   validates_presence_of :role
 
   enum role: ['user', 'admin']
+
+  before_create :add_vote_token
+
+  def add_vote_token
+    self.vote_token = SecureRandom.hex
+  end
 end

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :show]
 
+
   get '/auth/google_oauth2/callback', to: 'google_auths#create'
 
   get '/login', to: 'sessions#new'
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
   resources :recordings, only: [:index]
 
   namespace :user do
+    resources :votes, only: [:create]
     resources :landmarks, only: [:show] do
       resources :recordings, only: [:new, :create]
     end
