@@ -13,6 +13,8 @@ class User::VotesController < ApplicationController
       redirect_to landmark_path(params[:votable_id])
     end
   end
+  
+  private
 
   def update_vote(id)
     rating = params["type"] == "upvote" ? 1 : -1
@@ -22,10 +24,9 @@ class User::VotesController < ApplicationController
     return total_score
   end
 
-  private
-    def conn
-      Faraday.new url: "https://votes-app-1903.herokuapp.com" do  |faraday|
-        faraday.adapter Faraday.default_adapter
-      end
+  def conn
+    Faraday.new url: "https://votes-app-1903.herokuapp.com" do  |faraday|
+      faraday.adapter Faraday.default_adapter
     end
+  end
 end
