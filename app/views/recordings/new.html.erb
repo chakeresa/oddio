@@ -1,3 +1,4 @@
+<h3>Upload a Recording for <%= link_to @recording.landmark.name, landmark_path(@recording.landmark) %></h3>
 <%= form_for @recording, url: landmark_recordings_path(@recording.landmark) do |f| %>
   <% f.options[:html][:class] += ' form-group' %>
   <%= f.label :title %>

@@ -9,7 +9,7 @@
 
 <div class="container-fluid">
   <div class="container">
-    <h1><%= facade.landmark.name %></h1>
+    <h3 class='center-contents'><%= facade.landmark.name %></h3>
     <section class="picture">
       <%= image_tag facade.picture, class: "img-fluid img", style: "display: block; margin-left: auto; margin-right: auto; width: 80%;" %>
     </section>
@@ -47,7 +47,13 @@
         <br>
         <h3>Recordings</h3>
         <% facade.landmark.recordings.each do |recording| %>
-          <%= render partial: 'shared/audio_player', object: recording %>
+          <div class='recording-list'>
+            <p>
+              Title: <%= recording.title %><br>
+              Creator: <%= link_to recording.user.display_name, user_path(recording.user) %>
+            </p>
+            <%= render partial: 'shared/audio_player', object: recording %>
+          </div>
         <% end %>
       <% end %>
     </section>
