@@ -1,0 +1,23 @@
+language: ruby
+rvm:
+- 2.4.0
+before_script:
+- bundle exec rake db:create --all
+- bundle exec rake db:migrate
+script:
+- bundle exec rake ci:tests
+services:
+- postgresql
+notifications:
+  email: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: uTa49X/Ml6dK5OcwPA6u/ENp3GEIj/NMiR6KhLR/FtKT9KztPOf9xO9wSoJNeUTnLrYlhwndOjxKnQ2M6EBdl3YXBu7IZHsZAp20YIcCqRW9PvpUyZQjRALV9KOBiJhQ3t3eqsOfS3QixgR/dGv/69VE3NHr9VVopVtLsk8xqiLUi/JhtTR7pS+mP3dFwEWQa9v/YCUxIj72GCzVUAjYf9Ny/vpVltmBbD6erLykmy8SlzcBnXCBz8Ucg5ClJ+DSaDw+GhpBg8NS2Re3BGgeFWB20nJPmZyj7jrVyWWPfSSsdvH4AERaDNoxmQT6wI4R7CLQeLmQDnvc1PipnM+n39LV8lIHxWG9nUfVhAqtLA96IPWKc/b7BfyrrQ16/uF2GFHF6dh2X6Sm6fAxu0rA2vrHmBNg4cZIbkklf+jwAloxRInkoqPFJc2Rd8siAuD9JCM+vMpUXdGFW7JcCWgS0CQpbvRHQvgPYfc7Ca0SAz3j9a1ks/mz5+wumxsitoBCPL59NTzwigcVtqbXRZmvanFFCMzglEJ1a1lvXg3fIdfZ3yUkMCvGE2JFg3Mjb/yLvuaSt8Zx5SHDLkBui5roWgXgZlqABcvIOVUA1eAQALkkPsjr6Wn5T1V5/dltCsKiNVDaUvAkz6XH3qIw3x30efmdReKVz7X6RgPxWimfJzI=
+  app:
+    develop: oddio
+    master: oddio
+  on:
+    repo: chakeresa/oddio
+  run:
+    - "rails db:migrate"
