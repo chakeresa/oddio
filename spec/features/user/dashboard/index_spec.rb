@@ -98,6 +98,16 @@ feature 'user dashboard', :vcr do
       expect(page).to have_css('.recording-list', count: 2)
       expect(@landmark.recordings.count).to eq(2)
     end
+
+    it 'there is no dashboard link in navbar' do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+
+      visit landmarks_path
+      expect(page).to_not have_link('Dashboard', href: user_dashboard_path)
+
+      visit recordings_path
+      expect(page).to_not have_link('Dashboard', href: user_dashboard_path)
+    end
   end
 
   describe 'edge case' do
@@ -121,7 +131,7 @@ feature 'user dashboard', :vcr do
 
       visit landmarks_path
       expect(page).to have_link('Dashboard', href: user_dashboard_path)
-      
+
       visit recordings_path
       expect(page).to have_link('Dashboard', href: user_dashboard_path)
     end
