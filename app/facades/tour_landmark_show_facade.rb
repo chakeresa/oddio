@@ -17,8 +17,7 @@ class TourLandmarkShowFacade
   end
 
   def recordings
-    # TODO: add method in Recording model instead of using 'where' here
-    @_recordings ||= tour.recordings.where(recordings: {landmark: landmark})
+    @_recordings ||= tour.recordings_for_landmark(landmark)
   end
 
   private
