@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://maps.googleapis.com/maps/api/place/photo?key=<GOOGLE_PLACES_API_KEY>&maxheight=800&maxwidth=800&photoreference=CmRaAAAA58Iy6Em8ucPC_-OCxKTJ-p7YKDBUQ4mgVZj4qlFN6j2JhXKSfteprF-Ckca73TjXaYUtNk-trEbhBCWoUcWWsO42KRap_rlw4teWz4hqBU57sAoTl3-myl_4xjOw3LmBEhBTUAINq_SeOPXlwudc8ccKGhSH-pCQxOO6rRE-O1zFKPW1-h3OqA
+    uri: https://maps.googleapis.com/maps/api/place/photo?key=<GOOGLE_PLACES_API_KEY>&maxheight=800&maxwidth=800&photoreference=CmRaAAAA0DaL7ahs9-s43r1B5UgJDfY-PWSTiU4IaIGZXneIhnL9VoLasfdjb8uILVT2fpv3itbylY_ag0rfjDCNkgQfX7BbukpZYFyZkcyxt5QzpS4T-0jsU6i-yukAWcoplJ79EhAuUtUH8AmRk8vestSiHYHBGhR1RIVab8DqQ39GMus178M4aHepwQ
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: Found
     headers:
       Date:
-      - Thu, 25 Jul 2019 15:38:03 GMT
+      - Wed, 24 Jul 2019 23:11:13 GMT
       Pragma:
       - no-cache
       Expires:
@@ -27,7 +27,7 @@ http_interactions:
       Cache-Control:
       - no-cache, must-revalidate
       Location:
-      - https://lh3.googleusercontent.com/p/AF1QipP5cnZz_ezB1Q0szY_zgHVVSiM3lCBSbFOas_f6=s1600-w800-h800
+      - https://lh3.googleusercontent.com/p/AF1QipNDn_XhxFW-5EetN-Ko-0VPySLoOrcjTp6_5XUp=s1600-w800-h800
       Content-Type:
       - text/html; charset=UTF-8
       Server:
@@ -39,16 +39,16 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=30
+      - gfet4t7; dur=16
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
       encoding: UTF-8
       string: "<HTML><HEAD><meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<TITLE>302
         Moved</TITLE></HEAD><BODY>\n<H1>302 Moved</H1>\nThe document has moved\n<A
-        HREF=\"https://lh3.googleusercontent.com/p/AF1QipP5cnZz_ezB1Q0szY_zgHVVSiM3lCBSbFOas_f6=s1600-w800-h800\">here</A>.\r\n</BODY></HTML>\r\n"
+        HREF=\"https://lh3.googleusercontent.com/p/AF1QipNDn_XhxFW-5EetN-Ko-0VPySLoOrcjTp6_5XUp=s1600-w800-h800\">here</A>.\r\n</BODY></HTML>\r\n"
     http_version: 
-  recorded_at: Thu, 25 Jul 2019 15:38:03 GMT
+  recorded_at: Wed, 24 Jul 2019 23:11:12 GMT
 - request:
     method: get
     uri: https://votes-app-1903.herokuapp.com/api/v1/landmark/id/score
@@ -68,7 +68,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 25 Jul 2019 15:38:02 GMT
+      - Thu, 25 Jul 2019 02:17:23 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -85,7 +85,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"data":{"type":"landmark","votable_id":"id","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
     http_version: 
-  recorded_at: Thu, 25 Jul 2019 15:38:03 GMT
+  recorded_at: Thu, 25 Jul 2019 02:17:24 GMT
 - request:
     method: get
     uri: https://votes-app-1903.herokuapp.com/api/v1/landmark/id/score
@@ -105,7 +105,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 25 Jul 2019 15:38:03 GMT
+      - Thu, 25 Jul 2019 02:17:24 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -122,79 +122,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"data":{"type":"landmark","votable_id":"id","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
     http_version: 
-  recorded_at: Thu, 25 Jul 2019 15:38:03 GMT
-- request:
-    method: get
-    uri: https://votes-app-1903.herokuapp.com/api/v1/recording/434/score
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.15.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Thu, 25 Jul 2019 15:38:03 GMT
-      Connection:
-      - keep-alive
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '105'
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - thin
-      Via:
-      - 1.1 vegur
-    body:
-      encoding: UTF-8
-      string: '{"data":{"type":"recording","votable_id":"434","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
-    http_version: 
-  recorded_at: Thu, 25 Jul 2019 15:38:03 GMT
-- request:
-    method: get
-    uri: https://votes-app-1903.herokuapp.com/api/v1/recording/435/score
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.15.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Thu, 25 Jul 2019 15:38:03 GMT
-      Connection:
-      - keep-alive
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '105'
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - thin
-      Via:
-      - 1.1 vegur
-    body:
-      encoding: UTF-8
-      string: '{"data":{"type":"recording","votable_id":"435","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
-    http_version: 
-  recorded_at: Thu, 25 Jul 2019 15:38:04 GMT
+  recorded_at: Thu, 25 Jul 2019 02:17:25 GMT
 recorded_with: VCR 5.0.0

@@ -16,3 +16,17 @@
 <% else %>
   <p>No recordings uploaded yet</p>
 <% end %>
+<h4>Tours</h4>
+<% if @user.tours.any? %>
+  <ul>
+    <% @user.tours.each do |tour| %>
+      <div class='tour-list'>
+        <li>
+          <%= link_to tour.title, tour_path(tour) %>
+        </li>
+      </div>
+    <% end %>
+  <ul>
+<% else %>
+  <p>No tours hosted yet</p>
+<% end %>

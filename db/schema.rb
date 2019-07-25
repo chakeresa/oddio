@@ -59,6 +59,23 @@ ActiveRecord::Schema.define(version: 2019_07_25_022142) do
     t.index ["user_id"], name: "index_recordings_on_user_id"
   end
 
+  create_table "tour_recordings", force: :cascade do |t|
+    t.bigint "tour_id"
+    t.bigint "recording_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recording_id"], name: "index_tour_recordings_on_recording_id"
+    t.index ["tour_id"], name: "index_tour_recordings_on_tour_id"
+  end
+
+  create_table "tours", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tours_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.integer "role", default: 0
     t.datetime "created_at", null: false
@@ -74,4 +91,7 @@ ActiveRecord::Schema.define(version: 2019_07_25_022142) do
   add_foreign_key "google_auths", "users"
   add_foreign_key "recordings", "landmarks"
   add_foreign_key "recordings", "users"
+  add_foreign_key "tour_recordings", "recordings"
+  add_foreign_key "tour_recordings", "tours"
+  add_foreign_key "tours", "users"
 end
