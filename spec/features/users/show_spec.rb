@@ -5,7 +5,6 @@ feature 'user show page' do
     before(:each) do
       @user = create(:user)
       create_list(:recording, 2, user: @user)
-
     end
 
     it 'shows all recordings for one content creator' do
@@ -25,7 +24,6 @@ feature 'user show page' do
 
     it 'shows a message if there are no recordings' do
       VCR.use_cassette('visitor_sees_message_for_no_recordings', record: :new_episodes) do
-        visit user_path(@user)
         user = create(:user)
         visit user_path(user)
 
