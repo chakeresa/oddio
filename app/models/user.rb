@@ -10,9 +10,9 @@ class User < ApplicationRecord
 
   enum role: ['user', 'admin']
 
-  before_create :add_vote_token
+  after_create :add_vote_token
 
   def add_vote_token
-    self.vote_token = SecureRandom.hex
+    self.update(vote_token: SecureRandom.hex)
   end
 end
