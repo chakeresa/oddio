@@ -1,0 +1,26 @@
+<h1><%= @user.display_name %>'s Dashboard</h1>
+
+<section class='user-information'>
+  <p>First Name: <%= @user.first_name %></p>
+  <p>Last Name: <%= @user.last_name %></p>
+  <p>E-mail: <%= @user.email %></p>
+  <p>Role: <%= @user.role %></p>
+</section>
+
+<section class='user-recordings'>
+  <h3>My Recordings</h3>
+  <% if @user.recordings.any? %>
+    <% @user.recordings.each do |recording| %>
+      <div class='recording-list'>
+        <p>
+          Title: <%= recording.title %><br>
+          Landmark: <%= link_to recording.landmark.name, landmark_path(recording.landmark) %><br>
+          <%= button_to "Delete", user_delete_recording_path(recording), method: :delete %>
+        </p>
+        <%= render partial: 'shared/audio_player', object: recording %>
+      </div>
+    <% end %>
+  <% else %>
+    <p>No recordings uploaded yet</p>
+  <% end %>
+</section>

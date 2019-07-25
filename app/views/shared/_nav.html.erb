@@ -13,6 +13,11 @@
         <a class="nav-link" href="<%= root_path %>">About</a>
       </li>
       <% if current_user %>
+        <% if current_user? %>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= user_dashboard_path %>">Dashboard</a>
+          </li>
+        <% end %>
         <li class="nav-item">
           <a class="nav-link" href="<%= logout_path %>">Log Out</a>
         </li>
@@ -25,8 +30,9 @@
         </li>
       <% end %>
     </ul>
+    
     <% if current_page?(landmarks_path) %>
-      <input class="form-control mr-sm-2" type="search" placeholder="Enter a Place" aria-label="Search" id='searchTerm'>
+      <input class="mr-sm-2" type="search" placeholder="Enter a Place" aria-label="Search" id='searchTerm'>
       <button class="btn btn-outline-light my-2 my-sm-0" onclick='searchLandmark()'>Search</button>
     <% end %>
   </div>

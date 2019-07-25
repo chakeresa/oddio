@@ -19,10 +19,17 @@ Rails.application.routes.draw do
   resources :recordings, only: [:index]
 
   namespace :user do
+    get '/dashboard', to: 'dashboard#index'
+    delete '/dashboard/:id', to: 'recordings#destroy', as: :delete_recording
     resources :votes, only: [:create]
     resources :landmarks, only: [:show] do
       resources :recordings, only: [:new, :create]
     end
+  end
+
+  namespace :admin do
+    get '/users/:user_id', to: 'users#show'
+    delete '/destroy/:id', to: 'recordings#destroy', as: :delete_recording
   end
 
   namespace :api do
