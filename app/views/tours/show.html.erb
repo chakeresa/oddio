@@ -1,0 +1,12 @@
+<h3><%= @tour.title %></h3>
+<h4>Recordings</h4>
+<% @tour.recordings.each do |recording| %>
+  <div class='recording-list'>
+    <p>
+      Title: <%= recording.title %><br>
+      Landmark: <%= link_to recording.landmark.name, tour_landmark_path(@tour, recording.landmark) %><br>
+      Creator: <%= link_to recording.user.display_name, user_path(recording.user) %>
+    </p>
+    <%= render partial: 'shared/audio_player', object: recording %>
+  </div>
+<% end %>

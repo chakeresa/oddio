@@ -9,7 +9,7 @@
 
 <div class="container-fluid">
   <div class="container">
-    <h1><%= facade.landmark.name %></h1>
+    <h3 class='center-contents'><%= facade.landmark.name %></h3>
     <section class="picture">
       <%= image_tag facade.picture, class: "img-fluid img", style: "display: block; margin-left: auto; margin-right: auto; width: 80%;" %>
     </section>
@@ -20,17 +20,16 @@
       <br>
       <p><b>Address: </b> <%= facade.landmark.address %></p>
       <% if facade.landmark.phone_number.nil? %>
-        <p><b>Phone: </b>Not Available</p>
+        <b>Phone: </b>Not Available</p>
       <% else %>
         <p><b>Phone: </b> <%= facade.landmark.phone_number %></p>
       <% end %>
       <% if facade.landmark.website.nil? %>
-      <p><b>Website: </b>Not Available</p>
+        <b>Website: </b>Not Available</p>
       <% else %>
         <p><b>Website: </b> <%= link_to facade.landmark.website, facade.landmark.website, :target => "_blank" %></p>
       <% end %>
-      <p><b>Category: </b> <%= facade.landmark_category %></p>
-      <p><b>Landmark's Rating: </b> <%= facade.landmark_total_score %></p>
+      <p><b>Category: </b> <%= facade.landmark.category.capitalize %></p>
     </section>
   </div>
 
@@ -44,10 +43,10 @@
 
   <div class="container">
     <section class="recordings">
-      <% unless facade.landmark_recordings.empty? %>
+      <% unless facade.recordings.empty? %>
         <br>
-        <h4>Recordings</h4>
-        <% facade.landmark_recordings.each do |recording| %>
+        <h4>Recordings for this tour (<%= link_to facade.tour.title, tour_path(facade.tour) %>)</h4>
+        <% facade.recordings.each do |recording| %>
           <div class='recording-list'>
             <p>
               Title: <%= recording.title %><br>
@@ -56,25 +55,7 @@
             <%= render partial: 'shared/audio_player', object: recording %>
           </div>
         <% end %>
-      <% end %>
-    </section>
-  </div>
-
-  <div class="container">
-    <section class="tours">
-      <h4>Tours</h4>
-      <% if facade.landmark.tours.any? %>
-        <ul>
-          <% facade.landmark.tours.each do |tour| %>
-            <div class='tour-list'>
-              <li>
-                <%= link_to tour.title, tour_path(tour) %>, Creator: <%= link_to tour.user.display_name, user_path(tour.user) %>
-              </li>
-            </div>
-          <% end %>
-        </ul>
-      <% else %>
-        <p>No tours include this landmark</p>
+        <%= link_to 'View all Recordings', landmark_path(facade.landmark), class: 'btn btn-primary' %>
       <% end %>
     </section>
   </div>

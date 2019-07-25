@@ -49,6 +49,29 @@ feature 'landmark show', :vcr do
         expect(page.all('audio').count).to eq(1)
       end
     end
+
+    it 'shows all tours that include the landmark' do
+      t1, t2 = create_list(:tour, 2)
+      r1, r2 = create_list(:recording, 2, landmark: landmark)
+      create(:tour_recording, recording: r1)
+      create(:tour_recording, recording: r2)
+
+      visit landmark_path(landmark)
+
+      expect(page.all('.tour-list').count).to eq(2)
+
+      within(first('.tour-list')) do
+        tour = landmark.tours.first
+        expect(page).to have_link(tour.title, href: tour_path(tour))
+      end
+    end
+
+    it 'shows a message if there are no tours with the landmark' do
+      visit landmark_path(landmark)
+
+      expect(page).to have_content('Tours')
+      expect(page).to have_content('No tours include this landmark')
+    end
   end
 
   describe 'as a user' do
