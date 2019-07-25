@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-feature 'recordings index page' do
-  describe 'as a visitor' do
-    before(:each) do
-      @recordings = create_list(:recording, 2)
-    end
+feature 'recordings index page', :vcr do
+  before(:each) do
+    @recordings = create_list(:recording, 2)
+  end
 
+  describe 'as a visitor' do
     it 'shows all recordings' do
       VCR.use_cassette('visitor_sees_recording', record: :new_episodes) do
         visit recordings_path
@@ -20,6 +20,26 @@ feature 'recordings index page' do
           expect(page.all('audio').count).to eq(1)
         end
       end
+    end
+
+    it 'the vote arrows dont display' do
+      visit recordings_path
+
+      expect(page).to_not have_button('Up')
+      expect(page).to_not have_button('Down')
+    end
+  end
+
+  describe 'as a user' do
+    let(:user) { create(:user) }
+
+    it 'the vote arrows dont display' do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+      visit recordings_path
+
+      expect(page).to have_button('Up')
+      expect(page).to have_button('Down')
     end
   end
 end
