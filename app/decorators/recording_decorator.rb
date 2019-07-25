@@ -1,7 +1,6 @@
 class RecordingDecorator < SimpleDelegator
 
   def total_score
-    # ::Kernel.binding.pry
     score = JSON.parse(get_score.body)["data"]["attributes"]["total_score"]
     return score
   end
