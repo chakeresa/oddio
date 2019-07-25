@@ -3,13 +3,8 @@
 
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>The HTML5 Herald</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
   <style>
     #mapid { height: 500px; width: 100%};
-    @import 'leaflet/dist/leaflet.css';
   </style>
 </head>
 <body>
@@ -18,151 +13,175 @@
   <button onclick="map.locate()" class='btn btn-primary'>Use my Location</button>
 
 
- <!--script to load map with points-->
  <script>
 
+   var greenIcon = new L.Icon({
+     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png',
+     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+     iconSize: [25, 41],
+     iconAnchor: [12, 41],
+     popupAnchor: [1, -34],
+     shadowSize: [41, 41]
+   });
 
-   var map = L.map('mapid').setView([39.7392358, -104.990251], 13);
-   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-   maxZoom: 18,
-   id: 'mapbox.streets',
-   accessToken: 'pk.eyJ1IjoicGR1dmFsbCIsImEiOiJjanhveHczaG0wYnpsM21vN3AycjIxamo2In0.wgWKZjYwN5IckxRY5Qd9lQ'
-}).addTo(map);
 
-//<!--make green markers-->
-var greenIcon = new L.Icon({
-  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
-});
+   var greyIcon = new L.Icon({
+     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-grey.png',
+     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+     iconSize: [25, 41],
+     iconAnchor: [12, 41],
+     popupAnchor: [1, -34],
+     shadowSize: [41, 41]
+   });
 
-//<!--make purple markers-->
-var violetIcon = new L.Icon({
-  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-violet.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
-});
+   //<!--make purple markers-->
+   var violetIcon = new L.Icon({
+     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-violet.png',
+     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+     iconSize: [25, 41],
+     iconAnchor: [12, 41],
+     popupAnchor: [1, -34],
+     shadowSize: [41, 41]
+   });
 
-//<!--make orange markers-->
-var orangeIcon = new L.Icon({
-  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-orange.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
-});
+   //<!--make orange markers-->
+   var orangeIcon = new L.Icon({
+     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-orange.png',
+     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+     iconSize: [25, 41],
+     iconAnchor: [12, 41],
+     popupAnchor: [1, -34],
+     shadowSize: [41, 41]
+   });
 
-var userIcon = new L.Icon({
-  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
-});
+   var userIcon = new L.Icon({
+     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png',
+     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+     iconSize: [25, 41],
+     iconAnchor: [12, 41],
+     popupAnchor: [1, -34],
+     shadowSize: [41, 41]
+   });
 
-//<!--for map locate funktion-->
-
-//color based on type of landmark
 function selectMarkerColor(category){
   if (category === 'park') {
     return greenIcon
   } else if (category ==='theater') {
     return violetIcon
+  } else if (category ==='government'){
+    return greyIcon
   } else {
     return orangeIcon
   }
 };
-//what to do after user enables location service
-//assign for future use
-var currentPosition = null
+
+//empty vars to make layers
+var theaters = []
+var museums = []
+var parks = []
+var governments = []
+
+fetch('api/v1/landmarks')
+.then(function(response) {
+  return response.json();
+})
+.then(function(myJson) {
+  //iterate over landmarks, make points
+  myJson['data'].forEach(function(landmark){
+    let marker = L.marker([landmark['attributes']['lat'], landmark['attributes']['long']],{
+      icon: selectMarkerColor(landmark['attributes']['category'])
+    });
+  //add popups to landmarks
+  let name = landmark['attributes']['name']
+  let id = landmark['id']
+    marker.bindPopup(name.link(`/landmarks/${id}`) + `<br><button class="location_button" onclick="navigateTo(${landmark['attributes']['lat']}, ${landmark['attributes']['long']})" >Directions</button>`)
+  if (landmark['attributes']['category'] === 'theater') {theaters.push(marker)}
+  if (landmark['attributes']['category'] === 'museum') {museums.push(marker)}
+  if (landmark['attributes']['category'] === 'park') {parks.push(marker)}
+  if (landmark['attributes']['category'] === 'government') {governments.push(marker)}
+  });
+})
+//make layers for map
+.then(function(response){
+  var museumMarkers = L.layerGroup(museums)
+  var theaterMarkers = L.layerGroup(theaters)
+  var parkMarkers = L.layerGroup(parks)
+  var governmentMarkers = L.layerGroup(governments)
+  var allMarkers = L.layerGroup(museums.concat(theaters).concat(parks).concat(governments))
+//Make overlay interface
+  var overlayMaps = {
+      "museums": museumMarkers,
+      "theaters": theaterMarkers,
+      "parks": parkMarkers,
+      "government": governmentMarkers,
+      "all": allMarkers
+  };
+//make map
+   map = L.map('mapid',{layers: [museumMarkers, theaterMarkers, parkMarkers, governmentMarkers]}).setView([39.7392358, -104.990251], 15);
+  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+  maxZoom: 18,
+  id: 'mapbox.streets',
+  accessToken: '<%=ENV['MAPBOX_API_KEY']%>'
+  }).addTo(map);
+  map.on('locationerror', onLocationError);
+  map.on('locationfound', onLocationFound);
+  L.control.layers(overlayMaps).addTo(map)
+});
+
+//add my location popup When User clicks locate me
 function onLocationFound(e) {
-  //if we have position update
-  if (currentPosition) {
-    map.removeLayer(currentPosition);
-    currentPosition = L.marker(e.latlng, {icon: userIcon}).addTo(map);
-  } else {
-//otherwise set and populate map
-  fetch('api/v1/landmarks')
+  map.setView(e.latlng, 17)
+  var radius = e.accuracy;
+  currentPosition = L.marker(e.latlng,{icon: userIcon}).addTo(map)
+  .bindPopup("You are within " + radius + " meters from this point").openPopup();
+}
+//Display error if cannot find user
+function onLocationError(e) {
+  alert(e.message);
+}
+
+//Set route to null, allows us to change route
+var routingControl = null
+function navigateTo(lat,long){
+  navigator.geolocation.getCurrentPosition(function(position) {
+    var my_lat = position.coords.latitude;
+    var my_lng = position.coords.longitude;
+    if (routingControl){
+      routingControl.setWaypoints([]);
+      map.removeControl(routingControl);
+      routingControl = null;
+    }
+ //draw line on map from mapbox/walking
+    routingControl = L.Routing.control({
+      waypoints: [
+      L.latLng(my_lat, my_lng),
+      L.latLng(lat, long)
+      ],
+      router: L.Routing.mapbox('<%=ENV['MAPBOX_API_KEY']%>',{profile: 'mapbox/cycling'}),
+      createMarker: function() { return null; },
+      lineOptions: { addWaypoints: false },
+      collapsible: true
+    })
+    routingControl.addTo(map);
+  });
+}
+
+function searchLandmark(){
+  // debugger
+  let input = document.getElementById('searchTerm').value
+  fetch(`api/v1/landmarks/${input}`)
   .then(function(response) {
     return response.json();
   })
   .then(function(myJson) {
-    //iterate over landmarks, make points
-    myJson['data'].forEach(function(landmark){
-      let marker = L.marker([landmark['attributes']['lat'], landmark['attributes']['long']],{
-        icon: selectMarkerColor(landmark['attributes']['category'])
-      }).addTo(map);
-    //set landmarks
-    let name = landmark['attributes']['name']
-    let id = landmark['id']
-      marker.bindPopup(name.link(`/landmarks/${id}`) + `<br><button class="location_button" onclick="navigateTo(${landmark['attributes']['lat']}, ${landmark['attributes']['long']})" >Take me Here</button>`)
-    });
-  });
-  //set zoom level 17
-  map.setView(e.latlng, 17)
-
-  //add my location popup
-    var radius = e.accuracy;
-    currentPosition = L.marker(e.latlng,{icon: userIcon}).addTo(map)
-        .bindPopup("You are within " + radius + " meters from this point").openPopup();
-      }
-    }
-map.on('locationfound', onLocationFound);
-
-//<!--handle location error-->
-function onLocationError(e) {
-    alert(e.message);
-}
-map.on('locationerror', onLocationError);
-
-//navigate to button
-//set route to check against later
-var routingControl = null
-function navigateTo(lat,long){
-  navigator.geolocation.getCurrentPosition(function(position) {
-      var my_lat = position.coords.latitude;
-      var my_lng = position.coords.longitude;
-      //check and see if previous route exists
-      if (routingControl)
- {
-  routingControl.setWaypoints([]);
-  map.removeControl(routingControl);
-  routingControl = null;
- }
- //draw line on map from mapbox/walking
-      routingControl = L.Routing.control({
-          waypoints: [
-              L.latLng(my_lat, my_lng),
-              L.latLng(lat, long)
-          ],
-          router: L.Routing.mapbox('<%=ENV['MAPBOX_API_KEY']%>',{profile: 'mapbox/cycling'}),
-          createMarker: function() { return null; },
-          lineOptions: { addWaypoints: false },
-          collapsible: true
-      })
-      routingControl.addTo(map);
-  });
-}
-
-function locateMe() {
-  if (currentPosition){
-    map.locate({strings:{enableHighAccuracy: true}});
+    if (myJson['data']===null){
+      window.alert('Please try a different search')
+    } else{
+    map.flyTo([parseFloat(myJson['data']['attributes']['lat']),parseFloat(myJson['data']['attributes']['long'])], 18)
   }
-}
-
-// call locate every 5 seconds
-setInterval(locateMe, 5000);
-
-
+  })
+};
 
  </script>
 
