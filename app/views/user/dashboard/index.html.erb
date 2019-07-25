@@ -1,6 +1,13 @@
 <h1><%= @user.display_name %>'s Dashboard</h1>
 
-<section class='user-recordings'> 
+<section class='user-information'>
+  <p>First Name: <%= @user.first_name %></p>
+  <p>Last Name: <%= @user.last_name %></p>
+  <p>E-mail: <%= @user.email %></p>
+  <p>Role: <%= @user.role %></p>
+</section>
+
+<section class='user-recordings'>
   <h3>My Recordings</h3>
   <% if @user.recordings.any? %>
     <% @user.recordings.each do |recording| %>
