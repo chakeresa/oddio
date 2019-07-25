@@ -17,7 +17,12 @@ RSpec.describe User, type: :model do
   end
 
   it 'defaults to a regular (non-admin) user' do
-    user = User.create
+    user = User.create(email: "email", display_name: "display_name", first_name: "first_name")
     expect(user.role).to eq('user')
+  end
+
+  it 'adds a vote token upon creation' do
+    user = User.create(email: "email", display_name: "display_name", first_name: "first_name")
+    expect(user.vote_token).to_not eq(nil)
   end
 end
