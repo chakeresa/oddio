@@ -6,7 +6,7 @@
   <%= render partial: 'shared/reqd_field_label' %>
   <br>
   <div class='form-group'>
-    <%= f.file_field :recording, accept:"audio/*", capture: "microphone", class: 'form-control-file', required: true %><br>
+    <%= f.file_field :recording, accept:"audio/*", capture: true, class: 'form-control-file', required: true %><br>
   </div>
   <%= render partial: 'shared/reqd_field_label' %>
   <br>
