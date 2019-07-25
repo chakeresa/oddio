@@ -83,6 +83,21 @@ feature 'user dashboard', :vcr do
         expect(page.all('audio').count).to eq(1)
       end
     end
+
+    it 'can delete recording' do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+
+      visit admin_path(@user1)
+
+      within(first('.recording-list')) do
+        expect(page).to have_button('Delete')
+        click_button 'Delete'
+      end
+
+      expect(current_path).to eq(admin_path(@user1))
+      expect(page).to have_css('.recording-list', count: 2)
+      expect(@landmark.recordings.count).to eq(2)
+    end
   end
 
   describe 'edge case' do
