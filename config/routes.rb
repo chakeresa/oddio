@@ -24,6 +24,10 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :admin do
+    get '/users/:user_id', to: 'users#show'
+  end
+
   namespace :api do
     namespace :v1 do
       resources :landmarks, only: [:index, :show]
