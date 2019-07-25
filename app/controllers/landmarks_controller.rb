@@ -1,5 +1,6 @@
 class LandmarksController < ApplicationController
   def index
+    @tours = Tour.all
   end
 
   def show
