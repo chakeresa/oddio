@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '/users/:user_id', to: 'users#show'
+    delete '/destroy/:id', to: 'recordings#destroy', as: :delete_recording
   end
 
   namespace :api do
