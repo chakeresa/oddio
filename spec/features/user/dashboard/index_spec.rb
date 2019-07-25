@@ -67,6 +67,22 @@ feature 'user dashboard', :vcr do
   end
 
   describe 'as a admin' do
+    let(:admin) { create(:admin) }
+
+    it 'sees users information' do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+
+      visit admin_path(@user1)
+
+      expect(page).to have_content(@user1.display_name)
+      expect(page.all('.recording-list').count).to eq(3)
+
+      within(first('.recording-list')) do
+        expect(page).to have_content(@recording1.title)
+        expect(page).to have_link(@landmark.name, href: landmark_path(@landmark))
+        expect(page.all('audio').count).to eq(1)
+      end
+    end
   end
 
   describe 'edge case' do
