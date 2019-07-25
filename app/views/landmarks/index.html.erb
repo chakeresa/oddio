@@ -3,11 +3,6 @@
 
 <html lang="en">
 <head>
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.css"/>
-  <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet.routing.icons.png"/>
-  <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/routing-icon.png"/>
-  <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/images/layers-2x.png"/> -->
 
   <style>
     #mapid { height: 500px; width: 100%};
@@ -51,7 +46,6 @@
      shadowSize: [41, 41]
    });
 
-   //<!--make purple markers-->
    var violetIcon = new L.Icon({
      iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-violet.png',
      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -61,7 +55,6 @@
      shadowSize: [41, 41]
    });
 
-   //<!--make orange markers-->
    var orangeIcon = new L.Icon({
      iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-orange.png',
      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -185,7 +178,6 @@ function navigateTo(lat,long){
 }
 
 function searchLandmark(){
-  // debugger
   let input = document.getElementById('searchTerm').value
   fetch(`api/v1/landmarks/${input}`)
   .then(function(response) {
