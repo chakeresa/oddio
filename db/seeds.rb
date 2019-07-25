@@ -78,7 +78,7 @@ Recording.create(title: "Art && Pot?? Why not!",
                  url: "https://oddio1903.s3.us-east-2.amazonaws.com/d2a8b4fd917ebf88700e2e243da7654c.mp3",
                  user: user_10,
                  landmark: Landmark.where(name: "Sloane Gallery of Art"))
- Recording.create(title: "Be careful on these stairs",
-                  url: "https://oddio1903.s3.us-east-2.amazonaws.com/db45bbb0fd9ab9376c552684a49e7cc0.mp3",
-                  user: user_4,
-                  landmark: Landmark.where(name: "LoDo"))
+Recording.create(title: "Be careful on these stairs",
+                 url: "https://oddio1903.s3.us-east-2.amazonaws.com/db45bbb0fd9ab9376c552684a49e7cc0.mp3",
+                 user: user_4,
+                 landmark: Landmark.where(name: "LoDo"))
