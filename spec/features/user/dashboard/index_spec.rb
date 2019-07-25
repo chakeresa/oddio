@@ -115,5 +115,15 @@ feature 'user dashboard', :vcr do
       end
       expect(page).to have_content("That recording cannot be deleted")
     end
+
+    it 'there is a dashboard link in navbar' do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
+
+      visit landmarks_path
+      expect(page).to have_link('Dashboard', href: user_dashboard_path)
+      
+      visit recordings_path
+      expect(page).to have_link('Dashboard', href: user_dashboard_path)
+    end
   end
 end

@@ -13,6 +13,11 @@
         <a class="nav-link" href="<%= root_path %>">About</a>
       </li>
       <% if current_user %>
+        <% if current_user? %>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= user_dashboard_path %>">Dashboard</a>
+          </li>
+        <% end %>
         <li class="nav-item">
           <a class="nav-link" href="<%= logout_path %>">Log Out</a>
         </li>
