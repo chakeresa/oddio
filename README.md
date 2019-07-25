@@ -1,81 +1,21 @@
-# Terrificus
-
-# List of Landmarks
-<% unless @landmarks.nil? %>
-  <% @landmarks.each do |landmark| %>
-    <ul class="landmark_results">
-      <li class="landmark_name">Name: <%= landmark.name %></li>
-      <li class="landmark_rating">Rating: <%= landmark.rating %></li>
-      <li class="landmark_types">Type(s): <%= landmark.types %></li>
-      <li class="landmark_lat">Latitute: <%= landmark.lat %></li>
-      <li class="landmark_lng">Longitude: <%= landmark.lng %></li>
-      <li class="landmark_place_id">Place ID: <%= landmark.place_id %></li>
-    </ul>
-  <% end %>
-<% end %>
-
-var greenIcon = new L.Icon({
-  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
-});
-var redIcon = new L.Icon({
-  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
-});
-
-<script>
-var x = document.getElementById("demo");
-
-function getLocation() {
- if (navigator.geolocation) {
-   navigator.geolocation.getCurrentPosition(showPosition);
- } else {
-   x.innerHTML = "Geolocation is not supported by this browser.";
- }
-}
-
-function setMyLocation(lat, long)
-
-function showPosition(position) {
- x.innerHTML = "Latitude: " + position.coords.latitude +
- "<br>Longitude: " + position.coords.longitude;
-}
-</script>
+# Oddio
 
 
 
-<!--to prevent error before search-->
-<% if @landmarks %>
+Oddio is a Audio touring app built in 10 days by [Alexandra Chakeres](https://github.com/chakeresa), [Patrick Duvall](https://github.com/Patrick-Duvall), [Martin Mercer](https://github.com/m-mrcr), [Logan Pile](https://github.com/lpile),  and [Mills Provosty](https://github.com/MillsProvosty).
 
-//<!--show parks on map-->
-<%  @parks.each_with_index do |point, index| %>
-var marker<%= index %> = L.marker([<%=point.lat%>, <%= point.long%>], {
-  icon: greenIcon
-}).addTo(map);
-marker<%= index %>.bindPopup("<%= point.name %>" );
-<% end %>
+In Oddio visitors can explore a map populated with Denver locations stored in our datase. These locations ate generated from a rake task that hits Google and TomTom Apis to make landmarks. Users can navigate to different points on a map and open show pages for locations they can listen to user uploaded audio for that location. Users can log in by making an account or using google OAuth to gain the ability to upload audio and vote on audio. Admins have CRUD funtionality to moderate adn delete inappropriate content.
 
-//<!--show museums on map-->
-<%  @museums.each_with_index do |point, index| %>
-var marker<%= index %> = L.marker([<%=point.lat%>, <%= point.long%>], {
-  icon: orangeIcon
-}).addTo(map);
-marker<%= index %>.bindPopup("<%= point.name %>" );
-<% end %>
+[You can visit a working version of the project here](https://oddio.herokuapp.com/)
 
-//<!--show theaters on map-->
-<%  @theaters.each_with_index do |point, index| %>
-var marker<%= index %> = L.marker([<%=point.lat%>, <%= point.long%>], {
-  icon: violetIcon
-}).addTo(map);
-marker<%= index %>.bindPopup("<%= point.name %>" );
-<% end %>
-<% end %>
+### Built Using
+- Rails 5.2.x 
+- Ruby 2.4.1
+- Google OAuth for user authentication
+- Javascript and Leaflet JS for map functionality
+- PostgreSQL for Landmark, user, and authorization storage
+- AWS for S3 buckets to store Audio Files
+- Sinatra to host a voting microservice
+
+[Checkout the Microservice Here](https://github.com/MillsProvosty/Votes)
+
