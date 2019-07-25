@@ -45,8 +45,6 @@ gem 'faraday'
 # Secret environment variables
 gem 'figaro'
 
-gem 'activesupport', '~> 5.0'
-
 # enables has_secure_password
 gem 'bcrypt'
 
