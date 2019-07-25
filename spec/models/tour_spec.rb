@@ -5,6 +5,7 @@ RSpec.describe Tour, type: :model do
     it { should belong_to :user }
     it { should have_many :tour_recordings }
     it { should have_many(:recordings).through(:tour_recordings) }
+    it { should have_many(:landmarks).through(:recordings) }
   end
 
   describe 'instance methods' do
