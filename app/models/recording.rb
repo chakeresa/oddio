@@ -6,6 +6,7 @@ class Recording < ApplicationRecord
   validates_uniqueness_of :url
 
   def total_score
-    # TODO
+    recording = RecordingDecorator.new(self)
+    recording.total_score
   end
 end
