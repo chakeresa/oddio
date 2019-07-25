@@ -30,6 +30,19 @@ feature 'user dashboard', :vcr do
   end
 
   describe 'as a user' do
+    it 'displays their information' do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
+
+      visit user_dashboard_path
+
+      expect(current_path).to eq(user_dashboard_path)
+      expect(page).to have_css('.user-information')
+      expect(page).to have_content(@user1.first_name)
+      expect(page).to have_content(@user1.last_name)
+      expect(page).to have_content(@user1.email)
+      expect(page).to have_content(@user1.role)
+    end
+
     it 'it displays their recordings' do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
 
