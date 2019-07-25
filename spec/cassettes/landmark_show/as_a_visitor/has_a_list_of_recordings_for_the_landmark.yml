@@ -569,7 +569,7 @@ http_interactions:
   recorded_at: Thu, 25 Jul 2019 03:28:16 GMT
 - request:
     method: get
-    uri: https://votes-app-1903.herokuapp.com/api/v1/recording/100/score
+    uri: https://votes-app-1903.herokuapp.com/api/v1/recording/154/score
     body:
       encoding: US-ASCII
       string: ''
@@ -586,7 +586,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 25 Jul 2019 15:05:09 GMT
+      - Thu, 25 Jul 2019 15:01:10 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -601,12 +601,12 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":{"type":"recording","votable_id":"100","attributes":{"upvotes":1,"downvotes":0,"total_score":1}}}'
+      string: '{"data":{"type":"recording","votable_id":"154","attributes":{"upvotes":1,"downvotes":0,"total_score":1}}}'
     http_version: 
-  recorded_at: Thu, 25 Jul 2019 15:05:09 GMT
+  recorded_at: Thu, 25 Jul 2019 15:01:08 GMT
 - request:
     method: get
-    uri: https://votes-app-1903.herokuapp.com/api/v1/recording/101/score
+    uri: https://votes-app-1903.herokuapp.com/api/v1/recording/155/score
     body:
       encoding: US-ASCII
       string: ''
@@ -623,7 +623,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 25 Jul 2019 15:05:09 GMT
+      - Thu, 25 Jul 2019 15:01:11 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -638,12 +638,12 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":{"type":"recording","votable_id":"101","attributes":{"upvotes":1,"downvotes":0,"total_score":1}}}'
+      string: '{"data":{"type":"recording","votable_id":"155","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
     http_version: 
-  recorded_at: Thu, 25 Jul 2019 15:05:09 GMT
+  recorded_at: Thu, 25 Jul 2019 15:01:08 GMT
 - request:
     method: get
-    uri: https://votes-app-1903.herokuapp.com/api/v1/recording/138/score
+    uri: https://votes-app-1903.herokuapp.com/api/v1/recording/192/score
     body:
       encoding: US-ASCII
       string: ''
@@ -660,7 +660,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 25 Jul 2019 15:24:24 GMT
+      - Thu, 25 Jul 2019 15:10:27 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -675,12 +675,12 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":{"type":"recording","votable_id":"138","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
+      string: '{"data":{"type":"recording","votable_id":"192","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
     http_version: 
-  recorded_at: Thu, 25 Jul 2019 15:24:25 GMT
+  recorded_at: Thu, 25 Jul 2019 15:10:25 GMT
 - request:
     method: get
-    uri: https://votes-app-1903.herokuapp.com/api/v1/recording/139/score
+    uri: https://votes-app-1903.herokuapp.com/api/v1/recording/234/score
     body:
       encoding: US-ASCII
       string: ''
@@ -697,7 +697,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 25 Jul 2019 15:24:24 GMT
+      - Thu, 25 Jul 2019 15:11:25 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -712,7 +712,118 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":{"type":"recording","votable_id":"139","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
+      string: '{"data":{"type":"recording","votable_id":"234","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
     http_version: 
-  recorded_at: Thu, 25 Jul 2019 15:24:25 GMT
+  recorded_at: Thu, 25 Jul 2019 15:11:23 GMT
+- request:
+    method: get
+    uri: https://votes-app-1903.herokuapp.com/api/v1/recording/235/score
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 25 Jul 2019 15:11:25 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '105'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"type":"recording","votable_id":"235","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
+    http_version: 
+  recorded_at: Thu, 25 Jul 2019 15:11:23 GMT
+- request:
+    method: get
+    uri: https://votes-app-1903.herokuapp.com/api/v1/recording/2/score
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 25 Jul 2019 15:29:01 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '103'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"type":"recording","votable_id":"2","attributes":{"upvotes":6,"downvotes":0,"total_score":6}}}'
+    http_version: 
+  recorded_at: Thu, 25 Jul 2019 15:28:59 GMT
+- request:
+    method: get
+    uri: https://votes-app-1903.herokuapp.com/api/v1/recording/3/score
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 25 Jul 2019 15:29:01 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '103'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"type":"recording","votable_id":"3","attributes":{"upvotes":1,"downvotes":0,"total_score":1}}}'
+    http_version: 
+  recorded_at: Thu, 25 Jul 2019 15:28:59 GMT
 recorded_with: VCR 5.0.0

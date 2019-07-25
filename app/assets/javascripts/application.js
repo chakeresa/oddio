@@ -13,6 +13,8 @@
 
 
 
-
+//= require rails-ujs
 //= require activestorage
 //= require_tree .
+//= require  leaflet/dist/leaflet.js
+//= require  leaflet-routing-machine/dist/leaflet-routing-machine.js

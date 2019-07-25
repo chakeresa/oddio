@@ -12,7 +12,8 @@
  *
  *= require_tree .
  *= require_self
-
+ *= require leaflet/dist/leaflet.css
+ *= require leaflet-routing-machine/dist/leaflet-routing-machine.css
  */
 
 
