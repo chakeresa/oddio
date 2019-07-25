@@ -7,9 +7,14 @@ class User::RecordingsController < User::BaseController
   def create
     file = params[:recording][:recording]
     ran = SecureRandom.hex
-    file_name = "#{ran}.mp3"
+    file_name = "#{ran}"
     s3 = Aws::S3::Client.new(profile: 'oddio1903', region: 'us-east-2')
-    s3.put_object(bucket: 'oddio1903', key: file_name, body: file)
+    s3.put_object(
+      bucket: 'oddio1903',
+      key: file_name,
+      body: file,
+      content_type: "audio/mpeg"
+    )
     recording = Recording.new(
       user: current_user,
       landmark_id: params[:landmark_id].to_i,
