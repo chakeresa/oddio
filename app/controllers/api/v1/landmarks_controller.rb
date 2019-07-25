@@ -5,7 +5,8 @@ class Api::V1::LandmarksController < ApplicationController
   end
 
   def show
-    render json: LandmarkSerializer.new(Landmark.find(params['id']))
+    info = GoogleService.get_place_id(params[:id])
+    render json: LandmarkSerializer.new(Landmark.find_by(place_id: info))
   end
 
 end
