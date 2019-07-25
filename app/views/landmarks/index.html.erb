@@ -3,18 +3,35 @@
 
 <html lang="en">
 <head>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.css"/>
+  <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet.routing.icons.png"/>
+  <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/routing-icon.png"/>
+  <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/images/layers-2x.png"/> -->
+
   <style>
     #mapid { height: 500px; width: 100%};
   </style>
 </head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.css"/>
+<link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet.routing.icons.png"/>
+<link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/routing-icon.png"/>
+<link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/images/layers-2x.png"/>
+
+
+
 <body>
-  <!--map-->
-  <div id="mapid"></div>
-  <button onclick="map.locate()" class='btn btn-primary'>Use my Location</button>
+<div id="mapid"></div>
+<button onclick="map.locate()" class='btn btn-primary'>Use my Location</button>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.js">
+</script>
 
- <script>
-
+<script>
    var greenIcon = new L.Icon({
      iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png',
      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
