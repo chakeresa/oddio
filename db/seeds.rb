@@ -1,5 +1,4 @@
 #CONSOLE COMMANDS
-
 AppAuth.destroy_all
 GoogleAuth.destroy_all
 TourRecording.destroy_all
@@ -49,7 +48,6 @@ recording_1 = Recording.create!(title: "This is a place",
                         user: user_9,
                         landmark: landmark)
 TourRecording.create!(tour: tour_1, recording: recording_1)
-
 
 # RECORDINGS
 Recording.create!(title: '"Don Giovanni"',
