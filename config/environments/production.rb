@@ -16,7 +16,7 @@ Rails.application.configure do
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
-  
+
   # config.assets.compile = true
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
@@ -26,6 +26,8 @@ Rails.application.configure do
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+
+  config.force_ssl = ENV['FORCE_SSL'].present?
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
