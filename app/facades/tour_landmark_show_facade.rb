@@ -9,7 +9,7 @@ class TourLandmarkShowFacade
   end
 
   def picture
-    
+    @_picture ||= google_service.get_picture(landmark.photo_reference)
   end
   
   def tour
@@ -17,6 +17,13 @@ class TourLandmarkShowFacade
   end
 
   def recordings
+    # TODO: add method in Recording model instead of using 'where' here
     @_recordings ||= @tour.recordings.where(recordings: {landmark: @landmark})
+  end
+
+  private
+
+  def google_service
+    @_google_service ||= GoogleService.new
   end
 end

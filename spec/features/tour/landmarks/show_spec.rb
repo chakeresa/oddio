@@ -14,11 +14,11 @@ feature 'tour landmark show page', :vcr do
       visit tour_landmark_path(@tour, @landmark)
 
       expect(page).to have_all_of_selectors(".attributes", ".map")
-      expect(page).to have_content(landmark.name)
-      expect(page).to have_content(landmark.address)
-      expect(page).to have_content(landmark.phone_number)
-      expect(page).to have_content(landmark.category)
-      expect(page).to have_link(nil, href: "#{landmark.website}")
+      expect(page).to have_content(@landmark.name)
+      expect(page).to have_content(@landmark.address)
+      expect(page).to have_content(@landmark.phone_number)
+      expect(page).to have_content(@landmark.category.capitalize)
+      expect(page).to have_link(nil, href: "#{@landmark.website}")
     end
 
     it "doesn't display add new recording button" do
