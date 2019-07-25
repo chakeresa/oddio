@@ -1,10 +1,10 @@
 class User::VotesController < ApplicationController
   def create
-    rating = params["type"] == "upvote" ? 1 : -1
-    request = conn.post do |req|
-      req.url "/api/v1/#{params[:votable_type]}/#{params[:votable_id]}/create_vote/#{current_user.vote_token}/#{rating}"
-    end
+    request_create
+    redirect
+  end
 
+  def redirect
     if params[:votable_type] == "recording"
       recording = Recording.find(params[:votable_id])
       redirect_to landmark_path(recording.landmark)
@@ -26,6 +26,13 @@ class User::VotesController < ApplicationController
   def conn
     Faraday.new url: "https://votes-app-1903.herokuapp.com" do |faraday|
       faraday.adapter Faraday.default_adapter
+    end
+  end
+
+  def request_create
+    rating = params["type"] == "upvote" ? 1 : -1
+    request = conn.post do |req|
+      req.url "/api/v1/#{params[:votable_type]}/#{params[:votable_id]}/create_vote/#{current_user.vote_token}/#{rating}"
     end
   end
 end
