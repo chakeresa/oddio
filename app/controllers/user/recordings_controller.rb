@@ -24,4 +24,14 @@ class User::RecordingsController < User::BaseController
       render :new
     end
   end
+
+  def destroy
+    recording = current_user.recordings.find_by(id: params[:id])
+    if recording
+      recording.destroy
+    else
+      flash[:danger] = "That recording cannot be deleted"
+    end
+    redirect_to user_dashboard_path
+  end
 end
