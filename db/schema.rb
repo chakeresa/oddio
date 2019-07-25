@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 2019_07_24_180717) do
     t.string "first_name"
     t.string "last_name"
     t.string "display_name"
+    t.string "vote_token"
   end
 
   add_foreign_key "app_auths", "users"

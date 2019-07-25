@@ -9,13 +9,39 @@ class LandmarksShowFacade
     @_landmark ||= Landmark.find(@id)
   end
 
+  def landmark_category
+    landmark.category.capitalize
+  end
+
   def picture
-    @_picture ||= service.get_picture(landmark.photo_reference)
+    @_picture ||= google_service.get_picture(landmark.photo_reference)
+  end
+
+  def landmark_recordings
+    landmark.recordings
+  end
+
+  def landmark_total_score
+    get_score
+    score = JSON.parse(get_score.body)["data"]["attributes"]["total_score"]
+    return score
   end
 
   private
 
-  def service
-    @_service ||= GoogleService.new
+  def google_service
+    @_google_service ||= GoogleService.new
+  end
+
+  def votes_service
+    Faraday.new url: "https://votes-app-1903.herokuapp.com" do  |faraday|
+      faraday.adapter Faraday.default_adapter
+    end
+  end
+
+  def get_score
+    votes_service.get do |req|
+      req.url "/api/v1/landmark/#{:id}/score"
+    end
   end
 end

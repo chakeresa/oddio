@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   ### Registration & Login
   get '/register', to: 'app_auths#new'
   resources :app_auths, only: [:create]
+
   resources :users, only: [:new, :create, :show]
+
   get '/auth/google_oauth2/callback', to: 'google_auths#create'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
@@ -30,6 +32,7 @@ Rails.application.routes.draw do
   
   ### User
   namespace :user do
+    resources :votes, only: [:create]
     resources :landmarks, only: [:show] do
       resources :recordings, only: [:new, :create]
     end
