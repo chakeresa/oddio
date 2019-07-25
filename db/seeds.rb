@@ -53,7 +53,7 @@ TourRecording.create!(tour: tour_1, recording: recording_1)
 Recording.create!(title: '"Don Giovanni"',
                  url: "https://oddio1903.s3.us-east-2.amazonaws.com/a74401d47b4d40de7760cc73b5449659.mp3",
                  user: user_1,
-                 landmark: Landmark.where(name: "Ellie Caulkins Opera House at Denver Performing Arts Complex").first)
+                 landmark: Landmark.where(name: "Buell Theatre at Denver Performing Arts Complex").first)
 Recording.create!(title: "I hate my job",
                  url: "https://oddio1903.s3.us-east-2.amazonaws.com/7b66a05063f0ec4bb3f509875943b118.mp3",
                  user: user_2,
