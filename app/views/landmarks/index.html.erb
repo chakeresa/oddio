@@ -168,6 +168,7 @@ function navigateTo(lat,long){
 }
 
 function searchLandmark(){
+  // debugger
   let input = document.getElementById('searchTerm').value
   fetch(`api/v1/landmarks/${input}`)
   .then(function(response) {
