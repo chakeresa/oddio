@@ -45,7 +45,7 @@
     <section class="recordings">
       <% unless facade.recordings.empty? %>
         <br>
-        <h4>Recordings</h4>
+        <h4>Recordings for this tour (<%= link_to facade.tour.title, tour_path(facade.tour) %>)</h4>
         <% facade.recordings.each do |recording| %>
           <div class='recording-list'>
             <p>
@@ -55,6 +55,7 @@
             <%= render partial: 'shared/audio_player', object: recording %>
           </div>
         <% end %>
+        <%= link_to 'View all Recordings', landmark_path(facade.landmark), class: 'btn btn-primary' %>
       <% end %>
     </section>
   </div>
