@@ -2335,4 +2335,82 @@ http_interactions:
       string: '{"data":{"id":"146","type":"vote","attributes":{"id":146,"votable_type":"recording","votable_id":37,"rating":1,"user_token":"f15b2ff1e5706a22bca34a736e848233","total_score":2}}}'
     http_version: 
   recorded_at: Thu, 25 Jul 2019 15:45:58 GMT
+- request:
+    method: post
+    uri: https://votes-app-1903.herokuapp.com/api/v1/recording/37/create_vote/ecbb46bdcdd0b15d58b727e4a2372071/1
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 25 Jul 2019 15:50:47 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '177'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"147","type":"vote","attributes":{"id":147,"votable_type":"recording","votable_id":37,"rating":1,"user_token":"ecbb46bdcdd0b15d58b727e4a2372071","total_score":3}}}'
+    http_version: 
+  recorded_at: Thu, 25 Jul 2019 15:50:45 GMT
+- request:
+    method: post
+    uri: https://votes-app-1903.herokuapp.com/api/v1/recording/37/create_vote/320aebf59af1af35e09044c01d0cadb1/1
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 25 Jul 2019 15:55:59 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '177'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"148","type":"vote","attributes":{"id":148,"votable_type":"recording","votable_id":37,"rating":1,"user_token":"320aebf59af1af35e09044c01d0cadb1","total_score":4}}}'
+    http_version: 
+  recorded_at: Thu, 25 Jul 2019 15:55:56 GMT
 recorded_with: VCR 5.0.0
