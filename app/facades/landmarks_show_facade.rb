@@ -24,7 +24,6 @@ class LandmarksShowFacade
   def landmark_total_score
     get_score
     score = JSON.parse(get_score.body)["data"]["attributes"]["total_score"]
-    binding.pry
     return score
   end
 

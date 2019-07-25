@@ -29,7 +29,7 @@ describe 'A logged in user' do
     end
   end
 
-  it 'can add a vote to a specific landmarks recording' do
+  xit 'can add a vote to a specific landmarks recording' do
     VCR.use_cassette('user_creates_vote_landmark', record: :new_episodes) do
 
       visit landmark_path(@landmark.id)
