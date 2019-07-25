@@ -13,19 +13,8 @@
 <br>
 <br>
 <figure>
-  <audio controls style="width:100%">
-    <source src="<%= audio_player.url %>" type="audio/mpeg">
-      <p>Your browser doesn't support HTML5 audio.</p>
+  <audio controls>
+    <source src=<%= audio_player.url %> type="audio/mpeg">
+      <p>Your browser doesn't support HTML5 audio.</p>Your browser doesn't support HTML5 audio.
   </audio>
 </figure>
-<style>
-  audio::-internal-media-controls-download-button {
-    display:none;
-  }
-  audio::-webkit-media-controls-enclosure {
-    overflow:hidden;
-  }
-  audio::-webkit-media-controls-panel {
-    width: calc(100% + 33px);
-  }
-</style>
