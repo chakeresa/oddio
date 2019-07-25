@@ -43,6 +43,7 @@ AppAuth.create!(user: admin, username: "bossypants", password: "adminpassword")
 # TOURS & COMPONENTS
 tour_1 = user_9.tours.create!(title: "My First Tour!")
 landmark = Landmark.where(place_id: "ChIJISHlw9l-bIcRl-J_-5IVSN8").first
+require "pry"; binding.pry
 recording_1 = Recording.create!(title: "This is a place",
                         url: "https://oddio1903.s3.us-east-2.amazonaws.com/6a26c55a227aa6e31afe3684a1dab2fe.mp3",
                         user: user_9,
