@@ -28,7 +28,7 @@ feature 'tour landmark show page', :vcr do
     end
 
     it 'has a list of recordings for the tour/landmark' do
-      tour_landmark_path(@tour, @landmark)
+      visit tour_landmark_path(@tour, @landmark)
 
       expect(page.all('.recording-list').count).to eq(1)
 
