@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_22_215652) do
+ActiveRecord::Schema.define(version: 2019_07_25_022142) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,17 +34,17 @@ ActiveRecord::Schema.define(version: 2019_07_22_215652) do
   end
 
   create_table "landmarks", force: :cascade do |t|
+    t.string "name"
     t.decimal "lat", precision: 10, scale: 6
     t.decimal "long", precision: 10, scale: 6
-    t.string "name"
     t.string "address"
     t.string "phone_number"
     t.string "category"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "place_id"
     t.string "website"
     t.string "photo_reference"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "md5_hash"
   end
 
@@ -57,6 +57,23 @@ ActiveRecord::Schema.define(version: 2019_07_22_215652) do
     t.bigint "landmark_id"
     t.index ["landmark_id"], name: "index_recordings_on_landmark_id"
     t.index ["user_id"], name: "index_recordings_on_user_id"
+  end
+
+  create_table "tour_recordings", force: :cascade do |t|
+    t.bigint "tour_id"
+    t.bigint "recording_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recording_id"], name: "index_tour_recordings_on_recording_id"
+    t.index ["tour_id"], name: "index_tour_recordings_on_tour_id"
+  end
+
+  create_table "tours", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tours_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -74,4 +91,7 @@ ActiveRecord::Schema.define(version: 2019_07_22_215652) do
   add_foreign_key "google_auths", "users"
   add_foreign_key "recordings", "landmarks"
   add_foreign_key "recordings", "users"
+  add_foreign_key "tour_recordings", "recordings"
+  add_foreign_key "tour_recordings", "tours"
+  add_foreign_key "tours", "users"
 end
