@@ -1,9 +1,11 @@
 #CONSOLE COMMANDS
 
-# AppAuth.destroy_all
-# GoogleAuth.destroy_all
-# Recording.destroy_all
-# User.destroy_all
+AppAuth.destroy_all
+GoogleAuth.destroy_all
+TourRecording.destroy_all
+Tour.destroy_all
+Recording.destroy_all
+User.destroy_all
 
 # USERS
 user_1 = User.create!(email: "shmeeshmail@yahoo.com", first_name: "Nunya", last_name: "Business", display_name: "Nar")
@@ -39,16 +41,14 @@ AppAuth.create!(user: user_10, username: "powerothree", password: "password")
 admin = User.create!(role: "admin", email: "admin@example.com", first_name: "Bossy", last_name: "McBossface", display_name: "BossyMcBossface")
 AppAuth.create!(user: admin, username: "bossypants", password: "adminpassword")
 
-# LANDMARKS
-
-# # Tours + Components
-# tour_1 = user_9.tours.create!(title: "My First Tour!")
-# landmark = Landmark.where(place_id: "ChIJISHlw9l-bIcRl-J_-5IVSN8".first)
-# recording_1 = Recording.create!(title: "Be careful on these stairs",
-#                         url: "https://oddio1903.s3.us-east-2.amazonaws.com/db45bbb0fd9ab9376c552684a49e7cc0.mp3",
-#                         user: user_9,
-#                         landmark: landmark)
-# TourRecording.create!(tour: tour_1, recording: recording_1)
+# TOURS & COMPONENTS
+tour_1 = user_9.tours.create!(title: "My First Tour!")
+landmark = Landmark.where(place_id: "ChIJISHlw9l-bIcRl-J_-5IVSN8").first
+recording_1 = Recording.create!(title: "This is a place",
+                        url: "https://oddio1903.s3.us-east-2.amazonaws.com/6a26c55a227aa6e31afe3684a1dab2fe.mp3",
+                        user: user_9,
+                        landmark: landmark)
+TourRecording.create!(tour: tour_1, recording: recording_1)
 
 
 # RECORDINGS
