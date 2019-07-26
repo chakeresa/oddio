@@ -41,11 +41,11 @@ admin = User.create!(role: "admin", email: "admin@example.com", first_name: "Bos
 AppAuth.create!(user: admin, username: "bossypants", password: "adminpassword")
 
 # LANDMARKS
-buell = Landmark.where(place_id: "ChIJv6fqK854bIcREz-R0Panwd4")
-art_gallery = Landmark.where(place_id: "ChIJI3JicMN4bIcRE5JBd4aTO0o")
-museum = Landmark.where(place_id: "ChIJvcHQQcF4bIcRmDttJRd0FN4")
-axe_room = Landmark.where(place_id: "ChIJ5c4iVtl4bIcRJnnxpj0RIuA")
-lodo = Landmark.where(place_id: "ChIJux94CcN4bIcRcH7lFkSAUfo")
+buell = Landmark.where(place_id: "ChIJv6fqK854bIcREz-R0Panwd4").first
+art_gallery = Landmark.where(place_id: "ChIJI3JicMN4bIcRE5JBd4aTO0o").first
+museum = Landmark.where(place_id: "ChIJvcHQQcF4bIcRmDttJRd0FN4").first
+axe_room = Landmark.where(place_id: "ChIJ5c4iVtl4bIcRJnnxpj0RIuA").first
+lodo = Landmark.where(place_id: "ChIJux94CcN4bIcRcH7lFkSAUfo").first
 
 # RECORDINGS
 recording_1 = Recording.create!(title: '"Don Giovanni"',
