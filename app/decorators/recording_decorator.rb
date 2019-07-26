@@ -6,7 +6,7 @@ class RecordingDecorator < SimpleDelegator
 
   private
   def votes_service
-    Faraday.new url: ENV['VOTES_APP'] do |faraday|
+    Faraday.new url: "https://votes-app-1903.herokuapp.com" do |faraday|
       faraday.adapter Faraday.default_adapter
     end
   end
