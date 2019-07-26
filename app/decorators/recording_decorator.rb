@@ -1,13 +1,12 @@
 class RecordingDecorator < SimpleDelegator
 
   def total_score
-    score = JSON.parse(get_score.body)["data"]["attributes"]["total_score"]
-    return score
+    JSON.parse(get_score.body)["data"]["attributes"]["total_score"]
   end
 
   private
   def votes_service
-    Faraday.new url: "https://votes-app-1903.herokuapp.com" do |faraday|
+    Faraday.new url: ENV['VOTES_APP'] do |faraday|
       faraday.adapter Faraday.default_adapter
     end
   end
