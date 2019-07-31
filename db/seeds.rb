@@ -41,6 +41,7 @@ admin = User.create!(role: "admin", email: "admin@example.com", first_name: "Bos
 AppAuth.create!(user: admin, username: "bossypants", password: "adminpassword")
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 # TOURS & COMPONENTS
 tour_1 = user_9.tours.create!(title: "My First Tour!")
 landmark = Landmark.where(place_id: "ChIJISHlw9l-bIcRl-J_-5IVSN8").first
@@ -51,13 +52,18 @@ recording_1 = Recording.create!(title: "This is a place",
                         landmark: landmark)
 TourRecording.create!(tour: tour_1, recording: recording_1)
 =======
+=======
+>>>>>>> d30db13884faa1d14286fe1628f93ccb8e482f92
 # LANDMARKS
 buell = Landmark.where(place_id: "ChIJv6fqK854bIcREz-R0Panwd4").first
 art_gallery = Landmark.where(place_id: "ChIJI3JicMN4bIcRE5JBd4aTO0o").first
 museum = Landmark.where(place_id: "ChIJvcHQQcF4bIcRmDttJRd0FN4").first
 axe_room = Landmark.where(place_id: "ChIJ5c4iVtl4bIcRJnnxpj0RIuA").first
 lodo = Landmark.where(place_id: "ChIJux94CcN4bIcRcH7lFkSAUfo").first
+<<<<<<< HEAD
 >>>>>>> 21cef6e420a2b63144cbb69c5303e54462a2b1c6
+=======
+>>>>>>> d30db13884faa1d14286fe1628f93ccb8e482f92
 
 # RECORDINGS
 recording_1 = Recording.create!(title: '"Don Giovanni"',
