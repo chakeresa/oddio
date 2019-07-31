@@ -25,8 +25,8 @@ feature 'recordings index page', :vcr do
     it 'the vote arrows dont display' do
       visit recordings_path
 
-      expect(page).to_not have_button('Up')
-      expect(page).to_not have_button('Down')
+      expect(page).to_not have_button('⇧')
+      expect(page).to_not have_button('⇩')
     end
   end
 
@@ -38,8 +38,8 @@ feature 'recordings index page', :vcr do
 
       visit recordings_path
 
-      expect(page).to have_button('Up')
-      expect(page).to have_button('Down')
+      expect(page).to have_button('⇧')
+      expect(page).to have_button('⇩')
     end
   end
 end
