@@ -55,3 +55,11 @@ h1 {
 .inline-block {
   display: inline-block;
 }
+
+.active-upvote {
+  color: red;
+}
+
+.active-downvote {
+  color: blue;
+}

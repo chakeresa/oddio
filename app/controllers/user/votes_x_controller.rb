@@ -1,7 +1,9 @@
 class User::VotesXController < ApplicationController
   def create
-    request_create
-    render json: { meta: 'vote tallied' }
+    response = request_create
+    hash = JSON.parse(response.body, symbolize_names: true)
+    total_score = hash[:data][:attributes][:total_score]
+    render json: { new_score: total_score }
   end
 
   private
