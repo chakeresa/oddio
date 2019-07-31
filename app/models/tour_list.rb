@@ -22,4 +22,14 @@ class TourList
     @contents[landmark_id.to_s] -= 1
     @contents.delete(landmark_id.to_s) if count_of(landmark_id) == 0
   end
+
+  def landmark
+    @landmark ||= load_landmark
+  end
+
+  def load_landmark
+    @contents.map do |landmark_id, quantity|
+      landmark = Landmark.find(landmark_id)
+    end.to_a
+  end
 end
