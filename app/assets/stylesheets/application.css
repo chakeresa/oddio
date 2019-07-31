@@ -46,6 +46,7 @@ h1 {
 
 .vote {
   display: inline-block;
+  padding: 5px;
 }
 
 .landmark-header {
@@ -62,4 +63,17 @@ h1 {
 
 .active-downvote {
   color: blue;
+}
+
+.recording-box {
+  width: 90%;
+}
+
+.recording-list {
+  display: flex;
+  align-items: center;
+}
+
+figure {
+  margin: 0;
 }
