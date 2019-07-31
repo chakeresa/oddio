@@ -1,20 +1,12 @@
-class User::VotesController < ApplicationController
+class User::VotesXController < ApplicationController
   def create
     request_create
-    redirect
-  end
-
-  def redirect
-    if params[:votable_type] == "recording"
-      recording = Recording.find(params[:votable_id])
-      redirect_to landmark_path(recording.landmark)
-    else
-      redirect_to landmark_path(params[:votable_id])
-    end
+    render json: { meta: 'vote tallied' }
   end
 
   private
 
+  # TODO: abstract methods below into votes api service
   def conn
     Faraday.new url: "https://votes-app-1903.herokuapp.com" do |faraday|
       faraday.adapter Faraday.default_adapter

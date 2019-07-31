@@ -40,3 +40,6 @@ h1 {
   text-align:center;
 }
 
+.landmark-up-vote {
+  cursor: pointer; 
+}
