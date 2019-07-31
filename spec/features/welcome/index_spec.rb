@@ -17,13 +17,24 @@ RSpec.describe "Welcome Index" do
       expect(page).to have_link('Enter')
       expect(page).to have_selector(:css, "a[href=\"#{landmarks_path}\"]")
     end
-    
+
     it 'has links to register and login' do
       expect(page).to have_link('Register')
       expect(page).to have_selector(:css, "a[href=\"#{register_path}\"]")
 
       expect(page).to have_link('Login')
       expect(page).to have_selector(:css, "a[href=\"#{login_path}\"]")
+    end
+
+    it "has a link to the map do" do
+      save_and_open_page
+      click_button("Start Exploring")
+      expect(current_path).to eq(landmarks_path)
+    end
+
+    it "has a link to tours page" do
+      click_link("Premade Tours")
+      expect(current_path).to eq(tours_path)
     end
   end
 end

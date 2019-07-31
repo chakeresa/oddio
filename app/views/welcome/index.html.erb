@@ -1,5 +1,15 @@
+<head>
+  <style media="screen">
+    img {
+        width: auto ;
+        max-width: 100% ;
+        height: auto ;
+        }
+  </style>
+</head>
 <div class='center-contents'>
-  <h1>Welcome to Oddio</h1>
-  <%= link_to  'Enter', landmarks_path, class: 'btn btn-primary' %>
+  <img src="<%= image_path('oddio-logo.png')%>" width="100%">
+  <p>Welcome to Oddio, the crowdsourced audio touring app.</p>
+  <%= link_to  'Premade Tours', tours_path, class: 'btn btn-primary' %>
+  <%= link_to  'Start Exploring', landmarks_path, class: 'btn btn-primary' %>
 </div>
-
