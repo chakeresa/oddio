@@ -5,6 +5,5 @@ class ToursController < ApplicationController
 
   def show
     @tour = Tour.find(params[:id])
-    # require "pry"; binding.pry
   end
 end
