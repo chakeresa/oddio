@@ -15,7 +15,7 @@ RSpec.describe "Tourlist Create", vcr: :new_episodes do
       visit landmark_path(@landmark1)
 
       within(".attributes") do
-        click_button "Add to tour"
+        click_button "Add to Tour List"
       end
 
       expect(page).to have_content("You have added #{@landmark1.name} to your tour list.")
@@ -23,17 +23,17 @@ RSpec.describe "Tourlist Create", vcr: :new_episodes do
 
     it 'can add multiple landmarks to tour list' do
       visit landmark_path(@landmark1)
-      click_button "Add to tour"
+      click_button "Add to Tour List"
       expect(page).to have_content("You have added #{@landmark1.name} to your tour list.")
       expect(page).to have_content("You have 1 landmarks in your tour list.")
 
       visit landmark_path(@landmark2)
-      click_button "Add to tour"
+      click_button "Add to Tour List"
       expect(page).to have_content("You have added #{@landmark2.name} to your tour list.")
       expect(page).to have_content("You have 2 landmarks in your tour list.")
 
       visit landmark_path(@landmark3)
-      click_button "Add to tour"
+      click_button "Add to Tour List"
       expect(page).to have_content("You have added #{@landmark3.name} to your tour list.")
       expect(page).to have_content("You have 3 landmarks in your tour list.")
     end
@@ -43,17 +43,17 @@ RSpec.describe "Tourlist Create", vcr: :new_episodes do
 
       expect(page).to have_content("Create Tour(0)")
 
-      click_button "Add to tour"
+      click_button "Add to Tour List"
 
       expect(page).to have_content("Create Tour(1)")
 
       visit landmark_path(@landmark2)
-      click_button "Add to tour"
+      click_button "Add to Tour List"
 
       expect(page).to have_content("Create Tour(2)")
 
       visit landmark_path(@landmark3)
-      click_button "Add to tour"
+      click_button "Add to Tour List"
 
       expect(page).to have_content("Create Tour(3)")
     end
