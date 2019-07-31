@@ -9,7 +9,24 @@
 
 <div class="container-fluid">
   <div class="container">
-    <h1><%= facade.landmark.name %></h1>
+    <div class='landmark-header'>
+      <div class='vote'>
+        <% if current_user? %>
+          <div class="vote-button" id="landmark-<%= facade.landmark.id %>-up-vote">
+            ⇧
+          </div>
+        <% end %>
+        <div class="total-score">
+          <%= facade.landmark_total_score %>
+        </div>
+        <% if current_user? %>
+          <div class="vote-button" id="landmark-<%= facade.landmark.id %>-down-vote">
+            ⇩
+          </div>
+        <% end %>
+      </div>
+      <h1 class='inline-block'><%= facade.landmark.name %></h1>
+    </div>
     <section class="picture">
       <%= image_tag facade.picture, class: "img-fluid img", style: "display: block; margin-left: auto; margin-right: auto; width: 80%;" %>
     </section>
@@ -30,21 +47,6 @@
         <p><b>Website: </b> <%= link_to facade.landmark.website, facade.landmark.website, :target => "_blank" %></p>
       <% end %>
       <p><b>Category: </b> <%= facade.landmark_category %></p>
-        <div class='vote'>
-          <% if current_user? %>
-            <div class="vote-button" id="landmark-<%= facade.landmark.id %>-up-vote">
-              ⇧
-            </div>
-          <% end %>
-          <div class="total-score">
-            <%= facade.landmark_total_score %>
-          </div>
-          <% if current_user? %>
-            <div class="vote-button" id="landmark-<%= facade.landmark.id %>-down-vote">
-              ⇩
-            </div>
-          <% end %>
-        </div>
       </div>
     </section>
   </div>

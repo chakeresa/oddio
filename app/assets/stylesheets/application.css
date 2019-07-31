@@ -47,3 +47,11 @@ h1 {
 .vote {
   display: inline-block;
 }
+
+.landmark-header {
+  align-items: center;
+}
+
+.inline-block {
+  display: inline-block;
+}
