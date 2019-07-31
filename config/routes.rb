@@ -16,20 +16,26 @@ Rails.application.routes.draw do
   ### Public
   # Landmarks
   resources :landmarks, only: [:index, :show]
-  
+
   namespace :api do
     namespace :v1 do
       resources :landmarks, only: [:index, :show]
     end
   end
-  
+
   # Recordings
   resources :recordings, only: [:index]
-  
+
   # Tours
-  resources :tours, only: [:index, :show]
+  resources :tours, only: [:index, :show, :create]
   get '/tours/:tour_id/landmarks/:id', to: 'tour/landmarks#show', as: 'tour_landmark'
-  
+
+  # Tour list
+  get '/tour_list', to: 'tour_list#show'
+  delete '/tour_list', to: 'tour_list#destroy', as: :empty_tour_list
+  post '/tour_list/landmarks/:id', to: 'tour_list/landmark#create', as: :add_landmark
+  delete '/tour_list/landmarks/:id', to: 'tour_list/landmark#destroy', as: :remove_landmark
+
   ### User
   namespace :user do
     get '/dashboard', to: 'dashboard#index'
