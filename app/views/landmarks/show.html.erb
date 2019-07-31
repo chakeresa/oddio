@@ -17,6 +17,7 @@
 
   <div class="container">
     <section class="attributes">
+      <%= button_to "Add to Tour List", add_landmark_path(facade.landmark) %>
       <br>
       <p><b>Address: </b> <%= facade.landmark.address %></p>
       <% if facade.landmark.phone_number.nil? %>
