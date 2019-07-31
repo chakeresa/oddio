@@ -13,9 +13,6 @@ RSpec.describe "Welcome Index" do
 
     it 'shows basic info about the site' do
       expect(page).to have_content('Welcome to Oddio')
-      # TODO: Issue #16 - Add brief description of the site & sample content
-      expect(page).to have_link('Enter')
-      expect(page).to have_selector(:css, "a[href=\"#{landmarks_path}\"]")
     end
 
     it 'has links to register and login' do
@@ -28,7 +25,7 @@ RSpec.describe "Welcome Index" do
 
     it "has a link to the map do" do
       save_and_open_page
-      click_button("Start Exploring")
+      click_link("Start Exploring")
       expect(current_path).to eq(landmarks_path)
     end
 
