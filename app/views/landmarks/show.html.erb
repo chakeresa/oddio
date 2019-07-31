@@ -27,25 +27,6 @@
       </div>
       <h1 class='inline-block'><%= facade.landmark.name %></h1>
     </div>
-<script>
-  $(".vote-button").on('click',{},function(){
-    var element_id = $(this).attr('id');
-    var votable_type = element_id.split("-")[0];
-    var votable_id = element_id.split("-")[1];
-    var upDown = element_id.split("-")[2];
-    var clicker = $(this)
-    $.get("/user/votes_x?type=" + upDown + "vote&votable_id=" + votable_id + "&votable_type=" + votable_type, function(data, status){
-      clicker.parent().children('.total-score').html(data['new_score']);
-    });
-    $(this).toggleClass('active-' + upDown+ 'vote', true);
-    if (upDown == 'up') {
-      var oppositeUpDown = 'down';
-    } else {
-      var oppositeUpDown = 'up';
-    }
-    $(this).parent().children('.' + oppositeUpDown + 'vote').toggleClass('active-' + oppositeUpDown+ 'vote', false);
-  });
-</script>
     <section class="picture">
       <%= image_tag facade.picture, class: "img-fluid img", style: "display: block; margin-left: auto; margin-right: auto; width: 80%;" %>
     </section>
