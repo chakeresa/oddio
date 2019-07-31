@@ -12,7 +12,7 @@
     <div class='landmark-header'>
       <div class='vote'>
         <% if current_user? %>
-          <div class="vote-button" id="landmark-<%= facade.landmark.id %>-up-vote">
+          <div class="vote-button upvote" id="landmark-<%= facade.landmark.id %>-up-vote">
             ⇧
           </div>
         <% end %>
@@ -20,7 +20,7 @@
           <%= facade.landmark_total_score %>
         </div>
         <% if current_user? %>
-          <div class="vote-button" id="landmark-<%= facade.landmark.id %>-down-vote">
+          <div class="vote-button downvote" id="landmark-<%= facade.landmark.id %>-down-vote">
             ⇩
           </div>
         <% end %>
@@ -37,6 +37,12 @@
       alert("Data: " + data['new_score'] + "\nStatus: " + status);
     });
     $(this).toggleClass('active-' + upDown+ 'vote', true);
+    if (upDown == 'up') {
+      var oppositeUpDown = 'down';
+    } else {
+      var oppositeUpDown = 'up';
+    }
+    $(this).parent().children('.' + oppositeUpDown + 'vote').toggleClass('active-' + oppositeUpDown+ 'vote', false);
   });
 </script>
     <section class="picture">
