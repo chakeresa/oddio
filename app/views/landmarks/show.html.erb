@@ -31,7 +31,7 @@
       <% end %>
       <p><b>Category: </b> <%= facade.landmark_category %></p>
         <% if current_user? %>
-          <div class="landmark-up-vote">
+          <div class="landmark-up-vote" id="landmark-<%= facade.landmark.id %>-vote">
             ⇧
             <%#= button_to "⇧", user_votes_path(votable_type: "landmark", votable_id: facade.landmark.id, type: "upvote"), class: "upvote" %>
           </div>
@@ -49,10 +49,13 @@
   </div>
 
   <script>
-  //user/votes?type=upvote&votable_id=307&votable_type=landmark
-    //$(".landmark-up-vote").click(function(){
     $(".landmark-up-vote").on('click',{},function(){
-      $.get("/user/votes_x?type=upvote&votable_id=307&votable_type=landmark", function(data, status){
+      var element_class = $(this).attr('class');
+      var upDown = element_class.split("-")[1];
+      var element_id = $(this).attr('id');
+      var votable_type = element_id.split("-")[0];
+      var votable_id = element_id.split("-")[1];
+      $.get("/user/votes_x?type=" + upDown + "vote&votable_id=" + votable_id + "&votable_type=" + votable_type, function(data, status){
         alert("Data: " + data + "\nStatus: " + status);
       });
     });
