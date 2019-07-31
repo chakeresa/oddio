@@ -7,4 +7,9 @@ class Tour < ApplicationRecord
   def recordings_for_landmark(landmark)
     recordings.where(recordings: {landmark: landmark})
   end
+
+  def total_score
+    tour = TourDecorator.new(self)
+    tour.total_score
+  end
 end
