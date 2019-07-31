@@ -32,7 +32,7 @@
       <p><b>Category: </b> <%= facade.landmark_category %></p>
         <% if current_user? %>
           <div class="landmark-up-vote">
-            <%= button_to "Up", user_votes_path(votable_type: "landmark", votable_id: facade.landmark.id, type: "upvote"), class: "upvote" %>
+            <%= button_to "⇧", user_votes_path(votable_type: "landmark", votable_id: facade.landmark.id, type: "upvote"), class: "upvote" %>
           </div>
         <% end %>
         <div class="landmark-total-score">
@@ -40,7 +40,7 @@
         </div>
         <% if current_user? %>
           <div class="landmark-down-vote">
-            <%= button_to "Down", user_votes_path(votable_type: "landmark", votable_id: facade.landmark.id, type: "downvote"), class: "downvote" %>
+            <%= button_to "⇩", user_votes_path(votable_type: "landmark", votable_id: facade.landmark.id, type: "downvote"), class: "downvote" %>
           </div>
         <% end %>
       </div>

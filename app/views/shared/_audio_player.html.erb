@@ -1,7 +1,7 @@
 <div class="votebox">
   <% if current_user? %>
     <div class="up-vote">
-      <%= button_to "Up", user_votes_path(votable_type: "recording", votable_id: audio_player.id, type: "upvote"), class: "upvote" %>
+      <%= button_to "⇧", user_votes_path(votable_type: "recording", votable_id: audio_player.id, type: "upvote"), class: "upvote" %>
     </div>
   <% end %>
   <div class="total-score">
@@ -9,7 +9,7 @@
   </div>
   <% if current_user? %>
     <div class="down-vote">
-      <%= button_to "Down", user_votes_path(votable_type: "recording", votable_id: audio_player.id, type: "downvote"), class: "downvote" %>
+      <%= button_to "⇩", user_votes_path(votable_type: "recording", votable_id: audio_player.id, type: "downvote"), class: "downvote" %>
     </div>
   <% end %>
 </div>
