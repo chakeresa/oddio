@@ -34,14 +34,14 @@ class LandmarksShowFacade
   end
 
   def votes_service
-    Faraday.new url: "https://votes-app-1903.herokuapp.com" do  |faraday|
+    Faraday.new url: "https://votes-app-1903.herokuapp.com" do |faraday|
       faraday.adapter Faraday.default_adapter
     end
   end
 
   def get_score
     votes_service.get do |req|
-      req.url "/api/v1/landmark/#{:id}/score"
+      req.url "/api/v1/landmark/#{self.id}/score"
     end
   end
 end
