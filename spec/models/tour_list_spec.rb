@@ -2,7 +2,10 @@ require 'rails_helper'
 
 RSpec.describe TourList do
 
-  let(:subject) { TourList.new({'1' => 1, '2' => 1}) }
+  let(:landmark1) { create(:landmark) }
+  let(:landmark2) { create(:landmark) }
+  let(:tour) { TourList.new({"#{landmark1.id}" => 1, "#{landmark2.id}" => 1}) }
+  let(:subject) { TourList.new({"1" => 1, "2" => 1}) }
 
   describe "#total_count" do
     it "calculates the total number of landmarks it holds" do
@@ -29,6 +32,12 @@ RSpec.describe TourList do
       subject.remove_landmark(2)
 
       expect(subject.contents).to eq({'1' => 1})
+    end
+  end
+
+  describe "#load_landmark" do
+    it "loads landmarks in an array" do
+      expect(tour.landmark).to eq([landmark1, landmark2])
     end
   end
 end
