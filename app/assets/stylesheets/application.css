@@ -43,3 +43,7 @@ h1 {
 .vote-button {
   cursor: pointer; 
 }
+
+.vote {
+  display: inline-block;
+}

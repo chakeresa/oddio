@@ -30,19 +30,21 @@
         <p><b>Website: </b> <%= link_to facade.landmark.website, facade.landmark.website, :target => "_blank" %></p>
       <% end %>
       <p><b>Category: </b> <%= facade.landmark_category %></p>
-        <% if current_user? %>
-          <div class="vote-button" id="landmark-<%= facade.landmark.id %>-up-vote">
-            ⇧
+        <div class='vote'>
+          <% if current_user? %>
+            <div class="vote-button" id="landmark-<%= facade.landmark.id %>-up-vote">
+              ⇧
+            </div>
+          <% end %>
+          <div class="total-score">
+            <%= facade.landmark_total_score %>
           </div>
-        <% end %>
-        <div class="landmark-total-score">
-          <p><b>Landmark's Rating: </b> <%= facade.landmark_total_score %></p>
+          <% if current_user? %>
+            <div class="vote-button" id="landmark-<%= facade.landmark.id %>-down-vote">
+              ⇩
+            </div>
+          <% end %>
         </div>
-        <% if current_user? %>
-          <div class="vote-button" id="landmark-<%= facade.landmark.id %>-down-vote">
-            ⇩
-          </div>
-        <% end %>
       </div>
     </section>
   </div>
