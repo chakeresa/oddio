@@ -43,22 +43,23 @@ AppAuth.create!(user: admin, username: "bossypants", password: "adminpassword")
 # TOURS & COMPONENTS
 tour_1 = user_9.tours.create!(title: "My First Tour!")
 landmark = Landmark.where(place_id: "ChIJISHlw9l-bIcRl-J_-5IVSN8").first
-require "pry"; binding.pry
 recording_1 = Recording.create!(title: "This is a place",
                         url: "https://oddio1903.s3.us-east-2.amazonaws.com/6a26c55a227aa6e31afe3684a1dab2fe.mp3",
                         user: user_9,
                         landmark: landmark)
+recording_2 = Recording.create!(title: '"Don Giovanni"',
+              url: "https://oddio1903.s3.us-east-2.amazonaws.com/a74401d47b4d40de7760cc73b5449659.mp3",
+              user: user_1,
+              landmark: Landmark.first)
+recording_3 = Recording.create!(title: "I hate my job",
+              url: "https://oddio1903.s3.us-east-2.amazonaws.com/7b66a05063f0ec4bb3f509875943b118.mp3",
+              user: user_2,
+              landmark: Landmark.second)
 TourRecording.create!(tour: tour_1, recording: recording_1)
+TourRecording.create!(tour: tour_1, recording: recording_2)
+TourRecording.create!(tour: tour_1, recording: recording_3)
 
 # RECORDINGS
-Recording.create!(title: '"Don Giovanni"',
-                 url: "https://oddio1903.s3.us-east-2.amazonaws.com/a74401d47b4d40de7760cc73b5449659.mp3",
-                 user: user_1,
-                 landmark: Landmark.first)
-Recording.create!(title: "I hate my job",
-                 url: "https://oddio1903.s3.us-east-2.amazonaws.com/7b66a05063f0ec4bb3f509875943b118.mp3",
-                 user: user_2,
-                 landmark: Landmark.second)
 Recording.create!(title: "Bro Night!",
                  url: "https://oddio1903.s3.us-east-2.amazonaws.com/74d884ad530c6f108c5244a2d21b0393.mp3",
                  user: user_3,
