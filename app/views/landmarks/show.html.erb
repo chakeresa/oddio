@@ -68,15 +68,14 @@
     <section class="tours">
       <h4>Tours</h4>
       <% if facade.landmark.tours.any? %>
-        <ul>
-          <% facade.landmark.tours.each do |tour| %>
-            <div class='tour-list'>
-              <li>
-                <%= link_to tour.title, tour_path(tour) %>, Creator: <%= link_to tour.user.display_name, user_path(tour.user) %>
-              </li>
+        <% facade.landmark.tours.each do |tour| %>
+          <div class='tour-list'>
+            <%= render partial: 'shared/voting_arrows', object: tour %>
+            <div class='tour-box'>
+              <%= link_to tour.title, tour_path(tour) %><br> Creator: <%= link_to tour.user.display_name, user_path(tour.user) %>
             </div>
-          <% end %>
-        </ul>
+          </div>
+        <% end %>
       <% else %>
         <p>No tours include this landmark</p>
       <% end %>
