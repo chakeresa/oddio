@@ -10,7 +10,6 @@ describe 'A logged in user' do
 
   xit 'can add a vote to a specific landmarks recording' do
     VCR.use_cassette('user_creates_recording_vote', record: :new_episodes) do
-
       visit landmark_path(@landmark.id)
 
       within(".total-score") do

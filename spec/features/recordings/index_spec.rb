@@ -25,21 +25,21 @@ feature 'recordings index page', :vcr do
     it 'the vote arrows dont display' do
       visit recordings_path
 
-      expect(page).to_not have_button('Up')
-      expect(page).to_not have_button('Down')
+      expect(page).to_not have_content('▲')
+      expect(page).to_not have_content('▼')
     end
   end
 
   describe 'as a user' do
     let(:user) { create(:user) }
 
-    it 'the vote arrows dont display' do
+    it 'the vote arrows display' do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
       visit recordings_path
 
-      expect(page).to have_button('Up')
-      expect(page).to have_button('Down')
+      expect(page).to have_content('▲')
+      expect(page).to have_content('▼')
     end
   end
 end
