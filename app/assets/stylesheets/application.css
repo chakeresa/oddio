@@ -25,6 +25,16 @@ main {
   word-break: break-word;
 }
 
+.btn-primary {
+  background-color: #06D2B9;
+  border-color: white;
+}
+
+.btn-primary:hover {
+  background-color: #363636;
+  border-color: white;
+}
+
 nav .btn {
   margin: 5px;
 }
@@ -47,6 +57,12 @@ nav .btn {
 
 .search-field {
   width: 200px;
+}
+
+#navbar-brand-logo
+{
+    padding: 3px;
+    height: 50px;
 }
 
 h1 {
@@ -91,14 +107,32 @@ h1 {
 .recording-list, .tour-list {
   display: flex;
   align-items: center;
-  background-color: lightsteelblue;
+  background-color: #06D2B9;
   border-radius: 5px;
-  border: 1px solid black;
-  margin: 5px;
+  border: 1px solid white;
+  margin: 10px;;
 }
 
 .tour-list {
   padding: 5px;
+  background-color: #06D2B9;
+  color: white;
+}
+
+.tour-box {
+  background-color: #06D2B9;
+  color: white;
+  outline-color: white;
+  font-weight: bold;
+}
+
+.tour-info {
+  color: white;
+  font-weight: bold;
+}
+
+.tour-info:hover {
+  color: #919191;
 }
 
 figure {
