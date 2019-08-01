@@ -30,12 +30,6 @@ Rails.application.routes.draw do
   resources :tours, only: [:index, :show, :create]
   get '/tours/:tour_id/landmarks/:id', to: 'tour/landmarks#show', as: 'tour_landmark'
 
-  # Tour list
-  get '/tour_list', to: 'tour_list#show'
-  delete '/tour_list', to: 'tour_list#destroy', as: :empty_tour_list
-  post '/tour_list/landmarks/:id', to: 'tour_list/landmark#create', as: :add_landmark
-  delete '/tour_list/landmarks/:id', to: 'tour_list/landmark#destroy', as: :remove_landmark
-
   ### User
   namespace :user do
     get '/dashboard', to: 'dashboard#index'
@@ -44,6 +38,13 @@ Rails.application.routes.draw do
     resources :landmarks, only: [:show] do
       resources :recordings, only: [:new, :create]
     end
+  end
+
+  # Tour list
+  get '/tour_list', to: 'tour_list#show'
+  delete '/tour_list', to: 'tour_list#destroy', as: :empty_tour_list
+  namespace :tour_list do
+    resources :landmarks, only: [:create, :destroy]
   end
 
   ### Admin

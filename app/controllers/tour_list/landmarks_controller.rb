@@ -1,6 +1,6 @@
-class TourList::LandmarkController < TourList::BaseController
+class TourList::LandmarksController < TourList::BaseController
   def create
-    landmark = Landmark.find(params[:id])
+    landmark = Landmark.find(params[:landmark_id])
     unless tour_list.contents.keys.include?(landmark.id.to_s)
       tour_list.add_landmark(landmark.id)
       flash[:notice] = "You have added #{landmark.name} to your tour list."
