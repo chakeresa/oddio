@@ -17,7 +17,7 @@
           </div>
         <% end %>
         <div class="total-score">
-          <%= facade.landmark_total_score %>
+          <%= facade.landmark.total_score %>
         </div>
         <% if current_user? %>
           <div class="vote-button downvote" id="landmark-<%= facade.landmark.id %>-down-vote">
