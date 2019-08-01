@@ -107,10 +107,10 @@ h1 {
 .recording-list, .tour-list {
   display: flex;
   align-items: center;
-  background-color: lightsteelblue;
+  background-color: #06D2B9;
   border-radius: 5px;
-  border: 1px solid black;
-  margin: 5px;
+  border: 1px solid white;
+  margin: 10px;;
 }
 
 .tour-list {
