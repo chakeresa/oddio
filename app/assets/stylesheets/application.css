@@ -38,7 +38,7 @@ nav .btn {
 }
 
 h1 {
-  text-align:center;
+  text-align: center;
 }
 
 .vote-button {
@@ -48,6 +48,7 @@ h1 {
 .vote {
   display: inline-block;
   padding: 5px;
+  text-align:center;
 }
 
 .landmark-header {
@@ -73,6 +74,10 @@ h1 {
 .recording-list {
   display: flex;
   align-items: center;
+  background-color: lightsteelblue;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin: 5px;
 }
 
 figure {
