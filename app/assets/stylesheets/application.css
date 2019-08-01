@@ -59,6 +59,10 @@ h1 {
   display: inline-block;
 }
 
+.upvote, .downvote {
+  color: lightslategrey;
+}
+
 .active-upvote {
   color: red;
 }
