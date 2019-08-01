@@ -13,11 +13,10 @@ RSpec.describe "Welcome Index" do
 
     it 'shows basic info about the site' do
       expect(page).to have_content('Welcome to Oddio')
-      # TODO: Issue #16 - Add brief description of the site & sample content
       expect(page).to have_link('I want to explore')
       expect(page).to have_selector(:css, "a[href=\"#{landmarks_path}\"]")
 
-      expect(page).to have_link('Take me on a Recommended Tour')
+      expect(page).to have_link('Take me on a tour')
       expect(page).to have_selector(:css, "a[href=\"#{tours_path}\"]")
     end
 
