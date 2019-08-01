@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "tour list show:", vcr: { :record => :new_episodes }, type: :feature do
+RSpec.describe 'tour list show:', vcr: { :record => :new_episodes }, type: :feature do
 
   let(:user) { create(:user) }
   let(:landmark1) { create(:landmark) }
@@ -8,10 +8,10 @@ RSpec.describe "tour list show:", vcr: { :record => :new_episodes }, type: :feat
   let(:landmark3) { create(:landmark) }
 
   context 'as a visitor,' do
-    scenario 'unable to see create tour display' do
-      visit landmarks_path
+    scenario 'unable to visit the page' do
+      visit tour_list_path
 
-      expect(page).to_not have_content('Create Tour(0)')
+      expect(page.status_code).to eq(404)
     end
   end
 
@@ -80,7 +80,9 @@ RSpec.describe "tour list show:", vcr: { :record => :new_episodes }, type: :feat
   context 'as an admin,'
 
   context 'edge case' do
-    scenario 'displays message if there are no landmarks in tour list' do
+    scenario 'user sees message if there are no landmarks in tour list' do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
       visit tour_list_path
 
       expect(page).to have_content('There are no landmarks currently in your tour list.')
