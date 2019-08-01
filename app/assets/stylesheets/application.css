@@ -51,7 +51,7 @@ h1 {
   text-align:center;
 }
 
-.landmark-header {
+.landmark-header, .tour-header {
   align-items: center;
 }
 

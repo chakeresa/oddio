@@ -1,4 +1,7 @@
-<h3><%= @tour.title %></h3>
+<div class='tour-header'>
+  <%= render partial: 'shared/voting_arrows', object: @tour %>
+  <h3 class='inline-block'><%= @tour.title %></h3>
+</div>
 <h4>Recordings</h4>
 <% @tour.recordings.each do |recording| %>
   <div class='recording-list'>
