@@ -20,8 +20,10 @@ class TourList::RecordingsController < TourList::BaseController
       title: params[:recording][:title]
     )
     if recording.save!
+      tour_recording.add_recording(recording)
       flash[:success] = "Your recording has been saved."
-      redirect_to landmark_path(params[:landmark_id])
+      session[:tour_recording] = tour_recording.contents
+      redirect_to tour_list_path
     else
       flash.now[:error] = "Unable to save recording."
       render :new
@@ -29,12 +31,15 @@ class TourList::RecordingsController < TourList::BaseController
   end
 
   def destroy
-    recording = current_user.recordings.find_by(id: params[:id])
+    recording = Recording.find_by(id: params[:id])
     if recording
+      tour_recording.remove_recording(recording)
+      session[:tour_recording] = tour_recording.contents
       recording.destroy
+      flash[:success] = "Your recording has been deleted."
     else
       flash[:danger] = "That recording cannot be deleted"
     end
-    redirect_to user_dashboard_path
+    redirect_to tour_list_path
   end
 end

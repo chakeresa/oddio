@@ -46,7 +46,7 @@ Rails.application.routes.draw do
   namespace :tour_list do
     resources :landmarks, only: [:create, :destroy]
     resources :landmarks, only: [:show] do
-      resources :recordings, only: [:new, :create]
+      resources :recordings, only: [:new, :create, :destroy]
     end
   end
 

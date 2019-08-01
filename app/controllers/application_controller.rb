@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
                 :current_user?,
                 :current_admin?,
                 :tour_list,
+                :tour_recording,
                 :require_user
 
   private
@@ -31,5 +32,9 @@ class ApplicationController < ActionController::Base
 
   def tour_list
     @tour_list ||= TourList.new(session[:tour_list])
+  end
+
+  def tour_recording
+    @tour_recording ||= TourListRecording.new(session[:tour_recording])
   end
 end

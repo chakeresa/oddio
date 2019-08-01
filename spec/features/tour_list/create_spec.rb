@@ -31,7 +31,7 @@ RSpec.describe 'tour list create:', vcr: { :record => :new_episodes }, type: :fe
 
     scenario 'can add recording to landmark' do
       expect(page).to have_button('Upload Recording')
-      
+
       within("#landmark-#{landmark1.id}") do
         click_on 'Upload Recording'
       end

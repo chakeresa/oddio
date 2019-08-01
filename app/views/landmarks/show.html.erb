@@ -17,7 +17,9 @@
 
   <div class="container">
     <section class="attributes">
-      <%= button_to "Add to Tour List", tour_list_landmarks_path(landmark_id: facade.landmark.id) %>
+      <% if current_user? %>
+        <%= button_to "Add to Tour List", tour_list_landmarks_path(landmark_id: facade.landmark.id) %>
+      <% end %>
       <br>
       <p><b>Address: </b> <%= facade.landmark.address %></p>
       <% if facade.landmark.phone_number.nil? %>
