@@ -16,20 +16,20 @@ Rails.application.routes.draw do
   ### Public
   # Landmarks
   resources :landmarks, only: [:index, :show]
-  
+
   namespace :api do
     namespace :v1 do
       resources :landmarks, only: [:index, :show]
     end
   end
-  
+
   # Recordings
   resources :recordings, only: [:index]
-  
+
   # Tours
   resources :tours, only: [:index, :show]
   get '/tours/:tour_id/landmarks/:id', to: 'tour/landmarks#show', as: 'tour_landmark'
-  
+
   ### User
   namespace :user do
     get '/dashboard', to: 'dashboard#index'
