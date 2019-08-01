@@ -21,6 +21,16 @@ main {
   word-break: break-word;
 }
 
+.btn-primary {
+  background-color: #06D2B9;
+  border-color: white;
+}
+
+.btn-primary:hover {
+  background-color: #363636;
+  border-color: white;
+}
+
 nav .btn {
    margin: 5px;
  }
@@ -37,12 +47,18 @@ nav .btn {
   width: 200px;
 }
 
+.navbar-brand
+{
+    padding: 3px;
+    height: 50px;
+}
+
 h1 {
   text-align: center;
 }
 
 .vote-button {
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 .vote {
@@ -87,6 +103,24 @@ h1 {
 
 .tour-list {
   padding: 5px;
+  background-color: #06D2B9;
+  color: white;
+}
+
+.tour-box {
+  background-color: #06D2B9;
+  color: white;
+  outline-color: white;
+  font-weight: bold;
+}
+
+.tour-info {
+  color: white;
+  font-weight: bold;
+}
+
+.tour-info:hover {
+  color: #919191;
 }
 
 figure {
