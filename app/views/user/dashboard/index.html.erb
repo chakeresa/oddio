@@ -25,3 +25,17 @@
     <p>No recordings uploaded yet</p>
   <% end %>
 </section>
+
+<h3>Tours</h3>
+<% if @user.tours.any? %>
+  <% @user.tours.each do |tour| %>
+    <div class='tour-list'>
+      <%= render partial: 'shared/voting_arrows', object: tour %>
+      <div class='tour-box'>
+        <%= link_to tour.title, tour_path(tour) %>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <p>No tours added yet</p>
+<% end %>
