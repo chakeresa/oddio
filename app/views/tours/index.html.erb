@@ -2,10 +2,11 @@
 <% if @tours.any? %>
   <% @tours.each do |tour| %>
     <div class='tour-list'>
-      <p>
+      <%= render partial: 'shared/voting_arrows', object: tour %>
+      <div class='tour-box'>
         <%= link_to tour.title, tour_path(tour) %><br>
         Creator: <%= link_to tour.user.display_name, user_path(tour.user) %><br>
-      </p>
+      </div>
     </div>
   <% end %>
 <% else %>

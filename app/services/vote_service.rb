@@ -1,18 +1,33 @@
 class VoteService
-
-  
-  def total_score
-    get_score = conn.get do |req|
-      req.url "/api/v1/landmark/#{:id}/score"
-    end
-    score = JSON.parse(get_score.body)["data"]["attributes"]["total_score"]
-    return score
+  def initialize(parameters)
+    @votable_type = parameters[:votable_type]
+    @votable_id = parameters[:votable_id]
+    @type = parameters[:type]
+    @vote_token = parameters[:vote_token]
   end
 
-private
+  def total_score
+    response = conn.get do |req|
+      req.url "/api/v1/#{@votable_type}/#{@votable_id}/score"
+    end
+    JSON.parse(response.body)["data"]["attributes"]["total_score"]
+  end
+
+  def request_create
+    request = conn.post do |req|
+      req.url "/api/v1/#{@votable_type}/#{@votable_id}/create_vote/#{@vote_token}/#{rating}"
+    end
+  end
+
+  private
+
   def conn
     Faraday.new url: "https://votes-app-1903.herokuapp.com" do  |faraday|
       faraday.adapter Faraday.default_adapter
     end
+  end
+
+  def rating
+    @type == "upvote" ? 1 : -1
   end
 end

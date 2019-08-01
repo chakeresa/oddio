@@ -1,28 +1,28 @@
 <head>
-
-
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css"/>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.css"/>
    <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet.routing.icons.png"/>
    <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/routing-icon.png"/>
    <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/images/layers-2x.png"/>
-<style>
-  #mapid { height: 500px; }
-</style>
-
+  <style>
+    #mapid { height: 500px; }
+  </style>
 </head>
 
-
-<h3><%= @tour.title %></h3>
+<div class='tour-header'>
+  <%= render partial: 'shared/voting_arrows', object: @tour %>
+  <h3 class='inline-block'><%= @tour.title %></h3>
+</div>
 <h4>Recordings</h4>
 <% @tour.recordings.each do |recording| %>
   <div class='recording-list'>
-    <p>
+    <%= render partial: 'shared/voting_arrows', object: recording %>
+    <div class='recording-box'>
       Title: <%= recording.title %><br>
       Landmark: <%= link_to recording.landmark.name, tour_landmark_path(@tour, recording.landmark) %><br>
       Creator: <%= link_to recording.user.display_name, user_path(recording.user) %>
-    </p>
-    <%= render partial: 'shared/audio_player', object: recording %>
+      <%= render partial: 'shared/audio_player', object: recording %>
+    </div>
   </div>
 <% end %>
 
