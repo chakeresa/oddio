@@ -15,21 +15,11 @@
 <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/routing-icon.png"/>
 <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/images/layers-2x.png"/>
 
+
 <body>
 <div id="mapid"></div>
 <button onclick="map.locate()" class='btn btn-primary'>Use my Location</button>
-<% if @tours.any? %>
-  <h4>Recommended Tours</h4>
-  <ul>
-    <% @tours.each do |tour| %>
-      <div class='tour-list'>
-        <li>
-          <%= link_to tour.title, tour_path(tour) %>
-        </li>
-      </div>
-    <% end %>
-  <ul>
-<% end %>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js">
 </script>
@@ -38,7 +28,7 @@
 
 <script>
    var greenIcon = new L.Icon({
-     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png',
+     iconUrl: '<%= image_path('tree.png')%>',
      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
      iconSize: [25, 41],
      iconAnchor: [12, 41],
@@ -47,7 +37,7 @@
    });
 
    var greyIcon = new L.Icon({
-     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-grey.png',
+     iconUrl: '<%= image_path('congress.png')%>',
      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
      iconSize: [25, 41],
      iconAnchor: [12, 41],
@@ -56,7 +46,7 @@
    });
 
    var violetIcon = new L.Icon({
-     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-violet.png',
+     iconUrl: '<%= image_path('theater.png')%>',
      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
      iconSize: [25, 41],
      iconAnchor: [12, 41],
@@ -65,7 +55,7 @@
    });
 
    var orangeIcon = new L.Icon({
-     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-orange.png',
+     iconUrl: '<%= image_path('cramschool.png')%>',
      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
      iconSize: [25, 41],
      iconAnchor: [12, 41],

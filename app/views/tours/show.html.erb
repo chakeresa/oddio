@@ -1,12 +1,65 @@
-<h3><%= @tour.title %></h3>
+<head>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css"/>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.css"/>
+   <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet.routing.icons.png"/>
+   <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/routing-icon.png"/>
+   <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/images/layers-2x.png"/>
+  <style>
+    #mapid { height: 500px; }
+  </style>
+</head>
+
+<div class='tour-header'>
+  <%= render partial: 'shared/voting_arrows', object: @tour %>
+  <h3 class='inline-block'><%= @tour.title %></h3>
+</div>
 <h4>Recordings</h4>
 <% @tour.recordings.each do |recording| %>
   <div class='recording-list'>
-    <p>
+    <%= render partial: 'shared/voting_arrows', object: recording %>
+    <div class='recording-box'>
       Title: <%= recording.title %><br>
       Landmark: <%= link_to recording.landmark.name, tour_landmark_path(@tour, recording.landmark) %><br>
       Creator: <%= link_to recording.user.display_name, user_path(recording.user) %>
-    </p>
-    <%= render partial: 'shared/audio_player', object: recording %>
+      <%= render partial: 'shared/audio_player', object: recording %>
+    </div>
   </div>
 <% end %>
+
+<div id="mapid"></div>
+
+<!-- Make sure you put this AFTER Leaflet's CSS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.js">
+</script>
+  <script>
+    var mymap = L.map('mapid').setView([<%= @tour.landmarks.first.lat %>, <%=@tour.landmarks.first.long%>], 13)
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.streets',
+    accessToken: '<%=ENV['MAPBOX_API_KEY']%>'
+    }).addTo(mymap);
+
+    // /tours/:tour_id/landmarks/:id
+
+    
+    <% @tour.landmarks.each do |landmark| %>
+    L.marker([<%=landmark.lat%>, <%=landmark.long%> ]).bindPopup("<%=landmark.name %>".link(`/tours/<%= @tour.id %>/landmarks/<%= landmark.id %>`)).addTo(mymap)
+    <% end %>
+
+    routingControl = L.Routing.control({
+      waypoints: [
+      L.latLng(my_lat, my_lng),
+      L.latLng(lat, long)
+      ],
+      router: L.Routing.mapbox('<%=ENV['MAPBOX_API_KEY']%>',{profile: 'mapbox/cycling'}),
+      createMarker: function() { return null; },
+      lineOptions: { addWaypoints: false },
+      collapsible: true
+    })
+    routingControl.addTo(map);
+
+
+  </script>

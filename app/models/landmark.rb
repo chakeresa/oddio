@@ -1,4 +1,6 @@
 class Landmark < ApplicationRecord
+  include Votable
+  
   has_many :recordings
   has_many :tours, through: :recordings
 

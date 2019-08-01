@@ -1,11 +1,12 @@
 <h3>All Recordings</h3>
 <% @recordings.each do |recording| %>
   <div class='recording-list'>
-    <p>
+    <%= render partial: 'shared/voting_arrows', object: recording %>
+    <div class='recording-box'>
       Title: <%= recording.title %><br>
       Landmark: <%= link_to recording.landmark.name, landmark_path(recording.landmark) %><br>
       Creator: <%= link_to recording.user.display_name, user_path(recording.user) %>
-    </p>
-    <%= render partial: 'shared/audio_player', object: recording %>
+      <%= render partial: 'shared/audio_player', object: recording %>
+    </div>
   </div>
 <% end %>

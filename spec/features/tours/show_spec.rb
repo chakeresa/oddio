@@ -8,7 +8,7 @@ RSpec.describe "Tour Show Page" do
       tr1 = create(:tour_recording, tour: @tour, recording: r1)
       tr2 = create(:tour_recording, tour: @tour, recording: r2)
     end
-    
+
     it 'loads the page' do
       VCR.use_cassette('tour_show_page_loads', record: :new_episodes) do
         visit tour_path(@tour)
@@ -17,7 +17,7 @@ RSpec.describe "Tour Show Page" do
         expect(status_code).to eq(200)
       end
     end
-    
+
     it 'lists basic data and all recordings' do
       VCR.use_cassette('tour_show_page_data_and_recordings', record: :new_episodes) do
         visit tour_path(@tour)
@@ -33,7 +33,5 @@ RSpec.describe "Tour Show Page" do
         end
       end
     end
-
-    xit 'shows a map of the relevant locations'
   end
 end
