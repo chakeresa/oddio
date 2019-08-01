@@ -34,7 +34,7 @@
         var votable_id = element_id.split("-")[1];
         var upDown = element_id.split("-")[2];
         var clicker = $(this)
-        $.get("/user/votes_x?type=" + upDown + "vote&votable_id=" + votable_id + "&votable_type=" + votable_type, function(data, status){
+        $.get("/user/votes?type=" + upDown + "vote&votable_id=" + votable_id + "&votable_type=" + votable_type, function(data, status){
           clicker.parent().children('.total-score').html(data['new_score']);
         });
         $(this).toggleClass('active-' + upDown+ 'vote', true);

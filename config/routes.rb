@@ -34,8 +34,7 @@ Rails.application.routes.draw do
   namespace :user do
     get '/dashboard', to: 'dashboard#index'
     delete '/dashboard/:id', to: 'recordings#destroy', as: :delete_recording
-    resources :votes, only: [:create]
-    get '/votes_x', to: 'votes_x#create'
+    get '/votes', to: 'votes#create'
     resources :landmarks, only: [:show] do
       resources :recordings, only: [:new, :create]
     end
