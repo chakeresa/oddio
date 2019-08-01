@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe "tour list create", vcr: { :record => :new_episodes }, type: :feature do
+RSpec.describe 'tour list add landmarks:', vcr: { :record => :new_episodes }, type: :feature do
 
   let(:user) { create(:user) }
   let(:landmark1) { create(:landmark) }
   let(:landmark2) { create(:landmark) }
   let(:landmark3) { create(:landmark) }
 
-  context 'as a visitor' do
+  context 'as a visitor,' do
     scenario 'unable to see create tour display' do
       visit landmarks_path
 
@@ -15,7 +15,7 @@ RSpec.describe "tour list create", vcr: { :record => :new_episodes }, type: :fea
     end
   end
 
-  context 'as a user' do
+  context 'as a user,' do
     before :each do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     end
@@ -32,7 +32,7 @@ RSpec.describe "tour list create", vcr: { :record => :new_episodes }, type: :fea
 
     scenario 'can add multiple landmarks to tour list' do
       visit landmark_path(landmark1)
-      
+
       click_button 'Add to Tour List'
 
       expect(page).to have_content("You have added #{landmark1.name} to your tour list.")
@@ -76,7 +76,7 @@ RSpec.describe "tour list create", vcr: { :record => :new_episodes }, type: :fea
     end
   end
 
-  context 'as a admin'
+  context 'as a admin,'
 
   context 'edge case' do
     scenario 'unable to add same landmark' do
