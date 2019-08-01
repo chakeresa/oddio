@@ -10,21 +10,7 @@
 <div>
   <div>
     <div class='landmark-header'>
-      <div class='vote'>
-        <% if current_user? %>
-          <div class="vote-button upvote" id="landmark-<%= facade.landmark.id %>-up-vote">
-            ⇧
-          </div>
-        <% end %>
-        <div class="total-score">
-          <%= facade.landmark.total_score %>
-        </div>
-        <% if current_user? %>
-          <div class="vote-button downvote" id="landmark-<%= facade.landmark.id %>-down-vote">
-            ⇩
-          </div>
-        <% end %>
-      </div>
+      <%= render partial: 'shared/voting_arrows', object: facade.landmark %>
       <h1 class='inline-block'><%= facade.landmark.name %></h1>
     </div>
     <section class="picture">
