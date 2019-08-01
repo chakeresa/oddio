@@ -19,15 +19,14 @@
 <% end %>
 <h4>Tours</h4>
 <% if @user.tours.any? %>
-  <ul>
-    <% @user.tours.each do |tour| %>
-      <div class='tour-list'>
-        <li>
-          <%= link_to tour.title, tour_path(tour) %>
-        </li>
+  <% @user.tours.each do |tour| %>
+    <div class='tour-list'>
+      <div class='tour-box'>
+        <%= render partial: 'shared/voting_arrows', object: tour %>
+        <%= link_to tour.title, tour_path(tour) %>
       </div>
-    <% end %>
-  <ul>
+    </div>
+  <% end %>
 <% else %>
   <p>No tours hosted yet</p>
 <% end %>
