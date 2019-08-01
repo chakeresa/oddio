@@ -75,7 +75,7 @@ h1 {
   width: 90%;
 }
 
-.recording-list {
+.recording-list, .tour-list {
   display: flex;
   align-items: center;
   background-color: lightsteelblue;
