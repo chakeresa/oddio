@@ -18,6 +18,7 @@
 
 main {
   margin: 10px;
+  word-break: break-word;
 }
 
 nav .btn {
