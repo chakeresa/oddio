@@ -1,7 +1,7 @@
 <div class='vote'>
   <% if current_user? %>
     <div class="vote-button upvote" id="<%= voting_arrows.class.to_s.downcase %>-<%= voting_arrows.id %>-up-vote">
-      ⇧
+      ▲
     </div>
   <% end %>
   <div class="total-score">
@@ -9,7 +9,7 @@
   </div>
   <% if current_user? %>
     <div class="vote-button downvote" id="<%= voting_arrows.class.to_s.downcase %>-<%= voting_arrows.id %>-down-vote">
-      ⇩
+      ▼
     </div>
   <% end %>
 </div>
