@@ -1,4 +1,4 @@
-<h1>Tour List</h1>
+<h3>Tour List</h3>
 <% if tour_list.contents.empty? %>
   <p>There are no landmarks currently in your tour list. Add some by visiting the landmark's show page and click on "Add to Tour List"</p>
 <% else %>
@@ -6,16 +6,12 @@
   <ul id="landmarks">
     <% tour_list.landmarks.each do |landmark, quantity| %>
       <li id="landmark-<%= landmark.id %>" >
-        <%= landmark.name %>
-        <%= landmark.address %>
-        <%= landmark.phone_number %>
-        <%= landmark.category %>
-        <%= landmark.website %>
-        <%= button_to "Remove Landmark", tour_list_landmark_path(landmark.id), method: :delete %>
+        <%= link_to landmark.name, landmark_path(landmark) %>
+        <%= button_to "Remove Landmark", tour_list_landmark_path(landmark.id), method: :delete, class: 'btn btn-primary' %>
         <% unless tour_recording.contents.value?(landmark.id) %>
-          <%= button_to "Upload Recording", new_tour_list_landmark_recording_path(landmark), method: :get %>
+          <%= button_to "Upload Recording", new_tour_list_landmark_recording_path(landmark), method: :get, class: 'btn btn-primary' %>
         <% else %>
-          <%= button_to "Delete Recording", tour_list_landmark_recording_path(tour_recording.contents.key(landmark.id).to_i, landmark_id: landmark.id), method: :delete %>
+          <%= button_to "Delete Recording", tour_list_landmark_recording_path(tour_recording.contents.key(landmark.id).to_i, landmark_id: landmark.id), method: :delete, class: 'btn btn-primary' %>
         <% end %>
       </li>
     <% end %>
@@ -23,10 +19,10 @@
 
   <%= form_tag tours_path do %>
     <label>Tour Name:</label><br>
-    <input type="text" id="tour_title" name="tour[title]"><br>
+    <input type="text" id="tour_title" name="tour[title]" class="black-border">
 
-    <input type="submit" value="Create Tour">
+    <input type="submit" value="Create Tour" class="btn btn-primary">
   <% end %>
 
-  <%= button_to "Empty List", empty_tour_list_path, method: :delete %>
+  <%= button_to "Empty List", empty_tour_list_path, method: :delete, class: 'btn btn-primary' %>
 <% end %>

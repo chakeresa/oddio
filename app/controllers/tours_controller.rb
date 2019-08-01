@@ -9,7 +9,7 @@ class ToursController < ApplicationController
 
   def create
     unless check_landmark_with_recording
-      flash[:error] = "Make sure to add a recording to all landmarks."
+      flash[:danger] = "Make sure to add a recording to all landmarks."
 
       redirect_to tour_list_path
     else
