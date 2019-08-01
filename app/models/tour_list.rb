@@ -27,8 +27,8 @@ class TourList
     end
   end
 
-  def landmark
-    @landmark ||= load_landmark
+  def landmarks
+    @landmarks ||= load_landmark
   end
 
   def load_landmark
