@@ -1,4 +1,4 @@
-class TourList::LandmarkController < ApplicationController
+class TourList::LandmarkController < TourList::BaseController
   def create
     landmark = Landmark.find(params[:id])
     unless tour_list.contents.keys.include?(landmark.id.to_s)
@@ -18,7 +18,7 @@ class TourList::LandmarkController < ApplicationController
     tour_list.remove_landmark(landmark.id)
     session[:tour_list] = tour_list.contents
     flash[:success] = "#{landmark.name} has been removed from your tour list."
-    
+
     redirect_to tour_list_path
   end
 end
