@@ -1,4 +1,6 @@
 class Landmark < ApplicationRecord
+  include Votable
+  
   has_many :recordings
   has_many :tours, through: :recordings
 
@@ -6,15 +8,6 @@ class Landmark < ApplicationRecord
   validates :place_id, presence: true, uniqueness: true
 
   before_save :update_md5_hash
-
-  # TODO: abstract into a Votable module & include in several classes
-  def total_score
-    parameters = {
-      votable_type: self.class.to_s.downcase,
-      votable_id: self.id
-    }
-    VoteService.new(parameters).total_score
-  end
 
   private
 
