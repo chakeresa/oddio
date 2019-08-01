@@ -1,13 +1,29 @@
 <div class='center-contents'>
-  <h1>Welcome to Oddio</h1>
+  <style>
+    body {
+    background-image: url(<%= asset_path("Oddio-Background.png")%>);
+    background-repeat: no-repeat;
+    background-position: top-left;
+    background-size: cover;
+    }
+  </style>
+  <h1 class='white-text'>Welcome to Oddio</h1>
   <%= link_to  "I want to explore", landmarks_path, class: 'btn btn-primary' %>
   <br>
   <br>
   <%= link_to  'Take me on a tour', tours_path, class: 'btn btn-primary' %>
   <br>
   <br>
-  <h5>
+  <h5 class='white-translucent-background'>
     Oddio delivers crowd-sourced, self-guided audio tours of Denver, CO. As you explore the city, use Oddio to discover new landmarks or add your own local commentary for others to enjoy!
   </h5>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
 
 </div>
