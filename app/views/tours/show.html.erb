@@ -2,21 +2,7 @@
 <h4>Recordings</h4>
 <% @tour.recordings.each do |recording| %>
   <div class='recording-list'>
-    <div class='vote'>
-      <% if current_user? %>
-        <div class="vote-button upvote" id="recording-<%= recording.id %>-up-vote">
-          ⇧
-        </div>
-      <% end %>
-      <div class="total-score">
-        <%= recording.total_score %>
-      </div>
-      <% if current_user? %>
-        <div class="vote-button downvote" id="recording-<%= recording.id %>-down-vote">
-          ⇩
-        </div>
-      <% end %>
-    </div>
+    <%= render partial: 'shared/voting_arrows', object: recording %>
     <div class='recording-box'>
       Title: <%= recording.title %><br>
       Landmark: <%= link_to recording.landmark.name, tour_landmark_path(@tour, recording.landmark) %><br>
