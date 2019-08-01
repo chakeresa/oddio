@@ -15,6 +15,7 @@
         <%= landmark.category %>
         <%= landmark.website %>
         <%= button_to "Remove", tour_list_landmark_path(landmark.id), method: :delete %>
+        <%= button_to "Upload Recording", new_tour_list_landmark_recording_path(landmark), method: :get, class: 'btn btn-primary' %>
       </li>
     <% end %>
   </ul>

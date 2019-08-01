@@ -45,6 +45,9 @@ Rails.application.routes.draw do
   delete '/tour_list', to: 'tour_list#destroy', as: :empty_tour_list
   namespace :tour_list do
     resources :landmarks, only: [:create, :destroy]
+    resources :landmarks, only: [:show] do
+      resources :recordings, only: [:new, :create]
+    end
   end
 
   ### Admin
