@@ -33,6 +33,5 @@ RSpec.describe "Tour Show Page" do
         end
       end
     end
-
   end
 end
