@@ -21,31 +21,31 @@ RSpec.describe TourList, type: :model do
   end
 
   describe '#add_landmark' do
-    it 'adds a landmark to its contents' do
+    it 'adds a landmark to its landmark_contents' do
       subject.add_landmark(3)
 
-      expect(subject.contents).to eq({'1' => 1, '2' => 1, '3' => 1})
+      expect(subject.landmark_contents).to eq({'1' => 1, '2' => 1, '3' => 1})
     end
 
-    it 'unable to increase contents greater than one' do
+    it 'unable to increase landmark_contents greater than one' do
       subject.add_landmark(2)
 
-      expect(subject.contents).to eq({'1' => 1, '2' => 1})
+      expect(subject.landmark_contents).to eq({'1' => 1, '2' => 1})
     end
   end
 
   describe '#remove_landmark' do
-    it 'removes a landmark to its contents' do
+    it 'removes a landmark to its landmark_contents' do
       subject.remove_landmark(2)
 
-      expect(subject.contents).to eq({'1' => 1})
+      expect(subject.landmark_contents).to eq({'1' => 1})
     end
 
-    it 'unable to decrease contents less than zero' do
+    it 'unable to decrease landmark_contents less than zero' do
       subject.remove_landmark(3)
 
-      expect(subject.contents).to_not eq({'1' => 1, '2' => 1, '3' => -1})
-      expect(subject.contents).to eq({'1' => 1, '2' => 1})
+      expect(subject.landmark_contents).to_not eq({'1' => 1, '2' => 1, '3' => -1})
+      expect(subject.landmark_contents).to eq({'1' => 1, '2' => 1})
     end
   end
 
