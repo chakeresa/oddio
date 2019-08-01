@@ -15,12 +15,16 @@ class TourList
   end
 
   def add_landmark(landmark_id)
-    @contents[landmark_id.to_s] += 1
+    if count_of(landmark_id) == 0
+      @contents[landmark_id.to_s] += 1
+    end
   end
 
   def remove_landmark(landmark_id)
-    @contents[landmark_id.to_s] -= 1
-    @contents.delete(landmark_id.to_s) if count_of(landmark_id) == 0
+    if count_of(landmark_id) == 1
+      @contents[landmark_id.to_s] -= 1
+      @contents.delete(landmark_id.to_s) if count_of(landmark_id) == 0
+    end
   end
 
   def landmark
