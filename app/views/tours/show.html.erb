@@ -44,6 +44,7 @@
 
     // /tours/:tour_id/landmarks/:id
 
+    
     <% @tour.landmarks.each do |landmark| %>
     L.marker([<%=landmark.lat%>, <%=landmark.long%> ]).bindPopup("<%=landmark.name %>".link(`/tours/<%= @tour.id %>/landmarks/<%= landmark.id %>`)).addTo(mymap)
     <% end %>
