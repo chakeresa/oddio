@@ -12,4 +12,13 @@ class TourList::LandmarkController < ApplicationController
 
     redirect_to landmarks_path
   end
+
+  def destroy
+    landmark = Landmark.find(params[:id])
+    tour_list.remove_landmark(landmark.id)
+    session[:tour_list] = tour_list.contents
+    flash[:success] = "#{landmark.name} has been removed from your tour list."
+    
+    redirect_to tour_list_path
+  end
 end
