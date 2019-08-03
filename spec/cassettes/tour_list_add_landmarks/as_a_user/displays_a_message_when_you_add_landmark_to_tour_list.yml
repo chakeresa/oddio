@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 03 Aug 2019 16:10:21 GMT
+      - Sat, 03 Aug 2019 18:50:00 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -36,7 +36,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"data":{"type":"landmark","votable_id":"20","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
     http_version: 
-  recorded_at: Sat, 03 Aug 2019 16:10:22 GMT
+  recorded_at: Sat, 03 Aug 2019 18:50:00 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/photo?key=<GOOGLE_PLACES_API_KEY>&maxheight=800&maxwidth=800&photoreference=CmRaAAAA58Iy6Em8ucPC_-OCxKTJ-p7YKDBUQ4mgVZj4qlFN6j2JhXKSfteprF-Ckca73TjXaYUtNk-trEbhBCWoUcWWsO42KRap_rlw4teWz4hqBU57sAoTl3-myl_4xjOw3LmBEhBTUAINq_SeOPXlwudc8ccKGhSH-pCQxOO6rRE-O1zFKPW1-h3OqA
@@ -56,7 +56,7 @@ http_interactions:
       message: Found
     headers:
       Date:
-      - Sat, 03 Aug 2019 16:10:22 GMT
+      - Sat, 03 Aug 2019 18:50:00 GMT
       Pragma:
       - no-cache
       Expires:
@@ -76,7 +76,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=28
+      - gfet4t7; dur=31
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -85,5 +85,5 @@ http_interactions:
         Moved</TITLE></HEAD><BODY>\n<H1>302 Moved</H1>\nThe document has moved\n<A
         HREF=\"https://lh3.googleusercontent.com/p/AF1QipP5cnZz_ezB1Q0szY_zgHVVSiM3lCBSbFOas_f6=s1600-w800-h800\">here</A>.\r\n</BODY></HTML>\r\n"
     http_version: 
-  recorded_at: Sat, 03 Aug 2019 16:10:22 GMT
+  recorded_at: Sat, 03 Aug 2019 18:50:00 GMT
 recorded_with: VCR 5.0.0

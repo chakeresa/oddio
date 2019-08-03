@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://votes-app-1903.herokuapp.com/api/v1/landmark/28/score
+    uri: https://votes-app-1903.herokuapp.com/api/v1/landmark/36/score
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 03 Aug 2019 16:10:25 GMT
+      - Sat, 03 Aug 2019 18:50:07 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -34,9 +34,9 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":{"type":"landmark","votable_id":"28","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
+      string: '{"data":{"type":"landmark","votable_id":"36","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
     http_version: 
-  recorded_at: Sat, 03 Aug 2019 16:10:26 GMT
+  recorded_at: Sat, 03 Aug 2019 18:50:07 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/photo?key=<GOOGLE_PLACES_API_KEY>&maxheight=800&maxwidth=800&photoreference=CmRaAAAA58Iy6Em8ucPC_-OCxKTJ-p7YKDBUQ4mgVZj4qlFN6j2JhXKSfteprF-Ckca73TjXaYUtNk-trEbhBCWoUcWWsO42KRap_rlw4teWz4hqBU57sAoTl3-myl_4xjOw3LmBEhBTUAINq_SeOPXlwudc8ccKGhSH-pCQxOO6rRE-O1zFKPW1-h3OqA
@@ -56,7 +56,7 @@ http_interactions:
       message: Found
     headers:
       Date:
-      - Sat, 03 Aug 2019 16:10:26 GMT
+      - Sat, 03 Aug 2019 18:50:07 GMT
       Pragma:
       - no-cache
       Expires:
@@ -76,7 +76,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=72
+      - gfet4t7; dur=22
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -85,10 +85,10 @@ http_interactions:
         Moved</TITLE></HEAD><BODY>\n<H1>302 Moved</H1>\nThe document has moved\n<A
         HREF=\"https://lh3.googleusercontent.com/p/AF1QipP5cnZz_ezB1Q0szY_zgHVVSiM3lCBSbFOas_f6=s1600-w800-h800\">here</A>.\r\n</BODY></HTML>\r\n"
     http_version: 
-  recorded_at: Sat, 03 Aug 2019 16:10:26 GMT
+  recorded_at: Sat, 03 Aug 2019 18:50:07 GMT
 - request:
     method: get
-    uri: https://votes-app-1903.herokuapp.com/api/v1/landmark/29/score
+    uri: https://votes-app-1903.herokuapp.com/api/v1/landmark/37/score
     body:
       encoding: US-ASCII
       string: ''
@@ -105,7 +105,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 03 Aug 2019 16:10:25 GMT
+      - Sat, 03 Aug 2019 18:50:07 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -120,9 +120,9 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":{"type":"landmark","votable_id":"29","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
+      string: '{"data":{"type":"landmark","votable_id":"37","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
     http_version: 
-  recorded_at: Sat, 03 Aug 2019 16:10:26 GMT
+  recorded_at: Sat, 03 Aug 2019 18:50:07 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/photo?key=<GOOGLE_PLACES_API_KEY>&maxheight=800&maxwidth=800&photoreference=CmRaAAAA58Iy6Em8ucPC_-OCxKTJ-p7YKDBUQ4mgVZj4qlFN6j2JhXKSfteprF-Ckca73TjXaYUtNk-trEbhBCWoUcWWsO42KRap_rlw4teWz4hqBU57sAoTl3-myl_4xjOw3LmBEhBTUAINq_SeOPXlwudc8ccKGhSH-pCQxOO6rRE-O1zFKPW1-h3OqA
@@ -142,7 +142,7 @@ http_interactions:
       message: Found
     headers:
       Date:
-      - Sat, 03 Aug 2019 16:10:26 GMT
+      - Sat, 03 Aug 2019 18:50:07 GMT
       Pragma:
       - no-cache
       Expires:
@@ -162,7 +162,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=24
+      - gfet4t7; dur=29
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -171,10 +171,10 @@ http_interactions:
         Moved</TITLE></HEAD><BODY>\n<H1>302 Moved</H1>\nThe document has moved\n<A
         HREF=\"https://lh3.googleusercontent.com/p/AF1QipP5cnZz_ezB1Q0szY_zgHVVSiM3lCBSbFOas_f6=s1600-w800-h800\">here</A>.\r\n</BODY></HTML>\r\n"
     http_version: 
-  recorded_at: Sat, 03 Aug 2019 16:10:26 GMT
+  recorded_at: Sat, 03 Aug 2019 18:50:07 GMT
 - request:
     method: get
-    uri: https://votes-app-1903.herokuapp.com/api/v1/landmark/30/score
+    uri: https://votes-app-1903.herokuapp.com/api/v1/landmark/38/score
     body:
       encoding: US-ASCII
       string: ''
@@ -191,7 +191,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 03 Aug 2019 16:10:26 GMT
+      - Sat, 03 Aug 2019 18:50:08 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -206,9 +206,9 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":{"type":"landmark","votable_id":"30","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
+      string: '{"data":{"type":"landmark","votable_id":"38","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
     http_version: 
-  recorded_at: Sat, 03 Aug 2019 16:10:26 GMT
+  recorded_at: Sat, 03 Aug 2019 18:50:08 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/photo?key=<GOOGLE_PLACES_API_KEY>&maxheight=800&maxwidth=800&photoreference=CmRaAAAA58Iy6Em8ucPC_-OCxKTJ-p7YKDBUQ4mgVZj4qlFN6j2JhXKSfteprF-Ckca73TjXaYUtNk-trEbhBCWoUcWWsO42KRap_rlw4teWz4hqBU57sAoTl3-myl_4xjOw3LmBEhBTUAINq_SeOPXlwudc8ccKGhSH-pCQxOO6rRE-O1zFKPW1-h3OqA
@@ -228,7 +228,7 @@ http_interactions:
       message: Found
     headers:
       Date:
-      - Sat, 03 Aug 2019 16:10:27 GMT
+      - Sat, 03 Aug 2019 18:50:08 GMT
       Pragma:
       - no-cache
       Expires:
@@ -248,7 +248,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=20
+      - gfet4t7; dur=26
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43,39"
     body:
@@ -257,5 +257,5 @@ http_interactions:
         Moved</TITLE></HEAD><BODY>\n<H1>302 Moved</H1>\nThe document has moved\n<A
         HREF=\"https://lh3.googleusercontent.com/p/AF1QipP5cnZz_ezB1Q0szY_zgHVVSiM3lCBSbFOas_f6=s1600-w800-h800\">here</A>.\r\n</BODY></HTML>\r\n"
     http_version: 
-  recorded_at: Sat, 03 Aug 2019 16:10:27 GMT
+  recorded_at: Sat, 03 Aug 2019 18:50:08 GMT
 recorded_with: VCR 5.0.0

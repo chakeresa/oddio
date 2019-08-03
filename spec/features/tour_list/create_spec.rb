@@ -7,7 +7,7 @@ RSpec.describe 'tour list create', :vcr, type: :feature do
   let(:landmark2) { create(:landmark) }
   let(:landmark3) { create(:landmark) }
 
-  context 'as a visitor,' do
+  context 'as a visitor' do
     scenario 'unable to visit the page' do
       visit tour_list_path
 
@@ -15,7 +15,7 @@ RSpec.describe 'tour list create', :vcr, type: :feature do
     end
   end
 
-  context 'as a user,' do
+  context 'as a user' do
     before :each do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
@@ -40,7 +40,7 @@ RSpec.describe 'tour list create', :vcr, type: :feature do
     end
   end
 
-  context 'as an admin,'
+  context 'as an admin'
 
   context 'edge case'
 end
