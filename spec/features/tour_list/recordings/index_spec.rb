@@ -44,5 +44,26 @@ RSpec.describe 'tour list recordings', :vcr, type: :feature do
 
   context 'as an admin'
 
-  context 'edge case'
+  context 'edge case' do
+    scenario 'user can delete recording that was selected' do
+      recording = create(:recording, landmark: landmark)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+      visit landmark_path(landmark)
+      click_button 'Add to tour list'
+      visit tour_list_path
+
+      within("#landmark-#{landmark.id}") do
+        click_on 'Choose Existing Recording'
+      end
+
+      within(first('.recording-list')) do
+        click_on 'Pick Recording'
+      end
+
+      click_on 'Delete Recording'
+
+      expect(current_path).to eq(tour_list_path)
+      expect(page).to have_content('Your recording has been deleted.')
+    end
+  end
 end
