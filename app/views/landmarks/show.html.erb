@@ -36,7 +36,7 @@
     </section>
   </div>
 
-  <div class="attributes">
+  <div class="add-tour-list">
     <% if current_user? %>
       <%= button_to "Add to tour list", tour_list_landmarks_path(landmark_id: facade.landmark.id), class: 'btn btn-primary' %>
     <% end %>

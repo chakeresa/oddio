@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'tour list show:', vcr: { :record => :new_episodes }, type: :feature do
+RSpec.describe 'tour list show', :vcr, type: :feature do
 
   let(:user) { create(:user) }
   let(:landmark1) { create(:landmark) }
@@ -20,11 +20,11 @@ RSpec.describe 'tour list show:', vcr: { :record => :new_episodes }, type: :feat
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
       visit landmark_path(landmark1)
-      click_button 'Add to Tour List'
+      click_button 'Add to tour list'
       visit landmark_path(landmark2)
-      click_button 'Add to Tour List'
+      click_button 'Add to tour list'
       visit landmark_path(landmark3)
-      click_button 'Add to Tour List'
+      click_button 'Add to tour list'
 
       visit tour_list_path
     end
@@ -32,26 +32,14 @@ RSpec.describe 'tour list show:', vcr: { :record => :new_episodes }, type: :feat
     scenario 'sees their tour list' do
       within("#landmark-#{landmark1.id}") do
         expect(page).to have_content(landmark1.name)
-        expect(page).to have_content(landmark1.address)
-        expect(page).to have_content(landmark1.phone_number)
-        expect(page).to have_content(landmark1.category)
-        expect(page).to have_content(landmark1.website)
       end
 
       within("#landmark-#{landmark2.id}") do
         expect(page).to have_content(landmark2.name)
-        expect(page).to have_content(landmark2.address)
-        expect(page).to have_content(landmark2.phone_number)
-        expect(page).to have_content(landmark2.category)
-        expect(page).to have_content(landmark2.website)
       end
 
       within("#landmark-#{landmark3.id}") do
         expect(page).to have_content(landmark3.name)
-        expect(page).to have_content(landmark3.address)
-        expect(page).to have_content(landmark3.phone_number)
-        expect(page).to have_content(landmark3.category)
-        expect(page).to have_content(landmark3.website)
       end
     end
 

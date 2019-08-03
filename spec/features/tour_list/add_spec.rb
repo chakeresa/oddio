@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'tour list add landmarks:', vcr: { :record => :new_episodes }, type: :feature do
+RSpec.describe 'tour list add landmarks', :vcr, type: :feature do
 
   let(:user) { create(:user) }
   let(:landmark1) { create(:landmark) }
@@ -23,8 +23,8 @@ RSpec.describe 'tour list add landmarks:', vcr: { :record => :new_episodes }, ty
     scenario 'displays a message when you add landmark to tour list' do
       visit landmark_path(landmark1)
 
-      within('.attributes') do
-        click_button 'Add to Tour List'
+      within('.add-tour-list') do
+        click_button 'Add to tour list'
       end
 
       expect(page).to have_content("You have added #{landmark1.name} to your tour list.")
@@ -33,24 +33,21 @@ RSpec.describe 'tour list add landmarks:', vcr: { :record => :new_episodes }, ty
     scenario 'can add multiple landmarks to tour list' do
       visit landmark_path(landmark1)
 
-      click_button 'Add to Tour List'
+      click_button 'Add to tour list'
 
-      expect(page).to have_content("You have added #{landmark1.name} to your tour list.")
-      expect(page).to have_content('You have 1 landmarks in your tour list.')
+      expect(page).to have_content("You have added #{landmark1.name} to your tour list. You have 1 landmark(s) in your tour list.")
 
       visit landmark_path(landmark2)
 
-      click_button 'Add to Tour List'
+      click_button 'Add to tour list'
 
-      expect(page).to have_content("You have added #{landmark2.name} to your tour list.")
-      expect(page).to have_content('You have 2 landmarks in your tour list.')
+      expect(page).to have_content("You have added #{landmark2.name} to your tour list. You have 2 landmark(s) in your tour list.")
 
       visit landmark_path(landmark3)
 
-      click_button 'Add to Tour List'
+      click_button 'Add to tour list'
 
-      expect(page).to have_content("You have added #{landmark3.name} to your tour list.")
-      expect(page).to have_content('You have 3 landmarks in your tour list.')
+      expect(page).to have_content("You have added #{landmark3.name} to your tour list. You have 3 landmark(s) in your tour list.")
     end
 
     scenario 'displays the total number of landmarks in the tour list' do
@@ -58,19 +55,19 @@ RSpec.describe 'tour list add landmarks:', vcr: { :record => :new_episodes }, ty
 
       expect(page).to have_content('Create Tour(0)')
 
-      click_button 'Add to Tour List'
+      click_button 'Add to tour list'
 
       expect(page).to have_content('Create Tour(1)')
 
       visit landmark_path(landmark2)
 
-      click_button 'Add to Tour List'
+      click_button 'Add to tour list'
 
       expect(page).to have_content('Create Tour(2)')
 
       visit landmark_path(landmark3)
 
-      click_button 'Add to Tour List'
+      click_button 'Add to tour list'
 
       expect(page).to have_content('Create Tour(3)')
     end
@@ -84,14 +81,13 @@ RSpec.describe 'tour list add landmarks:', vcr: { :record => :new_episodes }, ty
 
       visit landmark_path(landmark1)
 
-      click_button 'Add to Tour List'
+      click_button 'Add to tour list'
 
-      expect(page).to have_content("You have added #{landmark1.name} to your tour list.")
-      expect(page).to have_content('You have 1 landmarks in your tour list.')
+      expect(page).to have_content("You have added #{landmark1.name} to your tour list. You have 1 landmark(s) in your tour list.")
 
       visit landmark_path(landmark1)
 
-      click_button 'Add to Tour List'
+      click_button 'Add to tour list'
 
       expect(page).to have_content("You already have #{landmark1.name} in your tour list")
     end
