@@ -47,6 +47,7 @@ Rails.application.routes.draw do
     resources :landmarks, only: [:create, :destroy]
     resources :landmarks, only: [:show] do
       resources :recordings, only: [:index, :new, :create, :destroy]
+      post '/recordings/:id', to: 'recordings#update', as: :pick_recording
     end
   end
 

@@ -9,7 +9,7 @@
         <%= link_to landmark.name, landmark_path(landmark) %>
         <%= button_to "Remove Landmark", tour_list_landmark_path(landmark.id), method: :delete, class: 'btn btn-primary' %>
         <% unless tour_recording.contents.value?(landmark.id) %>
-          <%= button_to 'Pick Existing Recording', tour_list_landmark_recordings_path(landmark), method: :get, class: 'btn btn-primary' %>
+          <%= button_to 'Choose Existing Recording', tour_list_landmark_recordings_path(landmark), method: :get, class: 'btn btn-primary' %>
           <%= button_to 'Upload Recording', new_tour_list_landmark_recording_path(landmark), method: :get, class: 'btn btn-primary' %>
         <% else %>
           <%= button_to 'Delete Recording', tour_list_landmark_recording_path(tour_recording.contents.key(landmark.id).to_i, landmark_id: landmark.id), method: :delete, class: 'btn btn-primary' %>

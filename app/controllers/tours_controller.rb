@@ -14,11 +14,10 @@ class ToursController < ApplicationController
       redirect_to tour_list_path
     else
       tour = Tour.create(user_id: current_user.id, title: params[:tour][:title])
-      
+
       tour_recording.contents.keys.each do |key|
         TourRecording.create(tour_id: tour.id, recording_id: key.to_i)
       end
-      require "pry"; binding.pry
 
       flash[:success] = "Your tour has been created."
       session[:tour_list] = nil
