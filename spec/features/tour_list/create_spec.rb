@@ -20,11 +20,11 @@ RSpec.describe 'tour list create:', vcr: { :record => :new_episodes }, type: :fe
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
       visit landmark_path(landmark1)
-      click_button 'Add to Tour List'
+      click_button 'Add to tour list'
       visit landmark_path(landmark2)
-      click_button 'Add to Tour List'
+      click_button 'Add to tour list'
       visit landmark_path(landmark3)
-      click_button 'Add to Tour List'
+      click_button 'Add to tour list'
 
       visit tour_list_path
     end
