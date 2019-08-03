@@ -1,0 +1,18 @@
+<div>
+  <section class="recordings">
+    <% unless facade.landmark_recordings.empty? %>
+      <br>
+      <h4>Recordings</h4>
+      <% facade.landmark_recordings.each do |recording| %>
+        <div class='recording-list'>
+          <%= render partial: 'shared/voting_arrows', object: recording %>
+          <div class='recording-box'>
+            Title: <%= recording.title %><br>
+            Creator: <%= link_to recording.user.display_name, user_path(recording.user) %>
+            <%= render partial: 'shared/audio_player', object: recording %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </section>
+</div>

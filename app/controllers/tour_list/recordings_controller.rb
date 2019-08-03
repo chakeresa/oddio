@@ -1,4 +1,10 @@
 class TourList::RecordingsController < TourList::BaseController
+  def index
+    render locals: {
+      facade: LandmarksShowFacade.new(params[:landmark_id])
+    }
+  end
+
   def new
     landmark = Landmark.find(params[:landmark_id])
     @recording = landmark.recordings.new
