@@ -41,7 +41,6 @@ class TourList::RecordingsController < TourList::BaseController
     if recording
       tour_recording.remove_recording(recording)
       session[:tour_recording] = tour_recording.contents
-      recording.destroy
       flash[:success] = 'Your recording has been deleted.'
     else
       flash[:danger] = 'That recording cannot be deleted'

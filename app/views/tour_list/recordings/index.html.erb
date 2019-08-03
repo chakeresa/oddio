@@ -4,10 +4,13 @@
     <h4>Recordings</h4>
     <% facade.landmark_recordings.each do |recording| %>
       <div class='recording-list'>
-        Title: <%= recording.title %><br>
-        Creator: <%= link_to recording.user.display_name, user_path(recording.user) %>
-        <%= render partial: 'shared/audio_player', object: recording %>
-        <%= button_to 'Pick Recording', tour_list_landmark_pick_recording_path(facade.landmark, id: recording.id), class: 'btn btn-primary' %>
+        <%= render partial: 'shared/voting_arrows', object: recording %>
+        <div class='recording-box'>
+          Title: <%= recording.title %><br>
+          Creator: <%= link_to recording.user.display_name, user_path(recording.user) %>
+          <%= render partial: 'shared/audio_player', object: recording %>
+          <%= button_to 'Pick Recording', tour_list_landmark_pick_recording_path(facade.landmark, id: recording.id), class: 'btn btn-primary' %>
+        </div>
       </div>
     <% end %>
   <% else %>
