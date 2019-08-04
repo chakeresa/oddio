@@ -17,19 +17,8 @@
 
 
 <body>
+
 <div id="mapid"></div>
-<% if @tours.any? %>
-  <h4>Recommended Tours</h4>
-  <ul>
-    <% @tours.each do |tour| %>
-      <div class='tour-list'>
-        <li>
-          <%= link_to tour.title, tour_path(tour) %>
-        </li>
-      </div>
-    <% end %>
-  <ul>
-<% end %>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js">
 </script>
