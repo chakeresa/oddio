@@ -1,11 +1,11 @@
 # Oddio
-Oddio is an audio touring app built in 10 days by [Alexandra Chakeres](https://github.com/chakeresa), [Patrick Duvall](https://github.com/Patrick-Duvall), [Martin Mercer](https://github.com/m-mrcr), [Logan Pile](https://github.com/lpile), and [Mills Provosty](https://github.com/MillsProvosty).
+Oddio is an audio walking tour app built in 10 days by [Alexandra Chakeres](https://github.com/chakeresa), [Patrick Duvall](https://github.com/Patrick-Duvall), [Martin Mercer](https://github.com/m-mrcr), [Logan Pile](https://github.com/lpile), and [Mills Provosty](https://github.com/MillsProvosty).
 
 In Oddio, visitors can explore a map populated with Denver locations stored in our database. These locations are generated from a rake task that hits the Google and TomTom APIs. Users can navigate to different points on the map and open a page with details for the landmark. They also can listen to user-uploaded audio for that location. Users can log in by making an account (or by using google OAuth) to gain the ability to upload and vote on recordings, tours, and landmarks. Admins have CRUD functionality to moderate and delete inappropriate content.
 
 [See the deployed app here](https://oddio.herokuapp.com/)
 
-## Built using...
+## Built using
 - Rails 5.2.x 
 - Ruby 2.4.1
 - Google OAuth for user authentication
@@ -18,6 +18,21 @@ In Oddio, visitors can explore a map populated with Denver locations stored in o
 - deployed at https://votes-app-1903.herokuapp.com/
 - Sinatra 2.0.5
 - Ruby 2.4.1
+
+## Selected Screenshots - TODO
+### Landmarks Index
+![Landmarks Index Screenshot](/app/assets/images/TODO.png)
+### Landmark Show Page
+![Landmark Show Page Screenshot](/app/assets/images/TODO.png)
+### Tours Index
+![Tours Index Screenshot](/app/assets/images/TODO.png)
+### Welcome Page 
+![Welcome Page Screenshot](/app/assets/images/TODO.png)
+### User Dashboard 
+![User Dashboard Screenshot](/app/assets/images/TODO.png)
+
+## Schema
+![Schema](/app/assets/images/schema.png)
 
 ## Running on your local machine
 1. `$ git clone git@github.com:chakeresa/oddio.git`
