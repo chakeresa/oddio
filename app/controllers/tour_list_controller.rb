@@ -1,6 +1,4 @@
-class TourListController < ApplicationController
-  before_action :require_user
-
+class TourListController < User::BaseController
   def show
 
   end

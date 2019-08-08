@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
                 :current_admin?,
                 :tour_list,
                 :tour_recording,
-                :require_user
 
   private
 
@@ -24,10 +23,6 @@ class ApplicationController < ActionController::Base
     flash[:success] = "Welcome, #{@user.first_name}!"
     session[:user_id] = @user.id
     redirect_to landmarks_path
-  end
-
-  def require_user
-    render file: '/public/404', status: 404 unless current_user?
   end
 
   def tour_list
