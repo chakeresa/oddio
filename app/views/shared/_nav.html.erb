@@ -25,6 +25,9 @@
           <li class="nav-item">
             <a class="nav-link" href="<%= user_dashboard_path %>">Dashboard</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= tour_list_path %>">Create Tour (<%= tour_list.total_count %>)</a>
+          </li>
         <% end %>
         <li class="nav-item">
           <a class="nav-link" href="<%= logout_path %>">Log Out</a>

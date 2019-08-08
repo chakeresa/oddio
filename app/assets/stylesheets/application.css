@@ -123,6 +123,21 @@ h1 {
   color: #919191;
 }
 
+.img-fluid {
+  margin-bottom: 6px;
+}
+
+.btn {
+ margin: 5px;
+}
+
+.black-border {
+  border-color: black;
+  border-width: 1px;
+  border-radius: 5px;
+  height: 50px;
+}
+
 figure {
   margin: 0;
 }
