@@ -1,4 +1,4 @@
-class TourList::RecordingsController < TourList::BaseController
+class TourList::RecordingsController < User::BaseController
   def index
     render locals: {
       facade: LandmarksShowFacade.new(params[:landmark_id])
@@ -41,7 +41,7 @@ class TourList::RecordingsController < TourList::BaseController
     if recording
       tour_recording.remove_recording(recording)
       session[:tour_recording] = tour_recording.contents
-      flash[:success] = 'Your recording has been deleted.'
+      flash[:success] = 'The recording has been removed from the tour list.'
     else
       flash[:danger] = 'That recording cannot be deleted'
     end

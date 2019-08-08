@@ -60,10 +60,10 @@ RSpec.describe 'tour list recordings', :vcr, type: :feature do
         click_on 'Pick Recording'
       end
 
-      click_on 'Delete Recording'
+      click_on 'Select A Different Recording'
 
       expect(current_path).to eq(tour_list_path)
-      expect(page).to have_content('Your recording has been deleted.')
+      expect(page).to have_content('The recording has been removed from the tour list.')
     end
   end
 end
