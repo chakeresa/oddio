@@ -16,6 +16,7 @@ class VoteService
   def request_create
     request = conn.post do |req|
       req.url "/api/v1/#{@votable_type}/#{@votable_id}/create_vote/#{@vote_token}/#{rating}"
+      req.params['api_key'] = ENV['VOTES_API_KEY']
     end
   end
 
