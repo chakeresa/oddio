@@ -81,6 +81,11 @@ h1 {
 
 .landmark-header, .tour-header {
   align-items: center;
+  display: flex;
+}
+
+.landmark-header h3 {
+  margin-left: 5px;
 }
 
 .inline-block {
@@ -99,7 +104,7 @@ h1 {
   color: blue;
 }
 
-.recording-box {
+.recording-box, .tour-box {
   width: 90%;
   margin-left: 5px;
 }
@@ -107,28 +112,11 @@ h1 {
 .recording-list, .tour-list {
   display: flex;
   align-items: center;
-  background-color: #06D2B9;
+  background-color: #c1e8e4;
   border-radius: 5px;
   border: 1px solid white;
-  margin: 10px;;
-}
-
-.tour-list {
+  margin: 10px;
   padding: 5px;
-  background-color: #06D2B9;
-  color: white;
-}
-
-.tour-box {
-  background-color: #06D2B9;
-  color: white;
-  outline-color: white;
-  font-weight: bold;
-}
-
-.tour-info {
-  color: white;
-  font-weight: bold;
 }
 
 .tour-info:hover {
