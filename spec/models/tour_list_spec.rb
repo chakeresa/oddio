@@ -6,9 +6,8 @@ RSpec.describe TourList, type: :model do
   let(:subject) { TourList.new({'1' => 1, '2' => 1}) }
   let(:landmark1) { create(:landmark) }
   let(:landmark2) { create(:landmark) }
-  let(:tour) { TourList.new({"#{landmark1.id}" => 1, "#{landmark2.id}" => 1}) }
 
-  describe '#total_count' do
+  describe '#total_landmark_count' do
     it 'calculates the total number of landmarks it holds' do
       expect(subject.total_count).to eq(2)
     end
@@ -50,6 +49,8 @@ RSpec.describe TourList, type: :model do
   end
 
   describe '#load_landmarks' do
+    let(:tour) { TourList.new({"#{landmark1.id}" => 1, "#{landmark2.id}" => 1}) }
+
     it 'loads landmarks in an array' do
       expect(tour.landmarks).to eq([landmark1, landmark2])
     end

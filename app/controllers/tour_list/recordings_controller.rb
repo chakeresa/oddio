@@ -31,7 +31,7 @@ class TourList::RecordingsController < TourList::BaseController
       session[:tour_recording] = tour_recording.contents
       redirect_to tour_list_path
     else
-      flash.now[:error] = 'Unable to save recording.'
+      flash.now[:danger] = 'Unable to save recording.'
       render :new
     end
   end

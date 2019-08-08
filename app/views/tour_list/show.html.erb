@@ -21,7 +21,7 @@
   <%= form_tag tours_path do %>
     <label>Tour Name:</label><br>
     <input type="text" id="tour_title" name="tour[title]" class="black-border">
-
+    <%= render partial: 'shared/reqd_field_label' %>
     <input type="submit" value="Create Tour" class="btn btn-primary">
   <% end %>
 

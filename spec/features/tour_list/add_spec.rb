@@ -53,23 +53,23 @@ RSpec.describe 'tour list add landmarks', :vcr, type: :feature do
     scenario 'displays the total number of landmarks in the tour list' do
       visit landmark_path(landmark1)
 
-      expect(page).to have_content('Create Tour(0)')
+      expect(page).to have_content('Create Tour (0)')
 
       click_button 'Add to tour list'
 
-      expect(page).to have_content('Create Tour(1)')
+      expect(page).to have_content('Create Tour (1)')
 
       visit landmark_path(landmark2)
 
       click_button 'Add to tour list'
 
-      expect(page).to have_content('Create Tour(2)')
+      expect(page).to have_content('Create Tour (2)')
 
       visit landmark_path(landmark3)
 
       click_button 'Add to tour list'
 
-      expect(page).to have_content('Create Tour(3)')
+      expect(page).to have_content('Create Tour (3)')
     end
   end
 

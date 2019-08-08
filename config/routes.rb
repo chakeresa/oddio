@@ -44,8 +44,7 @@ Rails.application.routes.draw do
   get '/tour_list', to: 'tour_list#show'
   delete '/tour_list', to: 'tour_list#destroy', as: :empty_tour_list
   namespace :tour_list do
-    resources :landmarks, only: [:create, :destroy]
-    resources :landmarks, only: [:show] do
+    resources :landmarks, only: [:show, :create, :destroy] do
       resources :recordings, only: [:index, :new, :create, :destroy]
       post '/recordings/:id', to: 'recordings#update', as: :pick_recording
     end

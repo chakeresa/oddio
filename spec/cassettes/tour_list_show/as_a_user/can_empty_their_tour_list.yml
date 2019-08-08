@@ -295,4 +295,336 @@ http_interactions:
       string: '{"data":{"type":"landmark","votable_id":"39","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
     http_version: 
   recorded_at: Sat, 03 Aug 2019 19:40:25 GMT
+- request:
+    method: get
+    uri: https://votes-app-1903.herokuapp.com/api/v1/landmark/35/score
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 08 Aug 2019 09:39:47 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '103'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"type":"landmark","votable_id":"35","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
+    http_version: 
+  recorded_at: Thu, 08 Aug 2019 09:39:47 GMT
+- request:
+    method: get
+    uri: https://votes-app-1903.herokuapp.com/api/v1/landmark/29/score
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 08 Aug 2019 09:44:40 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '103'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"type":"landmark","votable_id":"29","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
+    http_version: 
+  recorded_at: Thu, 08 Aug 2019 09:44:40 GMT
+- request:
+    method: get
+    uri: https://votes-app-1903.herokuapp.com/api/v1/landmark/37/score
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 08 Aug 2019 10:21:06 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '103'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"type":"landmark","votable_id":"37","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
+    http_version: 
+  recorded_at: Thu, 08 Aug 2019 10:21:05 GMT
+- request:
+    method: get
+    uri: https://votes-app-1903.herokuapp.com/api/v1/landmark/38/score
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 08 Aug 2019 10:21:06 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '103'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"type":"landmark","votable_id":"38","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
+    http_version: 
+  recorded_at: Thu, 08 Aug 2019 10:21:06 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/place/photo?key=<GOOGLE_PLACES_API_KEY>&maxheight=800&maxwidth=800&photoreference=CmRaAAAA58Iy6Em8ucPC_-OCxKTJ-p7YKDBUQ4mgVZj4qlFN6j2JhXKSfteprF-Ckca73TjXaYUtNk-trEbhBCWoUcWWsO42KRap_rlw4teWz4hqBU57sAoTl3-myl_4xjOw3LmBEhBTUAINq_SeOPXlwudc8ccKGhSH-pCQxOO6rRE-O1zFKPW1-h3OqA
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Date:
+      - Thu, 08 Aug 2019 10:21:07 GMT
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Location:
+      - https://lh3.googleusercontent.com/p/AF1QipP5cnZz_ezB1Q0szY_zgHVVSiM3lCBSbFOas_f6=s1600-w800-h800
+      Content-Type:
+      - text/html; charset=UTF-8
+      Server:
+      - scaffolding on HTTPServer2
+      Content-Length:
+      - '293'
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=33
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="46,43,39"
+    body:
+      encoding: UTF-8
+      string: "<HTML><HEAD><meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<TITLE>302
+        Moved</TITLE></HEAD><BODY>\n<H1>302 Moved</H1>\nThe document has moved\n<A
+        HREF=\"https://lh3.googleusercontent.com/p/AF1QipP5cnZz_ezB1Q0szY_zgHVVSiM3lCBSbFOas_f6=s1600-w800-h800\">here</A>.\r\n</BODY></HTML>\r\n"
+    http_version: 
+  recorded_at: Thu, 08 Aug 2019 10:21:06 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/place/photo?key=<GOOGLE_PLACES_API_KEY>&maxheight=800&maxwidth=800&photoreference=CmRaAAAA58Iy6Em8ucPC_-OCxKTJ-p7YKDBUQ4mgVZj4qlFN6j2JhXKSfteprF-Ckca73TjXaYUtNk-trEbhBCWoUcWWsO42KRap_rlw4teWz4hqBU57sAoTl3-myl_4xjOw3LmBEhBTUAINq_SeOPXlwudc8ccKGhSH-pCQxOO6rRE-O1zFKPW1-h3OqA
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Date:
+      - Thu, 08 Aug 2019 10:21:07 GMT
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Location:
+      - https://lh3.googleusercontent.com/p/AF1QipP5cnZz_ezB1Q0szY_zgHVVSiM3lCBSbFOas_f6=s1600-w800-h800
+      Content-Type:
+      - text/html; charset=UTF-8
+      Server:
+      - scaffolding on HTTPServer2
+      Content-Length:
+      - '293'
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=32
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="46,43,39"
+    body:
+      encoding: UTF-8
+      string: "<HTML><HEAD><meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<TITLE>302
+        Moved</TITLE></HEAD><BODY>\n<H1>302 Moved</H1>\nThe document has moved\n<A
+        HREF=\"https://lh3.googleusercontent.com/p/AF1QipP5cnZz_ezB1Q0szY_zgHVVSiM3lCBSbFOas_f6=s1600-w800-h800\">here</A>.\r\n</BODY></HTML>\r\n"
+    http_version: 
+  recorded_at: Thu, 08 Aug 2019 10:21:06 GMT
+- request:
+    method: get
+    uri: https://votes-app-1903.herokuapp.com/api/v1/landmark/39/score
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 08 Aug 2019 10:21:07 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '103'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"type":"landmark","votable_id":"39","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
+    http_version: 
+  recorded_at: Thu, 08 Aug 2019 10:21:06 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/place/photo?key=<GOOGLE_PLACES_API_KEY>&maxheight=800&maxwidth=800&photoreference=CmRaAAAA58Iy6Em8ucPC_-OCxKTJ-p7YKDBUQ4mgVZj4qlFN6j2JhXKSfteprF-Ckca73TjXaYUtNk-trEbhBCWoUcWWsO42KRap_rlw4teWz4hqBU57sAoTl3-myl_4xjOw3LmBEhBTUAINq_SeOPXlwudc8ccKGhSH-pCQxOO6rRE-O1zFKPW1-h3OqA
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Date:
+      - Thu, 08 Aug 2019 10:21:08 GMT
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Location:
+      - https://lh3.googleusercontent.com/p/AF1QipP5cnZz_ezB1Q0szY_zgHVVSiM3lCBSbFOas_f6=s1600-w800-h800
+      Content-Type:
+      - text/html; charset=UTF-8
+      Server:
+      - scaffolding on HTTPServer2
+      Content-Length:
+      - '293'
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=35
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="46,43,39"
+    body:
+      encoding: UTF-8
+      string: "<HTML><HEAD><meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<TITLE>302
+        Moved</TITLE></HEAD><BODY>\n<H1>302 Moved</H1>\nThe document has moved\n<A
+        HREF=\"https://lh3.googleusercontent.com/p/AF1QipP5cnZz_ezB1Q0szY_zgHVVSiM3lCBSbFOas_f6=s1600-w800-h800\">here</A>.\r\n</BODY></HTML>\r\n"
+    http_version: 
+  recorded_at: Thu, 08 Aug 2019 10:21:06 GMT
 recorded_with: VCR 5.0.0

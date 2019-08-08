@@ -47,7 +47,7 @@ RSpec.describe 'tour list show', :vcr, type: :feature do
       click_on 'Empty List'
 
       expect(current_path).to eq(tour_list_path)
-      expect(page).to have_content('Create Tour(0)')
+      expect(page).to have_content('Create Tour (0)')
       expect(page).to have_content("There are no landmarks currently in your tour list.")
       expect(page).to_not have_button("Empty List")
     end

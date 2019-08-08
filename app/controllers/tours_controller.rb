@@ -8,7 +8,7 @@ class ToursController < ApplicationController
   end
 
   def create
-    unless check_landmark_with_recording
+    unless all_landmarks_have_recordings?
       flash[:danger] = "Make sure to add a recording to all landmarks."
 
       redirect_to tour_list_path
@@ -28,7 +28,7 @@ class ToursController < ApplicationController
 
   private
 
-  def check_landmark_with_recording
+  def all_landmarks_have_recordings?
     landmarks = tour_list.contents.keys.map {|landmark_id, quantity| landmark_id.to_i}
     recordings = tour_recording.contents.values
     Set.new(landmarks) == Set.new(recordings)

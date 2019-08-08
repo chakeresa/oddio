@@ -9,7 +9,7 @@ class TourList::LandmarksController < TourList::BaseController
       flash[:danger] = "You already have #{landmark.name} in your tour list."
     end
 
-    redirect_to landmarks_path
+    redirect_back fallback_location: landmarks_path
   end
 
   def destroy
@@ -18,6 +18,6 @@ class TourList::LandmarksController < TourList::BaseController
     session[:tour_list] = tour_list.contents
     flash[:success] = "#{landmark.name} has been removed from your tour list."
 
-    redirect_to tour_list_path
+    redirect_back fallback_location: tour_list_path
   end
 end
