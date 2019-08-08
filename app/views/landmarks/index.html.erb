@@ -17,7 +17,7 @@
 
 
 <body>
-<button onclick="map.locate()" class='btn btn-primary'>Use my Location</button>
+
 <div id="mapid"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js">
@@ -26,6 +26,20 @@
 </script>
 
 <script>
+//define button to add to map
+  var locateButton = L.Control.extend({
+    options: {
+      position: 'topright'
+    },
+    onAdd: function (map) {
+        var btn = document.createElement("BUTTON");
+        btn.setAttribute('class', 'btn btn-primary')
+        btn.innerHTML = "Use My Location"
+        btn.setAttribute('onclick', "map.locate()")
+        return btn;
+      },
+  });
+
    var greenIcon = new L.Icon({
      iconUrl: '<%= image_path('tree.png')%>',
      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -125,7 +139,8 @@ fetch('api/v1/landmarks')
       "all": allMarkers
   };
 //make map
-   map = L.map('mapid',{layers: [museumMarkers, theaterMarkers, parkMarkers, governmentMarkers]}).setView([39.7392358, -104.990251], 15);
+   map = L.map('mapid',{layers: [museumMarkers, theaterMarkers, parkMarkers, governmentMarkers]}).setView([39.7392358, -104.990251], 15)
+   map.addControl(new locateButton());
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
   maxZoom: 18,
@@ -134,7 +149,7 @@ fetch('api/v1/landmarks')
   }).addTo(map);
   map.on('locationerror', onLocationError);
   map.on('locationfound', onLocationFound);
-  L.control.layers(overlayMaps).addTo(map)
+  L.control.layers(overlayMaps).addTo(map);
 });
 
 //add my location popup When User clicks locate me
