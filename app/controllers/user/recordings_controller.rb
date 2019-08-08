@@ -30,7 +30,7 @@ class User::RecordingsController < User::BaseController
 
   def destroy
     recording = current_user.recordings.find_by(id: params[:id])
-    if recording && recording.tours.empty?
+    if recording
       recording.destroy
     else
       flash[:danger] = "That recording cannot be deleted"
