@@ -45,7 +45,7 @@ RSpec.describe 'tour list recordings', :vcr, type: :feature do
   context 'as an admin'
 
   context 'edge case' do
-    scenario 'user can delete recording that was selected' do
+    scenario 'user can change recording that was selected' do
       recording = create(:recording, landmark: landmark)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
       visit landmark_path(landmark)

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'tour list create', :vcr, type: :feature do
+RSpec.describe 'tour list recordings create', :vcr, type: :feature do
 
   let(:user) { create(:user) }
   let(:landmark1) { create(:landmark) }
