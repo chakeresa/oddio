@@ -8,13 +8,7 @@ class ToursController < ApplicationController
   end
 
   def create
-    unless all_landmarks_have_recordings?
-      flash[:danger] = "Make sure to add a recording to all landmarks."
-
-      redirect_to tour_list_path
-    else
-      tour = Tour.create(user_id: current_user.id, title: params[:tour][:title])
-
+    if all_landmarks_have_recordings?
       tour_recording.contents.keys.each do |key|
         TourRecording.create(tour_id: tour.id, recording_id: key.to_i)
       end
@@ -23,6 +17,11 @@ class ToursController < ApplicationController
       session[:tour_list] = nil
       session[:tour_recording] = nil
       redirect_to user_dashboard_path
+    else
+      flash[:danger] = "Make sure to add a recording to all landmarks."
+
+      redirect_to tour_list_path
+      tour = Tour.create(user_id: current_user.id, title: params[:tour][:title])
     end
   end
 

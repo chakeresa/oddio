@@ -1,15 +1,15 @@
-class TourList::LandmarksController < TourList::BaseController
+class TourList::LandmarksController < User::BaseController
   def create
     landmark = Landmark.find(params[:landmark_id])
-    unless tour_list.contents.keys.include?(landmark.id.to_s)
+    if tour_list.contents.keys.include?(landmark.id.to_s)
+      flash[:danger] = "You already have #{landmark.name} in your tour list."
+    else
       tour_list.add_landmark(landmark.id)
       session[:tour_list] = tour_list.contents
       flash[:success] = "You have added #{landmark.name} to your tour list. You have #{tour_list.total_count} landmark(s) in your tour list."
-    else
-      flash[:danger] = "You already have #{landmark.name} in your tour list."
     end
 
-    redirect_back fallback_location: landmarks_path
+    redirect_to landmarks_path
   end
 
   def destroy
