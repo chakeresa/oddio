@@ -50,6 +50,7 @@ GOOGLE_INDIV_UID: <your individual Google UID>
 GOOGLE_INDIV_TOKEN: <your individual Google token>
 MAPBOX_API_KEY: <your Mapbox API key>
 GOOGLE_PLACES_API_KEY: <your Google Places API key>
+VOTES_API_KEY: <your API key for the Sinatra Votes app>
 ```
 1. `$ rails db:{create,migrate}`
 1. `$ rake landmarks:all`
