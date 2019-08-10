@@ -1,6 +1,6 @@
 <h3>All Tours</h3>
 <% if @tours.any? %>
-  <% @tours.each do |tour| %>
+  <% @tours.each do |tour, total_score| %>
     <div class='tour-list'>
       <%= render partial: 'shared/voting_arrows', object: tour %>
       <div class='tour-box'>

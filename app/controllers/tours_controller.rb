@@ -1,6 +1,7 @@
 class ToursController < ApplicationController
   def index
-    @tours = Tour.all
+    collection = Tour.all.includes(:user)
+    @tours = Tour.sort('tour', collection)
   end
 
   def show
