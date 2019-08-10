@@ -50,10 +50,41 @@ feature 'landmark show', :vcr do
       end
     end
 
+    it 'sorts recordings on landmark show by total rating from Sinatra' do
+      VCR.use_cassette('sorted_landamrk_recordings_index', record: :new_episodes) do
+        lr1 = create(:recording, id: 999 + rand(9999))
+        lr2 = create(:recording, id: 999 + rand(9999))
+        lr3 = create(:recording, id: 999 + rand(9999))
+        votable_type = 'recording'
+        # r2 rating = +1, r1 rating = 0, r3 rating = -1
+        VoteService.new(votable_type: votable_type, votable_id: lr2.id, type: 'upvote', vote_token: '12345').request_create
+        VoteService.new(votable_type: votable_type, votable_id: lr3.id, type: 'downvote', vote_token: '12345').request_create
+
+        visit recordings_path
+
+        expect(page.all('.recording-list').count).to eq(3)
+
+        within(first('.recording-list')) do
+          expect(page).to have_content(lr2.title)
+          expect(page).to have_content(1)
+        end
+
+        within(page.all('.recording-list')[1]) do
+          expect(page).to have_content(lr1.title)
+          expect(page).to have_content(0)
+        end
+
+        within(page.all('.recording-list')[2]) do
+          expect(page).to have_content(lr3.title)
+          expect(page).to have_content(-1)
+        end
+      end
+    end
+
     it 'shows all tours that include the landmark' do
       t1, t2 = create_list(:tour, 2)
       r1, r2 = create_list(:recording, 2, landmark: landmark)
-      
+
       create(:tour_recording, recording: r1)
       create(:tour_recording, recording: r2)
 
