@@ -42,7 +42,6 @@ RSpec.describe "Tours Index" do
         VoteService.new(votable_type: votable_type, votable_id: t3.id, type: 'downvote', vote_token: '12345').request_create
 
         visit tours_path
-
         expect(page.all('.tour-list').count).to eq(3)
 
         within(first('.tour-list')) do
