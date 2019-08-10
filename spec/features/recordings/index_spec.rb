@@ -38,12 +38,12 @@ feature 'recordings index page' do
           expect(page).to have_content(1)
         end
 
-        within(second('.recording-list')) do
+        within(page.all('.recording-list')[1]) do
           expect(page).to have_content(r1.title)
           expect(page).to have_content(0)
         end
 
-        within(third('.recording-list')) do
+        within(page.all('.recording-list')[2]) do
           expect(page).to have_content(r3.title)
           expect(page).to have_content(-1)
         end

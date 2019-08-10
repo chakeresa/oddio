@@ -7,7 +7,12 @@ class ApplicationRecord < ActiveRecord::Base
       votable_type: votable_type,
       array_of_ids: array_of_ids
     }
-    hash = VoteService.new(parameters).sort
-    # TODO: map back to objects
+    api_response = VoteService.new(parameters).sort
+    object_score_hash = {}
+    api_response.each do |id, total_score|
+      object = self.find(id)
+      object_score_hash[object] = total_score
+    end
+    object_score_hash
   end
 end
