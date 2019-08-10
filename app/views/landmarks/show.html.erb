@@ -52,7 +52,7 @@
       <% unless facade.landmark_recordings.empty? %>
         <br>
         <h4>Recordings</h4>
-        <% facade.landmark_recordings.each do |recording| %>
+        <% facade.landmark_recordings.each do |recording, total_score| %>
           <div class='recording-list'>
             <%= render partial: 'shared/voting_arrows', object: recording %>
             <div class='recording-box'>
