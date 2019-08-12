@@ -53,6 +53,7 @@ feature 'landmark show', :vcr do
     it 'shows all tours that include the landmark' do
       t1, t2 = create_list(:tour, 2)
       r1, r2 = create_list(:recording, 2, landmark: landmark)
+      
       create(:tour_recording, recording: r1)
       create(:tour_recording, recording: r2)
 

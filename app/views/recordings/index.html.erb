@@ -1,5 +1,6 @@
 <h3>All Recordings</h3>
-<% @recordings.each do |recording| %>
+<!--  TODO: use total_score instead of API call for each recording -->
+<% @recordings.each do |recording, total_score| %>
   <div class='recording-list'>
     <%= render partial: 'shared/voting_arrows', object: recording %>
     <div class='recording-box'>

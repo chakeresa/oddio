@@ -20,7 +20,6 @@
 
   <div>
     <section class="attributes">
-      <br>
       <p><b>Address: </b> <%= facade.landmark.address %></p>
       <% if facade.landmark.phone_number.nil? %>
         <p><b>Phone: </b>Not Available</p>
@@ -37,7 +36,10 @@
     </section>
   </div>
 
-  <div>
+  <div class="add-tour-list">
+    <% if current_user? %>
+      <%= button_to "Add to tour list", tour_list_landmarks_path(landmark_id: facade.landmark.id), class: 'btn btn-primary' %>
+    <% end %>
     <section class="add-recordings">
       <% if current_user %>
         <%= button_to "Upload new recording", new_user_landmark_recording_path(facade.landmark), method: :get, class: 'btn btn-primary' %>
