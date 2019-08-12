@@ -138,6 +138,10 @@ h1 {
   height: 50px;
 }
 
+.total-score {
+  word-break: keep-all;
+}
+
 figure {
   margin: 0;
 }
