@@ -33,17 +33,19 @@ RSpec.describe "Tours Index" do
       # VCR.use_cassette('sorted_tours_index', record: :new_episodes) do
         WebMock.allow_net_connect!
         VCR.turn_off!
-        t1 = create(:tour, id: 999 + rand(9999))
-        t2 = create(:tour, id: 999 + rand(9999))
-        t3 = create(:tour, id: 999 + rand(9999))
+        t1 = create(:tour)
+        t2 = create(:tour)
+        t3 = create(:tour)
         votable_type = 'tour'
         # r2 rating = +1, r1 rating = 0, r3 rating = -1
         VoteService.new(votable_type: votable_type, votable_id: t2.id, type: 'upvote', vote_token: '12345').request_create
         VoteService.new(votable_type: votable_type, votable_id: t3.id, type: 'downvote', vote_token: '12345').request_create
+          VoteService.new(votable_type: votable_type, votable_id: t3.id, type: 'downvote', vote_token: '12345').request_create
 
         visit tours_path
-        expect(page.all('.tour-list').count).to eq(3)
 
+        expect(page.all('.tour-list').count).to eq(3)
+save_and_open_page
         within(first('.tour-list')) do
           expect(page).to have_content(t2.title)
           expect(page).to have_content(1)
