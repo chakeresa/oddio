@@ -10,7 +10,7 @@ feature 'landmark show', :vcr do
     long: -104.981784,
     website: 'https://www.denvergov.org/content/denvergov/en/denver-parks-and-recreation.html',
     place_id: 'ChIJISHlw9l-bIcRl-J_-5IVSN8',
-    photo_reference: 'CmRaAAAA0DaL7ahs9-s43r1B5UgJDfY-PWSTiU4IaIGZXneIhnL9VoLasfdjb8uILVT2fpv3itbylY_ag0rfjDCNkgQfX7BbukpZYFyZkcyxt5QzpS4T-0jsU6i-yukAWcoplJ79EhAuUtUH8AmRk8vestSiHYHBGhR1RIVab8DqQ39GMus178M4aHepwQ'
+    photo_reference: 'https://lh3.googleusercontent.com/p/AF1QipMSRaKMGzPSpTxaKRFQaakq9McSixbA7lIyBtqg'
     ) }
 
   let(:user) { create(:user) }
