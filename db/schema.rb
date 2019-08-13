@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_25_022142) do
+ActiveRecord::Schema.define(version: 2019_08_13_230606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 2019_07_25_022142) do
     t.index ["user_id"], name: "index_app_auths_on_user_id"
   end
 
+  create_table "flags", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "recording_id"
+    t.index ["recording_id"], name: "index_flags_on_recording_id"
+    t.index ["user_id", "recording_id"], name: "index_flags_on_user_id_and_recording_id", unique: true
+    t.index ["user_id"], name: "index_flags_on_user_id"
+  end
+
   create_table "google_auths", force: :cascade do |t|
     t.bigint "user_id"
     t.string "uid"
@@ -34,17 +42,17 @@ ActiveRecord::Schema.define(version: 2019_07_25_022142) do
   end
 
   create_table "landmarks", force: :cascade do |t|
-    t.string "name"
     t.decimal "lat", precision: 10, scale: 6
     t.decimal "long", precision: 10, scale: 6
+    t.string "name"
     t.string "address"
     t.string "phone_number"
     t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "place_id"
     t.string "website"
     t.string "photo_reference"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "md5_hash"
   end
 
@@ -88,6 +96,8 @@ ActiveRecord::Schema.define(version: 2019_07_25_022142) do
   end
 
   add_foreign_key "app_auths", "users"
+  add_foreign_key "flags", "recordings"
+  add_foreign_key "flags", "users"
   add_foreign_key "google_auths", "users"
   add_foreign_key "recordings", "landmarks"
   add_foreign_key "recordings", "users"
