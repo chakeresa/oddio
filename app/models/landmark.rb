@@ -18,8 +18,7 @@ class Landmark < ApplicationRecord
       #{self.address}
       #{self.phone_number}
       #{self.category}
-      #{self.website}
-      #{self.photo_reference}"
+      #{self.website}"
     )
   end
 end
