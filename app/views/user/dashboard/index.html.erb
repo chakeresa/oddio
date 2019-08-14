@@ -31,6 +31,7 @@
   <% @user.tours.each do |tour| %>
     <div class='tour-list'>
       <%= render partial: 'shared/voting_arrows', object: tour %>
+      <img src=<%= tour.landmarks.first.photo_reference %> alt="<%= tour.title %> thumbnail" class="tour-thumb">
       <div class='tour-box'>
         <%= link_to tour.title, tour_path(tour) %>
       </div>
