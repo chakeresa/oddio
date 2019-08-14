@@ -3,12 +3,8 @@ class Recording < ApplicationRecord
 
   belongs_to :user
   belongs_to :landmark
-<<<<<<< HEAD
   has_many :flags
-  has_many :tour_recordings
-=======
-  has_many :tour_recordings, dependent: :destroy
->>>>>>> e7a2588522841442b08f83e1a8b21660d596c155
+  has_many :tour_recordings, depndent: :destroy
   has_many :tours, through: :tour_recordings
 
 
