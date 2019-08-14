@@ -28,6 +28,7 @@ VCR.configure do |config|
   config.filter_sensitive_data('<GOOGLE_INDIV_UID>') { ENV['GOOGLE_INDIV_UID'] }
   config.filter_sensitive_data('<GOOGLE_INDIV_TOKEN>') { ENV['GOOGLE_INDIV_TOKEN'] }
   config.filter_sensitive_data('<MAPBOX_API_KEY>') { ENV['MAPBOX_API_KEY'] }
+  config.filter_sensitive_data('<VOTES_API_KEY>') { ENV['VOTES_API_KEY'] }
   config.default_cassette_options = { record: :new_episodes }
 end
 

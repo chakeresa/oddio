@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   resources :recordings, only: [:index]
 
   # Tours
-  resources :tours, only: [:index, :show]
+  resources :tours, only: [:index, :show, :create]
   get '/tours/:tour_id/landmarks/:id', to: 'tour/landmarks#show', as: 'tour_landmark'
 
   ### User
@@ -39,6 +39,16 @@ Rails.application.routes.draw do
       resources :recordings, only: [:new, :create]
     end
     resources :flags, only: :create
+  end
+
+  # Tour list
+  get '/tour_list', to: 'tour_list#show'
+  delete '/tour_list', to: 'tour_list#destroy', as: :empty_tour_list
+  namespace :tour_list do
+    resources :landmarks, only: [:show, :create, :destroy] do
+      resources :recordings, only: [:index, :new, :create, :destroy]
+      post '/recordings/:id', to: 'recordings#update', as: :pick_recording
+    end
   end
 
   ### Admin

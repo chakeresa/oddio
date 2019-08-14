@@ -150,7 +150,7 @@ http_interactions:
   recorded_at: Thu, 25 Jul 2019 18:20:05 GMT
 - request:
     method: get
-    uri: https://votes-app-1903.herokuapp.com/api/v1/recording/1/score
+    uri: https://votes-app-1903.herokuapp.com/api/v1/sort_by_rating/recording?ids%5B%5D=6&ids%5B%5D=7
     body:
       encoding: US-ASCII
       string: ''
@@ -167,13 +167,13 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 13 Aug 2019 23:20:24 GMT
+      - Sat, 10 Aug 2019 00:04:26 GMT
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       Content-Length:
-      - '103'
+      - '13'
       X-Content-Type-Options:
       - nosniff
       Server:
@@ -182,9 +182,46 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":{"type":"recording","votable_id":"1","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
+      string: '{"6":0,"7":0}'
     http_version: 
-  recorded_at: Tue, 13 Aug 2019 23:20:24 GMT
+  recorded_at: Sat, 10 Aug 2019 00:04:25 GMT
+- request:
+    method: get
+    uri: https://votes-app-1903.herokuapp.com/api/v1/sort_by_rating/recording?ids%5B%5D=1&ids%5B%5D=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 10 Aug 2019 00:10:54 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '13'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"2":1,"1":0}'
+    http_version: 
+  recorded_at: Sat, 10 Aug 2019 00:10:54 GMT
 - request:
     method: get
     uri: https://votes-app-1903.herokuapp.com/api/v1/recording/2/score
@@ -204,7 +241,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 13 Aug 2019 23:20:25 GMT
+      - Sat, 10 Aug 2019 00:10:55 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -221,5 +258,42 @@ http_interactions:
       encoding: UTF-8
       string: '{"data":{"type":"recording","votable_id":"2","attributes":{"upvotes":1,"downvotes":0,"total_score":1}}}'
     http_version: 
-  recorded_at: Tue, 13 Aug 2019 23:20:25 GMT
+  recorded_at: Sat, 10 Aug 2019 00:10:55 GMT
+- request:
+    method: get
+    uri: https://votes-app-1903.herokuapp.com/api/v1/recording/1/score
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 10 Aug 2019 00:10:55 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '103'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"type":"recording","votable_id":"1","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
+    http_version: 
+  recorded_at: Sat, 10 Aug 2019 00:10:55 GMT
 recorded_with: VCR 5.0.0

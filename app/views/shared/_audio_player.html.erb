@@ -1,11 +1,12 @@
+<script src="ac_quicktime.js" type="text/javascript"></script>
 <figure>
-  <audio
-      controls
-      preload="auto"
-      style="width:100%"
-      src="<%= audio_player.url %>" type="audio/mpeg">
-          Your browser does not support the
-          <code>audio</code> element.
+  <audio controls style="width:100%">
+    <source src="<%= audio_player.url %>" type="audio/mp4">
+    Your browser does not support the
+    <code>audio</code> element.
+    <script type="text/javascript">
+      QT_WriteOBJECT(<%= audio_player.url %>);
+    </script>
   </audio>
 </figure>
 <% if current_user%>
