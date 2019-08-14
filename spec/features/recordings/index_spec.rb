@@ -53,18 +53,18 @@ feature 'recordings index page' do
     it 'the vote arrows dont display' do
       VCR.use_cassette('recordings_index_page/as_a_visitor/the_vote_arrows_dont_display', record: :new_episodes) do
         @recordings = create_list(:recording, 2)
-        
+
         visit recordings_path
-        
+
         expect(page).to_not have_content('▲')
         expect(page).to_not have_content('▼')
       end
     end
   end
-  
+
   describe 'as a user' do
     let(:user) { create(:user) }
-    
+
     it 'the vote arrows display' do
       VCR.use_cassette('recordings_index_page/as_a_user/the_vote_arrows_display', record: :new_episodes) do
         @recordings = create_list(:recording, 2)
@@ -78,19 +78,21 @@ feature 'recordings index page' do
     end
 
     it "has a button to flag content" do
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-      visit recordings_path
-      expect(@recordings.first.flags.count).to eq(0)
-      within(first('.recording-list')) do
-        click_button("⚑")
+      VCR.use_cassette('recordings_index_page/as_a_user/flag_content_button', record: :new_episodes) do
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+        visit recordings_path
+        expect(@recordings.first.flags.count).to eq(0)
+        within(first('.recording-list')) do
+          click_button("⚑")
+        end
+        expect(@recordings.first.flags.count).to eq(1)
+        expect(page).to have_content("Thanks for your report!")
+        within(first('.recording-list')) do
+          click_button("⚑")
+        end
+        expect(@recordings.first.flags.count).to eq(1)
+        expect(page).to_not have_content("Thanks for your report!")
       end
-      expect(@recordings.first.flags.count).to eq(1)
-      expect(page).to have_content("Thanks for your report!")
-      within(first('.recording-list')) do
-        click_button("⚑")
-      end
-      expect(@recordings.first.flags.count).to eq(1)
-      expect(page).to_not have_content("Thanks for your report!")
     end
   end
 end
