@@ -8,6 +8,9 @@
           <code>audio</code> element.
   </audio>
 </figure>
+<% if current_user%>
+<%=button_to "⚑", user_flags_path, params: {recording_id: audio_player.id} %>
+<% end %>
 <style>
   audio::-internal-media-controls-download-button {
     display:none;

@@ -28,16 +28,6 @@ feature 'recordings index page', :vcr do
       expect(page).to_not have_content('▲')
       expect(page).to_not have_content('▼')
     end
-
-    it "has a button to flag content" do
-      visit recordings_path(@r1)
-      expect(@r1.flags.count).to eq(0)
-      click_button("⚑")
-      expect(@r1.flags.count).to eq(1)
-      click_button("⚑")
-      # expect(page).to have_content("Thank you for your re
-      expect(@r1.flags.count).to eq(1)
-    end
   end
 
   describe 'as a user' do
@@ -50,6 +40,20 @@ feature 'recordings index page', :vcr do
 
       expect(page).to have_content('▲')
       expect(page).to have_content('▼')
+    end
+
+    it "has a button to flag content" do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+      visit recordings_path
+      expect(@recordings.first.flags.count).to eq(0)
+      within(first('.recording-list')) do
+        click_button("⚑")
+      end
+      expect(@recordings.first.flags.count).to eq(1)
+      within(first('.recording-list')) do
+        click_button("⚑")
+      end
+      expect(@recordings.first.flags.count).to eq(1)
     end
   end
 end

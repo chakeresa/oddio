@@ -38,6 +38,7 @@ Rails.application.routes.draw do
     resources :landmarks, only: [:show] do
       resources :recordings, only: [:new, :create]
     end
+    resources :flags, only: :create
   end
 
   ### Admin
