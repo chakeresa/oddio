@@ -50,10 +50,12 @@ feature 'recordings index page', :vcr do
         click_button("⚑")
       end
       expect(@recordings.first.flags.count).to eq(1)
+      expect(page).to have_content("Thanks for your report!")
       within(first('.recording-list')) do
         click_button("⚑")
       end
       expect(@recordings.first.flags.count).to eq(1)
+      expect(page).to_not have_content("Thanks for your report!")
     end
   end
 end

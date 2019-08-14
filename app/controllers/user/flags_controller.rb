@@ -4,6 +4,7 @@ class User::FlagsController < User::BaseController
     recording = Recording.find(params['recording_id'])
     unless recording.flags.find_by(user_id: current_user.id)
       Flag.create(user_id: current_user.id, recording_id: params['recording_id'])
+      flash[:success] = "Thanks for your report!"
     end
     redirect_back fallback_location: root_path
   end
