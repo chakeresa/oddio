@@ -8,6 +8,6 @@ FactoryBot.define do
     category { "park" }
     place_id { Faker::Crypto.sha1 }
     website { Faker::Internet.url }
-    photo_reference { 'https://lh3.googleusercontent.com/p/AF1QipMSRaKMGzPSpTxaKRFQaakq9McSixbA7lIyBtqg' }
+    photo_reference { 'CmRaAAAA58Iy6Em8ucPC_-OCxKTJ-p7YKDBUQ4mgVZj4qlFN6j2JhXKSfteprF-Ckca73TjXaYUtNk-trEbhBCWoUcWWsO42KRap_rlw4teWz4hqBU57sAoTl3-myl_4xjOw3LmBEhBTUAINq_SeOPXlwudc8ccKGhSH-pCQxOO6rRE-O1zFKPW1-h3OqA' }
   end
 end

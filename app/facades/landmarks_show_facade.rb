@@ -14,10 +14,16 @@ class LandmarksShowFacade
   end
 
   def picture
-    landmark.photo_reference
+    @_picture ||= google_service.get_picture(landmark.photo_reference)
   end
 
   def landmark_recordings
     landmark.recordings
+  end
+
+  private
+
+  def google_service
+    @_google_service ||= GoogleService.new
   end
 end
