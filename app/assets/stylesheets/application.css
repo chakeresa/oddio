@@ -142,6 +142,12 @@ h1 {
   word-break: keep-all;
 }
 
+.tour-thumb {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+}
+
 figure {
   margin: 0;
 }

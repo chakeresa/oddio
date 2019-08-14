@@ -9,7 +9,7 @@ class TourLandmarkShowFacade
   end
 
   def picture
-    @_picture ||= google_service.get_picture(landmark.photo_reference)
+    landmark.photo_reference
   end
   
   def tour
@@ -18,11 +18,5 @@ class TourLandmarkShowFacade
 
   def recordings
     @_recordings ||= tour.recordings_for_landmark(landmark)
-  end
-
-  private
-
-  def google_service
-    @_google_service ||= GoogleService.new
   end
 end
