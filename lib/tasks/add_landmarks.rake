@@ -82,16 +82,16 @@ namespace :landmarks do
   def create_or_update_landmark(details, type)
     puts "Starting Landmark resource update for #{details[:name]}"
     unless details[:photos].nil?
-      hashed_details = Digest::MD5.hexdigest(
-        "#{details[:name]}
-        #{details[:place_id]}
-        #{details[:formatted_address]}
-        #{details[:formatted_phone_number]}
-        #{type}
-        #{details[:website]}
-        #{details[:photos].first[:photo_reference]}"
-      )
-
+      hashed_details = "TODO: delete"
+      # TODO: undo comment after everyone (including Heroku) has run the script above
+      # hashed_details = Digest::MD5.hexdigest(
+      #   "#{details[:name]}
+      #   #{details[:place_id]}
+      #   #{details[:formatted_address]}
+      #   #{details[:formatted_phone_number]}
+      #   #{type}
+      #   #{details[:website]}
+      # )
 
       landmark = Landmark.find_or_initialize_by(place_id: details[:place_id])
       puts "Found/created Landmark resource for #{details[:name]}"
