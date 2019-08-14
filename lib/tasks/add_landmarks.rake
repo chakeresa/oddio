@@ -96,8 +96,6 @@ namespace :landmarks do
       landmark = Landmark.find_or_initialize_by(place_id: details[:place_id])
       puts "Found/created Landmark resource for #{details[:name]}"
       unless landmark.md5_hash == hashed_details
-        photo_ref = details[:photos].first[:photo_reference]
-        thumb_url = GoogleService.new.get_picture(photo_ref)
         landmark.update(
           name: details[:name],
           address: details[:formatted_address],
@@ -106,7 +104,7 @@ namespace :landmarks do
           lat: details[:geometry][:location][:lat],
           long: details[:geometry][:location][:lng],
           website: details[:website],
-          photo_reference: thumb_url
+          photo_reference: details[:photos].first[:photo_reference]
         )
         puts "Updated Landmark resource for #{details[:name]}"
       end
