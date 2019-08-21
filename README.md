@@ -19,17 +19,17 @@ In Oddio, visitors can explore a map populated with Denver locations stored in o
 - Sinatra 2.0.5
 - Ruby 2.4.1
 
-## Selected Screenshots - TODO
+## Selected Screenshots
 ### Landmarks Index
-![Landmarks Index Screenshot](/app/assets/images/TODO.png)
+![Landmarks Index Screenshot](/app/assets/images/screenshots/landmarks_index.png)
 ### Landmark Show Page
-![Landmark Show Page Screenshot](/app/assets/images/TODO.png)
+![Landmark Show Page Screenshot](/app/assets/images/screenshots/landmark_show.png)
 ### Tours Index
-![Tours Index Screenshot](/app/assets/images/TODO.png)
+![Tours Index Screenshot](/app/assets/images/screenshots/tour_index.png)
+### Tour Show Page
+![Tour Show Page Screenshot](/app/assets/images/screenshots/tour_show.png)
 ### Welcome Page 
-![Welcome Page Screenshot](/app/assets/images/TODO.png)
-### User Dashboard 
-![User Dashboard Screenshot](/app/assets/images/TODO.png)
+![Welcome Page Screenshot](/app/assets/images/screenshots/welcome_page.png)
 
 ## Schema
 ![Schema](/app/assets/images/schema.png)
