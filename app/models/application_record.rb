@@ -17,8 +17,8 @@ class ApplicationRecord < ActiveRecord::Base
       end
       
       object_score_hash
+    else
+      collection
     end
-  else
-    collection
   end
 end
