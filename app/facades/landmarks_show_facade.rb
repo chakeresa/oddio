@@ -18,6 +18,7 @@ class LandmarksShowFacade
   end
 
   def landmark_recordings
-    landmark.recordings
+    collection = landmark.recordings
+    Recording.sort('recording', collection)
   end
 end
