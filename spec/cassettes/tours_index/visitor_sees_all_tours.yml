@@ -222,4 +222,41 @@ http_interactions:
       string: '{"data":{"type":"tour","votable_id":"11","attributes":{"upvotes":0,"downvotes":0,"total_score":0}}}'
     http_version: 
   recorded_at: Thu, 01 Aug 2019 16:11:51 GMT
+- request:
+    method: get
+    uri: https://votes-app-1903.herokuapp.com/api/v1/sort_by_rating/tour?ids%5B%5D=10&ids%5B%5D=11
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 22 Aug 2019 17:52:23 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '15'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"10":0,"11":0}'
+    http_version: 
+  recorded_at: Thu, 22 Aug 2019 17:52:24 GMT
 recorded_with: VCR 5.0.0
