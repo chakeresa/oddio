@@ -23,7 +23,7 @@ class VoteService
   
   def sort
     query_params = 'ids[]=' + @array_of_ids.join('&ids[]=')
-    
+
     response = conn.get do |req|
       req.url "/api/v1/sort_by_rating/#{@votable_type}?#{query_params}"
     end
