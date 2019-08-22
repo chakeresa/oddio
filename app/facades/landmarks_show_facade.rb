@@ -21,4 +21,9 @@ class LandmarksShowFacade
     collection = landmark.recordings
     Recording.sort('recording', collection)
   end
+
+  def landmark_tours
+    collection = landmark.tours
+    Tour.sort('tour', collection)
+  end
 end
