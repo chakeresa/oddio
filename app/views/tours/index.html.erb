@@ -1,6 +1,7 @@
 <h3>All Tours</h3>
 <% if @tours.any? %>
-  <% @tours.each do |tour| %>
+  <% @tours.each do |tour, total_score| %>
+  <!--  TODO: use total_score instead of API call for each tour -->
     <div class='tour-list'>
       <%= render partial: 'shared/voting_arrows', object: tour %>
       <% if tour.landmarks.first %>
