@@ -1,5 +1,5 @@
 Given("a generic landmark") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @landmark = create(:landmark)
 end
 
 Given("I'm a visitor") do
