@@ -5,7 +5,7 @@ Feature: Landmark Show Page
     Given a generic landmark
     Given I'm a <user_type>
     When I visit that landmark's show page
-    Then I <should_or_should_not> see the "Upload new recording" button
+    Then I <should_or_should_not> see the Upload new recording button
 
     Examples:
     | user_type   | should_or_should_not |

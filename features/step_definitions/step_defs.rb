@@ -3,13 +3,19 @@ Given("a generic landmark") do
 end
 
 Given("I'm a visitor") do
-  pending # Write code here that turns the phrase above into concrete actions
 end
 
 When("I visit that landmark's show page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit landmark_path(@landmark)
 end
 
-Then("I should not see the {string} button") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/I (should not|should) see the (.*) button/) do |should_or_should_not, button_text|
+  case should_or_should_not
+  when 'should'
+    expect(page).to have_button(button_text)
+  when 'should not'
+    expect(page).to_not have_button(button_text)
+  else
+    raise "No match for Then statement: use 'should' or 'should not'"
+  end
 end
