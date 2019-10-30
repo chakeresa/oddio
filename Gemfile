@@ -63,7 +63,7 @@ gem 'colorize'
 gem 'newrelic_rpm'
 
 group :test do
-  gem 'cucumber'
+  gem 'cucumber-rails', require: false
 end
 
 group :development, :test do
