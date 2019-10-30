@@ -6,6 +6,7 @@
 
 require 'cucumber/rails'
 
+require 'cucumber/rspec/doubles'
 World(FactoryBot::Syntax::Methods)
 
 # frozen_string_literal: true
