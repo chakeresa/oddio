@@ -13,3 +13,4 @@ Feature: Landmark Show Page
     | user_type               | should_or_should_not |
     | visitor                 | should not           |
     | logged-in regular user  | should               |
+    | logged-in admin user    | should               |
